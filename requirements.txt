@@ -1,8 +1,0 @@
-google-genai
-edge-tts
-requests
-moviepy>=2.1,<3
-pillow
-numpy
-google-api-python-client
-google-auth
