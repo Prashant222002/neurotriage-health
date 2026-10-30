@@ -1,0 +1,8 @@
+google-genai
+edge-tts
+requests
+numpy
+opencv-python-headless
+pillow
+google-api-python-client
+google-auth
