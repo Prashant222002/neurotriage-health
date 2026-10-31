@@ -1,10 +1,11 @@
+import os
 """Phase 2: 16:9 long-video renderer (1920x1080).
 
 Design goals
  * Built at midnight, slowly: renders chapter-by-chapter into separate segment files. If the run dies
    (timeout, OOM, busy runner) the retry skips every finished segment instead of starting over.
  * Chapter cards with 3D neural sphere + perspective floor, 3D bars, stat cards, end card (motion_graphics.py).
- * Clean lower-third captions (caption_styles.py), chapter chip, progress bar with chapter ticks.
+ * Clean lower-third captions (caption_styles.py), chapter chip, small circle logo (no progress bar since round 3).
 Self-contained: only needs gfx / motion_graphics / caption_styles + ffmpeg.
 """
 import hashlib
@@ -20,6 +21,7 @@ import cv2
 import numpy as np
 from PIL import Image
 
+import brand_logo
 import motion_graphics as mg
 from caption_styles import StyledCaptions
 from gfx import (BLUE, GREEN, MINT, blit, clamp01, ease_in_out, ease_out, ease_out_back, pill, rounded, scaled,
@@ -149,6 +151,11 @@ class LShot:
         else:
             s, ty = 1.06, (0.5 - e) * 0.035 * H
         s *= 1 + 0.05 * (1 - ease_out(self.i / (0.25 * self.fps)))
+        if os.environ.get("ZOOM_POPS", "on").lower() not in ("off", "0", "no"):     # Round 6: quick zoom pop every ~3.4 s
+            per = int(3.4 * self.fps)
+            k = (self.i - int(1.2 * self.fps)) % per if self.i >= int(1.2 * self.fps) else per
+            if k < int(0.32 * self.fps) and self.i < self.n - int(0.5 * self.fps):
+                s *= 1 + 0.045 * math.sin(math.pi * k / (0.32 * self.fps))
         M = np.float32([[s, 0, (1 - s) * W / 2 + tx], [0, s, (1 - s) * H / 2 + ty]])
         out = cv2.warpAffine(raw, M, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)
         self.i += 1
@@ -209,30 +216,19 @@ class LongHUD:
         self.voice_end, self.chapters = voice_end, chapters
         self.chips = {i: pill(f"CH {i}/{len(chapters)}  \u2022  {n.upper()}", 30, BLUE, GREEN, 28, 13)
                       for i, n in enumerate(chapters, 1)}
-        self.logo = None
-        lp = Path(assets) / "logo.png"
-        if lp.exists():
-            self.logo = np.array(Image.open(lp).convert("RGBA").resize((92, 92), Image.LANCZOS))
+        self.logo_size = 62                                  # ~3% of 1920: small corner mark
+        self.logo = brand_logo.load(self.logo_size, assets)  # circle + ring + shadow, None if the asset gate fails
         self.brand = text_sprite(brand.upper(), 30, (235, 242, 255), 0, shadow=True)
-        self.bar_bg = np.full((7, W - 120, 4), (255, 255, 255, 60), np.uint8)
-        self.bar_fg = np.zeros((7, W - 120, 4), np.uint8)
-        for ch in range(3):
-            self.bar_fg[..., ch] = np.linspace(BLUE[ch], MINT[ch], W - 120)[None, :]
-        self.bar_fg[..., 3] = 255
 
     def draw(self, f, t, chapter, chapter_t0, ticks):
-        bw = W - 120
-        blit(f, self.bar_bg, 60, H - 34, 0.9)
-        wpx = int(bw * clamp01(t / max(1e-6, self.voice_end)))
-        if wpx > 2:
-            blit(f, self.bar_fg[:, :wpx], 60, H - 34, 1.0)
-        for tk in ticks:
-            x = 60 + int(bw * tk / self.voice_end)
-            f[H - 36:H - 25, x:x + 2] = 255
+        # (round 3) no progress bar / chapter ticks: YouTube already shows its own seek bar with chapters
         if self.logo is not None:
-            blit(f, self.logo, W - 60 - 92, 38, 0.85)
-        else:
-            blit(f, self.brand, W - 60 - self.brand.shape[1], 30, 0.8)
+            a = brand_logo.fade(t, start=1.5, peak=0.8)
+            if a > 0:
+                pad = brand_logo.pad_of(self.logo_size)
+                blit(f, self.logo, W - 48 - self.logo_size - pad, 30 - pad // 2, a)
+        elif t > 1.5:
+            blit(f, self.brand, W - 60 - self.brand.shape[1], 30, 0.7)
         u = t - chapter_t0
         if 0 <= u < 5.0 and chapter in self.chips:
             a = ease_out(u / 0.5) * (1 - clamp01((u - 4.4) / 0.6))
@@ -252,7 +248,7 @@ class LongRenderer:
         self.fps, self.preset, self.crf, self.log, self.seed = fps, preset, crf, log, seed
         self.hud = LongHUD(brand, chapters, voice_end, assets)
         self.scrim = _scrim()
-        self.end = mg.EndCard(W, H, brand, site, end_line1, end_line2)
+        self.end = mg.EndCard(W, H, brand, site, end_line1, end_line2, logo=brand_logo.load(int(H * 0.11), assets))
         words = []
         for i, (_, _, ws) in enumerate(res):
             words += [(w, starts[i] + s, starts[i] + e) for (w, s, e) in ws]
@@ -421,7 +417,9 @@ class LongRenderer:
 # ----------------------------------------------------------------------------- thumbnail
 def make_thumbnail(text, out_path, brand="NeuroTriage", frame_rgb=None):
     """1280x720 thumbnail. text: <=4 words. frame_rgb optional background (any size)."""
+    import safe
     tw, th = 1280, 720
+    text = safe.thumb_words(text, brand or "WATCH THIS")      # str / list / None / anything -> clean string
     if frame_rgb is not None:
         bg = cv2.resize(frame_rgb, (tw, th), interpolation=cv2.INTER_AREA)
         bg = (bg.astype(np.float32) * 0.55).astype(np.uint8)
@@ -431,13 +429,16 @@ def make_thumbnail(text, out_path, brand="NeuroTriage", frame_rgb=None):
     bg = np.clip(bg.astype(np.float32) * (0.45 + 0.55 * (1 - g)) , 0, 255).astype(np.uint8)
     s = mg.NeuralSphere(520, seed=3).render(1.3, strength=0.9)
     blit(bg, s, tw - 520 - 20, 100)
-    words = text.upper().split()[:4]
+    words = text.split()[:4]
     lines = [" ".join(words[:2]), " ".join(words[2:])] if len(words) > 2 else [" ".join(words)]
     y = 150 if len(lines) == 2 else 230
     for i, ln in enumerate(l for l in lines if l):
         spr = text_sprite(ln, 150 if len(ln) < 11 else 118, (255, 230, 90) if i else (255, 255, 255), stroke=8)
         blit(bg, spr, 40, y)
         y += spr.shape[0] * 0.78
-    blit(bg, pill(brand.upper(), 34, BLUE, GREEN, 30, 12), 30, th - 100)
+    blit(bg, pill(str(brand or "").upper(), 34, BLUE, GREEN, 30, 12), 30, th - 100)
+    lg = brand_logo.load(112)                                   # small circle, bottom-right, clear of the 3D sphere text
+    if lg is not None:
+        blit(bg, lg, tw - 112 - 28 - brand_logo.pad_of(112), th - 112 - 20 - brand_logo.pad_of(112), 0.95)
     cv2.imwrite(str(out_path), bg[:, :, ::-1], [cv2.IMWRITE_JPEG_QUALITY, 90])
     return out_path

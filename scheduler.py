@@ -46,7 +46,14 @@ def schedule_for(kind, built_at=None):
     built_at = built_at or now_ist()
     if os.environ.get("PUBLISH_ASAP", "").lower() in ("1", "true", "yes"):
         return built_at + MIN_LEAD
-    h, m = _hhmm(os.environ.get("PUBLISH_TIME_SHORT_IST" if kind == "short" else "PUBLISH_TIME_LONG_IST"),
+    best = None
+    try:
+        import analytics                      # Round 7: weekly best-time shift (state/best_time.json); BEST_TIME=off ignores it
+        if not os.environ.get("PUBLISH_TIME_" + kind.upper() + "_FORCE"):
+            best = analytics.load_best(kind)
+    except Exception:
+        best = None
+    h, m = _hhmm(best or os.environ.get("PUBLISH_TIME_SHORT_IST" if kind == "short" else "PUBLISH_TIME_LONG_IST"),
                  "10:00" if kind == "short" else "19:00")
     t = built_at.replace(hour=h, minute=m, second=0, microsecond=0)
     while t < built_at + MIN_LEAD:                 # build finished too late for today's slot -> next day's slot

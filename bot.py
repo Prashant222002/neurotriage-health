@@ -18,12 +18,20 @@ cv2.setNumThreads(2)
 
 import eleven_voice, virality, publisher      # v7 modules (same folder)
 import ckpt, scheduler, long_render, caption_styles, publish_due   # v8 modules
+import safe                                                         # round 1: crash-proofing
+import brand_logo, project_state, research as research_engine      # round 3
+import topics, hook_intro                                          # round 5a
+import endcard, variants                                           # round 5b
 
 # ------------------------------------------------------------------ settings
 W, H, FPS = 1080, 1920, 30
 ROOT = Path(__file__).parent
 ASSETS, WORK, OUT = ROOT / "assets", ROOT / "work", ROOT / "output"
 HISTORY = ROOT / "topics_done.txt"
+LOOP_JOIN = os.environ.get("LOOP_JOIN", "on").lower() not in ("off", "0", "no")
+LOOP_SEC = 0.5
+DIRECTIVE = [""]                 # round 5a: topic order from topics.plan() (trending > disorder/habit rotation)
+PLAN = {}
 
 GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "")
 PIXABAY_KEY = os.environ.get("PIXABAY_API_KEY", "")
@@ -42,6 +50,9 @@ QUEUE_MODE = os.environ.get("QUEUE_MODE", "off").lower() == "on"  # on = build n
 NATIVE_SCHEDULE = os.environ.get("NATIVE_SCHEDULE", "on").lower() != "off"
 LONG_RENDER = os.environ.get("LONG_RENDER", "on").lower() != "off"   # on = real 16:9 long video (else script kit only)
 LONG_VISION = os.environ.get("LONG_VISION", "on").lower() != "off"   # Gemini picks best stock clip per scene
+VIDEO_TYPE = (os.environ.get("VIDEO_TYPE", "short").strip().lower() or "short")   # short | long | both
+if VIDEO_TYPE not in ("short", "long", "both"):
+    VIDEO_TYPE = "short"
 FORCE_REBUILD = os.environ.get("FORCE_REBUILD", "").lower() in ("1", "true", "yes")
 LANDSCAPE = False                                                # set True while picking clips for the 16:9 long video
 BRAND_NAME = os.environ.get("BRAND_NAME", "NeuroTriage")
@@ -362,30 +373,32 @@ class Splash:
 
 
 # ================================================================== 1. GEMINI (research + script + clip picking)
-KEYS = []
-for _k in [GEMINI_KEY] + [os.environ.get(f"GEMINI_API_KEY_{i}", "") for i in range(2, 7)]:
-    _k = (_k or "").strip()
-    if _k and _k not in KEYS:
-        KEYS.append(_k)
+import keyring                                           # round 2: all keys, naming, cooldowns live in keyring.py
+GEM = keyring.ring("gemini")
+GRQ = keyring.ring("groq")
+KEYS = [sl.value for sl in GEM.slots]                    # kept for old code paths (len / truthiness)
 PREFERRED = ["gemini-3.8-flash", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite",
              "gemini-3-flash-preview", "gemini-2.5-flash", "gemini-2.5-flash-lite"]
-MODELS, BAD, _CLIENTS = [], set(), []
+MODELS, BAD, _CLIENTS = [], set(), {}
 
 
 def clients():
-    global _CLIENTS
-    if not _CLIENTS:
-        from google import genai
-        _CLIENTS = [genai.Client(api_key=k) for k in KEYS]
     return _CLIENTS
 
 
+def _gclient(slot):
+    if slot.value not in _CLIENTS:
+        from google import genai
+        _CLIENTS[slot.value] = genai.Client(api_key=slot.value)
+    return _CLIENTS[slot.value]
+
+
 def discover_models():
-    if not KEYS:
+    if not GEM.slots:
         return []
     names = [MODEL] + PREFERRED
     try:
-        for m in clients()[0].models.list():
+        for m in _gclient(GEM.slots[0]).models.list():
             n = m.name.replace("models/", "")
             skip = ("image", "live", "tts", "audio", "embed", "native", "robotics", "computer")
             if "flash" in n and not any(x in n for x in skip):
@@ -401,11 +414,7 @@ def discover_models():
 
 
 # ---------------------------------------------------------------- GROQ (primary) -> Gemini (fallback)
-GROQ_KEYS = []
-for _k in [os.environ.get("GROQ_API_KEY", "")] + [os.environ.get(f"GROQ_API_KEY_{i}", "") for i in range(2, 6)]:
-    _k = (_k or "").strip()
-    if _k and _k not in GROQ_KEYS:
-        GROQ_KEYS.append(_k)
+GROQ_KEYS = [sl.value for sl in GRQ.slots]
 
 
 def _models(env, default):
@@ -413,39 +422,84 @@ def _models(env, default):
     return [m.strip() for m in v.split(",") if m.strip()] if v else default
 
 
-# compound = built-in live web search (research ke liye best); baaki normal text models
-GROQ_SEARCH_MODELS = _models("GROQ_SEARCH_MODELS", ["groq/compound", "groq/compound-mini"])
-GROQ_TEXT_MODELS = _models("GROQ_TEXT_MODELS", ["openai/gpt-oss-120b", "llama-3.3-70b-versatile",
-                                                "qwen/qwen3-32b", "openai/gpt-oss-20b",
-                                                "llama-3.1-8b-instant"])
-GROQ_VISION_MODELS = _models("GROQ_VISION_MODELS", ["meta-llama/llama-4-scout-17b-16e-instruct",
-                                                    "meta-llama/llama-4-maverick-17b-128e-instruct"])
-GROQ_BAD = set()
+# Verified at start-up against Groq's live model list (see groq_discover). Defaults = what worked in the real log.
+_TEXT_PREF = ["openai/gpt-oss-120b", "openai/gpt-oss-20b", "llama-3.3-70b-versatile"]   # primary, fallback, recovery
+GROQ_SEARCH_MODELS = _models("GROQ_SEARCH_MODELS", [])
+GROQ_TEXT_MODELS = _models("GROQ_TEXT_MODELS", _TEXT_PREF[:2])
+GROQ_VISION_MODELS = _models("GROQ_VISION_MODELS", [])
+GROQ_BAD = GRQ.bad_models
+
+
+def groq_discover():
+    """Ask Groq which models this key can really use, then keep: 1 primary + 1 fallback + 1 recovery for text,
+    and vision/search models ONLY if they exist. No more cycling through IDs that return 404."""
+    global GROQ_TEXT_MODELS, GROQ_VISION_MODELS, GROQ_SEARCH_MODELS
+    if not GRQ.slots:
+        return
+    avail = None
+    for sl in GRQ.alive():
+        try:
+            r = requests.get("https://api.groq.com/openai/v1/models",
+                             headers={"Authorization": f"Bearer {sl.value}"}, timeout=20)
+            if r.status_code == 200:
+                avail = [m.get("id", "") for m in r.json().get("data", []) if m.get("active", True)]
+                break
+            GRQ.fail(sl, r.status_code, r.text[:200], r.headers)
+            log(f"[groq] model list via {sl.label}: HTTP {r.status_code}")
+        except Exception as e:
+            log("[groq] model list failed:", str(e)[:100])
+    if not avail:
+        log("[groq] could not verify models -> using defaults", GROQ_TEXT_MODELS)
+        return
+    if not os.environ.get("GROQ_TEXT_MODELS"):
+        pick = [m for m in _TEXT_PREF if m in avail]
+        if not pick:                                              # preferred list gone -> any chat model
+            junk = ("whisper", "tts", "guard", "embed", "orpheus", "playai", "safeguard", "compound", "distil")
+            pick = [m for m in avail if not any(j in m.lower() for j in junk)][:3]
+        GROQ_TEXT_MODELS = pick[:3]
+    if not os.environ.get("GROQ_VISION_MODELS"):
+        GROQ_VISION_MODELS = [m for m in avail if any(w in m.lower() for w in ("llama-4", "vision", "scout", "maverick"))][:2]
+    if not os.environ.get("GROQ_SEARCH_MODELS"):
+        GROQ_SEARCH_MODELS = [m for m in avail if "compound" in m.lower()][:2]
+    log(f"[groq] verified models: text={GROQ_TEXT_MODELS} vision={GROQ_VISION_MODELS or 'none (Gemini does vision)'} "
+        f"search={GROQ_SEARCH_MODELS or 'none'}")
+
+
+def _failed_generation(body):
+    """Groq 'Failed to validate JSON' carries the model's raw output in failed_generation -> callers can still use it."""
+    try:
+        j = json.loads(body)
+        fg = (j.get("error") or {}).get("failed_generation")
+        return fg.strip() if isinstance(fg, str) and len(fg.strip()) > 20 else None
+    except Exception:
+        return None
+
+
+LAST_CALL = {}          # round 3: which provider/model/key label answered the latest ask() (labels only, never key values)
 
 
 def ask_groq(prompt, search=False, json_mode=False, image=None):
-    """Groq (OpenAI-compatible) se jawab. Har model x har key try. None => Gemini pe jao."""
-    if not GROQ_KEYS:
+    """Groq answer. Walks verified models x healthy keys; cooling/dead keys are skipped instantly.
+    None => caller falls back to Gemini."""
+    if not GRQ.slots:
         return None
     if image is not None:
         models = GROQ_VISION_MODELS
     elif search:
-        models = GROQ_SEARCH_MODELS + GROQ_TEXT_MODELS      # search fail ho to normal model
+        models = GROQ_SEARCH_MODELS + GROQ_TEXT_MODELS
     else:
         models = GROQ_TEXT_MODELS
     if image is not None:
-        content = [{"type": "text", "text": prompt},
-                   {"type": "image_url",
-                    "image_url": {"url": "data:image/jpeg;base64," + base64.b64encode(image).decode()}}]
+        imgs = image if isinstance(image, (list, tuple)) else [image]        # round 4: several sheets in ONE call
+        content = [{"type": "text", "text": prompt}] + [
+            {"type": "image_url", "image_url": {"url": "data:image/jpeg;base64," + base64.b64encode(i).decode()}} for i in imgs]
     else:
         content = prompt
     sys_msg = "Return ONLY valid JSON. No markdown, no commentary." if json_mode else None
     for model in models:
         if model in GROQ_BAD:
             continue
-        for ki, key in enumerate(GROQ_KEYS):
-            if model in GROQ_BAD:
-                break
+        for slot in GRQ.candidates(model):
             use_rf = json_mode and not model.startswith("groq/compound") and not model.startswith("qwen")
             for attempt in range(2):
                 body = {"model": model, "temperature": 0.7,
@@ -455,44 +509,54 @@ def ask_groq(prompt, search=False, json_mode=False, image=None):
                     body["response_format"] = {"type": "json_object"}
                 try:
                     r = requests.post("https://api.groq.com/openai/v1/chat/completions",
-                                      headers={"Authorization": f"Bearer {key}"},
-                                      json=body, timeout=120)
-                    if r.status_code == 200:
-                        txt = (r.json()["choices"][0]["message"].get("content") or "").strip()
-                        txt = re.sub(r"<think>.*?</think>", "", txt, flags=re.S).strip()
-                        if txt:
-                            log(f"[groq] ok: {model} (key {ki + 1})")
-                            return txt
-                        break
-                    msg = r.text[:160].replace("\n", " ")
-                    log(f"[groq] {model} key {ki + 1} HTTP {r.status_code}: {msg}")
-                    if r.status_code in (404, 410) or "decommission" in msg or "model_not_found" in msg:
-                        GROQ_BAD.add(model)
-                        break
-                    if r.status_code == 400 and use_rf and attempt == 0:
-                        use_rf = False                      # json mode support nahi => bina uske
-                        continue
-                    if r.status_code in (401, 403):
-                        break                               # key kharab => agli key
-                    if r.status_code == 429:
-                        break                               # quota => agli key/model
-                    time.sleep(3)
+                                      headers={"Authorization": f"Bearer {slot.value}"}, json=body, timeout=120)
                 except Exception as e:
-                    log(f"[groq] {model} error: {str(e)[:120]}")
-                    time.sleep(3)
-        if model in GROQ_BAD:
-            continue
+                    log(f"[groq] {model} {slot.label} net error: {str(e)[:100]}")
+                    time.sleep(2)
+                    continue
+                if r.status_code == 200:
+                    txt = (r.json()["choices"][0]["message"].get("content") or "").strip()
+                    txt = re.sub(r"<think>.*?</think>", "", txt, flags=re.S).strip()
+                    if txt:
+                        GRQ.ok(slot, model)
+                        LAST_CALL.update(provider="groq", model=model, key=slot.label)
+                        log(f"[groq] ok: {model} ({slot.label})")
+                        return txt
+                    break
+                msg = r.text[:300].replace("\n", " ")
+                if r.status_code == 400 and json_mode:
+                    fg = _failed_generation(r.text)
+                    if fg:                                   # the model DID answer; JSON mode just disliked it
+                        log(f"[groq] {model}: JSON validation failed -> using its raw output (caller repairs/validates)")
+                        return fg
+                    if use_rf and attempt == 0:
+                        use_rf = False                       # retry once without json mode
+                        continue
+                kind = GRQ.fail(slot, r.status_code, msg, r.headers, scope=model)
+                wait = GRQ.until.get((slot.label, model), 0) - time.time()
+                log(f"[groq] {model} {slot.label} HTTP {r.status_code} -> {kind}" + (f", cooling {wait:.0f}s" if kind in ("rate", "server") else ""))
+                break
     return None
 
 
-def ask(prompt, search=False, json_mode=False, image=None):
-    """Pehle Groq, na chale to Gemini. image = JPEG bytes (vision). Models/keys ke beech fallback."""
+def _gem_status(msg):
+    m = re.search(r"\b(4\d\d|5\d\d)\b", msg)
+    st = int(m.group(1)) if m else 0
+    if "RESOURCE_EXHAUSTED" in msg:
+        st = 429
+    if "NOT_FOUND" in msg:
+        st = 404
+    if "API_KEY_INVALID" in msg or "PERMISSION_DENIED" in msg:
+        st = st or 403
+    return st
+
+
+def _ask_once(prompt, search, json_mode, image):
     out = ask_groq(prompt, search=search, json_mode=json_mode, image=image)
     if out:
         return out
-    if not KEYS:
+    if not GEM.slots:
         return None
-    log("[llm] Groq unavailable -> Gemini fallback")
     from google.genai import types
     cfg = {}
     if search:
@@ -501,31 +565,83 @@ def ask(prompt, search=False, json_mode=False, image=None):
         cfg["response_mime_type"] = "application/json"
     contents = prompt
     if image is not None:
-        contents = [types.Part.from_bytes(data=image, mime_type="image/jpeg"), prompt]
-    for ci, cl in enumerate(clients()):
-        for model in MODELS:
-            if model in BAD:
-                continue
-            for attempt in range(2):
-                try:
-                    r = cl.models.generate_content(
-                        model=model, contents=contents,
-                        config=types.GenerateContentConfig(**cfg))
-                    if r.text:
-                        log(f"[gemini] ok: {model} (key {ci + 1})")
-                        return r.text
-                    break
-                except Exception as e:
-                    msg = str(e)
-                    log(f"[gemini] {model} try {attempt + 1} failed: {msg[:140]}")
-                    if "404" in msg or "NOT_FOUND" in msg:
-                        BAD.add(model)
-                        break
-                    if "429" in msg or "RESOURCE_EXHAUSTED" in msg:
-                        time.sleep(6)
-                        break
-                    time.sleep(8)
+        imgs = image if isinstance(image, (list, tuple)) else [image]
+        contents = [types.Part.from_bytes(data=i, mime_type="image/jpeg") for i in imgs] + [prompt]
+    tried = False
+    for model in MODELS:
+        if model in GEM.bad_models:
+            continue
+        for slot in GEM.candidates(model):
+            if not tried:
+                log("[llm] Groq unavailable -> Gemini fallback")
+                tried = True
+            try:
+                r = _gclient(slot).models.generate_content(model=model, contents=contents,
+                                                           config=types.GenerateContentConfig(**cfg))
+                if r.text:
+                    GEM.ok(slot, model)
+                    LAST_CALL.update(provider="gemini", model=model, key=slot.label)
+                    log(f"[gemini] ok: {model} ({slot.label})")
+                    return r.text
+            except Exception as e:
+                msg = str(e)
+                st = _gem_status(msg)
+                kind = GEM.fail(slot, st, msg[:300], scope=model)
+                wait = GEM.until.get((slot.label, model), 0) - time.time()
+                log(f"[gemini] {model} {slot.label} {st or 'error'} -> {kind}" + (f", cooling {wait:.0f}s" if kind in ("rate", "server") else f": {msg[:90]}"))
+                if kind == "other":
+                    time.sleep(2)
     return None
+
+
+def _ask_inner(prompt, search=False, json_mode=False, image=None):
+    """Groq first, then Gemini. Healthy-key rotation + cooldowns. If EVERYTHING is merely cooling (rate-limited,
+    not dead) and the wait is short, wait once and try again instead of failing the whole build."""
+    out = _ask_once(prompt, search, json_mode, image)
+    if out:
+        return out
+    waits = []
+    for ring_, scopes in ((GRQ, GROQ_TEXT_MODELS), (GEM, MODELS)):
+        for sc in scopes:
+            w = ring_.wait_needed(sc)
+            if w is not None:
+                waits.append(w)
+    if waits and min(waits) <= 75:
+        w = min(waits) + 1
+        log(f"[llm] all providers rate-limited -> waiting {w:.0f}s then retrying once")
+        time.sleep(w)
+        return _ask_once(prompt, search, json_mode, image)
+    return None
+
+
+def ask(prompt, search=False, json_mode=False, image=None, task=None):
+    """Round 3 wrapper around the provider walk. Every text call is prefixed with the shared PROJECT STATE
+    (final topic, verified facts, locked-script rules, what the previous AI already did), so a fallback provider
+    continues instead of restarting. After the call the answering provider is written to the project memory.
+    Vision calls (clip choice) skip the block: they decide nothing about the script."""
+    st = project_state.current()
+    if st is not None and image is None:
+        prompt = st.handoff_block(task) + prompt
+    LAST_CALL.clear()
+    out = _ask_inner(prompt, search=search, json_mode=json_mode, image=image)
+    if out and st is not None and image is None and LAST_CALL:
+        try:
+            st.record_call(task or st.d.get("stage_now", ""), LAST_CALL.get("provider", ""), LAST_CALL.get("model", ""),
+                           LAST_CALL.get("key", ""), summary=re.sub(r"\s+", " ", out)[:120])
+        except Exception as e:
+            log("[state] record_call failed:", str(e)[:80])
+    return out
+
+
+def pick_topic_plan():
+    forced = MODE if MODE in ("awareness", "student") else None
+    try:
+        return topics.plan(ask, research_engine.default_http_get, os.environ.get("YT_API_KEY", "").strip(), forced, log=log)
+    except Exception as e:                                  # topic planner must never stop the build
+        log("[topics] failed, old alternate-day mode:", str(e)[:100])
+        m = pick_mode()
+        return {"kind": "disorder" if m == "awareness" else "habit", "mode": m, "subject": "", "audience": "",
+                "trend": "", "angle": "", "directive": ""}
 
 
 def pick_mode():
@@ -534,9 +650,31 @@ def pick_mode():
     return "awareness" if time.gmtime().tm_yday % 2 else "student"
 
 
+def _brief(a, d, m, s):
+    try:
+        return virality.viral_brief(a, d, m, s, directive=DIRECTIVE[0])
+    except TypeError:                                # older viral_brief without the directive argument
+        return virality.viral_brief(a, d, m, s)
+
+
 def research(done, mode):
+    st = project_state.current()
+    if st is not None:
+        st.set_stage("research")
+    try:                                             # round 3: claims -> PubMed/Wikipedia evidence -> verified facts only
+        rec = research_engine.run(ask, done, mode, SAFETY, log=log, directive=DIRECTIVE[0],
+                                  brief_fn=_brief)
+    except Exception as e:
+        log("[research] engine failed, old research:", str(e)[:100])
+        rec = None
+    if rec and rec.get("facts_text"):
+        if st is not None:
+            st.set_research({k: rec.get(k) for k in ("topic", "verified", "sources", "level", "hook", "tip")}
+                            | {"dropped": [d[0][:100] + " (" + d[1] + ")" for d in rec.get("dropped", [])][:8]})
+            st.stage_done("research", LAST_CALL.get("provider", ""), rec.get("level", ""))
+        return rec["facts_text"]
     try:                                             # v7: real outlier data + 21 formulas
-        t = virality.viral_brief(ask, done, mode, SAFETY)
+        t = _brief(ask, done, mode, SAFETY)
         if t:
             return t
     except Exception as e:
@@ -552,7 +690,7 @@ def research(done, mode):
     prompt = f"""You are a researcher for an English Shorts channel for Indian viewers. Focus: {focus}.
 Topics already covered (do NOT repeat): {done[-40:]}
 {SAFETY}
-Pick ONE fresh topic that would hook viewers. Research it using reliable sources
+{DIRECTIVE[0] or "Pick ONE fresh topic that would hook viewers."} Research it using reliable sources
 (peer-reviewed research, WHO, NIMH, NIMHANS, APA etc.).
 Return plain text: the topic, 5-6 accurate key facts, one hook, one practical tip, and a one-line note of the sources."""
     txt = ask(prompt, search=True) or ask(prompt)
@@ -572,6 +710,7 @@ Write a ~45 second HINGLISH Reel as a list of SCENES. Return ONLY JSON with keys
 "title_en": the same title in simple English.
 "formula": name of the hook formula used (from the 21).
 "kicker": 2-3 word UPPERCASE label shown on screen at the start (e.g. "BRAIN SCIENCE", "STUDY HACK").
+"hook_text": 3-6 word UPPERCASE hook shown BIG on screen in the first 2 seconds (curiosity or a bold claim, e.g. "YE HABIT TUMHE THAKA RAHI HAI"). Must not repeat scene 1 word for word.
 "scenes": a list of 11 to 13 scenes. Each scene is an object with:
    "text": ONE short spoken sentence or part of a sentence (7-12 words) in natural HINGLISH written in
       Roman script (Hindi words in English letters, the way an Indian senior talks to juniors; no Devanagari,
@@ -589,6 +728,7 @@ Write a ~45 second HINGLISH Reel as a list of SCENES. Return ONLY JSON with keys
       shown big on screen (e.g. "FREEZE RESPONSE"). Use "" for the other scenes.
 Total narration across all scenes: 100-112 words (in each language).
 {virality.VIRAL_RULES}
+{virality.SHARE_RULES}
 "description": 2-3 line English description.
 "hashtags": list of 6 hashtags (with #).
 Facts must be accurate; do not invent numbers."""
@@ -616,6 +756,7 @@ Facts must be accurate; do not invent numbers."""
             data["scenes"] = sc
             data["kicker"] = str(data.get("kicker") or "DID YOU KNOW").upper()[:24]
             data["title_en"] = str(data.get("title_en") or data["title"])
+            data["hook_text"] = re.sub(r"\s+", " ", str(data.get("hook_text") or "")).strip().upper()[:46]
             return data
         except Exception as e:
             log("[script] bad JSON, retrying:", e)
@@ -764,23 +905,43 @@ def _make_voice_edge(scenes, max_total=52.0):
     sys.exit("Voice generation failed.")
 
 
-def make_voice(scenes, max_total=52.0):
-    """1) ElevenLabs Hinglish (10 keys, model+voice fallback)  2) edge-tts with ENGLISH text_en.
+ELEVEN_FALLBACK = os.environ.get("ELEVEN_FALLBACK", "english").strip().lower()   # english | fail
+
+
+def make_voice(scenes, max_total=52.0, engine="auto"):
+    """engine=auto : 1) ElevenLabs Hinglish (keys rotate, model+voice fallback)  2) edge-tts ENGLISH text_en.
+    engine=local: skip ElevenLabs on purpose (Long videos: saves ElevenLabs credits).
+    ELEVEN_FALLBACK=fail -> if ElevenLabs is configured but failing, stop instead of switching voice silently.
     Returns (res, voice_name, lang). Captions always follow the language that was actually voiced."""
-    if eleven_voice.available():
+    why = ""
+    if engine == "local":
+        log("[voice] local TTS on purpose (engine=local) -> English text, ElevenLabs credits untouched")
+    elif eleven_voice.available():
         for sp in (1.05, 1.12, 1.18):
             eleven_voice.SPEED[0] = sp
             try:
                 res = [synth_scene(sc["text"], "ELEVEN", "+0%") for sc in scenes]
             except Exception as e:
-                log("[voice] ElevenLabs failed -> English fallback:", str(e)[:240])
+                why = str(e)[:240]
                 break
             total = sum(r[1] for r in res) + 0.2 * len(res)
             log(f"[voice] ElevenLabs speed {sp}: {total:.1f}s")
             if total <= max_total or sp == 1.18:
                 return res, "ELEVEN", "hinglish"
+        st = eleven_voice.status()
+        log(f"[voice] WARNING: ElevenLabs is configured ({st['keys']} key(s), {st['dead']} unusable) but FAILED: {why}")
+        if ELEVEN_FALLBACK == "fail":
+            raise RuntimeError("ElevenLabs failed and ELEVEN_FALLBACK=fail: " + why)
+        log("[voice] -> falling back to English local TTS (set ELEVEN_FALLBACK=fail to stop instead)")
     else:
-        log("[voice] no ElevenLabs key available -> English fallback")
+        st = eleven_voice.status()
+        if st["keys"]:
+            log(f"[voice] WARNING: all {st['keys']} ElevenLabs key(s) are out of credit / invalid -> English fallback")
+        else:
+            log("[voice] ElevenLabs NOT CONFIGURED: no key named ELEVEN_API_KEY / ELEVEN_API_KEY_1..10 found "
+                "(see KEYS.md) -> English fallback")
+        if ELEVEN_FALLBACK == "fail":
+            raise RuntimeError("no ElevenLabs key and ELEVEN_FALLBACK=fail")
     for sc in scenes:
         sc["text"] = sc.get("text_en") or sc["text"]
     res, voice = _make_voice_edge(scenes, max_total)
@@ -813,6 +974,12 @@ def _reverb(x, sr=SR, secs=2.4, seed=1):
 
 def synth_music(total, seed=7):
     """Naram ambient pad + dheemi bell notes (focus music). Stereo float32 (n,2), peak ~0.9."""
+    if os.environ.get("MUSIC_STYLE", "flute").strip().lower() == "flute":      # Round 6: calming flute (MUSIC_STYLE=pad = old pad)
+        try:
+            import flute
+            return flute.synth(total, seed)
+        except Exception as e:
+            log("[music] flute failed, pad instead:", str(e)[:80])
     rng = np.random.default_rng(seed)
     n = int(total * SR)
     t = np.arange(n) / SR
@@ -971,20 +1138,107 @@ def write_wav(path, stereo):
 
 # ================================================================== 4. STOCK FOOTAGE (relevant clips, Gemini vision se chunav)
 USED = set()
+FOOTAGE_KEEP_DAYS = int(os.environ.get("FOOTAGE_NO_REPEAT_DAYS", "14"))   # same clip is not reused within N days (variety)
+FOOTAGE_MAX_MB = int(os.environ.get("FOOTAGE_CACHE_MB", "1500"))
+_FLOCK = __import__("threading").Lock()
+
+
+def footage_dir():
+    d = WORK / "footage"
+    d.mkdir(parents=True, exist_ok=True)
+    return d
+
+
+def _used_file():
+    return footage_dir() / "used.json"
+
+
+def used_recent():
+    """{clip id: date} of clips already shipped lately, so tomorrow's video does not look like today's."""
+    try:
+        d = json.loads(_used_file().read_text())
+        cut = time.time() - FOOTAGE_KEEP_DAYS * 86400
+        return {k for k, v in d.items() if v >= cut}
+    except Exception:
+        return set()
+
+
+def mark_used(cid):
+    with _FLOCK:
+        try:
+            d = json.loads(_used_file().read_text()) if _used_file().exists() else {}
+        except Exception:
+            d = {}
+        d[cid] = time.time()
+        d = {k: v for k, v in d.items() if v >= time.time() - 60 * 86400}
+        _used_file().write_text(json.dumps(d))
+
+
+def cached_search(src, q, fn):
+    """Stock search results cached for 7 days (same query on a retry / resume / next run = zero API calls).
+    Empty results are not cached (a rate-limited key must not poison the cache)."""
+    import hashlib
+    p = footage_dir() / ("s_" + hashlib.md5(f"{src}|{q}|{LANDSCAPE}".encode()).hexdigest()[:16] + ".json")
+    try:
+        if p.exists() and time.time() - p.stat().st_mtime < 7 * 86400:
+            return json.loads(p.read_text())
+    except Exception:
+        pass
+    out = fn(q)
+    if out:
+        try:
+            p.write_text(json.dumps(out))
+        except Exception:
+            pass
+    return out
+
+
+def prune_footage(max_mb=None):
+    """Keep the cache folder small (GitHub cache limit): delete oldest clips first. Returns MB left."""
+    d = footage_dir()
+    files = sorted((f for f in d.glob("clip_*.mp4")), key=lambda f: f.stat().st_mtime)
+    total = sum(f.stat().st_size for f in files) / 1e6
+    lim = max_mb or FOOTAGE_MAX_MB
+    for f in files:
+        if total <= lim:
+            break
+        total -= f.stat().st_size / 1e6
+        f.unlink(missing_ok=True)
+    return total
+
+
+PXR = keyring.ring("pexels")
+PBR = keyring.ring("pixabay")
+
+
+def _stock_get(rg, url, make_kwargs, tag):
+    """GET with key rotation: a rate-limited / dead key is skipped, next key is used. None if all keys failed."""
+    for slot in rg.candidates():
+        try:
+            r = requests.get(url, timeout=30, **make_kwargs(slot.value))
+        except Exception as e:
+            log(f"[{tag}] {slot.label} net error: {str(e)[:80]}")
+            continue
+        if r.status_code == 200:
+            rg.ok(slot)
+            return r
+        kind = rg.fail(slot, r.status_code, r.text[:200], r.headers)
+        log(f"[{tag}] {slot.label} HTTP {r.status_code} -> {kind}; trying next key")
+    return None
 
 
 def _pexels(q, n=10):
-    if not PEXELS_KEY:
+    if not PXR.slots:
         return []
     out = []
     sets = ({"orientation": "landscape", "size": "large"},) if LANDSCAPE else (
         {"orientation": "portrait", "size": "medium"}, {"size": "large"})
     for params in sets:
         try:
-            r = requests.get("https://api.pexels.com/videos/search",
-                             headers={"Authorization": PEXELS_KEY},
-                             params={"query": q, "per_page": n, **params}, timeout=30)
-            r.raise_for_status()
+            r = _stock_get(PXR, "https://api.pexels.com/videos/search",
+                           lambda k: {"headers": {"Authorization": k}, "params": {"query": q, "per_page": n, **params}}, "pexels")
+            if r is None:
+                break
             for v in r.json().get("videos", []):
                 files = [f for f in v.get("video_files", [])
                          if f.get("file_type") == "video/mp4" and f.get("width") and f.get("height")]
@@ -1011,13 +1265,13 @@ def _pexels(q, n=10):
 
 
 def _pixabay(q, n=12):
-    if not PIXABAY_KEY:
+    if not PBR.slots:
         return []
     try:
-        r = requests.get("https://pixabay.com/api/videos/",
-                         params={"key": PIXABAY_KEY, "q": q, "per_page": n,
-                                 "safesearch": "true", "video_type": "film"}, timeout=30)
-        r.raise_for_status()
+        r = _stock_get(PBR, "https://pixabay.com/api/videos/",
+                       lambda k: {"params": {"key": k, "q": q, "per_page": n, "safesearch": "true", "video_type": "film"}}, "pixabay")
+        if r is None:
+            return []
         out = []
         for h in r.json().get("hits", []):
             v = h.get("videos", {})
@@ -1037,9 +1291,10 @@ def _pixabay(q, n=12):
 
 def gather_candidates(queries, need):
     seen, cands = set(), []
+    recent = used_recent()
     for qi, q in enumerate(queries[:4]):
-        for c in _pexels(q) + _pixabay(q):
-            if c["id"] in seen or c["id"] in USED or not c.get("thumb"):
+        for c in cached_search("pexels", q, _pexels) + cached_search("pixabay", q, _pixabay):
+            if c["id"] in seen or c["id"] in USED or c["id"] in recent or not c.get("thumb"):
                 continue
             seen.add(c["id"])
             c["qrank"] = qi
@@ -1082,7 +1337,7 @@ def contact_sheet(cands):
 
 def vision_pick(text, topic, cands):
     """Gemini image dekh ke best 2 clips chunta hai. returns (ordered idx list, relevant: bool)."""
-    if not cands or not KEYS or (LANDSCAPE and not LONG_VISION):
+    if not cands or not (KEYS or GROQ_VISION_MODELS) or (LANDSCAPE and not LONG_VISION):
         return list(range(len(cands))), True
     prompt = f"""These are {len(cands)} stock-video preview frames numbered 1..{len(cands)}.
 A calm educational mental-health/study reel for young Indian viewers (topic: {topic}) says this line:
@@ -1092,7 +1347,7 @@ that look high quality, bright/warm/calm, with no visible text, logos or waterma
 distress, nothing graphic, scary or unsafe. Reply ONLY JSON: {{"best":[first_choice, second_choice],"relevant":true}}
 Use "relevant": false if none of them really fits the line."""
     raw = ask(prompt, json_mode=True, image=contact_sheet(cands))
-    time.sleep(3)
+    time.sleep(1)
     try:
         j = json.loads(re.sub(r"^```(?:json)?|```$", "", (raw or "").strip()).strip())
         order = [int(i) - 1 for i in j.get("best", []) if 0 < int(i) <= len(cands)]
@@ -1103,7 +1358,9 @@ Use "relevant": false if none of them really fits the line."""
 
 
 def download_clip(c):
-    p = WORK / f"clip_{c['id']}.mp4"
+    p = footage_dir() / f"clip_{c['id']}.mp4"
+    if p.exists():
+        os.utime(p, None)                                   # cache hit: keep it fresh for pruning
     if not p.exists():
         with requests.get(c["url"], stream=True, timeout=(10, 120)) as r:
             r.raise_for_status()
@@ -1141,9 +1398,118 @@ def pick_clips(scene, topic, need_sec, want):
             log("[download]", c["id"], str(e)[:90])
             continue
         USED.add(c["id"])
+        mark_used(c["id"])
         got.append({"path": p, "w": info[0], "h": info[1], "dur": info[2], "id": c["id"]})
         log(f"[clip] '{scene['text'][:36]}' -> {c['id']} ({info[0]}x{info[1]}, {info[2]:.1f}s)")
     return got
+
+
+VISION_BATCH = max(1, int(os.environ.get("VISION_BATCH", "4")))      # scenes judged per Gemini/Groq call
+PREFETCH_THREADS = max(1, int(os.environ.get("PREFETCH_THREADS", "4")))
+
+
+def _batch_vision(items, topic):
+    """items: [(scene, cands)] -> {index: (order, relevant)} from ONE multi-image call. Scenes the model skips or
+    garbles are simply missing (caller falls back to the single-scene picker)."""
+    sheets = [contact_sheet(c) for _, c in items]
+    lines = "\n".join(f'Image {i + 1} = scene {i + 1}: "{sc["text"]}" ({len(c)} numbered clips)' for i, (sc, c) in enumerate(items))
+    prompt = f"""{len(items)} images follow, one per scene of a calm educational mental-health/study reel for young Indian
+viewers (topic: {topic}). Each image is a contact sheet of numbered stock-video preview frames.
+{lines}
+For EACH scene pick the 2 clips that BEST visually match the line (concrete subject match matters most), high quality,
+bright/warm/calm, no visible text/logos/watermarks, nobody in visible distress, nothing graphic or unsafe.
+Reply ONLY JSON: {{"scenes":[{{"scene":1,"best":[first,second],"relevant":true}}]}}. relevant=false if none fits that line."""
+    raw = ask(prompt, json_mode=True, image=sheets)
+    out = {}
+    try:
+        j = json.loads(re.sub(r"^```(?:json)?|```$", "", (raw or "").strip()).strip())
+        for r in j.get("scenes", []):
+            k = int(r.get("scene")) - 1
+            if not 0 <= k < len(items):
+                continue
+            n = len(items[k][1])
+            order = [int(i) - 1 for i in r.get("best", []) if 0 < int(i) <= n]
+            order += [i for i in range(n) if i not in order]
+            out[k] = (order, bool(r.get("relevant", True)))
+    except Exception as e:
+        log("[vision-batch] unreadable answer:", str(e)[:80])
+    return out
+
+
+def pick_clips_batch(items, topic, log_prefix="clip"):
+    """items: [(scene, need_sec, want)] -> [clips per scene]. Round 4 speed-up:
+      1. stock search for all scenes in parallel (cached 7 days)
+      2. vision choice in batches of VISION_BATCH scenes (13 scenes -> 4 calls instead of 13)
+      3. downloads in parallel (cached; same clip on a retry = no download)
+    A failing scene gives [] (motion-graphic background) and never stops the others."""
+    from concurrent.futures import ThreadPoolExecutor
+    n = len(items)
+    land = LANDSCAPE
+
+    def search(i):
+        global LANDSCAPE
+        LANDSCAPE = land
+        try:
+            return gather_candidates(items[i][0]["queries"], items[i][1])
+        except Exception as e:
+            log(f"[{log_prefix}] scene {i + 1} search error:", str(e)[:100])
+            return []
+    with ThreadPoolExecutor(PREFETCH_THREADS) as ex:
+        cands = list(ex.map(search, range(n)))
+    # one clip id may be proposed to two scenes: first scene keeps it, the next one drops it
+    taken = set()
+    for i in range(n):
+        cands[i] = [c for c in cands[i] if c["id"] not in taken] or []
+        taken |= {c["id"] for c in cands[i][:2]}
+    use_vision = bool(KEYS or GROQ_VISION_MODELS) and not (LANDSCAPE and not LONG_VISION)
+    choice = {}
+    if use_vision:
+        todo = [i for i in range(n) if cands[i]]
+        for b in range(0, len(todo), VISION_BATCH):
+            grp = todo[b:b + VISION_BATCH]
+            got = _batch_vision([(items[i][0], cands[i]) for i in grp], topic)
+            for k, i in enumerate(grp):
+                if k in got:
+                    choice[i] = got[k]
+                else:                                             # model skipped this scene: single-scene fallback
+                    choice[i] = vision_pick(items[i][0]["text"], topic, cands[i])
+    for i in range(n):
+        choice.setdefault(i, (list(range(len(cands[i]))), True))
+    log(f"[{log_prefix}] {n} scenes: {sum(1 for c in cands if c)} with candidates, vision calls ~{-(-sum(1 for c in cands if c) // VISION_BATCH) if use_vision else 0}")
+
+    def fetch(i):
+        sc, need, want = items[i]
+        order, relevant = choice[i]
+        if not cands[i] or not relevant:
+            return []
+        got = []
+        for k in order:
+            if len(got) >= want:
+                break
+            c = cands[i][k]
+            try:
+                p, info = download_clip(c)
+            except Exception as e:
+                log("[download]", c["id"], str(e)[:90])
+                continue
+            with _FLOCK:
+                USED.add(c["id"])
+            mark_used(c["id"])
+            got.append({"path": p, "w": info[0], "h": info[1], "dur": info[2], "id": c["id"]})
+            log(f"[{log_prefix}] '{sc['text'][:36]}' -> {c['id']} ({info[0]}x{info[1]}, {info[2]:.1f}s)")
+        return got
+    with ThreadPoolExecutor(PREFETCH_THREADS) as ex:
+        res = list(ex.map(lambda i: _safe_fetch(fetch, i, log_prefix), range(n)))
+    prune_footage()
+    return res
+
+
+def _safe_fetch(fn, i, tag):
+    try:
+        return fn(i)
+    except Exception as e:
+        log(f"[{tag}] scene {i + 1} error:", str(e)[:100])
+        return []
 
 
 # ================================================================== 5. EDIT ENGINE
@@ -1399,31 +1765,7 @@ class Captions:
 
     def __init__(self, words):
         # words: [(text, start, end)] global seconds
-        self.pages = []
-        cur = []
-
-        def flush():
-            if cur:
-                self.pages.append(list(cur))
-                cur.clear()
-        for w in words:
-            txt = re.sub(r"[.,]+$", "", w[0]) if not re.search(r"www|\.in", w[0]) else w[0].rstrip(".,")
-            if cur:
-                gap = w[1] - cur[-1][2]
-                chars = sum(len(c[0]) for c in cur) + len(txt)
-                if len(cur) >= 4 or chars > 26 or gap > 0.45 or re.search(r"[.?!;:]$", cur[-1][3]):
-                    flush()
-            cur.append((txt.upper() if "." not in txt else txt, w[1], w[2], w[0]))
-        flush()
-        merged = []                                  # v7: no one-word orphan pages ("SLOT", "SET A TIMER")
-        for pg in self.pages:
-            if (merged and len(pg) == 1 and len(merged[-1]) <= 3
-                    and sum(len(c[0]) for c in merged[-1]) + len(pg[0][0]) <= 26
-                    and pg[0][1] - merged[-1][-1][2] < 0.5):
-                merged[-1].extend(pg)
-            else:
-                merged.append(pg)
-        self.pages = merged
+        self.pages = caption_styles.paginate(words, 4, 26, True)
         self.starts = [p[0][1] for p in self.pages]
         self.ends = []
         for i, p in enumerate(self.pages):
@@ -1534,23 +1876,12 @@ def pill(text, size, c1, c2, padx=34, pady=18, alpha=240):
 
 
 class HUD:
-    """Logo watermark, kicker chip, key-term sticker, progress bar - sab motion ke saath."""
+    """Circle logo, kicker chip, key-term sticker - sab motion ke saath (top loading bar hata diya)."""
 
     def __init__(self, kicker, emph_events, voice_end):
         self.voice_end = voice_end
-        self.logo = None
-        lp = ASSETS / "logo.png"
-        if lp.exists():
-            im = Image.open(lp).convert("RGBA").resize((124, 124), Image.LANCZOS)
-            pad = 24
-            can = Image.new("RGBA", (124 + 2 * pad, 124 + 2 * pad), (0, 0, 0, 0))
-            sh = Image.new("RGBA", can.size, (0, 0, 0, 0))
-            sh.paste((0, 0, 0, 120), (pad, pad + 6, pad + 124, pad + 130), im.split()[3])
-            can = Image.alpha_composite(can, sh.filter(ImageFilter.GaussianBlur(8)))
-            can.alpha_composite(im, (pad, pad))
-            self.logo = np.array(can)
-        else:
-            log("[warn] assets/logo.png nahi mila, logo skip.")
+        self.logo_size = 76                                   # ~7% of the 1080 px width: small, tasteful
+        self.logo = brand_logo.load(self.logo_size, ASSETS)    # circle + ring + shadow; None if asset gate fails
         self.kicker = pill(f"{BRAND_NAME.upper()}  \u2022  {kicker}", 32, BLUE, GREEN, 30, 15)
         self.emph = []
         for s, e, txt in emph_events:
@@ -1558,29 +1889,17 @@ class HUD:
             while ImageFont.truetype(find_font(True), size).getlength(txt) > 840 and size > 44:
                 size -= 4
             self.emph.append((s, e, pill(txt, size, BLUE, GREEN, 46, 26, 238)))
-        bw = W - 96
-        self.bar_bg = np.zeros((8, bw, 4), np.uint8)
-        self.bar_bg[...] = (255, 255, 255, 70)
-        self.bar_fg = np.zeros((8, bw, 4), np.uint8)
-        for ch in range(3):
-            self.bar_fg[..., ch] = np.linspace(BLUE[ch], MINT[ch], bw)[None, :]
-        self.bar_fg[..., 3] = 255
 
     def draw(self, frame, t, alpha=1.0):
         if alpha <= 0:
             return
-        # progress bar
-        bw = W - 96
-        blit(frame, self.bar_bg, 48, 58, 0.9 * alpha)
-        wpx = int(bw * clamp01(t / max(self.voice_end, 1e-6)))
-        if wpx > 2:
-            blit(frame, self.bar_fg[:, :wpx], 48, 58, alpha)
-        # logo watermark (top-right)
+        # (round 3) the thin loading bar at the top is removed
+        # logo: invisible during the hook, fades in to 82%, top-right (clear of platform buttons), circle with ring
         if self.logo is not None:
-            a = clamp01((t - 0.35) / 0.5) * alpha
-            k = 0.85 + 0.15 * ease_out_back(clamp01((t - 0.35) / 0.6))
-            sp = scaled(self.logo, k)
-            blit(frame, sp, W - 40 - sp.shape[1] / 2 - 62 + 0, 112 + (self.logo.shape[0] - sp.shape[0]) / 2 + 0, a)
+            a = brand_logo.fade(t) * alpha
+            if a > 0:
+                pad = brand_logo.pad_of(self.logo_size)
+                blit(frame, self.logo, W - 44 - self.logo_size - pad, 128 - pad, a)
         # kicker chip: slide-in, hold, slide-out
         tin, tout = 0.30, 3.3
         if t < tout + 0.6:
@@ -1707,7 +2026,7 @@ def build_timeline(res):
     return starts, cur        # cur = splash start
 
 
-def render_video(scenes, res, starts, splash_start, clips_per_scene, kicker, splash, out_video, rng):
+def render_video(scenes, res, starts, splash_start, clips_per_scene, kicker, splash, out_video, rng, hook_text=""):
     total_t = splash_start + SPLASH_SECONDS + 0.4
     n_total = int(round(total_t * FPS))
     fb = [int(round(s * FPS)) for s in starts] + [int(round(splash_start * FPS))]
@@ -1729,6 +2048,10 @@ def render_video(scenes, res, starts, splash_start, clips_per_scene, kicker, spl
         if sc.get("emphasis"):
             emph.append((starts[i] + 0.2, starts[i] + res[i][1] + 0.1, sc["emphasis"]))
     hud = HUD(kicker, emph, splash_start)
+    hook = hook_intro.HookText(hook_text, W)
+    ecard = endcard.EndCard(W, SITE_WWW, BRAND_NAME)
+    ec_t0 = splash_start + 0.9
+    first0, loop_n = None, (int(LOOP_SEC * FPS) if LOOP_JOIN else 0)
     amb = Ambient()
     spl_fb = int(round(splash_start * FPS))
     disc = text_sprite("Educational content \u2022 not medical advice", 30, (150, 160, 178), 0, shadow=False, heavy=False)
@@ -1763,21 +2086,27 @@ def render_video(scenes, res, starts, splash_start, clips_per_scene, kicker, spl
                 sf = splash.frame(max(0.0, (g - spl_fb) / FPS)) if g >= spl_fb else splash.frame(0.0)
                 a_d = clamp01((t - splash_start - 0.9) / 0.5) * 0.9
                 if a_d > 0:
-                    blit(sf, disc, (W - disc.shape[1]) / 2, 1380, a_d)
+                    blit(sf, disc, (W - disc.shape[1]) / 2, 1565, a_d)
                 if frame is None:
                     frame = sf
                 else:
                     frame = cv2.addWeighted(frame, 1 - w_spl, sf, w_spl, 0)
             if frame is None:
-                frame = np.full((H, W, 3), 255, np.uint8)
+                frame = np.full((H, W, 3), NAVY, np.uint8)
             frame = np.ascontiguousarray(frame)
             if t < splash_start + 0.2:
                 hud_a = 1 - w_spl
                 caps.draw(frame, t, hud_a)
                 hud.draw(frame, t, hud_a)
-            if t < 0.3:                                  # white-flash intro (brand splash se match)
-                a = 1 - ease_out(t / 0.3)
-                frame = cv2.addWeighted(frame, 1 - a, np.full_like(frame, 255), a, 0)
+            hook.draw(frame, t)                          # round 5a: hook text from frame 0 (no white flash)
+            if t >= ec_t0:                               # round 5b: Like / Share / Follow + Try NeuroTriage
+                ecard.draw(frame, t - ec_t0)
+            if loop_n:                                   # round 5b: loop-join = last 0.5 s dissolves into frame 0 (cheap, ~0 s)
+                if g == 0:
+                    first0 = frame.copy()
+                elif first0 is not None and g >= n_total - loop_n:
+                    wl = (g - (n_total - loop_n) + 1) / float(loop_n)
+                    frame = cv2.addWeighted(frame, 1 - wl, first0, wl, 0)
             enc.stdin.write(frame.tobytes())
             for i, r in enumerate(renderers):
                 if g == r.b - 1:
@@ -1887,24 +2216,44 @@ def _voice_track(res, starts, total_t):
 
 
 # ================================================================== LONG VIDEO (Phase 2)
+def _long_engine():
+    """LONG_VOICE: eleven = ElevenLabs (2-3 min video) | local = free TTS (full length) | auto = ElevenLabs while credits last, then free TTS."""
+    v = os.environ.get("LONG_VOICE", "auto").strip().lower()
+    if v == "auto":
+        return "auto" if eleven_voice.available() else "local"
+    return v
+
+
+def _long_minutes():
+    return float(os.environ.get("LONG_ELEVEN_MIN", "2.5")) if _long_engine() in ("eleven", "auto") else float(os.environ.get("LONG_MINUTES", "7"))
+
+
 def make_long_video(facts, mode, key, rng):
     """16:9 long video: script -> Hinglish ElevenLabs narration -> landscape stock -> chaptered render
     (3D chapter cards, stat cards, captions, end card) -> mix -> thumbnail -> description with chapters."""
     global LANDSCAPE
-    ls = ckpt.stage("long_script", lambda: virality.long_script(ask, facts, SAFETY), key, log=log)
+    st = project_state.begin(key, "long")
+    if RS["state"] is not None:
+        st.set_research(RS["state"].d.get("research") or {})
+    st.set_request(kind="long", mode=mode, language=_long_engine())
+    ls = ckpt.stage("long_script", lambda: _locked_script(st, lambda: virality.long_script(ask, facts, SAFETY, target_minutes=_long_minutes()), "long_script"),
+                    key, log=log)
     if not ls:
         raise RuntimeError("long script failed")
+    ls = st.lock_script(ls, source="resume")                       # same rule as the short: approved script never changes
     pk = ckpt.stage("long_pack", lambda: virality.packaging(
         ask, {"title": ls.get("title"), "scenes": ls["scenes"], "hashtags": []}, mode, long=True), key, log=log)
+    ls_title = safe.as_text(ls.get("title"), "NeuroTriage", 100)
+    pk = safe.normalize_pack(pk, ls_title)                      # wrong-type AI fields can no longer crash us
     scenes = [dict(sc) for sc in ls["scenes"]]
-    chapters = [c.get("name", f"Part {i + 1}") for i, c in enumerate(ls.get("chapters", []))] or ["Hook", "Core", "Fix"]
+    chapters = [safe.as_text(c.get("name") if isinstance(c, dict) else c, f"Part {i + 1}") for i, c in enumerate(ls.get("chapters", []))] or ["Hook", "Core", "Fix"]
     last_ch = max(sc.get("chapter", 1) for sc in scenes)
     cta = CTA_AWARENESS_HI if mode == "awareness" else CTA_STUDENT_HI
     cta_en = CTA_AWARENESS if mode == "awareness" else CTA_STUDENT
     scenes.append({"text": cta, "text_en": cta_en, "queries": ["person using laptop", "typing laptop desk"],
                    "emphasis": "", "chapter": last_ch})
     log(f"[long] {len(scenes)} scenes, {len(chapters)} chapters")
-    res, voice, lang = ckpt.stage("long_voice", lambda: make_voice(scenes, max_total=1e9), key, log=log)
+    res, voice, lang = ckpt.stage("long_voice", lambda: make_voice(scenes, max_total=1e9, engine=_long_engine()), key, log=log)
     _apply_lang(scenes, lang)
     starts, segs, total_t, voice_end = long_render.long_timeline(scenes, [r[1] for r in res])
     log(f"[long] voice={voice} lang={lang} narration {voice_end / 60:.1f} min, total {total_t / 60:.1f} min")
@@ -1913,16 +2262,8 @@ def make_long_video(facts, mode, key, rng):
         global LANDSCAPE
         LANDSCAPE = True
         try:
-            out = []
-            for i, sc in enumerate(scenes):
-                need = res[i][1] + 0.5
-                try:
-                    out.append(pick_clips(sc, ls.get("title", ""), need, 2 if need >= 4.6 else 1))
-                except Exception as e:
-                    log("[long clip] scene", i + 1, "error:", str(e)[:100])
-                    out.append([])
-                time.sleep(0.5)                              # slow and gentle on free API limits
-            return out
+            items = [(sc, res[i][1] + 0.5, 2 if res[i][1] + 0.5 >= 4.6 else 1) for i, sc in enumerate(scenes)]
+            return pick_clips_batch(items, ls.get("title", ""), "long clip")
         finally:
             LANDSCAPE = False
     clips = ckpt.stage("long_clips", pick_all, key, validate=_clips_ok, log=log)
@@ -1934,51 +2275,83 @@ def make_long_video(facts, mode, key, rng):
     vid_only = WORK / "long_video_only.mp4"
     R.render(clips, vid_only)
 
-    log("[long] audio mix...")
-    v = _voice_track(res, starts, total_t)
-    v = audio_filter(v, "highpass=f=75,equalizer=f=220:t=q:w=1:g=-1.5,equalizer=f=3400:t=q:w=1.1:g=2.4,"
-                        "acompressor=threshold=0.06:ratio=2.8:attack=6:release=150:makeup=2.2")
-    act = v[np.abs(v) > 0.01]
-    if len(act):
-        v *= 0.16 / max(1e-6, float(np.sqrt((act ** 2).mean())))
-    v = np.clip(v, -0.95, 0.95)
-    sfx = [(sg["t0"] - 0.05, "up", 0.34) for sg in segs if sg["kind"] == "card"]
-    sfx += [(starts[i] + 0.25, "pop", 0.26) for i, sc in enumerate(scenes) if sc.get("emphasis")]
-    mus = ASSETS / "music.mp3"
-    stereo = build_mix(v, total_t, sfx, None, None, mus if mus.exists() else None)
-    peak = float(np.abs(stereo).max())
-    if peak > 0.95:
-        stereo *= 0.95 / peak
-    wav = WORK / "long_mix.wav"
-    write_wav(wav, stereo)
     d = OUT / "long"
-    d.mkdir(exist_ok=True)
+    d.mkdir(parents=True, exist_ok=True)
     final = d / "long_final.mp4"
-    run(["ffmpeg", "-y", "-v", "error", "-i", str(vid_only), "-i", str(wav), "-map", "0:v", "-map", "1:a",
-         "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
-         "-shortest", "-movflags", "+faststart", str(final)])
+    mark = WORK / f"long_final_{key}.ok"
 
+    def do_mix():
+        log("[long] audio mix...")
+        v = _voice_track(res, starts, total_t)
+        v = audio_filter(v, "highpass=f=75,equalizer=f=220:t=q:w=1:g=-1.5,equalizer=f=3400:t=q:w=1.1:g=2.4,"
+                            "acompressor=threshold=0.06:ratio=2.8:attack=6:release=150:makeup=2.2")
+        act = v[np.abs(v) > 0.01]
+        if len(act):
+            v *= 0.16 / max(1e-6, float(np.sqrt((act ** 2).mean())))
+        v = np.clip(v, -0.95, 0.95)
+        sfx = [(sg["t0"] - 0.05, "up", 0.34) for sg in segs if sg["kind"] == "card"]
+        sfx += [(starts[i] + 0.25, "pop", 0.26) for i, sc in enumerate(scenes) if sc.get("emphasis")]
+        mus = ASSETS / "music.mp3"
+        stereo = build_mix(v, total_t, sfx, None, None, mus if mus.exists() else None)
+        peak = float(np.abs(stereo).max())
+        if peak > 0.95:
+            stereo *= 0.95 / peak
+        wav = WORK / "long_mix.wav"
+        write_wav(wav, stereo)
+        run(["ffmpeg", "-y", "-v", "error", "-i", str(vid_only), "-i", str(wav), "-map", "0:v", "-map", "1:a",
+             "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
+             "-shortest", "-movflags", "+faststart", str(final)])
+        mark.write_text("ok")
+        return True
+
+    if mark.exists() and final.exists() and final.stat().st_size > 100000:
+        log("[long] final mp4 already exists from earlier run -> skip audio mix")
+    else:
+        ok_mix = safe.soft("long_audio_mix", do_mix, False, log)
+        if not ok_mix:                                   # mix failed -> still ship the video (voice-less beats nothing)
+            def raw_copy():
+                import shutil
+                shutil.copy2(vid_only, final)
+                return True
+            if not safe.soft("long_video_only_fallback", raw_copy, False, log):
+                raise RuntimeError("long: both audio mix and raw fallback failed")
+
+    # ---- thumbnail: OPTIONAL. Any failure -> no thumbnail, video still uploads (add thumbnail manually later)
     thumb = d / "thumb.jpg"
-    try:
-        fr = run(["ffmpeg", "-v", "error", "-ss", f"{min(8.0, voice_end / 3):.1f}", "-i", str(vid_only), "-frames:v", "1",
-                  "-f", "image2pipe", "-vcodec", "png", "-"]).stdout
-        frame = np.array(Image.open(io.BytesIO(fr)).convert("RGB"))
-    except Exception:
-        frame = None
-    long_render.make_thumbnail(pk.get("thumb_text") or ls.get("title", "")[:30], thumb, BRAND_NAME, frame)
 
-    ch_txt = long_render.chapters_text(chapters, scenes, starts)
-    hi = lang == "hinglish"
-    title = (pk.get("title") if hi else ls.get("title")) or ls.get("title") or "NeuroTriage"
-    hashtags = (pk.get("hashtags") or []) [:5]
-    body = pk.get("yt_description") or ""
-    parts = [body, ("Chapters:\n" + ch_txt) if ch_txt else "", f"{BRAND_NAME}: {SITE_URL}", DISCLAIMER]
-    if mode == "awareness":
-        parts.append(HELPLINE)
-    parts.append(" ".join(hashtags))
-    meta = {"title": title, "yt_description": "\n\n".join(p for p in parts if p), "hashtags": hashtags}
-    (d / "long_meta.json").write_text(json.dumps(dict(meta, language=lang, chapters=ch_txt, seconds=round(total_t, 1)),
-                                                  ensure_ascii=False, indent=2), encoding="utf-8")
+    def do_thumb():
+        frame = None
+        try:
+            fr = run(["ffmpeg", "-v", "error", "-ss", f"{min(8.0, voice_end / 3):.1f}", "-i", str(vid_only),
+                      "-frames:v", "1", "-f", "image2pipe", "-vcodec", "png", "-"]).stdout
+            frame = np.array(Image.open(io.BytesIO(fr)).convert("RGB"))
+        except Exception:
+            frame = None
+        try:
+            long_render.make_thumbnail(pk["thumb_text"], thumb, BRAND_NAME, frame)
+        except Exception as e:
+            log("[thumb] with frame failed, trying plain background:", str(e)[:80])
+            long_render.make_thumbnail(ls_title[:30], thumb, BRAND_NAME, None)
+        return thumb.exists()
+    if not safe.soft("long_thumbnail", do_thumb, False, log):
+        thumb = None
+        log("[thumb] no thumbnail made -> uploading video without it (add manually later)")
+
+    def do_meta():
+        ch_txt = long_render.chapters_text(chapters, scenes, starts)
+        hi = lang == "hinglish"
+        title = (pk.get("title") if hi else ls_title) or ls_title
+        hashtags = pk["hashtags"]
+        parts = [pk["yt_description"], ("Chapters:\n" + ch_txt) if ch_txt else "", _sources_line(), f"{BRAND_NAME}: {SITE_URL}", DISCLAIMER]
+        if mode == "awareness":
+            parts.append(HELPLINE)
+        parts.append(" ".join(hashtags))
+        m = {"title": title, "yt_description": "\n\n".join(p for p in parts if p), "hashtags": hashtags}
+        (d / "long_meta.json").write_text(json.dumps(dict(m, language=lang, chapters=ch_txt, seconds=round(total_t, 1)),
+                                                      ensure_ascii=False, indent=2), encoding="utf-8")
+        return m
+    meta = safe.soft("long_meta", do_meta, None, log) or {
+        "title": ls_title, "yt_description": f"{BRAND_NAME}: {SITE_URL}\n\n{DISCLAIMER}", "hashtags": []}
     return {"video": final, "thumb": thumb, "meta": meta, "seconds": total_t}
 
 
@@ -1992,6 +2365,10 @@ def enqueue(kind, key, video, thumb, meta):
     import shutil
     vname = Path(video).name
     shutil.copy2(video, qd / vname)
+    for suf in ("_4k", "_ig"):                               # round 5b: platform files travel with the master
+        sib = variants.sibling(video, suf)
+        if sib.exists():
+            shutil.copy2(sib, qd / sib.name)
     files = {"video": vname}                               # paths are relative to the artifact root (= this folder)
     if thumb and Path(thumb).exists():
         shutil.copy2(thumb, qd / Path(thumb).name)
@@ -2014,38 +2391,69 @@ def enqueue(kind, key, video, thumb, meta):
 
 
 # ================================================================== short video
+RS = {"state": None}          # shared research state of today's run
+
+
+def _sources_line():
+    """'Sources: url | url' for the video description, only when real sources were found."""
+    try:
+        st = RS["state"]
+        src = (st.d.get("research") or {}).get("sources") if st else None
+        urls = [x["url"] for x in (src or []) if x.get("url")][:4]
+        return ("Sources: " + " | ".join(urls)) if urls else ""
+    except Exception:
+        return ""
+
+
+def _locked_script(st, make, source):
+    """SCRIPT LOCK: if a script is already locked for this video, use it and make NO AI call. Otherwise generate it,
+    lock it (first audited script wins) and remember which provider wrote it."""
+    if st.locked:
+        log(f"[lock] script v{st.d['script']['version']} already approved -> reusing it, no AI call")
+        return st.locked_script()
+    st.set_stage("script")
+    data = make()
+    out = st.lock_script(data, source=LAST_CALL.get("provider", ""))
+    st.stage_done("script", LAST_CALL.get("provider", ""), f"v{st.d['script']['version']} locked")
+    return out
+
+
 def build_short(facts, mode, key, rng):
     log("2/6 script...")
 
+    st = project_state.begin(key, "short")
+    if RS["state"] is not None:
+        st.set_research(RS["state"].d.get("research") or {})
+    st.set_request(kind="short", mode=mode, language="hinglish")
+
     def mk_script():
-        d = write_script(facts)
-        return virality.improve_script(ask, d, SAFETY)             # v7: cross-check + one rewrite if weak
+        def make():
+            d = write_script(facts)
+            return virality.improve_script(ask, d, SAFETY)         # v7: cross-check + one rewrite if weak (BEFORE the lock)
+        return _locked_script(st, make, "short_script")
     data = ckpt.stage("short_script", mk_script, key, log=log)
+    data = st.lock_script(data, source="resume")                   # resume / retry can never swap in a different script
     log("   title:", data["title"])
     scenes = [dict(sc) for sc in data["scenes"]]
+    if not st.verify(scenes):
+        raise RuntimeError("script lock: scenes differ from the approved script")
     cta = CTA_AWARENESS_HI if mode == "awareness" else CTA_STUDENT_HI
     cta_en = CTA_AWARENESS if mode == "awareness" else CTA_STUDENT
     scenes.append({"text": cta, "text_en": cta_en, "queries": ["person using laptop", "typing laptop desk", "student laptop"],
                    "emphasis": ""})
     log("3/6 voice (har scene alag)...")
+    st.set_stage("voice")
     res, voice, lang = ckpt.stage("short_voice", lambda: make_voice(scenes), key, log=log)
+    st.stage_done("voice", voice, lang)
     _apply_lang(scenes, lang)
     log(f"   voice={voice} language={lang}")
     starts, splash_start = build_timeline(res)
     log(f"   voice ends at {splash_start:.1f}s")
 
     def pick_all():
-        log("4/6 relevant footage (Gemini vision se chunav)...")
-        out = []
-        for i, sc in enumerate(scenes):
-            need = res[i][1] + 0.5
-            want = 2 if need >= 3.3 else 1
-            try:
-                out.append(pick_clips(sc, data["title"], need, want))
-            except Exception as e:
-                log("[clip] scene", i + 1, "error:", str(e)[:100])
-                out.append([])
-        return out
+        log("4/6 relevant footage (parallel search + batched vision + parallel download)...")
+        items = [(sc, res[i][1] + 0.5, 2 if res[i][1] + 0.5 >= 3.3 else 1) for i, sc in enumerate(scenes)]
+        return pick_clips_batch(items, data["title"], "clip")
     clips = ckpt.stage("short_clips", pick_all, key, validate=_clips_ok, log=log)
 
     log("5/6 edit + render...")
@@ -2057,7 +2465,8 @@ def build_short(facts, mode, key, rng):
     def do_render():
         splash = Splash(splash_json)
         return render_video(scenes, res, starts, splash_start, clips, data["kicker"], splash, vid_only,
-                            random.Random(SEED) if SEED else random.Random(sum(map(ord, key))))
+                            random.Random(SEED) if SEED else random.Random(sum(map(ord, key))),
+                            hook_text=hook_intro.hook_words(data))
     total_t, kinds = ckpt.stage("short_render", do_render, key, validate=lambda v: vid_only.exists(), log=log)
 
     log("6/6 audio mix + final...")
@@ -2069,14 +2478,17 @@ def build_short(facts, mode, key, rng):
     run(["ffmpeg", "-y", "-v", "error", "-i", str(vid_only), "-i", str(wav), "-map", "0:v", "-map", "1:a",
          "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:a", "aac", "-b:a", "192k",
          "-ar", "48000", "-shortest", str(out)])
+    safe.soft("variants", lambda: variants.make_variants(out, log), {}, log)     # round 5b: 4K YouTube + own 1080 Instagram file
 
-    pk = ckpt.stage("short_pack", lambda: virality.packaging(ask, data, mode), key, log=log)
+    pk = safe.soft("short_pack", lambda: ckpt.stage("short_pack", lambda: virality.packaging(ask, data, mode), key, log=log), {}, log)
+    pk = safe.normalize_pack(pk, safe.as_text(data.get("title_en"), "NeuroTriage"))
     hi = lang == "hinglish"
-    title = pk["title"] if hi else data["title_en"]
-    hashtags = (pk["hashtags"] if hi else data["hashtags"][:5]) + ["#Shorts"]
+    title = pk["title"] if hi else safe.as_text(data.get("title_en"), pk["title"])
+    hashtags = (pk["hashtags"] if hi else safe.hashtags(data.get("hashtags"))) + ["#Shorts"]
     brand = f"{BRAND_NAME}: {SITE_URL}" + (f" | {TAGLINE}" if TAGLINE else "")
-    body = (pk.get("yt_description") if hi else None) or data["description"]
-    parts_desc = [body, brand, DISCLAIMER]
+    body = (pk.get("yt_description") if hi else None) or safe.as_text(data.get("description"), title)
+    parts_desc = [body, _sources_line(), brand, DISCLAIMER]
+    parts_desc = [p for p in parts_desc if p]
     if mode == "awareness":
         parts_desc.append(HELPLINE)
     parts_desc.append(" ".join(hashtags))
@@ -2089,14 +2501,16 @@ def build_short(facts, mode, key, rng):
              first_comment=pk.get("first_comment"), title_options=pk.get("titles")),
         ensure_ascii=False, indent=2), encoding="utf-8")
     log("\nTITLE:", title, "\nDESCRIPTION:\n", desc)
+    st.stage_done("short_final", "", title[:60])
     return out, meta, data
 
 
 def main():
     if not KEYS and not GROQ_KEYS:
-        sys.exit("GROQ_API_KEY ya GEMINI_API_KEY set karo.")
-    log(f"[llm] groq keys: {len(GROQ_KEYS)}, gemini keys: {len(KEYS)}")
+        sys.exit("GROQ_API_KEY ya GEMINI_API_KEY set karo (naming: KEYS.md).")
+    log(f"[llm] groq keys: {len(GRQ)} {[l for l, _ in GRQ.status()]}, gemini keys: {len(GEM)} {[l for l, _ in GEM.status()]}")
     global MODELS
+    groq_discover()
     MODELS = discover_models()
     WORK.mkdir(exist_ok=True)
     OUT.mkdir(exist_ok=True)
@@ -2106,40 +2520,72 @@ def main():
     ckpt.cleanup(key)
     plan = publisher.today_plan()
     log("[plan]", plan, "| queue mode:", QUEUE_MODE, "| preset:", RENDER_PRESET)
-    want_short = True
-    want_long = bool(plan["long"])
+    want_short = VIDEO_TYPE in ("short", "both")                 # round 3: auto = Short only; Long only when YOU ask
+    want_long = bool(plan["long"]) or VIDEO_TYPE in ("long", "both")
     if QUEUE_MODE and not FORCE_REBUILD:
-        want_short = not scheduler.already_built("short")
+        want_short = want_short and not scheduler.already_built("short")
         want_long = want_long and not scheduler.already_built("long")
         if not (want_short or want_long):
             log("[queue] today's video(s) already built -> nothing to do.")
             return
-    mode = ckpt.stage("mode", pick_mode, key, log=log)
-    log("mode:", mode)
+    plan_t = ckpt.stage("topic_plan", pick_topic_plan, key, log=log)     # round 5a: trending first, then rotation
+    PLAN.update(plan_t)
+    DIRECTIVE[0] = plan_t["directive"]
+    mode = plan_t["mode"]
+    log("mode:", mode, "| topic kind:", plan_t["kind"])
     log("1/6 research...")
+    RS["state"] = project_state.begin(key, "research")             # round 3: shared project memory starts here
+    RS["state"].set_request(kind="research", mode=mode)
     facts = ckpt.stage("facts", lambda: research(done, mode), key, log=log)
+    project_state.end()
 
     report, failed = {}, []
     if want_short:
-        out, meta, data = build_short(facts, mode, key, rng)
-        if QUEUE_MODE:
-            report["short"] = enqueue("short", key, out, None, meta)
-        else:
-            report["short"] = publisher.publish_short(out, meta, PRIVACY)
-        sh = report["short"].values()
-        ok = any(v.get("ok") or v.get("status") in ("done", "scheduled") for v in sh) or \
-            all(v.get("skipped") or v.get("status") == "skipped" or v.get("deferred") or v.get("status") == "pending" for v in sh)
-        if ok:                                        # topic tabhi 'done' jab video ban gayi + upload/queue theek
-            with open(HISTORY, "a", encoding="utf-8") as f:
-                f.write(data["title_en"].replace("\n", " ") + "\n")
+        try:
+            out, meta, data = build_short(facts, mode, key, rng)
+            safe.STEPS.append({"step": "short_build", "status": "ok", "sec": 0, "error": ""})
+        except Exception as e:                        # a short problem must never block the long video
+            import traceback
+            traceback.print_exc()
+            log("[short] failed:", str(e)[:200])
+            report["short"] = {"ok": False, "error": str(e)[:200]}
+            failed.append("short")
+            safe.STEPS.append({"step": "short_build", "status": "FAILED", "sec": 0, "error": str(e)[:160]})
+            out = None
+        if out is not None:
+            try:
+                if QUEUE_MODE:
+                    report["short"] = enqueue("short", key, out, None, meta)
+                else:
+                    report["short"] = publisher.publish_short(out, meta, PRIVACY)
+            except Exception as e:                    # upload trouble: video is safe in output/, don't lose it
+                log("[short] publish/queue failed (video saved in output/):", str(e)[:160])
+                report["short"] = {"ok": False, "error": str(e)[:200], "video_saved": str(out)}
+                failed.append("short-publish")
+            sh = [v for v in report["short"].values() if isinstance(v, dict)] or [report["short"]]
+            ok = any(v.get("ok") or v.get("status") in ("done", "scheduled") for v in sh) or \
+                all(v.get("skipped") or v.get("status") == "skipped" or v.get("deferred") or v.get("status") == "pending" for v in sh)
+            if ok:                                    # topic tabhi 'done' jab video ban gayi + upload/queue theek
+                with open(HISTORY, "a", encoding="utf-8") as f:
+                    f.write(safe.as_text(data.get("title_en"), "short").replace("\n", " ") + "\n")
+                try:
+                    if PLAN.get("subject") or PLAN.get("trend"):
+                        topics.record(PLAN)
+                except Exception as e:
+                    log("[topics] record failed:", str(e)[:80])
     if want_long:
         try:
             if LONG_RENDER:
                 info = make_long_video(facts, mode, key, rng)
-                if QUEUE_MODE:
-                    report["long"] = enqueue("long", key, info["video"], info["thumb"], info["meta"])
-                else:
-                    report["long"] = publisher.publish_long(info["video"], info["meta"], PRIVACY, info["thumb"])
+                try:
+                    if QUEUE_MODE:
+                        report["long"] = enqueue("long", key, info["video"], info["thumb"], info["meta"])
+                    else:
+                        report["long"] = publisher.publish_long(info["video"], info["meta"], PRIVACY, info["thumb"])
+                except Exception as e:
+                    log("[long] publish/queue failed (video saved in output/long):", str(e)[:160])
+                    report["long"] = {"ok": False, "error": str(e)[:200], "video_saved": str(info["video"])}
+                    failed.append("long-publish")
             else:
                 report["long"] = make_long_kit(facts, mode)
         except Exception as e:                        # a long-video problem must never lose the daily short
@@ -2148,9 +2594,10 @@ def main():
             log("[long] failed:", str(e)[:200])
             report["long"] = {"ok": False, "error": str(e)[:200]}
             failed.append("long")
+    safe.save_steps(OUT / "step_report.json")
     publisher.save_report(OUT / "publish_report.json", report)
     if failed:
-        sys.exit(f"build finished but failed: {failed} (short is safe; retry/catch-up will redo the long part)")
+        sys.exit(f"build finished but these parts failed: {failed} (every other part was completed and saved; retry/catch-up redoes only the failed ones)")
 
 
 if __name__ == "__main__":

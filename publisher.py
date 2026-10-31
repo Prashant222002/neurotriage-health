@@ -4,6 +4,7 @@ CYCLE (assumption, change in one line): 7-day loop. Days 1-6 = 1 Short. Day 7 = 
   Short -> YouTube + Instagram Reels + Facebook Reels.   Long -> YouTube only.
 Each platform is optional and isolated: a failure on one never stops the others.
 """
+import variants
 import json
 import os
 import time
@@ -21,17 +22,20 @@ def log(*a):
 
 # --------------------------------------------------------------------------- cycle
 def today_plan(today=None):
-    """{'day': 1..7, 'short': True, 'long': bool}. CYCLE_START=YYYY-MM-DD is day 1. FORCE_LONG=1 overrides."""
+    """{'day': 1..7, 'short': True, 'long': bool}.
+    Round 3: automatic runs make a SHORT only. A long video is made when you ask (FORCE_LONG=1 / VIDEO_TYPE=long|both).
+    AUTO_LONG=on brings back the old rhythm (day 7 of the CYCLE_START loop = short + long)."""
     ist = datetime.now(timezone(timedelta(hours=5, minutes=30))).date()
     today = today or ist
     start = date.fromisoformat(os.environ.get("CYCLE_START", "2026-11-01"))
     day = ((today - start).days % 7) + 1
     force = os.environ.get("FORCE_LONG", "").lower() in ("1", "true", "yes")
-    return {"day": day, "short": True, "long": day == 7 or force}
+    auto = os.environ.get("AUTO_LONG", "off").lower() in ("1", "true", "yes", "on")
+    return {"day": day, "short": True, "long": force or (auto and day == 7)}
 
 
 # --------------------------------------------------------------------------- YouTube
-def youtube(video, title, desc, tags, privacy="private", thumb=None, category="27", publish_at=None):
+def youtube(video, title, desc, tags, privacy="private", thumb=None, category="27", publish_at=None, synthetic=True):
     need = ("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRESH_TOKEN")
     if not all(os.environ.get(k) for k in need):
         return {"ok": False, "skipped": "YouTube secrets missing"}
@@ -45,7 +49,8 @@ def youtube(video, title, desc, tags, privacy="private", thumb=None, category="2
     yt = build("youtube", "v3", credentials=creds)
     body = {"snippet": {"title": title[:95], "description": desc[:4900], "tags": [t.lstrip("#") for t in tags][:15],
                         "categoryId": category},
-            "status": {"privacyStatus": privacy, "selfDeclaredMadeForKids": False}}
+            "status": {"privacyStatus": privacy, "selfDeclaredMadeForKids": False,
+                       "containsSyntheticMedia": bool(synthetic)}}      # round 5a: "Altered or synthetic content" (AI voice/visuals) label
     scheduled = False
     if publish_at is not None and privacy == "public":     # YouTube publishes by itself at publishAt (needs private)
         body["status"]["privacyStatus"] = "private"
@@ -133,6 +138,8 @@ def post_one(name, video, meta, privacy="private", publish_at=None, kind="short"
     tags = meta.get("hashtags", [])
     caption = meta.get("ig_caption") or meta["yt_description"]
     try:
+        if kind == "short":                                  # round 5b: 4K file for YouTube, own 1080 file for IG/FB
+            video = variants.pick(name, video)
         if name == "youtube":
             return youtube(video, meta["title"], meta["yt_description"], tags, privacy, thumb, publish_at=publish_at)
         if name == "instagram":

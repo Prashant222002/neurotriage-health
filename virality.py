@@ -43,6 +43,14 @@ def formulas_text():
     return "\n".join(f"{i + 1}. {n} -> e.g. \"{ex}\"" for i, (_, n, ex) in enumerate(FORMULAS))
 
 
+SHARE_RULES = """SHARE-WORTHY WRITING (apply all):
+- ONE 'send-this' moment in scenes 4-8: a line that makes the viewer think of a specific friend/sibling/batchmate
+  (e.g. "Ye line us dost ko bhejo jo raat bhar jaagta hai."). It is a natural line, not a pushy ask.
+- Make at least one line relatable enough to screenshot/save (a rule of thumb, a 3-step mini-plan, a before/after).
+- A mid-video open loop ("aur teesra point sabse zaroori hai") so people stay to the end and replay.
+- The last scene before the CTA must end in a way that connects to the first scene (a loop).
+- Never guilt, never shame, never claim to diagnose; share-bait must stay kind and calm."""
+
 VIRAL_RULES = f"""VIRALITY RULES (apply all):
 - Hook = one of these 21 proven formulas (name it in "formula"):
 {formulas_text()}
@@ -178,7 +186,7 @@ Return ONLY JSON: {{"patterns":[{{"title":"","formula":"","trigger":"","structur
     return _json(ask(prompt, json_mode=True))
 
 
-def viral_brief(ask, done, mode, safety="", yt_key=None):
+def viral_brief(ask, done, mode, safety="", yt_key=None, directive=""):
     """Replacement for bot.research(): topic + facts + proven structure. Returns plain text."""
     yt_key = yt_key or os.environ.get("YT_API_KEY", "").strip()
     ctx = ""
@@ -196,7 +204,7 @@ def viral_brief(ask, done, mode, safety="", yt_key=None):
 Already covered (do NOT repeat): {done[-40:]}
 {safety}
 {ctx or "Search what is trending right now on YouTube/Instagram in this niche in India (last 90 days) and which angles are underused."}
-Pick ONE fresh topic with high viral potential and low competition. Use reliable sources only (peer-reviewed, WHO, NIMH, NIMHANS, APA).
+{directive or "Pick ONE fresh topic with high viral potential and low competition."} Use reliable sources only (peer-reviewed, WHO, NIMH, NIMHANS, APA).
 Return plain text: TOPIC; ANGLE (why it is underused); HOOK FORMULA to use (one of the 21); 5-6 accurate facts; one practical tip; one-line sources note; PROVEN STRUCTURE to follow."""
     return ask(prompt, search=True) or ask(prompt)
 

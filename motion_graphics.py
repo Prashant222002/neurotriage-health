@@ -211,8 +211,9 @@ class ChapterCard:
 
 
 class EndCard:
-    def __init__(self, w, h, brand, site, line1="Subscribe karo", line2="Roz ek naya MBBS + brain concept"):
+    def __init__(self, w, h, brand, site, line1="Subscribe karo", line2="Roz ek naya MBBS + brain concept", logo=None):
         self.w, self.h = w, h
+        self.logo = logo
         self.bg = gradient_bg(w, h)
         self.sphere = NeuralSphere(int(h * 0.9), seed=5)
         self.l1 = text_sprite(line1.upper(), int(h * 0.11), (255, 255, 255))
@@ -229,4 +230,8 @@ class EndCard:
         for i, (spr, y) in enumerate(((self.brand, 0.22), (self.l1, 0.32), (self.l2, 0.55), (self.site, 0.68))):
             u = ease_out((t - i * 0.18) / 0.5)
             blit(f, spr, x0, self.h * y + (1 - u) * 40, u)
+        if self.logo is not None:                      # circle logo above the brand name, fades in first
+            u = ease_out(t / 0.6)
+            pad = int(self.logo.shape[0] * 0.22 / 1.44)
+            blit(f, self.logo, x0 - pad + 8, self.h * 0.045 + (1 - u) * 30, u * 0.95)
         return f

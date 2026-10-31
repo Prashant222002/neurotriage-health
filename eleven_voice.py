@@ -27,13 +27,15 @@ def _env_list(name, default):
 
 
 def load_keys():
-    names = ["ELEVEN_API_KEY"] + [f"ELEVEN_API_KEY_{i}" for i in range(1, 13)]
-    keys = []
-    for n in names:
-        k = os.environ.get(n, "").strip()
-        if k and k not in keys:
-            keys.append(k)
-    return keys
+    """Round 2: names come from keyring.py (ELEVEN_API_KEY, ELEVEN_API_KEY_1..10 + aliases such as ELEVENLABS_API_KEY,
+    XI_API_KEY; also read from ALL_SECRETS_JSON). Duplicates merged."""
+    import keyring
+    slots = keyring.load("elevenlabs")
+    _LABEL.update({sl.value: sl.label for sl in slots})
+    return [sl.value for sl in slots]
+
+
+_LABEL = {}                       # key value -> secret name (for logs; the key itself is never printed)
 
 
 MODELS = _env_list("ELEVEN_MODELS", ["eleven_multilingual_v2", "eleven_v3",
@@ -140,7 +142,7 @@ def tts(text):
                     break
                 if key in _BAD:
                     continue
-                tag = f"...{key[-4:]}/{model}/{voice[:6]}"
+                tag = f"{_LABEL.get(key, 'key')}/{model}/{voice[:6]}"
                 for attempt in range(2):
                     try:
                         r = _call(key, voice, model, text)
@@ -173,3 +175,35 @@ def tts(text):
 
 def status():
     return {"keys": len(_KEYS), "dead": len(_BAD), "last_error": _state["last_error"]}
+
+
+def health(test_voice=True):
+    """Dashboard / CLI check. Per key: valid? credits left? Then ONE tiny real generation (3 characters) with the
+    first usable key + first voice + first model, so a wrong voice id / model id is caught BEFORE a long build.
+    Never returns or prints a key."""
+    _check_balances()
+    rows = []
+    for k in _KEYS:
+        lab = _LABEL.get(k, "key")
+        rem = _REMAIN.get(k)
+        if k in _BAD:
+            rows.append({"key": lab, "status": "dead/no-credit", "credits_left": rem})
+        else:
+            rows.append({"key": lab, "status": "ok", "credits_left": rem})
+    test = None
+    if test_voice and _KEYS:
+        live = [k for k in _KEYS if k not in _BAD]
+        if not live:
+            test = {"ok": False, "why": "no key with credits"}
+        else:
+            try:
+                r = _call(live[0], VOICES[0], MODELS[0], "Hi.")
+                if r.status_code == 200 and (r.json().get("alignment") or r.json().get("normalized_alignment")):
+                    test = {"ok": True, "voice": VOICES[0], "model": MODELS[0]}
+                else:
+                    test = {"ok": False, "http": r.status_code, "why": r.text[:140].replace("\n", " "),
+                            "voice": VOICES[0], "model": MODELS[0]}
+            except Exception as e:
+                test = {"ok": False, "why": str(e)[:120]}
+    return {"configured_keys": len(_KEYS), "keys": rows, "test_generation": test,
+            "voices": VOICES, "models": MODELS}

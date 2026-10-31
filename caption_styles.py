@@ -27,6 +27,43 @@ def pick_style(name="auto", today=None):
     d = today or date.today()
     return STYLES[d.toordinal() % len(STYLES)]
 
+DASH_END = re.compile(r"[-\u2010-\u2014]$")      # word ends with a hyphen/dash  -> must stay with the next word
+DASH_START = re.compile(r"^[-\u2010-\u2014]")
+
+
+def paginate(words, max_words=4, max_chars=26, upper=True):
+    """words: [(text, start, end)] -> pages of (shown_text, start, end, raw). Shared by every caption style.
+    Round 5: a page never ends on 'MOVE-' (hyphen/dash glued to the next word), so no half-finished text on screen."""
+    pages, cur = [], []
+    for w in words:
+        raw = w[0]
+        txt = raw.rstrip(".,") if re.search(r"www|\.in", raw) else re.sub(r"[.,]+$", "", raw)
+        if cur:
+            gap = w[1] - cur[-1][2]
+            chars = sum(len(c[0]) for c in cur) + len(txt)
+            glued = bool(DASH_END.search(cur[-1][0]) or DASH_START.search(txt))
+            hard = re.search(r"[.?!;:]$", cur[-1][3]) or gap > 0.45
+            over = len(cur) >= max_words or chars > max_chars
+            if hard or (over and not (glued and len(cur) < max_words + 2)):
+                pages.append(cur)
+                cur = []
+        cur.append((txt.upper() if (upper and "." not in txt) else txt, w[1], w[2], raw))
+    if cur:
+        pages.append(cur)
+    merged = []
+    for pg in pages:                                 # no one-word orphans
+        if (merged and len(pg) == 1 and len(merged[-1]) <= max_words - 1
+                and sum(len(c[0]) for c in merged[-1]) + len(pg[0][0]) <= max_chars
+                and pg[0][1] - merged[-1][-1][2] < 0.5):
+            merged[-1].extend(pg)
+        else:
+            merged.append(pg)
+    for i in range(len(merged) - 1):                 # last safety net: a dangling dash joins the next page
+        if DASH_END.search(merged[i][-1][0]) and merged[i + 1][0][1] - merged[i][-1][2] < 0.5:
+            merged[i + 1] = merged[i] + merged[i + 1]
+            merged[i] = []
+    return [p for p in merged if p]
+
 
 class StyledCaptions:
     def __init__(self, words, style="pop", W=1080, H=1920, max_words=4, max_chars=26, size=92, maxw=None, upper=True):
@@ -34,28 +71,7 @@ class StyledCaptions:
         self.style, self.W, self.H, self.size = style, W, H, size
         self.maxw = maxw or int(W * 0.80)
         self.upper = upper and style != "clean"
-        self.pages, cur = [], []
-        for w in words:
-            raw = w[0]
-            txt = raw.rstrip(".,") if re.search(r"www|\.in", raw) else re.sub(r"[.,]+$", "", raw)
-            if cur:
-                gap = w[1] - cur[-1][2]
-                chars = sum(len(c[0]) for c in cur) + len(txt)
-                if len(cur) >= max_words or chars > max_chars or gap > 0.45 or re.search(r"[.?!;:]$", cur[-1][3]):
-                    self.pages.append(cur)
-                    cur = []
-            cur.append((txt.upper() if (self.upper and "." not in txt) else txt, w[1], w[2], raw))
-        if cur:
-            self.pages.append(cur)
-        merged = []
-        for pg in self.pages:                       # no one-word orphans
-            if (merged and len(pg) == 1 and len(merged[-1]) <= max_words - 1
-                    and sum(len(c[0]) for c in merged[-1]) + len(pg[0][0]) <= max_chars
-                    and pg[0][1] - merged[-1][-1][2] < 0.5):
-                merged[-1].extend(pg)
-            else:
-                merged.append(pg)
-        self.pages = merged
+        self.pages = paginate(words, max_words, max_chars, self.upper)
         self.starts = [p[0][1] for p in self.pages]
         self.ends = []
         for i, p in enumerate(self.pages):

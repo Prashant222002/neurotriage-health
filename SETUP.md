@@ -44,3 +44,24 @@ Short ~700 characters. Long (7 min) ~6-7 hazaar characters hafte mein ek baar. 1
 
 ## Offline test chalana
 `python tests/test_phase2.py` (poora flow: build -> queue -> publish -> idempotent) aur `python tests/test_resume.py` (render beech mein mare to resume).
+
+
+## Round 3 - kaise chalana (Actions -> Midnight Build -> Run workflow)
+| Tum kya chahte ho | Inputs |
+|---|---|
+| Roz ka auto | kuch nahi. Sirf **Short** banta hai (10:00 IST). |
+| **Long video** | Actions -> **Long Video (on demand)** -> Run workflow. `publish_time_ist` khali = 19:00 IST. (Round 4: alag workflow, video_type input hat gaya) |
+| Long video **turant live** | Long Video workflow, `publish_when` = `now` (PUBLIC ho jaati hai, build khatam hote hi upload) |
+| Apne time par | `publish_time_ist` = `17:30` (aaj ka time nikal gaya ho to agle din) |
+| Script badalni hai | `unlock_script` = `1` (sirf tab nayi script banti hai) |
+
+- **Script Lock:** pehli audited script lock ho jaati hai. Retry, resume, doosra AI (Gemini <-> Groq) - koi use badal nahi sakta. Badli hui script `state/<date>_short.json` ke `pending` mein jaati hai, apply nahi hoti.
+- **AI memory:** har AI call ke aage project state jaata hai (final topic, verified facts, script locked, pehle AI ne kya kiya). `state/` repo mein commit hota hai (kaun sa AI, kaun sa key-LABEL; key ki value kabhi nahi).
+- **Research:** PubMed + Wikipedia se check. Jis fact mein number hai aur wo number evidence mein nahi milta, wo hata diya jaata hai. Description mein `Sources:` line aati hai.
+- **Logo:** chhota circle, upar-right (reel), corner (long), end card, thumbnail. `LOGO: "off"` se band. Upar ka loading bar hata diya.
+- Purana rhythm (din 7 = short + long) wapas chahiye: `AUTO_LONG: "on"`.
+
+## Round 4 - speed
+- Short aur Long ab alag workflows (`build.yml`, `build_long.yml`), ek hi concurrency group: ek chal raha ho to doosra intezaar karta hai, saath nahi chalte, kuch cancel nahi hota.
+- Footage: search parallel + 7 din cache, vision 4 scenes ek call mein, download parallel. Retry/resume par wahi clip dobara download nahi hoti.
+- Kal ki clips 14 din tak dobara nahi aati (`FOOTAGE_NO_REPEAT_DAYS`).
