@@ -20,6 +20,7 @@ import bot, virality, publisher, scheduler, publish_due, ckpt
 bot.ROOT = tmp
 bot.WORK, bot.OUT = tmp / "work", tmp / "output"
 ckpt.DIR = tmp / "work" / "ckpt"
+import project_state; project_state.LIVE_DIR = tmp / "work" / "ckpt" / "state"; project_state.ARCHIVE_DIR = tmp / "state"
 publish_due.WORK = tmp / "work" / "queue"
 bot.HISTORY = tmp / "topics_done.txt"
 bot.ASSETS = ROOT / "assets"
@@ -27,7 +28,7 @@ bot.ASSETS = ROOT / "assets"
 SR = bot.SR
 calls = []
 
-def fake_voice(scenes, max_total=52.0):
+def fake_voice(scenes, max_total=52.0, **kw):
     res = []
     for sc in scenes:
         ws = sc["text"].split()
@@ -61,6 +62,7 @@ virality.long_script = lambda ask, facts, safety, target_minutes=7: {
                sc("Ab fix ka time hai", 3)]}
 bot.make_voice = fake_voice
 bot.pick_clips = lambda *a, **k: []
+bot.pick_clips_batch = lambda items, *a, **k: [[] for _ in items]
 bot.Splash = FakeSplash
 (bot.ASSETS / "neurotriage_splash.json").exists() or (bot.ASSETS / "neurotriage_splash.json").write_text("{}")
 
@@ -75,8 +77,8 @@ publisher.instagram_reel = lambda video, caption: (ig_calls.append(Path(video).n
 
 
 voice_calls=[0]; orig=bot.make_voice
-def counting(scenes,max_total=52.0):
-    voice_calls[0]+=1; return orig(scenes,max_total)
+def counting(scenes,max_total=52.0,**kw):
+    voice_calls[0]+=1; return orig(scenes,max_total,**kw)
 bot.make_voice=counting
 real_render=bot.render_video
 state={"boom":True}
@@ -86,9 +88,10 @@ def flaky(*a,**k):
     return real_render(*a,**k)
 bot.render_video=flaky
 try:
-    bot.main(); raise SystemExit("should have failed")
-except RuntimeError as e:
-    print("attempt 1 failed as expected:", e)
+    bot.main(); raise AssertionError("should have failed")
+except SystemExit as e:        # round 1: short failure is isolated, run ends non-zero so retry/catch-up fires
+    assert "short" in str(e), e
+    print("attempt 1 failed as expected (isolated):", e)
 bot.main()      # attempt 2 (same job, retry loop)
 assert voice_calls[0]==1, voice_calls   # voice NOT re-synthesised (no ElevenLabs credits wasted)
 key=scheduler.now_ist().date().isoformat()
