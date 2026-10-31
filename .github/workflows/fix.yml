@@ -1,0 +1,26 @@
+name: Fix folders (one-time)
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Move files
+        run: |
+          mv_() { d="$1"; shift; mkdir -p "$d"; for f in "$@"; do [ -f "$f" ] && git mv -f "$f" "$d/" || true; done; }
+          mv_ tests test_*.py
+          mv_ vendor/claude_fx/fonts *.ttf OFL-*.txt LICENSE-PermanentMarker.txt
+          mv_ vendor/claude_fx/models yunet.onnx selfie_segmenter.tflite NOTICE.md
+          mv_ vendor/claude_fx/scripts fx.py words.py
+          mv_ vendor/claude_fx LICENSE
+          mv_ state topic_rotation.json
+          mv_ dashboard/api _gh.js download.js run.js status.js studio-*.js upload.js
+          mv_ dashboard index.html control.html sw.js icon.png icon-192.png icon-maskable.png manifest.webmanifest vercel.json package.json
+          for f in logo.png neurotriage_splash.json; do [ -f "$f" ] && git rm -q "$f" || true; done
+          mkdir -p queue state; touch queue/.gitkeep
+          git add -A
+          git config user.name "fix-bot"; git config user.email "fix@bot"
+          git commit -m "Fix folder structure" || echo nothing
+          git push
