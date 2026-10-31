@@ -18,6 +18,7 @@ import bot, virality, publisher, scheduler, publish_due, ckpt
 bot.ROOT = tmp
 bot.WORK, bot.OUT = tmp / "work", tmp / "output"
 ckpt.DIR = tmp / "work" / "ckpt"
+import project_state; project_state.LIVE_DIR = tmp / "work" / "ckpt" / "state"; project_state.ARCHIVE_DIR = tmp / "state"
 publish_due.WORK = tmp / "work" / "queue"
 bot.HISTORY = tmp / "topics_done.txt"
 bot.ASSETS = ROOT / "assets"
@@ -25,7 +26,7 @@ bot.ASSETS = ROOT / "assets"
 SR = bot.SR
 calls = []
 
-def fake_voice(scenes, max_total=52.0):
+def fake_voice(scenes, max_total=52.0, **kw):
     res = []
     for sc in scenes:
         ws = sc["text"].split()
@@ -59,6 +60,7 @@ virality.long_script = lambda ask, facts, safety, target_minutes=7: {
                sc("Ab fix ka time hai", 3)]}
 bot.make_voice = fake_voice
 bot.pick_clips = lambda *a, **k: []
+bot.pick_clips_batch = lambda items, *a, **k: [[] for _ in items]
 bot.Splash = FakeSplash
 (bot.ASSETS / "neurotriage_splash.json").exists() or (bot.ASSETS / "neurotriage_splash.json").write_text("{}")
 
@@ -98,11 +100,11 @@ assert publish_due.run(now=datetime.now(timezone.utc)) == 0 and not ig_calls
 # ---- 4. at publish time -> Instagram posted, manifest completes, YouTube/FB not re-posted
 later = datetime.fromisoformat(s["publish_at_utc"]) + timedelta(minutes=5)
 publish_due.run(now=later)
-assert ig_calls == ["final_reel.mp4"], ig_calls
+assert ig_calls == ["final_reel_ig.mp4"], ig_calls
 s2 = json.loads((tmp / "queue" / f"{key}-short.json").read_text())
 assert s2["status"] == "complete" and s2["platforms"]["instagram"]["status"] == "done"
 assert len(yt_calls) == n
-publish_due.run(now=later); assert ig_calls == ["final_reel.mp4"]
+publish_due.run(now=later); assert ig_calls == ["final_reel_ig.mp4"]
 print("publish_due OK (instagram once, idempotent)")
 
 # ---- 5. failure + retry accounting
