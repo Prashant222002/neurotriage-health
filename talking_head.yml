@@ -1,0 +1,86 @@
+name: Talking Head Edit
+run-name: "TH ${{ inputs.job }}"
+# Round 8/9: raw talking-head clip -> word-glow captions, silence cuts, zoom punch, topic-matched cards/inserts, shard/whip.
+# Steps are numbered on purpose: the Studio page reads them to show live progress + time left.
+on:
+  workflow_dispatch:
+    inputs:
+      job: {description: "Studio job id (page fills this)", required: false, default: "manual"}
+      video: {description: "Raw video: path in repo (raw/clip.mp4) OR direct https link OR YouTube link", required: true}
+      inserts: {description: "Screen recordings/images, comma separated (paths or https links). Khali = sirf cards", required: false, default: ""}
+      audio: {description: "Optional music/audio file (path or https link): mixed under your voice. Khali = sirf clip ki awaaz", required: false, default: ""}
+      audio_vol: {description: "Music volume 0.05-0.6 (default 0.22)", required: false, default: "0.22"}
+      style: {description: "Caption colour", type: choice, options: [red, white], default: red}
+      hook: {description: "Hook text (khali = AI khud)", required: false, default: ""}
+      handle: {description: "Profile card handle", required: false, default: "@neurotriage"}
+      cuts: {description: "Silence cut", type: choice, options: ["yes", "no"], default: "yes"}
+      endcard: {description: "End card (short only)", type: choice, options: ["yes", "no"], default: "yes"}
+permissions:
+  contents: write
+concurrency:
+  group: midnight-build
+  cancel-in-progress: false
+jobs:
+  edit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 170
+    env:
+      ALL_SECRETS_JSON: ${{ toJSON(secrets) }}
+      GH_TOKEN: ${{ github.token }}
+      IN_JOB: ${{ inputs.job }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11", cache: pip}
+      - name: System packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-montserrat fonts-noto-core fonts-dejavu-core
+      - name: Python packages
+        run: |
+          pip install -r requirements.txt
+          python -c "import keyring,sys; sys.exit(0 if keyring.ring('groq').slots else 1)" || pip install faster-whisper
+      - name: Get inputs
+        env: {IN_VIDEO: "${{ inputs.video }}", IN_INSERTS: "${{ inputs.inserts }}", IN_AUDIO: "${{ inputs.audio }}"}
+        run: |
+          mkdir -p work_in/ins
+          fetch() { case "$1" in http*) curl -fL --retry 3 -o "$2" "$1" ;; *) cp "$1" "$2" ;; esac; }
+          case "$IN_VIDEO" in
+            *youtube.com/*|*youtu.be/*)
+              pip install -q yt-dlp
+              yt-dlp -f "bv*[height<=1080]+ba/b" --merge-output-format mp4 --no-playlist -o work_in/clip.mp4 "$IN_VIDEO" ;;
+            *) fetch "$IN_VIDEO" work_in/clip.mp4 ;;
+          esac
+          if [ -n "$IN_AUDIO" ]; then ext="${IN_AUDIO%%\?*}"; ext="${ext##*.}"; case "$ext" in mp3|wav|m4a|aac|ogg|mp4|mov|webm) ;; *) ext=mp3 ;; esac; fetch "$IN_AUDIO" "work_in/music.$ext"; fi
+          echo "$IN_INSERTS" | tr ',' '\n' | while read -r p; do [ -n "$p" ] && fetch "$p" "work_in/ins/$(basename "${p%%\?*}")"; done; true
+      - name: "1 Transcribe and cut"
+        env: {IN_CUTS: "${{ inputs.cuts }}"}
+        run: |
+          args=(--stage 1 --video work_in/clip.mp4 --work work_th)
+          [ "$IN_CUTS" = "no" ] && args+=(--no-cuts)
+          python talking_head.py "${args[@]}"
+          job=$(echo "$IN_JOB" | tr -cd 'a-z0-9'); [ -z "$job" ] && job=$GITHUB_RUN_ID
+          gh release delete "th-$job" --cleanup-tag -y 2>/dev/null || true
+          gh release create "th-$job" --prerelease --title "th-$job" --notes-file work_th/progress.json
+      - name: "2 Plan topics"
+        env: {IN_HOOK: "${{ inputs.hook }}", IN_HANDLE: "${{ inputs.handle }}"}
+        run: |
+          args=(--stage 2 --work work_th --hook "$IN_HOOK" --handle "$IN_HANDLE")
+          ins=$(ls work_in/ins/* 2>/dev/null | paste -sd, -); [ -n "$ins" ] && args+=(--inserts "$ins")
+          python talking_head.py "${args[@]}"
+      - name: "3 Render"
+        env: {IN_AUDIO_VOL: "${{ inputs.audio_vol }}", IN_STYLE: "${{ inputs.style }}", IN_ENDCARD: "${{ inputs.endcard }}", IN_HANDLE: "${{ inputs.handle }}"}
+        run: |
+          args=(--stage 3 --work work_th --style "$IN_STYLE" --handle "$IN_HANDLE" --out output/th)
+          [ "$IN_ENDCARD" = "no" ] && args+=(--no-endcard)
+          music=$(ls work_in/music.* 2>/dev/null | head -1); [ -n "$music" ] && args+=(--audio "$music" --audio-vol "${IN_AUDIO_VOL:-0.22}")
+          python talking_head.py "${args[@]}"
+      - name: "4 Finish"
+        run: |
+          job=$(echo "$IN_JOB" | tr -cd 'a-z0-9'); [ -z "$job" ] && job=$GITHUB_RUN_ID
+          python -c "import json;r=json.load(open('output/th/th_report.json'));json.dump(r['meta'],open('notes.json','w'),ensure_ascii=False)"
+          gh release upload "th-$job" output/th/final_th.mp4 output/th/th_report.json output/th/cover.jpg --clobber
+          gh release edit "th-$job" --prerelease=false --notes-file notes.json
+          gh release list --limit 100 --json tagName --jq '.[]|select(.tagName|startswith("th-"))|.tagName' | tail -n +9 | xargs -r -I{} gh release delete {} --cleanup-tag -y
+      - uses: actions/upload-artifact@v4
+        with: {name: talking-head-result, path: output/th, retention-days: 3}

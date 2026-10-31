@@ -1,5 +1,7 @@
 name: Midnight Build
 
+# SHORT ONLY (round 4). The Long video has its own workflow: build_long.yml. Both share one concurrency group,
+# so two videos are never built at the same time.
 # 00:00 IST main build. 02:00 and 04:00 IST are CATCH-UPS: if GitHub started the 00:00 run late, was busy,
 # or the build died, they pick up the checkpoints and finish it. If today's video is already built they exit in seconds.
 on:
@@ -9,12 +11,21 @@ on:
     - cron: "30 22 * * *"    # 04:00 IST catch-up
   workflow_dispatch:
     inputs:
-      force_long:
-        description: "Aaj long video bhi banao? (1 = haan)"
+      publish_when:
+        description: "scheduled = schedule time par live | now = TURANT PUBLIC publish (privacy ignore)"
+        type: choice
+        options: [scheduled, now]
+        default: scheduled
+      publish_time_ist:
+        description: "Schedule time IST, HH:MM (khali = Short 10:00, Long 19:00). Aaj ka time nikal gaya ho to agla din."
         required: false
         default: ""
       publish_asap:
         description: "Schedule ignore karo, ~25 min baad publish (1 = haan)"
+        required: false
+        default: ""
+      unlock_script:
+        description: "Aaj ki locked script hatakar nayi banao (1 = haan). Sirf tumhari permission se script badalti hai."
         required: false
         default: ""
       force_rebuild:
@@ -63,8 +74,23 @@ jobs:
           key: ckpt-${{ steps.d.outputs.date }}-${{ github.run_id }}
           restore-keys: ckpt-${{ steps.d.outputs.date }}-
 
+      - name: Restore footage cache (stock clips + search results from earlier runs)
+        uses: actions/cache/restore@v4
+        with:
+          path: work/footage
+          key: footage-${{ github.run_id }}
+          restore-keys: footage-
+
+      - name: API key health check (which keys work, which secrets are named wrong)
+        continue-on-error: true
+        env:
+          ALL_SECRETS_JSON: ${{ toJSON(secrets) }}
+        run: python healthcheck.py
+
       - name: Build (3 attempts, resumes from checkpoints)
         env:
+          # every secret, so GROQ_API_KEY_3..10 / ELEVEN_API_KEY_1..10 / XAI_... work without editing this file
+          ALL_SECRETS_JSON: ${{ toJSON(secrets) }}
           # ---- LLM (research + script) ----
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_API_KEY_2: ${{ secrets.GROQ_API_KEY_2 }}
@@ -97,14 +123,21 @@ jobs:
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
           # ---- Schedule ----
-          QUEUE_MODE: "on"                    # build now, publish at the scheduled time
-          PUBLISH_TIME_SHORT_IST: "10:00"     # Short goes live (YouTube + Facebook + Instagram)
-          PUBLISH_TIME_LONG_IST: "19:00"      # Long video goes live (YouTube)
+          LONG_VOICE: local                   # local = Long video uses free English TTS (saves ElevenLabs). eleven = Hinglish ElevenLabs
+          ELEVEN_FALLBACK: english            # english = if ElevenLabs fails, use English TTS (with a loud warning). fail = stop instead
+          # Round 3: normal (automatic) runs make a SHORT only. Run workflow -> video_type = long / both for a Long video.
+          VIDEO_TYPE: short                   # this workflow never builds a Long video (see build_long.yml)
+          AUTO_LONG: "off"
+          UNLOCK_SCRIPT: ${{ github.event.inputs.unlock_script }}
+          QUEUE_MODE: ${{ github.event.inputs.publish_when == 'now' && 'off' || 'on' }}   # off = publish immediately after the build
+          PUBLISH_TIME_SHORT_IST: ${{ github.event.inputs.publish_time_ist || '10:00' }}   # Short goes live (YouTube + Facebook + Instagram)
+          PUBLISH_TIME_LONG_IST: "19:00"
+          LOGO: "on"                          # off = no logo anywhere
           PUBLISH_ASAP: ${{ github.event.inputs.publish_asap }}
           FORCE_REBUILD: ${{ github.event.inputs.force_rebuild }}
           NATIVE_SCHEDULE: "on"               # YouTube + Facebook schedule themselves; Instagram posted by publish.yml
           CYCLE_START: "2026-11-01"           # day 1 of the 7-day loop; day 7 = short + long video
-          FORCE_LONG: ${{ github.event.inputs.force_long }}
+          FORCE_LONG: ""
           # ---- Quality / look ----
           RENDER_PRESET: "slow"               # Short: slow encode = better quality (time is not a problem at midnight)
           LONG_PRESET: "medium"
@@ -113,7 +146,8 @@ jobs:
           LONG_VISION: "on"                   # Gemini picks the best stock clip per long-video scene
           CAPTION_STYLE: "auto"               # auto (rotates daily) | pop | box | karaoke | bounce | glow
           # ---- Misc ----
-          PRIVACY: private                    # YouTube: change to "public" after you have checked a few videos
+          # scheduled runs use the value after '||' (change 'private' to 'public' once you trust the videos). publish_when=now is always PUBLIC.
+          PRIVACY: ${{ github.event.inputs.publish_when == 'now' && 'public' || 'private' }}
           VOICE: "en-US-AndrewMultilingualNeural"   # English fallback voice only
           MODE: auto
           MUSIC: "on"
@@ -142,6 +176,13 @@ jobs:
             work/long_seg
           key: ckpt-${{ steps.d.outputs.date }}-${{ github.run_id }}
 
+      - name: Save footage cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: work/footage
+          key: footage-${{ github.run_id }}
+
       - name: Which day is in the queue?
         id: qk
         if: always()
@@ -157,7 +198,7 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
 
-      - name: Queue artifact - Long
+      - name: Queue artifact - Long (never used here)
         if: always() && steps.qk.outputs.key != ''
         uses: actions/upload-artifact@v4
         with:
@@ -172,7 +213,9 @@ jobs:
         with:
           name: build-info
           path: |
+            state/*.json
             output/meta.json
+            output/step_report.json
             output/publish_report.json
             output/long/long_meta.json
           retention-days: 7
@@ -183,6 +226,6 @@ jobs:
         run: |
           git config user.name "reel-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add topics_done.txt queue/ 2>/dev/null || true
+          git add topics_done.txt queue/ state/ 2>/dev/null || true
           git commit -m "build: topic log + queue manifests" || echo "nothing to commit"
           for i in 1 2 3 4 5; do git pull --rebase -q && git push && break || sleep 6; done

@@ -1,1 +1,2 @@
-# manifests of built-but-not-yet-published videos (written by the bot)
+Project memory per video (script lock, research, which AI did what). Written by the bot, committed by build.yml. Leave this folder.
+Key values are never stored here, only key labels.

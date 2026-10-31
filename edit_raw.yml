@@ -1,0 +1,84 @@
+name: Edit Raw Video
+
+# Button workflow (round 5c). Put your raw clip in the repo folder raw/ (or paste a direct download link),
+# optionally your own audio, press "Run workflow". Result = Artifacts: final_raw.mp4 (+ _4k, _ig) and raw_report.json.
+# It never publishes anything and needs no API keys. Shares the build's concurrency group: never two heavy jobs at once.
+on:
+  workflow_dispatch:
+    inputs:
+      video:
+        description: "Raw video: path in repo (raw/clip.mp4) OR direct https link"
+        required: true
+      audio:
+        description: "Your own audio (path in repo or https link). Khali = clip ki apni awaaz"
+        required: false
+        default: ""
+      hook:
+        description: "Hook text, pehle 2 sec screen par (khali = koi nahi)"
+        required: false
+        default: ""
+      method:
+        description: "Watermark hatana: auto (zoom-crop, nahi toh blur+logo) | crop | blur | none"
+        type: choice
+        options: [auto, crop, blur, none]
+        default: auto
+      box:
+        description: "Watermark ki jagah haath se: x,y,w,h pixels (khali = khud dhoondhe)"
+        required: false
+        default: ""
+      endcard:
+        description: "End card (Like/Share/Follow + Try NeuroTriage)"
+        type: choice
+        options: ["yes", "no"]
+        default: "yes"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: midnight-build
+  cancel-in-progress: false
+
+jobs:
+  edit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: System packages (ffmpeg + fonts)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-montserrat fonts-noto-core
+      - name: Python packages
+        run: pip install -r requirements.txt
+      - name: Get inputs
+        env:
+          IN_VIDEO: ${{ inputs.video }}
+          IN_AUDIO: ${{ inputs.audio }}
+        run: |
+          mkdir -p work_in
+          fetch() { case "$1" in http*) curl -fL --retry 3 -o "$2" "$1" ;; *) cp "$1" "$2" ;; esac; }
+          fetch "$IN_VIDEO" work_in/clip.mp4
+          if [ -n "$IN_AUDIO" ]; then fetch "$IN_AUDIO" work_in/own_audio; fi
+      - name: Edit
+        env:
+          IN_HOOK: ${{ inputs.hook }}
+          IN_METHOD: ${{ inputs.method }}
+          IN_BOX: ${{ inputs.box }}
+          IN_ENDCARD: ${{ inputs.endcard }}
+        run: |
+          args=(--video work_in/clip.mp4 --method "$IN_METHOD" --hook "$IN_HOOK" --out output/raw)
+          [ -f work_in/own_audio ] && args+=(--audio work_in/own_audio)
+          [ -n "$IN_BOX" ] && args+=(--box "$IN_BOX")
+          [ "$IN_ENDCARD" = "no" ] && args+=(--no-endcard)
+          python raw_edit.py "${args[@]}"
+      - name: Result
+        uses: actions/upload-artifact@v4
+        with:
+          name: raw-edit-result
+          path: output/raw
+          retention-days: 7

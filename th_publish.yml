@@ -1,0 +1,45 @@
+name: Studio Publish
+run-name: "THP ${{ inputs.job }}"
+# Uploads an edited Studio video (release th-<job>) to YouTube. Started by the Studio page after the password check.
+on:
+  workflow_dispatch:
+    inputs:
+      job: {description: "Studio job id", required: true}
+      title: {description: "Title", required: true}
+      description: {description: "Description", required: false, default: ""}
+      tags: {description: "Tags, comma separated", required: false, default: ""}
+      privacy: {description: "public | unlisted | private", required: false, default: "public"}
+      platforms: {description: "youtube,instagram,facebook (long video = youtube only)", required: false, default: "youtube"}
+permissions:
+  contents: write
+concurrency:
+  group: studio-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install requests google-api-python-client google-auth
+      - name: Upload to YouTube
+        env:
+          GH_TOKEN: ${{ github.token }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          IN_JOB: ${{ inputs.job }}
+          IN_TITLE: ${{ inputs.title }}
+          IN_DESC: ${{ inputs.description }}
+          IN_TAGS: ${{ inputs.tags }}
+          IN_PRIV: ${{ inputs.privacy }}
+          IN_PLATS: ${{ inputs.platforms }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+        run: |
+          job=$(echo "$IN_JOB" | tr -cd 'a-z0-9')
+          python th_publish.py "$job" "$IN_TITLE" "$IN_DESC" "$IN_TAGS" "$IN_PRIV" "$IN_PLATS"

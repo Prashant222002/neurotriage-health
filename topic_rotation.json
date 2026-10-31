@@ -1,0 +1,45 @@
+{
+ "n_regular": 29,
+ "subjects": {
+  "disorder": [
+   "Generalized anxiety (constant worry)",
+   "Panic attacks",
+   "Social anxiety",
+   "Depression vs normal sadness",
+   "ADHD in adults and students",
+   "OCD (it is not just being neat)",
+   "Burnout",
+   "Insomnia and racing thoughts",
+   "Bipolar disorder basics",
+   "PTSD and trauma response",
+   "Health anxiety",
+   "Exam / test anxiety",
+   "Perfectionism and anxiety"
+  ],
+  "habit": [
+   "Active recall",
+   "Spaced repetition",
+   "Pomodoro and focus blocks",
+   "Sleep and memory",
+   "Phone distraction",
+   "Morning routine",
+   "Deep work",
+   "Habit stacking",
+   "The 2-minute rule",
+   "Feynman technique",
+   "Exercise and focus",
+   "Note-taking that works"
+  ]
+ },
+ "students": [
+  "placement / coding aspirant",
+  "school student (class 9-12)",
+  "board-exam student",
+  "JEE aspirant",
+  "NEET aspirant",
+  "UPSC / SSC / government-exam aspirant",
+  "UPSC / SSC / government-exam aspirant"
+ ],
+ "trends": [],
+ "last_kind": ""
+}

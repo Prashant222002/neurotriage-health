@@ -1,0 +1,31 @@
+name: Best Posting Time (weekly)
+# Round 7: looks at your last uploads once a week and moves the Short/Long slot by at most 1 hour toward the best hour.
+on:
+  schedule:
+    - cron: "0 12 * * 6"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: analytics
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11", cache: pip }
+      - run: pip install -r requirements.txt
+      - name: Analyse
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python analytics.py
+      - name: Save
+        run: |
+          git config user.name "bot"; git config user.email "bot@users.noreply.github.com"
+          git add state/best_time.json || true
+          git diff --cached --quiet || (git commit -m "best posting time" && git push)
