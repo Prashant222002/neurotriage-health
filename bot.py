@@ -1,4 +1,4 @@
-"""NeuroTriage Auto Reel Bot v6
+"""NeuroTriage Auto Reel Bot v7 (Hinglish + ElevenLabs + virality + multi-platform)
 research -> script -> per-scene voice -> relevant stock (Gemini picks) -> pro edit
 (grade, camera moves, motion-blur transitions, kinetic captions, motion graphics,
 ambient music, Lottie end splash) -> YouTube.
@@ -15,6 +15,9 @@ import requests
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 cv2.setNumThreads(2)
+
+import eleven_voice, virality, publisher      # v7 modules (same folder)
+import ckpt, scheduler, long_render, caption_styles, publish_due   # v8 modules
 
 # ------------------------------------------------------------------ settings
 W, H, FPS = 1080, 1920, 30
@@ -33,6 +36,14 @@ MODE = os.environ.get("MODE", "auto")          # auto | awareness | student
 PRIVACY = os.environ.get("PRIVACY", "private")
 MUSIC_ON = os.environ.get("MUSIC", "on").lower() != "off"
 SEED = os.environ.get("SEED")
+RENDER_PRESET = os.environ.get("RENDER_PRESET", "medium")        # midnight build uses "slow" (better quality, no rush)
+CAPTION_STYLE = os.environ.get("CAPTION_STYLE", "auto")          # auto | pop | box | karaoke | bounce | glow
+QUEUE_MODE = os.environ.get("QUEUE_MODE", "off").lower() == "on"  # on = build now, publish at scheduled time
+NATIVE_SCHEDULE = os.environ.get("NATIVE_SCHEDULE", "on").lower() != "off"
+LONG_RENDER = os.environ.get("LONG_RENDER", "on").lower() != "off"   # on = real 16:9 long video (else script kit only)
+LONG_VISION = os.environ.get("LONG_VISION", "on").lower() != "off"   # Gemini picks best stock clip per scene
+FORCE_REBUILD = os.environ.get("FORCE_REBUILD", "").lower() in ("1", "true", "yes")
+LANDSCAPE = False                                                # set True while picking clips for the 16:9 long video
 BRAND_NAME = os.environ.get("BRAND_NAME", "NeuroTriage")
 SITE_URL = os.environ.get("SITE_URL", "https://www.neurotriage.in/")
 SITE_SHORT = os.environ.get("SITE_SHORT", "neurotriage.in")
@@ -47,6 +58,9 @@ CTA_AWARENESS = os.environ.get(
     "CTA_AWARENESS", f"Take a free screening at [{SITE_WWW}|{SPOKEN_URL}].")
 CTA_STUDENT = os.environ.get(
     "CTA_STUDENT", f"Boost your productivity at [{SITE_WWW}|{SPOKEN_URL}].")
+
+CTA_AWARENESS_HI = f"Free screening ke liye [{SITE_WWW}|{SPOKEN_URL}] par jao."
+CTA_STUDENT_HI = f"Apni productivity badhane ke liye [{SITE_WWW}|{SPOKEN_URL}] par jao."
 
 SAFETY = """Safety rules (must follow):
 - Educational only. Never diagnose, never tell viewers they 'have' a disorder.
@@ -521,6 +535,12 @@ def pick_mode():
 
 
 def research(done, mode):
+    try:                                             # v7: real outlier data + 21 formulas
+        t = virality.viral_brief(ask, done, mode, SAFETY)
+        if t:
+            return t
+    except Exception as e:
+        log("[research] viral brief failed, old research:", str(e)[:100])
     if mode == "awareness":
         focus = ("mental health, psychology and psychiatry awareness for young Indian "
                  "viewers (e.g. how anxiety/stress/burnout/sleep affect the brain, myths vs facts, "
@@ -547,12 +567,16 @@ def write_script(facts):
 
 {SAFETY}
 
-Write a ~45 second English Reel as a list of SCENES. Return ONLY JSON with keys:
-"title": viral Shorts title in simple English, max 70 chars, no hashtags, no clickbait lies.
+Write a ~45 second HINGLISH Reel as a list of SCENES. Return ONLY JSON with keys:
+"title": viral Shorts title in natural Hinglish (Roman script), max 70 chars, no hashtags, no clickbait lies.
+"title_en": the same title in simple English.
+"formula": name of the hook formula used (from the 21).
 "kicker": 2-3 word UPPERCASE label shown on screen at the start (e.g. "BRAIN SCIENCE", "STUDY HACK").
 "scenes": a list of 11 to 13 scenes. Each scene is an object with:
-   "text": ONE short spoken sentence or part of a sentence (7-12 words), simple conversational
-      Indian-friendly English written to be SPOKEN (contractions, natural, no emojis, no jargon).
+   "text": ONE short spoken sentence or part of a sentence (7-12 words) in natural HINGLISH written in
+      Roman script (Hindi words in English letters, the way an Indian senior talks to juniors; no Devanagari,
+      no emojis, no jargon), written to be SPOKEN.
+   "text_en": the SAME line in simple conversational English (used only if the Hindi voice is unavailable).
       Scene 1 is a strong hook (a question or a surprising fact). The last scene is one practical takeaway.
       Do NOT mention any website or app (added automatically).
    "queries": a list of 3 stock-VIDEO search phrases (2-4 plain English words each) for what is
@@ -563,7 +587,8 @@ Write a ~45 second English Reel as a list of SCENES. Return ONLY JSON with keys:
       Calm, bright or warm, non-graphic, non-stigmatising visuals; never a person in visible distress.
    "emphasis": OPTIONAL, only in 3-4 scenes: the 1-3 most important words of that line, to be
       shown big on screen (e.g. "FREEZE RESPONSE"). Use "" for the other scenes.
-Total narration across all scenes: 100-112 words.
+Total narration across all scenes: 100-112 words (in each language).
+{virality.VIRAL_RULES}
 "description": 2-3 line English description.
 "hashtags": list of 6 hashtags (with #).
 Facts must be accurate; do not invent numbers."""
@@ -585,10 +610,12 @@ Facts must be accurate; do not invent numbers."""
                     q.append(str(x["fallback"]))
                 if x.get("text") and q:
                     sc.append({"text": str(x["text"]).strip(), "queries": q,
+                               "text_en": str(x.get("text_en") or x["text"]).strip(),
                                "emphasis": str(x.get("emphasis") or "").strip().upper()[:28]})
             assert len(sc) >= 6
             data["scenes"] = sc
             data["kicker"] = str(data.get("kicker") or "DID YOU KNOW").upper()[:24]
+            data["title_en"] = str(data.get("title_en") or data["title"])
             return data
         except Exception as e:
             log("[script] bad JSON, retrying:", e)
@@ -687,7 +714,10 @@ def spoken_word_times(spoken, ev, a0, a1):
 def synth_scene(text, voice, rate):
     items = parse_text(text)
     spoken = [w for _, s in items for w in s]
-    audio, ev = asyncio.run(_tts(" ".join(spoken), voice, rate))
+    if voice == "ELEVEN":
+        audio, ev = eleven_voice.tts(" ".join(spoken))
+    else:
+        audio, ev = asyncio.run(_tts(" ".join(spoken), voice, rate))
     x = decode_audio(audio)
     env = np.abs(x)
     idx = np.where(env > 0.012)[0]
@@ -708,7 +738,7 @@ def synth_scene(text, voice, rate):
     return y, dur, words
 
 
-def make_voice(scenes, max_total=52.0):
+def _make_voice_edge(scenes, max_total=52.0):
     voices = [VOICE] + [v for v in FALLBACK_VOICES if v != VOICE]
     for voice in voices:
         for rate in ("+0%", "+7%", "+13%"):
@@ -732,6 +762,29 @@ def make_voice(scenes, max_total=52.0):
             if total <= max_total or rate == "+13%":
                 return res, voice
     sys.exit("Voice generation failed.")
+
+
+def make_voice(scenes, max_total=52.0):
+    """1) ElevenLabs Hinglish (10 keys, model+voice fallback)  2) edge-tts with ENGLISH text_en.
+    Returns (res, voice_name, lang). Captions always follow the language that was actually voiced."""
+    if eleven_voice.available():
+        for sp in (1.05, 1.12, 1.18):
+            eleven_voice.SPEED[0] = sp
+            try:
+                res = [synth_scene(sc["text"], "ELEVEN", "+0%") for sc in scenes]
+            except Exception as e:
+                log("[voice] ElevenLabs failed -> English fallback:", str(e)[:240])
+                break
+            total = sum(r[1] for r in res) + 0.2 * len(res)
+            log(f"[voice] ElevenLabs speed {sp}: {total:.1f}s")
+            if total <= max_total or sp == 1.18:
+                return res, "ELEVEN", "hinglish"
+    else:
+        log("[voice] no ElevenLabs key available -> English fallback")
+    for sc in scenes:
+        sc["text"] = sc.get("text_en") or sc["text"]
+    res, voice = _make_voice_edge(scenes, max_total)
+    return res, voice, "english"
 
 
 def audio_filter(x, af, sr=SR, ch=1):
@@ -924,7 +977,9 @@ def _pexels(q, n=10):
     if not PEXELS_KEY:
         return []
     out = []
-    for params in ({"orientation": "portrait", "size": "medium"}, {"size": "large"}):
+    sets = ({"orientation": "landscape", "size": "large"},) if LANDSCAPE else (
+        {"orientation": "portrait", "size": "medium"}, {"size": "large"})
+    for params in sets:
         try:
             r = requests.get("https://api.pexels.com/videos/search",
                              headers={"Authorization": PEXELS_KEY},
@@ -936,7 +991,11 @@ def _pexels(q, n=10):
                 if not files:
                     continue
                 port = [f for f in files if f["height"] > f["width"]]
-                if port:
+                if LANDSCAPE:
+                    land = [f for f in files if f["width"] > f["height"]]
+                    ok = [f for f in land if f["width"] <= 2600] or land or files
+                    f = min(ok, key=lambda f: abs(f["width"] - 1920))
+                elif port:
                     f = min(port, key=lambda f: abs(f["height"] - 1920))
                 else:
                     ok = [f for f in files if f["height"] <= 2200] or files
@@ -946,7 +1005,7 @@ def _pexels(q, n=10):
                             "w": f["width"], "h": f["height"], "portrait": f["height"] > f["width"]})
         except Exception as e:
             log("[pexels]", q, str(e)[:100])
-        if len([o for o in out if o["portrait"]]) >= 4:
+        if not LANDSCAPE and len([o for o in out if o["portrait"]]) >= 4:
             break
     return out
 
@@ -984,9 +1043,13 @@ def gather_candidates(queries, need):
                 continue
             seen.add(c["id"])
             c["qrank"] = qi
-            c["score"] = ((2.5 if c["portrait"] else 0) + min(c["dur"] / max(need, 0.5), 1.6)
-                          + (0.7 if c["h"] >= 1900 else 0.4 if c["h"] >= 1440 else 0.1 if c["h"] >= 1080 else -1.0)
-                          + 0.6 / (1 + qi))
+            if LANDSCAPE:
+                fit = 2.0 if not c["portrait"] else -3.0
+                res_ = 0.7 if c["w"] >= 1900 else 0.4 if c["w"] >= 1280 else -1.0
+            else:
+                fit = 2.5 if c["portrait"] else 0
+                res_ = 0.7 if c["h"] >= 1900 else 0.4 if c["h"] >= 1440 else 0.1 if c["h"] >= 1080 else -1.0
+            c["score"] = fit + min(c["dur"] / max(need, 0.5), 1.6) + res_ + 0.6 / (1 + qi)
             cands.append(c)
     cands.sort(key=lambda c: -c["score"])
     return cands[:6]
@@ -1019,7 +1082,7 @@ def contact_sheet(cands):
 
 def vision_pick(text, topic, cands):
     """Gemini image dekh ke best 2 clips chunta hai. returns (ordered idx list, relevant: bool)."""
-    if not cands or not KEYS:
+    if not cands or not KEYS or (LANDSCAPE and not LONG_VISION):
         return list(range(len(cands))), True
     prompt = f"""These are {len(cands)} stock-video preview frames numbered 1..{len(cands)}.
 A calm educational mental-health/study reel for young Indian viewers (topic: {topic}) says this line:
@@ -1348,10 +1411,19 @@ class Captions:
             if cur:
                 gap = w[1] - cur[-1][2]
                 chars = sum(len(c[0]) for c in cur) + len(txt)
-                if len(cur) >= 3 or chars > 19 or gap > 0.38 or re.search(r"[.,?!;:]$", cur[-1][3]):
+                if len(cur) >= 4 or chars > 26 or gap > 0.45 or re.search(r"[.?!;:]$", cur[-1][3]):
                     flush()
             cur.append((txt.upper() if "." not in txt else txt, w[1], w[2], w[0]))
         flush()
+        merged = []                                  # v7: no one-word orphan pages ("SLOT", "SET A TIMER")
+        for pg in self.pages:
+            if (merged and len(pg) == 1 and len(merged[-1]) <= 3
+                    and sum(len(c[0]) for c in merged[-1]) + len(pg[0][0]) <= 26
+                    and pg[0][1] - merged[-1][-1][2] < 0.5):
+                merged[-1].extend(pg)
+            else:
+                merged.append(pg)
+        self.pages = merged
         self.starts = [p[0][1] for p in self.pages]
         self.ends = []
         for i, p in enumerate(self.pages):
@@ -1430,6 +1502,18 @@ class Captions:
         a = clamp01(u / 3.0) * alpha
         spr = scaled(spr, sc)
         blit(frame, spr, (W - spr.shape[1]) / 2, cy - spr.shape[0] / 2, a)
+
+
+CAPTION_USED = ["pop"]
+
+
+def make_captions(words):
+    st = caption_styles.pick_style(CAPTION_STYLE, scheduler.now_ist().date())
+    CAPTION_USED[0] = st
+    log("   caption style:", st)
+    if st == "pop":
+        return Captions(words)                       # v7 look
+    return caption_styles.StyledCaptions(words, st, W, H)
 
 
 def pill(text, size, c1, c2, padx=34, pady=18, alpha=240):
@@ -1511,7 +1595,7 @@ class HUD:
                 k = 0.7 + 0.3 * ease_out_back(u / 9.0)
                 a = clamp01(u / 3.0) * (1 - clamp01((t - (e - 0.25)) / 0.25)) * alpha
                 sp = scaled(spr, k)
-                blit(frame, sp, (W - sp.shape[1]) / 2, 600 - sp.shape[0] / 2, a)
+                blit(frame, sp, (W - sp.shape[1]) / 2, 940 - sp.shape[0] / 2, a)
 
 
 def _dir_blur(img, L, horizontal):
@@ -1639,7 +1723,7 @@ def render_video(scenes, res, starts, splash_start, clips_per_scene, kicker, spl
     words = []
     for i, (_, _, ws) in enumerate(res):
         words += [(w, starts[i] + s, starts[i] + e) for (w, s, e) in ws]
-    caps = Captions(words)
+    caps = make_captions(words)
     emph = []
     for i, sc in enumerate(scenes):
         if sc.get("emphasis"):
@@ -1651,7 +1735,7 @@ def render_video(scenes, res, starts, splash_start, clips_per_scene, kicker, spl
 
     enc = subprocess.Popen(
         ["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS),
-         "-i", "-", "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p",
+         "-i", "-", "-c:v", "libx264", "-preset", RENDER_PRESET, "-crf", "18", "-pix_fmt", "yuv420p",
          "-profile:v", "high", "-movflags", "+faststart", str(out_video)],
         stdin=subprocess.PIPE)
     t0 = time.time()
@@ -1769,51 +1853,212 @@ def compose_audio(res, starts, splash_start, kinds, emph_starts, total_t):
     return stereo
 
 
-def main():
-    if not KEYS and not GROQ_KEYS:
-        sys.exit("GROQ_API_KEY ya GEMINI_API_KEY set karo.")
-    log(f"[llm] groq keys: {len(GROQ_KEYS)}, gemini keys: {len(KEYS)}")
-    global MODELS
-    MODELS = discover_models()
-    WORK.mkdir(exist_ok=True)
-    OUT.mkdir(exist_ok=True)
-    rng = random.Random(SEED) if SEED else random.Random()
-    done = HISTORY.read_text(encoding="utf-8").splitlines() if HISTORY.exists() else []
+def make_long_kit(facts, mode):
+    """Script-only fallback (LONG_RENDER=off): saves script + packaging into output/long/."""
+    ls = virality.long_script(ask, facts, SAFETY)
+    if not ls:
+        return {"ok": False, "error": "long script failed"}
+    pk = virality.packaging(ask, {"title": ls.get("title"), "scenes": ls["scenes"], "hashtags": []}, mode, long=True)
+    d = OUT / "long"
+    d.mkdir(exist_ok=True)
+    (d / "long_script.json").write_text(json.dumps({"script": ls, "packaging": pk}, ensure_ascii=False, indent=2),
+                                        encoding="utf-8")
+    return {"ok": True, "scenes": len(ls["scenes"]), "title": pk.get("title")}
 
-    mode = pick_mode()
-    log("mode:", mode)
-    log("1/6 research...")
-    facts = research(done, mode)
+
+def _apply_lang(scenes, lang):
+    """make_voice swaps text -> text_en when it falls back to English; redo that after a checkpoint resume."""
+    if lang != "hinglish":
+        for sc in scenes:
+            sc["text"] = sc.get("text_en") or sc["text"]
+
+
+def _clips_ok(v):
+    return all(Path(c["path"]).exists() for lst in v for c in lst)
+
+
+def _voice_track(res, starts, total_t):
+    n = int(total_t * SR)
+    v = np.zeros(n, np.float32)
+    for (y, _, _), st in zip(res, starts):
+        a = int(st * SR)
+        v[a:a + len(y)] += y[: max(0, n - a)]
+    return v
+
+
+# ================================================================== LONG VIDEO (Phase 2)
+def make_long_video(facts, mode, key, rng):
+    """16:9 long video: script -> Hinglish ElevenLabs narration -> landscape stock -> chaptered render
+    (3D chapter cards, stat cards, captions, end card) -> mix -> thumbnail -> description with chapters."""
+    global LANDSCAPE
+    ls = ckpt.stage("long_script", lambda: virality.long_script(ask, facts, SAFETY), key, log=log)
+    if not ls:
+        raise RuntimeError("long script failed")
+    pk = ckpt.stage("long_pack", lambda: virality.packaging(
+        ask, {"title": ls.get("title"), "scenes": ls["scenes"], "hashtags": []}, mode, long=True), key, log=log)
+    scenes = [dict(sc) for sc in ls["scenes"]]
+    chapters = [c.get("name", f"Part {i + 1}") for i, c in enumerate(ls.get("chapters", []))] or ["Hook", "Core", "Fix"]
+    last_ch = max(sc.get("chapter", 1) for sc in scenes)
+    cta = CTA_AWARENESS_HI if mode == "awareness" else CTA_STUDENT_HI
+    cta_en = CTA_AWARENESS if mode == "awareness" else CTA_STUDENT
+    scenes.append({"text": cta, "text_en": cta_en, "queries": ["person using laptop", "typing laptop desk"],
+                   "emphasis": "", "chapter": last_ch})
+    log(f"[long] {len(scenes)} scenes, {len(chapters)} chapters")
+    res, voice, lang = ckpt.stage("long_voice", lambda: make_voice(scenes, max_total=1e9), key, log=log)
+    _apply_lang(scenes, lang)
+    starts, segs, total_t, voice_end = long_render.long_timeline(scenes, [r[1] for r in res])
+    log(f"[long] voice={voice} lang={lang} narration {voice_end / 60:.1f} min, total {total_t / 60:.1f} min")
+
+    def pick_all():
+        global LANDSCAPE
+        LANDSCAPE = True
+        try:
+            out = []
+            for i, sc in enumerate(scenes):
+                need = res[i][1] + 0.5
+                try:
+                    out.append(pick_clips(sc, ls.get("title", ""), need, 2 if need >= 4.6 else 1))
+                except Exception as e:
+                    log("[long clip] scene", i + 1, "error:", str(e)[:100])
+                    out.append([])
+                time.sleep(0.5)                              # slow and gentle on free API limits
+            return out
+        finally:
+            LANDSCAPE = False
+    clips = ckpt.stage("long_clips", pick_all, key, validate=_clips_ok, log=log)
+
+    fps = int(os.environ.get("LONG_FPS", "24"))
+    R = long_render.LongRenderer(scenes, res, starts, segs, total_t, voice_end, chapters, WORK / "long_seg", fps=fps,
+                                 brand=BRAND_NAME, site=SITE_SHORT, assets=ASSETS, preset=os.environ.get("LONG_PRESET", RENDER_PRESET),
+                                 log=log)
+    vid_only = WORK / "long_video_only.mp4"
+    R.render(clips, vid_only)
+
+    log("[long] audio mix...")
+    v = _voice_track(res, starts, total_t)
+    v = audio_filter(v, "highpass=f=75,equalizer=f=220:t=q:w=1:g=-1.5,equalizer=f=3400:t=q:w=1.1:g=2.4,"
+                        "acompressor=threshold=0.06:ratio=2.8:attack=6:release=150:makeup=2.2")
+    act = v[np.abs(v) > 0.01]
+    if len(act):
+        v *= 0.16 / max(1e-6, float(np.sqrt((act ** 2).mean())))
+    v = np.clip(v, -0.95, 0.95)
+    sfx = [(sg["t0"] - 0.05, "up", 0.34) for sg in segs if sg["kind"] == "card"]
+    sfx += [(starts[i] + 0.25, "pop", 0.26) for i, sc in enumerate(scenes) if sc.get("emphasis")]
+    mus = ASSETS / "music.mp3"
+    stereo = build_mix(v, total_t, sfx, None, None, mus if mus.exists() else None)
+    peak = float(np.abs(stereo).max())
+    if peak > 0.95:
+        stereo *= 0.95 / peak
+    wav = WORK / "long_mix.wav"
+    write_wav(wav, stereo)
+    d = OUT / "long"
+    d.mkdir(exist_ok=True)
+    final = d / "long_final.mp4"
+    run(["ffmpeg", "-y", "-v", "error", "-i", str(vid_only), "-i", str(wav), "-map", "0:v", "-map", "1:a",
+         "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
+         "-shortest", "-movflags", "+faststart", str(final)])
+
+    thumb = d / "thumb.jpg"
+    try:
+        fr = run(["ffmpeg", "-v", "error", "-ss", f"{min(8.0, voice_end / 3):.1f}", "-i", str(vid_only), "-frames:v", "1",
+                  "-f", "image2pipe", "-vcodec", "png", "-"]).stdout
+        frame = np.array(Image.open(io.BytesIO(fr)).convert("RGB"))
+    except Exception:
+        frame = None
+    long_render.make_thumbnail(pk.get("thumb_text") or ls.get("title", "")[:30], thumb, BRAND_NAME, frame)
+
+    ch_txt = long_render.chapters_text(chapters, scenes, starts)
+    hi = lang == "hinglish"
+    title = (pk.get("title") if hi else ls.get("title")) or ls.get("title") or "NeuroTriage"
+    hashtags = (pk.get("hashtags") or []) [:5]
+    body = pk.get("yt_description") or ""
+    parts = [body, ("Chapters:\n" + ch_txt) if ch_txt else "", f"{BRAND_NAME}: {SITE_URL}", DISCLAIMER]
+    if mode == "awareness":
+        parts.append(HELPLINE)
+    parts.append(" ".join(hashtags))
+    meta = {"title": title, "yt_description": "\n\n".join(p for p in parts if p), "hashtags": hashtags}
+    (d / "long_meta.json").write_text(json.dumps(dict(meta, language=lang, chapters=ch_txt, seconds=round(total_t, 1)),
+                                                  ensure_ascii=False, indent=2), encoding="utf-8")
+    return {"video": final, "thumb": thumb, "meta": meta, "seconds": total_t}
+
+
+# ================================================================== queue (midnight build -> scheduled publish)
+def enqueue(kind, key, video, thumb, meta):
+    """Copy files into output/queue/<date>/<kind>/, write the manifest, and let YouTube + Facebook schedule
+    themselves natively (Instagram is left pending for publish_due.py)."""
+    sched = scheduler.schedule_for(kind)
+    qd = OUT / "queue" / key / kind
+    qd.mkdir(parents=True, exist_ok=True)
+    import shutil
+    vname = Path(video).name
+    shutil.copy2(video, qd / vname)
+    files = {"video": vname}                               # paths are relative to the artifact root (= this folder)
+    if thumb and Path(thumb).exists():
+        shutil.copy2(thumb, qd / Path(thumb).name)
+        files["thumb"] = Path(thumb).name
+    platforms = ["youtube", "instagram", "facebook"] if kind == "short" else ["youtube"]
+    small = {k: meta[k] for k in ("title", "yt_description", "ig_caption", "hashtags") if k in meta}
+    m = scheduler.new_manifest(kind, small, files, sched, PRIVACY, f"queue-{key}-{kind}", platforms)
+    for name in platforms:
+        if name == "instagram" or not NATIVE_SCHEDULE:
+            res = {"ok": False, "deferred": True}                       # publish_due.py posts it at publish time
+        else:
+            res = publisher.post_one(name, qd / vname, meta, PRIVACY, sched, kind,
+                                     qd / Path(thumb).name if "thumb" in files else None)
+        log(f"[queue] {kind}/{name}: {res}")
+        publish_due.record(m, name, res)
+    scheduler.save_manifest(m)
+    (OUT / "queue_key.txt").write_text(key)
+    log(f"[queue] {kind} ready. Publishes at {sched.strftime('%d %b %H:%M IST')} (privacy={PRIVACY}).")
+    return {n: {k: v for k, v in st.items() if k in ("status", "result")} for n, st in m["platforms"].items()}
+
+
+# ================================================================== short video
+def build_short(facts, mode, key, rng):
     log("2/6 script...")
-    data = write_script(facts)
+
+    def mk_script():
+        d = write_script(facts)
+        return virality.improve_script(ask, d, SAFETY)             # v7: cross-check + one rewrite if weak
+    data = ckpt.stage("short_script", mk_script, key, log=log)
     log("   title:", data["title"])
-    scenes = data["scenes"]
-    cta = CTA_AWARENESS if mode == "awareness" else CTA_STUDENT
-    scenes.append({"text": cta, "queries": ["person using laptop", "typing laptop desk", "student laptop"],
+    scenes = [dict(sc) for sc in data["scenes"]]
+    cta = CTA_AWARENESS_HI if mode == "awareness" else CTA_STUDENT_HI
+    cta_en = CTA_AWARENESS if mode == "awareness" else CTA_STUDENT
+    scenes.append({"text": cta, "text_en": cta_en, "queries": ["person using laptop", "typing laptop desk", "student laptop"],
                    "emphasis": ""})
     log("3/6 voice (har scene alag)...")
-    res, voice = make_voice(scenes)
+    res, voice, lang = ckpt.stage("short_voice", lambda: make_voice(scenes), key, log=log)
+    _apply_lang(scenes, lang)
+    log(f"   voice={voice} language={lang}")
     starts, splash_start = build_timeline(res)
     log(f"   voice ends at {splash_start:.1f}s")
 
-    log("4/6 relevant footage (Gemini vision se chunav)...")
-    clips = []
-    for i, sc in enumerate(scenes):
-        need = res[i][1] + 0.5
-        want = 2 if need >= 3.3 else 1
-        try:
-            clips.append(pick_clips(sc, data["title"], need, want))
-        except Exception as e:
-            log("[clip] scene", i + 1, "error:", str(e)[:100])
-            clips.append([])
+    def pick_all():
+        log("4/6 relevant footage (Gemini vision se chunav)...")
+        out = []
+        for i, sc in enumerate(scenes):
+            need = res[i][1] + 0.5
+            want = 2 if need >= 3.3 else 1
+            try:
+                out.append(pick_clips(sc, data["title"], need, want))
+            except Exception as e:
+                log("[clip] scene", i + 1, "error:", str(e)[:100])
+                out.append([])
+        return out
+    clips = ckpt.stage("short_clips", pick_all, key, validate=_clips_ok, log=log)
 
     log("5/6 edit + render...")
     splash_json = ASSETS / "neurotriage_splash.json"
-    splash = Splash(splash_json) if splash_json.exists() else None
-    if splash is None:
+    if not splash_json.exists():
         sys.exit(f"{splash_json} nahi mila. Repo me assets/neurotriage_splash.json commit karo (exact naam, lowercase).")
-    vid_only = WORK / "video_only.mp4"
-    total_t, kinds = render_video(scenes, res, starts, splash_start, clips, data["kicker"], splash, vid_only, rng)
+    vid_only = WORK / f"short_video_only_{key}.mp4"
+
+    def do_render():
+        splash = Splash(splash_json)
+        return render_video(scenes, res, starts, splash_start, clips, data["kicker"], splash, vid_only,
+                            random.Random(SEED) if SEED else random.Random(sum(map(ord, key))))
+    total_t, kinds = ckpt.stage("short_render", do_render, key, validate=lambda v: vid_only.exists(), log=log)
 
     log("6/6 audio mix + final...")
     emph_starts = [starts[i] + 0.2 for i, s in enumerate(scenes) if s.get("emphasis")]
@@ -1825,21 +2070,87 @@ def main():
          "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:a", "aac", "-b:a", "192k",
          "-ar", "48000", "-shortest", str(out)])
 
-    hashtags = data["hashtags"] + ["#Shorts"]
+    pk = ckpt.stage("short_pack", lambda: virality.packaging(ask, data, mode), key, log=log)
+    hi = lang == "hinglish"
+    title = pk["title"] if hi else data["title_en"]
+    hashtags = (pk["hashtags"] if hi else data["hashtags"][:5]) + ["#Shorts"]
     brand = f"{BRAND_NAME}: {SITE_URL}" + (f" | {TAGLINE}" if TAGLINE else "")
-    parts_desc = [data["description"], brand, DISCLAIMER]
+    body = (pk.get("yt_description") if hi else None) or data["description"]
+    parts_desc = [body, brand, DISCLAIMER]
     if mode == "awareness":
         parts_desc.append(HELPLINE)
     parts_desc.append(" ".join(hashtags))
     desc = "\n\n".join(parts_desc)
-    (OUT / "meta.json").write_text(json.dumps({"title": data["title"], "description": desc},
-                                              ensure_ascii=False, indent=2), encoding="utf-8")
-    log("\nTITLE:", data["title"], "\nDESCRIPTION:\n", desc)
+    ig_caption = ((pk.get("ig_caption") if hi else None) or body) + f"\n\n{SITE_URL}\n{DISCLAIMER}\n" + " ".join(hashtags[:5])
+    meta = {"title": title, "yt_description": desc, "ig_caption": ig_caption, "hashtags": hashtags}
+    (OUT / "meta.json").write_text(json.dumps(
+        dict(meta, language=lang, voice=voice, formula=data.get("formula"), audit=data.get("audit"),
+             caption_style=CAPTION_USED[0], thumb_text=pk.get("thumb_text"), comment_keyword=pk.get("keyword"),
+             first_comment=pk.get("first_comment"), title_options=pk.get("titles")),
+        ensure_ascii=False, indent=2), encoding="utf-8")
+    log("\nTITLE:", title, "\nDESCRIPTION:\n", desc)
+    return out, meta, data
 
-    ok = upload_youtube(out, data["title"], desc, [h.lstrip("#") for h in hashtags])
-    if ok:                                        # topic tabhi 'done' jab video ban gayi + upload theek
-        with open(HISTORY, "a", encoding="utf-8") as f:
-            f.write(data["title"].replace("\n", " ") + "\n")
+
+def main():
+    if not KEYS and not GROQ_KEYS:
+        sys.exit("GROQ_API_KEY ya GEMINI_API_KEY set karo.")
+    log(f"[llm] groq keys: {len(GROQ_KEYS)}, gemini keys: {len(KEYS)}")
+    global MODELS
+    MODELS = discover_models()
+    WORK.mkdir(exist_ok=True)
+    OUT.mkdir(exist_ok=True)
+    rng = random.Random(SEED) if SEED else random.Random()
+    done = HISTORY.read_text(encoding="utf-8").splitlines() if HISTORY.exists() else []
+    key = scheduler.now_ist().date().isoformat()
+    ckpt.cleanup(key)
+    plan = publisher.today_plan()
+    log("[plan]", plan, "| queue mode:", QUEUE_MODE, "| preset:", RENDER_PRESET)
+    want_short = True
+    want_long = bool(plan["long"])
+    if QUEUE_MODE and not FORCE_REBUILD:
+        want_short = not scheduler.already_built("short")
+        want_long = want_long and not scheduler.already_built("long")
+        if not (want_short or want_long):
+            log("[queue] today's video(s) already built -> nothing to do.")
+            return
+    mode = ckpt.stage("mode", pick_mode, key, log=log)
+    log("mode:", mode)
+    log("1/6 research...")
+    facts = ckpt.stage("facts", lambda: research(done, mode), key, log=log)
+
+    report, failed = {}, []
+    if want_short:
+        out, meta, data = build_short(facts, mode, key, rng)
+        if QUEUE_MODE:
+            report["short"] = enqueue("short", key, out, None, meta)
+        else:
+            report["short"] = publisher.publish_short(out, meta, PRIVACY)
+        sh = report["short"].values()
+        ok = any(v.get("ok") or v.get("status") in ("done", "scheduled") for v in sh) or \
+            all(v.get("skipped") or v.get("status") == "skipped" or v.get("deferred") or v.get("status") == "pending" for v in sh)
+        if ok:                                        # topic tabhi 'done' jab video ban gayi + upload/queue theek
+            with open(HISTORY, "a", encoding="utf-8") as f:
+                f.write(data["title_en"].replace("\n", " ") + "\n")
+    if want_long:
+        try:
+            if LONG_RENDER:
+                info = make_long_video(facts, mode, key, rng)
+                if QUEUE_MODE:
+                    report["long"] = enqueue("long", key, info["video"], info["thumb"], info["meta"])
+                else:
+                    report["long"] = publisher.publish_long(info["video"], info["meta"], PRIVACY, info["thumb"])
+            else:
+                report["long"] = make_long_kit(facts, mode)
+        except Exception as e:                        # a long-video problem must never lose the daily short
+            import traceback
+            traceback.print_exc()
+            log("[long] failed:", str(e)[:200])
+            report["long"] = {"ok": False, "error": str(e)[:200]}
+            failed.append("long")
+    publisher.save_report(OUT / "publish_report.json", report)
+    if failed:
+        sys.exit(f"build finished but failed: {failed} (short is safe; retry/catch-up will redo the long part)")
 
 
 if __name__ == "__main__":

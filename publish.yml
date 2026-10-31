@@ -1,0 +1,69 @@
+name: Publish Due
+
+# Posts whatever is due in queue/ (Instagram always; YouTube/Facebook only if their own scheduling failed).
+# Safe to run often: it is idempotent. GitHub crons can start late, so there are several triggers per slot.
+# Slots default: Short 10:00 IST, Long 19:00 IST. If you change PUBLISH_TIME_*_IST in build.yml, move these windows too.
+on:
+  schedule:
+    - cron: "*/30 4-6 * * *"      # 09:30 - 12:30 IST (around the 10:00 Short slot)
+    - cron: "*/30 13-15 * * *"    # 18:30 - 21:30 IST (around the 19:00 Long slot)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write                  # lets the watchdog start an emergency build
+
+concurrency:
+  group: publish-due
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Python packages (small)
+        run: pip install requests google-api-python-client google-auth
+
+      - name: Watchdog - is today's Short missing?
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          python watchdog.py; rc=$?
+          if [ "$rc" = "10" ]; then
+            busy=$(gh run list --workflow build.yml --limit 5 --json status --jq '[.[]|select(.status=="in_progress" or .status=="queued")]|length')
+            if [ "$busy" = "0" ]; then
+              echo "No build running -> emergency build, publishing ~25 min after it finishes"
+              gh workflow run build.yml -f publish_asap=1
+            else
+              echo "A build is already running/queued, waiting for it."
+            fi
+          fi
+          exit 0
+
+      - name: Publish what is due
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python publish_due.py
+
+      - name: Save manifests
+        if: always()
+        run: |
+          git config user.name "reel-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add queue/ 2>/dev/null || true
+          git commit -m "publish: queue status" || echo "nothing to commit"
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push && break || sleep 6; done
