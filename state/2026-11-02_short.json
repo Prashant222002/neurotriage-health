@@ -1,0 +1,326 @@
+{
+ "key": "2026-11-02",
+ "kind": "short",
+ "created": "2026-11-01T19:15:28",
+ "request": {
+  "kind": "short",
+  "mode": "student",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Juventus vs Napoli – using the hype around the high‑stakes football clash to show students how to handle performance pressure and exam anxiety",
+  "verified": [
+   "Performance anxiety can increase cortisol levels, which may impair aspects of memory such as working memory.",
+   "Performance anxiety spikes cortisol, impairing working memory"
+  ],
+  "sources": [
+   {
+    "title": "The effects of acute stress on performance: implications for health professions education.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/19907380/"
+   },
+   {
+    "title": "Test Anxiety and Salivary Cortisol Levels in Nursing Students.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/27391244/"
+   },
+   {
+    "title": "Stress experience and performance during an oral exam: the role of self-efficacy, threat appraisals, anxiety, and cortisol.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30257566/"
+   }
+  ],
+  "level": "partial",
+  "hook": "What if the nerves you feel watching Juventus vs Napoli are the exact same ones that can wreck your exam scores – and you can train them like a pro footballer?",
+  "tip": "Before a big exam, do a 3‑minute “match‑day routine”: visualize entering the exam hall calmly, recite a cue like “Focus like a striker” while breathing deeply, then jump into a 5‑minute active‑recall sprint on a key topic.",
+  "dropped": [
+   "Acute stress before a match or exam reduces prefrontal‑cortex activity, making focus harder (unsupported)",
+   "Visualization and pre‑performance routines lower heart rate and boost confidence, improving exam per (unsupported)",
+   "Active recall under timed pressure trains rapid information retrieval like a striker’s split‑second  (unsupported)",
+   "Spacing study sessions every 24‑48 hours counters the forgetting curve and builds long‑term retentio (unsupported)",
+   "Adequate sleep (7‑9 h) after intense mental effort consolidates memories and normalizes stress hormo (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "f92546b305368c31",
+  "data": {
+   "title": "Exam Pressure Ka Real Solution | Football Hack",
+   "title_en": "The Real Solution to Exam Pressure | Football Hack",
+   "formula": "The real reason...",
+   "kicker": "EXAM PRESSURE",
+   "hook_text": "EXAM MEIN BLANK KYUN?",
+   "scenes": [
+    {
+     "text": "Exam mein blank hone ka shocking reason?",
+     "text_en": "The shocking reason you blank out in exams?",
+     "text_hi": "Exam में blank होने का shocking reason?",
+     "queries": [
+      "student staring at exam paper",
+      "exam hall desk closeup",
+      "student holding pen thinking"
+     ],
+     "emphasis": "BLANK HONE KA REASON"
+    },
+    {
+     "text": "Juventus vs Napoli match jaisa high pressure sab bigad deta hai.",
+     "text_en": "High stakes pressure like Juventus vs Napoli ruins your game.",
+     "text_hi": "Juventus vs Napoli match जैसा high pressure सब बिगाड़ देता है।",
+     "queries": [
+      "football stadium floodlights",
+      "soccer match tension crowd",
+      "football player on pitch"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Delhi ka JEE aspirant Rahul bhi ye pressure feel karta hai.",
+     "text_en": "Delhi JEE aspirant Rahul also feels this pressure.",
+     "text_hi": "Delhi का JEE aspirant Rahul भी ये pressure feel करता है।",
+     "queries": [
+      "student studying JEE",
+      "Delhi college campus",
+      "young aspirant looking stressed"
+     ],
+     "emphasis": "JEE ASPIRANT"
+    },
+    {
+     "text": "Research batati hai ki performance anxiety se cortisol badh jaata hai, aur ek surprising tip hai jo aage milegi.",
+     "text_en": "Research shows performance anxiety can increase cortisol, and there's a surprising tip you'll discover later.",
+     "text_hi": "Research बताती है कि performance anxiety से cortisol बढ़ जाता है, और एक surprising tip है जो आगे मिलेगी।",
+     "queries": [
+      "hormone cortisol diagram",
+      "laboratory scientific research screen",
+      "medical science graphics"
+     ],
+     "emphasis": "CORTISOL SPIKE"
+    },
+    {
+     "text": "Ye spike tumhari working memory ko seedha impair kar sakta hai.",
+     "text_en": "This spike can directly impair your brain working memory.",
+     "text_hi": "यह spike तुम्हारी working memory को सीधा impair कर सकता है।",
+     "queries": [
+      "human brain neural activity",
+      "brain scan glowing model",
+      "digital mind network illustration"
+     ],
+     "emphasis": "WORKING MEMORY"
+    },
+    {
+     "text": "Ye us batchmate ko bhejo jo exam mein panic karta hai.",
+     "text_en": "Send this to that batchmate who panics during exams.",
+     "text_hi": "यह उस batchmate को भेजो जो exam में panic करता है।",
+     "queries": [
+      "two students walking library",
+      "friends talking campus bench",
+      "student holding phone texting"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Pro footballers ki tarah ek simple match routine follow karo.",
+     "text_en": "Follow a simple match routine just like pro footballers.",
+     "text_hi": "Pro footballers की तरह एक simple match routine follow करो।",
+     "queries": [
+      "athlete stretching tunnel entrance",
+      "footballer tying shoelaces bench",
+      "athlete focused locker room"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Pehle, exam hall mein shanti se baith kar deep breath lo.",
+     "text_en": "First, sit calmly in the exam hall and breathe deeply.",
+     "text_hi": "पहले, exam hall में शांति से बैठकर deep breath लो।",
+     "queries": [
+      "student breathing slowly desk",
+      "person taking deep breath",
+      "student sitting quietly classroom"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Phir khud se kaho, focus like a striker.",
+     "text_en": "Then tell yourself, focus just like a striker.",
+     "text_hi": "फिर खुद से कहो, focus like a striker.",
+     "queries": [
+      "football striker closeup eyes",
+      "penalty kick focused player",
+      "determined athlete facial expression"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Last mein main concepts ka quick active recall shuru karo.",
+     "text_en": "Lastly, start a quick active recall of key concepts.",
+     "text_hi": "Last में main concepts का quick active recall शुरू करो।",
+     "queries": [
+      "student writing notebook pen",
+      "handwriting formulas paper",
+      "flipping revision notes table"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Pressure ko darr nahi, match day ki energy samjho.",
+     "text_en": "Treat pressure as match day energy, not your fear.",
+     "text_hi": "Pressure को डर नहीं, match day की energy समझो।",
+     "queries": [
+      "confident student smiling library",
+      "student walking sunny campus",
+      "morning sunlight university courtyard"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Toh agle exam mein blank nahi, confident entry karo.",
+     "text_en": "Enter your next exam confident, never blanking out again.",
+     "text_hi": "तो अगले exam में blank नहीं, confident entry करो।",
+     "queries": [
+      "student walking classroom doorway",
+      "entering examination room calmly",
+      "confident person walking hallway"
+     ],
+     "emphasis": "CONFIDENT ENTRY"
+    },
+    {
+     "text": "Take 3 deep breaths, then write the first answer.",
+     "text_en": "Take 3 deep breaths, then write the first answer.",
+     "text_hi": "Take 3 deep breaths, then write the first answer.",
+     "queries": [
+      "student taking deep breath exam",
+      "hand writing answer",
+      "exam hall focus"
+     ],
+     "emphasis": "ACTION"
+    }
+   ],
+   "description": "Ever feel your mind go completely blank before a big exam? Learn how high-stakes pressure spikes cortisol to affect memory, and how a football match routine helps you stay focused.",
+   "hashtags": [
+    "#StudyHacks",
+    "#ExamAnxiety",
+    "#StudentLife",
+    "#PerformanceAnxiety",
+    "#JuventusNapoli",
+    "#BrainScience"
+   ],
+   "audit": {
+    "score": 45,
+    "hook": 30,
+    "retention": 50,
+    "specificity": 30,
+    "safety_ok": true,
+    "fixes": [
+     "Trim first line to ≤9 words and boost curiosity/pain hook",
+     "Add a concrete Indian student example (e.g., a JEE aspirant from Delhi)",
+     "Make the final call‑to‑action a specific, actionable step like “Take 3 deep breaths, then write the first answer”",
+     "Strengthen the open loop in scene 3 by teasing a surprising tip that will be revealed later"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-01T19:28:20",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-01T19:28:20",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-01T19:31:01",
+   "provider": "en-US-AndrewMultilingualNeural",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-01T19:38:53",
+   "provider": "",
+   "note": "The Real Solution to Exam Pressure | Football Hack"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-01T19:15:55",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{ \"title\": \"Juventus vs Napoli ka pressure kaise exam stress se nipto\", \"title_en\": \"Turning Juventus‑Napoli pressure in"
+  },
+  {
+   "at": "2026-11-01T19:16:15",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Juventus vs Napoli ka pressure exam stress se kaise nipto\",\"title_en\":\"Turning Juventus‑Napoli pressure into e"
+  },
+  {
+   "at": "2026-11-01T19:17:04",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-20b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"Juventus vs Napoli ke nerves se exam score kaise bachayein\",\"title_en\":\"How to Protect Exam Scores from Juvent"
+  },
+  {
+   "at": "2026-11-01T19:19:18",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Juventus vs Napoli ki tension se exam anxiety kaise beat karein\",\"title_en\":\"Beat Exam Anxiety with Juventus v"
+  },
+  {
+   "at": "2026-11-01T19:19:45",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{ \"title\": \"Juventus vs Napoli ka pressure exam ko kaise beat karein\", \"title_en\": \"Beat Exam Pressure with Juventus vs "
+  },
+  {
+   "at": "2026-11-01T19:19:59",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{ \"title\": \"Juventus vs Napoli ka pressure exam ko beat karo\", \"title_en\": \"Beat Exam Pressure with Juventus vs Napoli\","
+  },
+  {
+   "at": "2026-11-01T19:28:13",
+   "stage": "script",
+   "provider": "gemini",
+   "model": "gemini-3.8-flash",
+   "key": "GEMINI_API_KEY_2",
+   "summary": "{ \"title\": \"Exam Pressure Ka Real Solution | Football Hack\", \"title_en\": \"The Real Solution to Exam Pressure | Football "
+  },
+  {
+   "at": "2026-11-01T19:28:14",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"score\":45,\"hook\":30,\"retention\":50,\"specificity\":30,\"safety_ok\":true,\"fixes\":[\"Trim first line to ≤9 words and boost c"
+  },
+  {
+   "at": "2026-11-01T19:28:20",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Exam Pressure Ka Real Solution | Football Hack\",\"title_en\":\"The Real Solution to Exam Pressure | Football Hack"
+  },
+  {
+   "at": "2026-11-01T19:38:53",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Juventus vs Napoli: Exam Stress Ka Football Formula\",\"Kaise Juventus ki Tension Se Badhao Apni Exam Performa"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}

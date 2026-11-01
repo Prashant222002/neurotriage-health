@@ -1,0 +1,51 @@
+{
+  "id": "2026-11-02-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-02T01:08:53+05:30",
+  "publish_at": "2026-11-02T10:00+05:30",
+  "publish_at_utc": "2026-11-02T04:30+00:00",
+  "privacy": "private",
+  "artifact": "queue-2026-11-02-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "The Real Solution to Exam Pressure | Football Hack",
+    "yt_description": "Ever feel your mind go completely blank before a big exam? Learn how high-stakes pressure spikes cortisol to affect memory, and how a football match routine helps you stay focused.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/19907380/ | https://pubmed.ncbi.nlm.nih.gov/27391244/ | https://pubmed.ncbi.nlm.nih.gov/30257566/\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\n#StudyHacks #ExamAnxiety #StudentLife #PerformanceAnxiety #JuventusNapoli #Shorts",
+    "ig_caption": "Ever feel your mind go completely blank before a big exam? Learn how high-stakes pressure spikes cortisol to affect memory, and how a football match routine helps you stay focused.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#StudyHacks #ExamAnxiety #StudentLife #PerformanceAnxiety #JuventusNapoli",
+    "hashtags": [
+      "#StudyHacks",
+      "#ExamAnxiety",
+      "#StudentLife",
+      "#PerformanceAnxiety",
+      "#JuventusNapoli",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "YouTube secrets missing"
+      },
+      "at": "2026-11-01T19:38:53+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-01T19:38:53+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-01T19:38:53+00:00"
+    }
+  },
+  "status": "pending"
+}

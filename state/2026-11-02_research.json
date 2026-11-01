@@ -1,0 +1,84 @@
+{
+ "key": "2026-11-02",
+ "kind": "research",
+ "created": "2026-11-01T19:15:20",
+ "request": {
+  "kind": "research",
+  "mode": "student"
+ },
+ "research": {
+  "topic": "Juventus vs Napoli – using the hype around the high‑stakes football clash to show students how to handle performance pressure and exam anxiety",
+  "verified": [
+   "Performance anxiety can increase cortisol levels, which may impair aspects of memory such as working memory.",
+   "Performance anxiety spikes cortisol, impairing working memory"
+  ],
+  "sources": [
+   {
+    "title": "The effects of acute stress on performance: implications for health professions education.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/19907380/"
+   },
+   {
+    "title": "Test Anxiety and Salivary Cortisol Levels in Nursing Students.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/27391244/"
+   },
+   {
+    "title": "Stress experience and performance during an oral exam: the role of self-efficacy, threat appraisals, anxiety, and cortisol.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30257566/"
+   }
+  ],
+  "level": "partial",
+  "hook": "What if the nerves you feel watching Juventus vs Napoli are the exact same ones that can wreck your exam scores – and you can train them like a pro footballer?",
+  "tip": "Before a big exam, do a 3‑minute “match‑day routine”: visualize entering the exam hall calmly, recite a cue like “Focus like a striker” while breathing deeply, then jump into a 5‑minute active‑recall sprint on a key topic.",
+  "dropped": [
+   "Acute stress before a match or exam reduces prefrontal‑cortex activity, making focus harder (unsupported)",
+   "Visualization and pre‑performance routines lower heart rate and boost confidence, improving exam per (unsupported)",
+   "Active recall under timed pressure trains rapid information retrieval like a striker’s split‑second  (unsupported)",
+   "Spacing study sessions every 24‑48 hours counters the forgetting curve and builds long‑term retentio (unsupported)",
+   "Adequate sleep (7‑9 h) after intense mental effort consolidates memories and normalizes stress hormo (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-01T19:15:28",
+   "provider": "groq",
+   "note": "partial"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-01T19:15:22",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Juventus vs Napoli – using the hype around the high‑stakes football clash to show students how to handle perfo"
+  },
+  {
+   "at": "2026-11-01T19:15:24",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Juventus vs Napoli – using the hype around the high‑stakes football clash to show students how to handle perfo"
+  },
+  {
+   "at": "2026-11-01T19:15:28",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"uncertain\",\"cites\":[0,2,3],\"fix\":\"Performance anxiety can increase cortisol levels, which "
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}
