@@ -102,12 +102,12 @@ def text_sprite(text, size, fill=(255, 255, 255), stroke=0, stroke_fill=(10, 16,
     return np.array(lay)
 
 
-def pill(text, size, c1=BLUE, c2=GREEN, padx=34, pady=18, alpha=240):
+def pill(text, size, c1=BLUE, c2=GREEN, padx=34, pady=18, alpha=240, tc=(255, 255, 255)):
     f = font(size)
     bb = f.getbbox(text)
     w, h = bb[2] - bb[0] + 2 * padx, bb[3] - bb[1] + 2 * pady
     base = Image.fromarray(rounded(w, h, c1, c2, h // 2, alpha), "RGBA")
-    ImageDraw.Draw(base).text((padx - bb[0], pady - bb[1]), text, font=f, fill=(255, 255, 255, 255))
+    ImageDraw.Draw(base).text((padx - bb[0], pady - bb[1]), text, font=f, fill=tuple(tc) + (255,))
     pad = 20
     out = Image.new("RGBA", (w + 2 * pad, h + 2 * pad), (0, 0, 0, 0))
     sh = Image.new("RGBA", out.size, (0, 0, 0, 0))
