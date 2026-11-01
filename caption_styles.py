@@ -52,9 +52,9 @@ def paginate(words, max_words=4, max_chars=26, upper=True):
         pages.append(cur)
     merged = []
     for pg in pages:                                 # no one-word orphans
-        if (merged and len(pg) == 1 and len(merged[-1]) <= max_words - 1
-                and sum(len(c[0]) for c in merged[-1]) + len(pg[0][0]) <= max_chars
-                and pg[0][1] - merged[-1][-1][2] < 0.5):
+        if (merged and len(pg) <= 2 and len(merged[-1]) <= max_words - 1      # v17: no 1-2 word orphans like "HAI" / "SE JODO"
+                and sum(len(c[0]) for c in merged[-1]) + sum(len(c[0]) for c in pg) <= max_chars + 6
+                and pg[0][1] - merged[-1][-1][2] < 0.9):
             merged[-1].extend(pg)
         else:
             merged.append(pg)
