@@ -4,32 +4,33 @@
  "created": "2026-10-31T23:51:17",
  "request": {
   "kind": "research",
-  "mode": "awareness"
+  "mode": "student"
  },
  "research": {
   "topic": "Leveraging Viral Challenges to Build Healthy Habits & Boost Focus for Indian Students",
   "verified": [
-   "Habit‑stacking may increase automaticity, though the exact magnitude is not established.",
-   "Brief physical activity can enhance attention and working memory, but the precise duration and lasting effects are not definitively quantified."
+   "Habit‑stacking may enhance the automaticity of new behaviors",
+   "Habit‑stacking increases automaticity of new behaviors"
   ],
   "sources": [
    {
-    "title": "Micro-habits for life-long learning.",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/34223960/"
+    "title": "Cultivating Reciprocity Between People and Planet: Habit-Stacking Planetary Health Prescriptions Into Existing Nature RX Encounters During Integrative Health Vi",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38558827/"
    },
    {
-    "title": "Effects of physical activity on executive functions, attention and academic performance in preadolescent children: a meta-analysis.",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/29054748/"
+    "title": "Micro-habits for life-long learning.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34223960/"
    }
   ],
   "level": "partial",
-  "hook": "What if the #30DayFlipChallenge could actually help you study better?",
-  "tip": "Add a 10‑second focus‑pause: inhale 4 s, hold 2 s, exhale 4 s before repeating the challenge move.",
+  "hook": "If you’re cramming for JEE Main and your brain feels fried, try THIS 30‑second challenge that top‑rankers are secretly using to stay razor‑sharp!",
+  "tip": "After each 45‑minute study block, do a 30‑second high‑knee or jumping‑jack burst, record a short video with #JEEFocusPulse and share it to create a viral habit‑stack that refreshes focus.",
   "dropped": [
-   "Dopamine response to novelty peaks during the first 3‑5 days of a new routine, aiding habit formatio (unsupported)",
-   "Consistent sleep‑wake timing reduces daytime fatigue by 15‑20 % in young adults (WHO Sleep Guideline (unsupported)",
-   "30‑second mindful breathing lowers perceived stress scores by ~10 % in college students (NIMHANS 202 (unsupported)",
-   "Sharing progress with peers boosts habit adherence by about 25 % (APA 2021) (unsupported)"
+   "Brief physical activity can boost attention and working memory (unsupported)",
+   "Stress impairs working memory and reduces recall efficiency (unsupported)",
+   "Active recall combined with spaced repetition enhances durable learning (unsupported)",
+   "Consistent 7‑9 hours sleep supports memory consolidation (unsupported)",
+   "Publicly shared challenges increase motivation through peer accountability (unsupported)"
   ]
  },
  "script": {
@@ -41,7 +42,7 @@
  },
  "stages": {
   "research": {
-   "at": "2026-10-31T23:51:27",
+   "at": "2026-11-01T15:42:49",
    "provider": "groq",
    "note": "partial"
   }
@@ -70,6 +71,30 @@
    "model": "openai/gpt-oss-120b",
    "key": "GROQ_API_KEY",
    "summary": "{\"results\":[{\"i\":0,\"verdict\":\"uncertain\",\"cites\":[0],\"fix\":\"Habit‑stacking may increase automaticity, though the exact m"
+  },
+  {
+   "at": "2026-11-01T15:42:44",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Leveraging Viral Challenges to Build Healthy Habits & Boost Focus for Indian Students – with a JEE Main stress"
+  },
+  {
+   "at": "2026-11-01T15:42:46",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Leveraging Viral Challenges to Build Healthy Habits & Boost Focus for Indian Students\",\"search_terms\":[\"habit "
+  },
+  {
+   "at": "2026-11-01T15:42:49",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"uncertain\",\"cites\":[0,1],\"fix\":\"Habit‑stacking may enhance the automaticity of new behavio"
   }
  ],
  "pending": [],

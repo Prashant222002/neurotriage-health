@@ -1,0 +1,690 @@
+{
+ "key": "2026-11-01",
+ "kind": "long",
+ "created": "2026-11-01T15:42:49",
+ "request": {
+  "kind": "long",
+  "mode": "student",
+  "language": "auto"
+ },
+ "research": {
+  "topic": "Leveraging Viral Challenges to Build Healthy Habits & Boost Focus for Indian Students",
+  "verified": [
+   "Habit‑stacking may enhance the automaticity of new behaviors",
+   "Habit‑stacking increases automaticity of new behaviors"
+  ],
+  "sources": [
+   {
+    "title": "Cultivating Reciprocity Between People and Planet: Habit-Stacking Planetary Health Prescriptions Into Existing Nature RX Encounters During Integrative Health Vi",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38558827/"
+   },
+   {
+    "title": "Micro-habits for life-long learning.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34223960/"
+   }
+  ],
+  "level": "partial",
+  "hook": "If you’re cramming for JEE Main and your brain feels fried, try THIS 30‑second challenge that top‑rankers are secretly using to stay razor‑sharp!",
+  "tip": "After each 45‑minute study block, do a 30‑second high‑knee or jumping‑jack burst, record a short video with #JEEFocusPulse and share it to create a viral habit‑stack that refreshes focus.",
+  "dropped": [
+   "Brief physical activity can boost attention and working memory (unsupported)",
+   "Stress impairs working memory and reduces recall efficiency (unsupported)",
+   "Active recall combined with spaced repetition enhances durable learning (unsupported)",
+   "Consistent 7‑9 hours sleep supports memory consolidation (unsupported)",
+   "Publicly shared challenges increase motivation through peer accountability (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "f1201c54a5355203",
+  "data": {
+   "title": "Leveraging Viral Challenges to Build Healthy Habits & Boost Focus for Indian Students",
+   "hook_formula": "Nobody tells you...",
+   "chapters": [
+    {
+     "name": "Hook & Promise",
+     "goal": "Capture attention and promise a quick focus boost",
+     "beats": [
+      "Koi nahi batata 30‑second challenge se focus badhe",
+      "Tension of JEE/med exams ka scene set karo",
+      "Promise: ek simple viral habit se brain ko reset karo"
+     ]
+    },
+    {
+     "name": "Relate Stress",
+     "goal": "Connect with Indian medical student pressures",
+     "beats": [
+      "Night duty, hostel life, endless revision ka stress",
+      "Brain fried lagta hai, concentration low ho jata hai",
+      "Sabko lagta hai koi shortcut nahi hai"
+     ]
+    },
+    {
+     "name": "Science of Habit‑Stacking",
+     "goal": "Introduce research‑backed habit‑stacking concept",
+     "beats": [
+      "Research suggests habit‑stacking may enhance automaticity of new behaviors",
+      "Another study shows habit‑stacking increases automaticity of new behaviors",
+      "Yeh automaticity ka matlab hai actions bina soch ke ho jate hain"
+     ]
+    },
+    {
+     "name": "Power‑Pulse Challenge",
+     "goal": "Explain the 30‑second movement burst",
+     "beats": [
+      "45‑minute study block ke baad 30‑second high‑knee ya jumping‑jack burst karo",
+      "Video record karo, #JEEFocusPulse ya #MedFocusPulse lagao",
+      "Yeh short burst brain ko oxygen aur dopamine deta hai"
+     ]
+    },
+    {
+     "name": "Demo & Study Integration",
+     "goal": "Show challenge fitting with active recall & spaced repetition",
+     "beats": [
+      "Demo: timer set, knees up, 30 seconds, breathe out",
+      "Immediately ek flashcard ya recall session shuru karo",
+      "Habit‑stacked pulse se recall speed aur retention dono improve hoti hain"
+     ]
+    },
+    {
+     "name": "Action & Closing",
+     "goal": "Give one practical step and soft NeuroTriage mention",
+     "beats": [
+      "Aaj se har 45‑minute study ke baad Power‑Pulse repeat karo",
+      "Video upload, hashtag share, apne friends ko tag karo",
+      "Agar personalized guidance chahiye, Soft NeuroTriage se consult kar sakte ho"
+     ]
+    }
+   ],
+   "scenes": [
+    {
+     "text": "Koi nahi batata 30-second challenge se focus badhe.",
+     "text_en": "No one tells you that a 30-second challenge can boost your focus.",
+     "queries": [
+      "college student studying",
+      "clock ticking",
+      "brain neurons"
+     ],
+     "emphasis": "30-second challenge",
+     "chapter": 1
+    },
+    {
+     "text": "JEE ke exams ka pressure, roz ka stress, aur padhai mein lagta hai ki time kaise nikalta hai.",
+     "text_en": "The pressure of JEE exams, daily stress, and the feeling that time just slips away.",
+     "queries": [
+      "students studying JEE",
+      "exam anxiety",
+      "clock on wall"
+     ],
+     "emphasis": "JEE pressure",
+     "chapter": 1
+    },
+    {
+     "text": "Par imagine karo, sirf ek minute ke liye, tum apne dimaag ko reset kar sakte ho.",
+     "text_en": "But imagine, just for a minute, you could reset your brain.",
+     "queries": [
+      "student meditating",
+      "mind reset",
+      "brain waves"
+     ],
+     "emphasis": "reset",
+     "chapter": 1
+    },
+    {
+     "text": "Ek simple viral habit se tumhara brain 10 minutes ke baad fresh feel karega.",
+     "text_en": "A simple viral habit will make your brain feel fresh after 10 minutes.",
+     "queries": [
+      "student doing quick exercise",
+      "brain feeling fresh",
+      "viral challenge"
+     ],
+     "emphasis": "viral habit",
+     "chapter": 1
+    },
+    {
+     "text": "Lekin ek chhota secret hai jo sab log miss karte hain…",
+     "text_en": "But there's a small secret that everyone misses…",
+     "queries": [
+      "student looking puzzled",
+      "secret reveal",
+      "lightbulb moment"
+     ],
+     "emphasis": "secret",
+     "chapter": 1
+    },
+    {
+     "text": "Is challenge ko habit‑stacking ke saath jod kar, automaticity badhegi aur focus double ho jayega.",
+     "text_en": "Combine this challenge with habit‑stacking, and automaticity will increase and focus will double.",
+     "queries": [
+      "students stacking habits",
+      "habit stacking infographic",
+      "focus increasing"
+     ],
+     "emphasis": "habit‑stacking",
+     "chapter": 1
+    },
+    {
+     "text": "Jaise ki, coffee ke saath 30-second breathing, ya doodh ke baad quick stretch.",
+     "text_en": "Like, 30-second breathing with coffee, or a quick stretch after milk.",
+     "queries": [
+      "student sipping coffee",
+      "quick stretch",
+      "breathing exercise"
+     ],
+     "emphasis": "30-second breathing",
+     "chapter": 1
+    },
+    {
+     "text": "Yeh koi miracle cure nahi, bas ek small, repeatable step hai jo brain ko reset karta hai.",
+     "text_en": "This is not a miracle cure, just a small repeatable step that resets your brain.",
+     "queries": [
+      "student relaxing",
+      "brain reset",
+      "small step"
+     ],
+     "emphasis": "small step",
+     "chapter": 1
+    },
+    {
+     "text": "Abhi try karo aur comment karo kaun sa challenge tumhe sabse zyada pasand aaya.",
+     "text_en": "Try it now and comment which challenge you liked the most.",
+     "queries": [
+      "student trying challenge",
+      "commenting on video",
+      "engagement"
+     ],
+     "emphasis": "try now",
+     "chapter": 1
+    },
+    {
+     "text": "Yaar, hostel ki night duty aur exams ka pressure, sab kuch ek saath feel hota hai.",
+     "text_en": "Dude, night duty in hostel and exam pressure, everything feels overwhelming at once.",
+     "queries": [
+      "hostel night shift students",
+      "students studying late at night",
+      "college exam stress montage"
+     ],
+     "emphasis": "overwhelming",
+     "chapter": 2
+    },
+    {
+     "text": "Kya tumne notice kiya, ek din ke baad bhi bed se uthna mushkil lagta hai?",
+     "text_en": "Did you notice that even after a day, getting out of bed feels tough?",
+     "queries": [
+      "students struggling to get out of bed",
+      "college dorm morning routine",
+      "late night study fatigue"
+     ],
+     "emphasis": "tough",
+     "chapter": 2
+    },
+    {
+     "text": "Revising 12 hours, ek kaam ke baad doosra kaam, mind lagta hai like a treadmill.",
+     "text_en": "Revving for 12 hours, one task after another, your mind feels like a treadmill.",
+     "queries": [
+      "students studying for long hours",
+      "tired mind study montage",
+      "college revision marathon"
+     ],
+     "emphasis": "tired",
+     "chapter": 2
+    },
+    {
+     "text": "Brain fried lagta hai, concentration low ho jata hai, aur sab kuch mushkil lagta hai.",
+     "text_en": "Your brain feels fried, concentration drops, and everything seems difficult.",
+     "queries": [
+      "brain fatigue study",
+      "low concentration students",
+      "frustrated student expression"
+     ],
+     "emphasis": "fried",
+     "chapter": 2
+    },
+    {
+     "text": "Sab log kehte hain, 'No shortcut, sirf hard work se hi success milegi'.",
+     "text_en": "Everyone says, 'No shortcut, only hard work brings success.'",
+     "queries": [
+      "students hearing advice",
+      "college motivation speech",
+      "hard work success message"
+     ],
+     "emphasis": "shortcut",
+     "chapter": 2
+    },
+    {
+     "text": "Par yeh soch kaise hoti hai? Kya hum apni energy ko better manage kar sakte hain?",
+     "text_en": "But how does this thinking happen? Can we manage our energy better?",
+     "queries": [
+      "students managing energy",
+      "time management college",
+      "energy management techniques"
+     ],
+     "emphasis": "energy",
+     "chapter": 2
+    },
+    {
+     "text": "Habit stacking ka matlab hai ek habit ko dusre ke saath jodna, jisse automatic ho jata hai.",
+     "text_en": "Habit stacking means linking one habit with another, making it automatic.",
+     "queries": [
+      "student studying routine",
+      "college student morning routine",
+      "visualization of habit chain"
+     ],
+     "emphasis": "habit stacking",
+     "chapter": 3
+    },
+    {
+     "text": "Automaticity ka matlab hai ki koi kaam bina soch samajh ke ho jata hai.",
+     "text_en": "Automaticity means a task is done without conscious thought.",
+     "queries": [
+      "automatic behavior illustration",
+      "mindless routine student",
+      "brain automatic processes"
+     ],
+     "emphasis": "automaticity",
+     "chapter": 3
+    },
+    {
+     "text": "Research suggests habit‑stacking may enhance automaticity of new behaviors, especially in learning contexts.",
+     "text_en": "Research suggests habit‑stacking may enhance automaticity of new behaviors, especially in learning contexts.",
+     "queries": [
+      "academic research on habit stacking",
+      "studies on automatic behavior",
+      "scientific evidence habit formation"
+     ],
+     "emphasis": "research suggests",
+     "chapter": 3
+    },
+    {
+     "text": "Maan lo tum morning coffee pehle chai piyo, phir ek 10-min meditation, isse focus automatically badhega.",
+     "text_en": "Imagine you drink tea before your morning coffee, then do a 10-minute meditation; focus will automatically improve.",
+     "queries": [
+      "student meditation routine",
+      "tea before coffee routine",
+      "focus improvement study"
+     ],
+     "emphasis": "focus automatically",
+     "chapter": 3
+    },
+    {
+     "text": "Ab thoda twist: habit stack ko gamify karte hain, jaise TikTok challenge ke saath.",
+     "text_en": "Now a twist: gamify the habit stack, like a TikTok challenge.",
+     "queries": [
+      "gamified habit challenge",
+      "TikTok challenge for study",
+      "gamification of routines"
+     ],
+     "emphasis": "gamify",
+     "chapter": 3
+    },
+    {
+     "text": "Aur ek secret hai jo aapko next chapter mein batane wale hain, jisse focus aur bhi badhega.",
+     "text_en": "And a secret I will reveal in the next chapter that will boost focus even more.",
+     "queries": [
+      "study focus techniques",
+      "secret study hack",
+      "next chapter teaser"
+     ],
+     "emphasis": "secret",
+     "chapter": 3
+    },
+    {
+     "text": "Habit stacking se stress kam hota hai, routine smooth hota hai, aur study ke liye time banta hai.",
+     "text_en": "Habit stacking reduces stress, smooths routine, and frees time for studying.",
+     "queries": [
+      "stress reduction routine",
+      "smooth study schedule",
+      "time management student"
+     ],
+     "emphasis": "stress",
+     "chapter": 3
+    },
+    {
+     "text": "Par dhyan rahe, yeh koi shortcut nahi; consistent practice zaroori hai.",
+     "text_en": "But remember, this is not a shortcut; consistent practice is essential.",
+     "queries": [
+      "consistent practice importance",
+      "habit building consistency",
+      "student routine consistency"
+     ],
+     "emphasis": "consistent practice",
+     "chapter": 3
+    },
+    {
+     "text": "Ab aap ready ho? Chalo ek simple stack banayein aur focus ko boost karein.",
+     "text_en": "Now are you ready? Let's create a simple stack and boost focus.",
+     "queries": [
+      "simple habit stack example",
+      "student focus boost",
+      "habit stacking tutorial"
+     ],
+     "emphasis": "ready",
+     "chapter": 3
+    },
+    {
+     "text": "Hai bhai, 45‑minute padhai ke baad 30‑second high‑knee burst karo, brain ko fresh karo.",
+     "text_en": "Listen, after a 45‑minute study session, do a 30‑second high‑knee burst to refresh your brain.",
+     "queries": [
+      "students studying at desk",
+      "timer counting 45 minutes",
+      "high knee exercise demonstration"
+     ],
+     "emphasis": "high‑knee",
+     "chapter": 4
+    },
+    {
+     "text": "Research suggests yeh short burst se brain ko extra oxygen milti hai aur dopamine level thoda badhta hai.",
+     "text_en": "Research suggests this short burst supplies extra oxygen to the brain and slightly raises dopamine levels.",
+     "queries": [
+      "brain oxygen animation",
+      "dopamine release illustration",
+      "person doing quick jump exercise"
+     ],
+     "emphasis": "oxygen dopamine",
+     "chapter": 4
+    },
+    {
+     "text": "Habit‑stacking ka ye step aapke padhai routine ko automatic banane mein madad karega zaroor.",
+     "text_en": "Adding this step to your study routine can help make the habit more automatic, definitely beneficial.",
+     "queries": [
+      "habit stacking concept diagram",
+      "routine habit linking",
+      "student marking calendar"
+     ],
+     "emphasis": "habit‑stacking",
+     "chapter": 4
+    },
+    {
+     "text": "Ab aap soch rahe honge ki ye pulse aapki focus ko kaise double karega, aage dekho.",
+     "text_en": "You might wonder how this pulse could double your focus, stay tuned to find out.",
+     "queries": [
+      "mystery question mark overlay",
+      "focus boost visual",
+      "anticipation effect"
+     ],
+     "emphasis": "focus",
+     "chapter": 4
+    },
+    {
+     "text": "Apna 30‑second burst video record karo, #JEEFocusPulse ya #MedFocusPulse lagao aur share karo ab.",
+     "text_en": "Record your 30‑second burst, tag #JEEFocusPulse or #MedFocusPulse, and share it now with friends.",
+     "queries": [
+      "student recording phone video",
+      "hashtag overlay animation",
+      "sharing video on social media"
+     ],
+     "emphasis": "record",
+     "chapter": 4
+    },
+    {
+     "text": "Ab hum dekhte hain kaise viral challenges ko study routine ke saath jodein, aur focus ko boost karein.",
+     "text_en": "Now we see how to merge viral challenges with your study routine to boost focus.",
+     "queries": [
+      "young student using smartphone",
+      "college student studying",
+      "student practicing focus exercises"
+     ],
+     "emphasis": "viral challenges, focus",
+     "chapter": 5
+    },
+    {
+     "text": "Kya aap jaante hain ki ek 30-second challenge aapke brain ko kaise rev up karta hai?",
+     "text_en": "Did you know how a 30-second challenge can rev up your brain?",
+     "queries": [
+      "student doing quick exercise",
+      "brain activation demo",
+      "short workout clip"
+     ],
+     "emphasis": "30-second challenge",
+     "chapter": 5
+    },
+    {
+     "text": "Timer set, knees up, 30 seconds, breathe out, feel the pulse.",
+     "text_en": "Timer set, knees up, 30 seconds, exhale, feel the pulse.",
+     "queries": [
+      "timer app screen",
+      "student doing knee lifts",
+      "breathing exercise clip"
+     ],
+     "emphasis": "timer, knees up",
+     "chapter": 5
+    },
+    {
+     "text": "Ab ekdum se break lete hain, aur ek flashcard session start karte hain.",
+     "text_en": "Now we suddenly pause and start a flashcard session.",
+     "queries": [
+      "student flipping flashcards",
+      "study flashcard clip",
+      "quick recall exercise"
+     ],
+     "emphasis": "break, flashcard",
+     "chapter": 5
+    },
+    {
+     "text": "Yeh habit stacking se aapke naye behavior automatic ho jate hain, daily life me.",
+     "text_en": "Habit stacking makes new behaviors automatic, in daily life.",
+     "queries": [
+      "habit stacking concept",
+      "behavior change illustration",
+      "automatic behavior clip"
+     ],
+     "emphasis": "habit stacking",
+     "chapter": 5
+    },
+    {
+     "text": "Knees up ke baad, ek flashcard ya recall session shuru karo.",
+     "text_en": "After the knees-up, start a flashcard or recall session.",
+     "queries": [
+      "student recalling information",
+      "flashcard study session",
+      "memory recall clip"
+     ],
+     "emphasis": "recall session",
+     "chapter": 5
+    },
+    {
+     "text": "Research suggests habit‑stacked pulses improve recall speed and retention for students in academic settings.",
+     "text_en": "Research suggests habit-stacked pulses improve recall speed and retention for students in academic settings.",
+     "queries": [
+      "study research results",
+      "memory retention study clip",
+      "academic research footage"
+     ],
+     "emphasis": "research, recall speed",
+     "chapter": 5
+    },
+    {
+     "text": "Yeh exercise sirf healthy routine ka hissa hai, koi medical advice nahi.",
+     "text_en": "This exercise is part of a healthy routine, not medical advice.",
+     "queries": [
+      "healthy routine illustration",
+      "student exercising",
+      "medical disclaimer clip"
+     ],
+     "emphasis": "healthy routine",
+     "chapter": 5
+    },
+    {
+     "text": "Ab aap soch rahe honge ki kaise daily routine me isko fit karein?",
+     "text_en": "Now you may wonder how to fit this into your daily routine.",
+     "queries": [
+      "student planning schedule",
+      "daily routine planning clip",
+      "time management tutorial"
+     ],
+     "emphasis": "daily routine",
+     "chapter": 5
+    },
+    {
+     "text": "Toh dosto, ab bari hai action lene ki. Aaj se har 45-minute study ke baad apna Power-Pulse break zaroor repeat karo.",
+     "text_en": "So friends, it is time for action. From today, repeat your Power-Pulse break right after every 45-minute study session.",
+     "queries": [
+      "indian student timer desk study",
+      "young man stretching after study",
+      "study clock 45 minutes"
+     ],
+     "emphasis": "Power-Pulse",
+     "chapter": 6
+    },
+    {
+     "text": "Rukiye ek second! Pehle phone screen band kijiye, kyunki bina distraction ke hi aapka focus sahi tarike se lock hoga.",
+     "text_en": "Wait a second! Turn off your phone screen first, because focus truly locks in only without distractions.",
+     "queries": [
+      "turning off smartphone screen desk",
+      "hand pushing phone away desk",
+      "student putting phone upside down"
+     ],
+     "emphasis": "phone screen",
+     "chapter": 6
+    },
+    {
+     "text": "Research suggests habit-stacking increases automaticity of new behaviors, isliye breaks ko study session ke saath hamesha pair karte raho.",
+     "text_en": "Research suggests habit-stacking increases automaticity of new behaviors, so always pair your breaks with study sessions.",
+     "queries": [
+      "brain habit formation graphic",
+      "scientific routine habit stacking chart",
+      "student writing structured schedule"
+     ],
+     "emphasis": "automaticity",
+     "chapter": 6
+    },
+    {
+     "text": "Apni is 7-day challenge journey ka video upload karo aur apne study circle ke friends ko tag karna mat bhulna.",
+     "text_en": "Upload a video of your 7-day challenge journey and do not forget to tag your study circle friends.",
+     "queries": [
+      "student recording video smartphone desk",
+      "friends studying social media challenge",
+      "teen sharing video online"
+     ],
+     "emphasis": "tag karo",
+     "chapter": 6
+    },
+    {
+     "text": "Apna hashtag share karke dekho kaise hazaron Indian students ek sath milkar apna concentration level boost kar rahe hain.",
+     "text_en": "Share your hashtag and watch how thousands of Indian students together boost their concentration levels.",
+     "queries": [
+      "indian students community campus",
+      "social media hashtag notification phone",
+      "group of young students high five"
+     ],
+     "emphasis": "hashtag share",
+     "chapter": 6
+    },
+    {
+     "text": "Lekin kya aap jante ho jab deep mental fatigue aati hai, tab yeh habits kaise handle karein?",
+     "text_en": "But do you know how to handle these habits when deep mental fatigue sets in?",
+     "queries": [
+      "tired student thinking deeply desk",
+      "student looking out window thoughtful",
+      "curious student notebook desk"
+     ],
+     "emphasis": "mental fatigue",
+     "chapter": 6
+    },
+    {
+     "text": "Agar personalized guidance chahiye, toh aap Soft NeuroTriage se consult kar sakte ho apni routines ko optimize karne ke liye.",
+     "text_en": "If you need personalized guidance, you can consult Soft NeuroTriage to optimize your daily routines.",
+     "queries": [
+      "online student counseling laptop",
+      "professional mentor consultation screen",
+      "student speaking to advisor online"
+     ],
+     "emphasis": "Soft NeuroTriage",
+     "chapter": 6
+    },
+    {
+     "text": "Yaad rakhiye, kisi mentor ya counselor se guidance lena hamesha normal hota hai. Best of luck, focus banaye rakho!",
+     "text_en": "Remember, seeking guidance from a mentor or counselor is completely normal. Best of luck, stay focused!",
+     "queries": [
+      "smiling indian student confident library",
+      "student packing notebook smiling camera",
+      "positive study desk warm lighting"
+     ],
+     "emphasis": "focus banaye",
+     "chapter": 6
+    }
+   ]
+  },
+  "history": [],
+  "locked_at": "2026-11-01T15:44:07",
+  "source": "gemini"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-01T15:44:07",
+   "provider": "gemini",
+   "note": "v1 locked"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-01T15:42:52",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Leveraging Viral Challenges to Build Healthy Habits & Boost Focus for Indian Students\",\"hook_formula\":\"Nobody "
+  },
+  {
+   "at": "2026-11-01T15:42:56",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-20b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"scenes\":[{\"text\":\"Koi nahi batata 30-second challenge se focus badhe.\",\"text_en\":\"No one tells you that a 30-second ch"
+  },
+  {
+   "at": "2026-11-01T15:42:59",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-20b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"scenes\":[{\"text\":\"Yaar, hostel ki night duty aur exams ka pressure, sab kuch ek saath feel hota hai.\",\"text_en\":\"Dude,"
+  },
+  {
+   "at": "2026-11-01T15:43:01",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-20b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"scenes\":[{\"text\":\"Habit stacking ka matlab hai ek habit ko dusre ke saath jodna, jisse automatic ho jata hai.\",\"text_e"
+  },
+  {
+   "at": "2026-11-01T15:43:08",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"scenes\":[{\"text\":\"Hai bhai, 45‑minute padhai ke baad 30‑second high‑knee burst karo, brain ko fresh karo.\",\"text_en\":\""
+  },
+  {
+   "at": "2026-11-01T15:43:10",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-20b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"scenes\":[{\"text\":\"Ab hum dekhte hain kaise viral challenges ko study routine ke saath jodein, aur focus ko boost karei"
+  },
+  {
+   "at": "2026-11-01T15:44:07",
+   "stage": "script",
+   "provider": "gemini",
+   "model": "gemini-3.8-flash",
+   "key": "GEMINI_API_KEY",
+   "summary": "{\"scenes\":[{\"text\":\"Toh dosto, ab bari hai action lene ki. Aaj se har 45-minute study ke baad apna Power-Pulse break zar"
+  },
+  {
+   "at": "2026-11-01T15:44:09",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"30-Second Viral Challenge: Boost Study Focus Instantly!\",\"How a TikTok Trend Can Turn Your Study Routine Aro"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "script"
+}

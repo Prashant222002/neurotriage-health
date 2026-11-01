@@ -1,0 +1,36 @@
+{
+  "id": "2026-11-01-long",
+  "kind": "long",
+  "built": true,
+  "built_at": "2026-11-01T21:45:58+05:30",
+  "publish_at": "2026-11-02T19:00+05:30",
+  "publish_at_utc": "2026-11-02T13:30+00:00",
+  "privacy": "private",
+  "artifact": "queue-2026-11-01-long",
+  "files": {
+    "video": "long_final.mp4",
+    "thumb": "thumb.jpg"
+  },
+  "meta": {
+    "title": "Leveraging Viral Challenges to Build Healthy Habits & Boost Focus for Indian Students",
+    "yt_description": "Discover how viral challenges can become powerful study habits for Indian med students. Learn habit‑stacking tricks to boost focus, reduce fatigue, and ace your exams. Join the challenge and share your progress in the comments!\n\nChapters:\n00:00 Hook & Promise\n00:43 Relate Stress\n01:16 Science of Habit‑Stacking\n02:07 Power‑Pulse Challenge\n02:45 Demo & Study Integration\n03:28 Action & Closing\n\nSources: https://pubmed.ncbi.nlm.nih.gov/38558827/ | https://pubmed.ncbi.nlm.nih.gov/34223960/\n\nNeuroTriage: https://www.neurotriage.in/\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\n#StudyHack #ViralChallenge #FocusBoost #IndianStudents #HabitStacking",
+    "hashtags": [
+      "#StudyHack",
+      "#ViralChallenge",
+      "#FocusBoost",
+      "#IndianStudents",
+      "#HabitStacking"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "YouTube secrets missing"
+      },
+      "at": "2026-11-01T16:15:58+00:00"
+    }
+  },
+  "status": "pending"
+}
