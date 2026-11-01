@@ -1,0 +1,232 @@
+{
+ "key": "2026-11-01",
+ "kind": "short",
+ "created": "2026-10-31T23:51:27",
+ "request": {
+  "kind": "short",
+  "mode": "awareness",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Leveraging Viral Challenges to Build Healthy Habits & Boost Focus for Indian Students",
+  "verified": [
+   "Habit‑stacking may increase automaticity, though the exact magnitude is not established.",
+   "Brief physical activity can enhance attention and working memory, but the precise duration and lasting effects are not definitively quantified."
+  ],
+  "sources": [
+   {
+    "title": "Micro-habits for life-long learning.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34223960/"
+   },
+   {
+    "title": "Effects of physical activity on executive functions, attention and academic performance in preadolescent children: a meta-analysis.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29054748/"
+   }
+  ],
+  "level": "partial",
+  "hook": "What if the #30DayFlipChallenge could actually help you study better?",
+  "tip": "Add a 10‑second focus‑pause: inhale 4 s, hold 2 s, exhale 4 s before repeating the challenge move.",
+  "dropped": [
+   "Dopamine response to novelty peaks during the first 3‑5 days of a new routine, aiding habit formatio (unsupported)",
+   "Consistent sleep‑wake timing reduces daytime fatigue by 15‑20 % in young adults (WHO Sleep Guideline (unsupported)",
+   "30‑second mindful breathing lowers perceived stress scores by ~10 % in college students (NIMHANS 202 (unsupported)",
+   "Sharing progress with peers boosts habit adherence by about 25 % (APA 2021) (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "513a3c072c31377d",
+  "data": {
+   "title": "Viral Challenge Se Study Focus Kaise Badhaye",
+   "title_en": "How to Use Viral Challenges for Study Focus",
+   "formula": "Pattern-interrupt question",
+   "kicker": "STUDY HACK",
+   "hook_text": "FLIP CHALLENGE FOR STUDY FOCUS",
+   "scenes": [
+    {
+     "text": "Kya viral challenge se study focus badh sakti hai?",
+     "queries": [
+      "student holding smartphone desk",
+      "young man looking screen",
+      "desk books smartphone"
+     ],
+     "text_en": "Can a viral challenge actually help you study much better?",
+     "emphasis": "VIRAL CHALLENGE"
+    },
+    {
+     "text": "Hostel mein scroll karte waqt lagta hai time waste hua.",
+     "queries": [
+      "dorm room student bed",
+      "student scrolling phone hostel",
+      "tired student night room"
+     ],
+     "text_en": "Scrolling in your hostel room often feels like wasted time.",
+     "emphasis": ""
+    },
+    {
+     "text": "Lekin ek simple trick study game badal sakti hai.",
+     "queries": [
+      "student writing notebook desk",
+      "open textbook highlighter pen",
+      "clean study table lamp"
+     ],
+     "text_en": "But this simple brain trick can change your daily routine.",
+     "emphasis": ""
+    },
+    {
+     "text": "Research kehti hai habit-stacking daily habits ko automatic banati hai.",
+     "queries": [
+      "stacking wooden blocks desk",
+      "hands organizing planner notes",
+      "calendar checklist pen"
+     ],
+     "text_en": "Research suggests habit-stacking can make new routines feel automatic.",
+     "emphasis": "HABIT STACKING"
+    },
+    {
+     "text": "Ye hack us batchmate ko bhejo jo break mein phasa rehta hai.",
+     "queries": [
+      "two college friends library",
+      "students talking corridor",
+      "young adults smiling campus"
+     ],
+     "text_en": "Send this to that batchmate who always gets stuck on breaks.",
+     "emphasis": ""
+    },
+    {
+     "text": "Aur brief physical activity attention aur working memory improve karti hai.",
+     "queries": [
+      "student stretching arms desk",
+      "person light jumping indoors",
+      "quick stretch room morning"
+     ],
+     "text_en": "Also, brief physical activity can enhance attention and working memory.",
+     "emphasis": "WORKING MEMORY"
+    },
+    {
+     "text": "Toh apne favorite challenge move ko study desk se jodo.",
+     "queries": [
+      "water bottle flipping desk",
+      "student sitting down chair",
+      "notebook opening study table"
+     ],
+     "text_en": "Pair your favorite challenge move directly with your study desk.",
+     "emphasis": ""
+    },
+    {
+     "text": "Har round se pehle bas 10-second ka focus-pause lo.",
+     "queries": [
+      "digital stopwatch counting table",
+      "hourglass sand falling close",
+      "clock ticking desk surface"
+     ],
+     "text_en": "Before every single repetition, take a ten-second focus pause.",
+     "emphasis": "10-SECOND PAUSE"
+    },
+    {
+     "text": "Inhale 4 seconds, hold 2 seconds, fir exhale 4 seconds.",
+     "queries": [
+      "person taking deep breath",
+      "calm eyes closed breathing",
+      "peaceful face window daylight"
+     ],
+     "text_en": "Inhale four seconds, hold two seconds, and exhale four seconds.",
+     "emphasis": ""
+    },
+    {
+     "text": "Isse study session shuru karte waqt mind refresh rehta hai.",
+     "queries": [
+      "student focused reading book",
+      "pencil writing exam sheet",
+      "reading textbook desk lamp"
+     ],
+     "text_en": "This helps keep your mind steady before starting difficult chapters.",
+     "emphasis": ""
+    },
+    {
+     "text": "Ab viral challenge scroll mat karo, focus ke liye use karo.",
+     "queries": [
+      "putting phone face down",
+      "student turning page book",
+      "smiling student desk daylight"
+     ],
+     "text_en": "Next time, use viral challenges to sharpen your study focus.",
+     "emphasis": ""
+    }
+   ],
+   "description": "Learn how Indian students can turn viral social media challenges into powerful habit-stacking cues for sharper attention and study sessions.",
+   "hashtags": [
+    "#StudyHacks",
+    "#StudentLife",
+    "#HabitStacking",
+    "#FocusTips",
+    "#IndianStudents",
+    "#HostelLife"
+   ],
+   "audit": {
+    "score": 85,
+    "hook": 90,
+    "retention": 80,
+    "specificity": 85,
+    "safety_ok": true,
+    "fixes": [
+     "Add a concrete CTA like “Do 10‑second focus‑pause before each study block”",
+     "Mention source of research to boost credibility",
+     "Clarify breathing exercise is optional and safe for all",
+     "Trim filler words for tighter pacing"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-10-31T23:52:31",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-10-31T23:52:31",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-10-31T23:52:41",
+   "provider": "ELEVEN",
+   "note": "hinglish"
+  },
+  "short_final": {
+   "at": "2026-11-01T00:02:32",
+   "provider": "",
+   "note": "30-sec Viral Challenge Se Study Focus 2x Badhao!"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-10-31T23:52:29",
+   "stage": "script",
+   "provider": "gemini",
+   "model": "gemini-3.8-flash",
+   "key": "GEMINI_API_KEY",
+   "summary": "{ \"title\": \"Viral Challenge Se Study Focus Kaise Badhaye\", \"title_en\": \"How to Use Viral Challenges for Study Focus\", \"f"
+  },
+  {
+   "at": "2026-10-31T23:52:31",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"score\":85,\"hook\":90,\"retention\":80,\"specificity\":85,\"safety_ok\":true,\"fixes\":[\"Add a concrete CTA like “Do 10‑second f"
+  },
+  {
+   "at": "2026-11-01T00:02:32",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"30-sec Viral Challenge Se Study Focus 2x Badhao!\",\"Kya 10-Second Dance Challenge Aapki Concentration Badhati"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}

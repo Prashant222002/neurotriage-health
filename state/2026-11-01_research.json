@@ -1,0 +1,79 @@
+{
+ "key": "2026-11-01",
+ "kind": "research",
+ "created": "2026-10-31T23:51:17",
+ "request": {
+  "kind": "research",
+  "mode": "awareness"
+ },
+ "research": {
+  "topic": "Leveraging Viral Challenges to Build Healthy Habits & Boost Focus for Indian Students",
+  "verified": [
+   "Habit‑stacking may increase automaticity, though the exact magnitude is not established.",
+   "Brief physical activity can enhance attention and working memory, but the precise duration and lasting effects are not definitively quantified."
+  ],
+  "sources": [
+   {
+    "title": "Micro-habits for life-long learning.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34223960/"
+   },
+   {
+    "title": "Effects of physical activity on executive functions, attention and academic performance in preadolescent children: a meta-analysis.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29054748/"
+   }
+  ],
+  "level": "partial",
+  "hook": "What if the #30DayFlipChallenge could actually help you study better?",
+  "tip": "Add a 10‑second focus‑pause: inhale 4 s, hold 2 s, exhale 4 s before repeating the challenge move.",
+  "dropped": [
+   "Dopamine response to novelty peaks during the first 3‑5 days of a new routine, aiding habit formatio (unsupported)",
+   "Consistent sleep‑wake timing reduces daytime fatigue by 15‑20 % in young adults (WHO Sleep Guideline (unsupported)",
+   "30‑second mindful breathing lowers perceived stress scores by ~10 % in college students (NIMHANS 202 (unsupported)",
+   "Sharing progress with peers boosts habit adherence by about 25 % (APA 2021) (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-10-31T23:51:27",
+   "provider": "groq",
+   "note": "partial"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-10-31T23:51:19",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "TOPIC: Leveraging Viral Challenges to Build Healthy Habits & Boost Focus for Indian Students ANGLE (why it is underused)"
+  },
+  {
+   "at": "2026-10-31T23:51:22",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Leveraging Viral Challenges to Build Healthy Habits & Boost Focus for Indian Students\",\"search_terms\":[\"habit "
+  },
+  {
+   "at": "2026-10-31T23:51:27",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"uncertain\",\"cites\":[0],\"fix\":\"Habit‑stacking may increase automaticity, though the exact m"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}
