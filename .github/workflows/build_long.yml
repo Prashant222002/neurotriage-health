@@ -93,13 +93,13 @@ jobs:
       - name: API key health check (which keys work, which secrets are named wrong)
         continue-on-error: true
         env:
-          ALL_SECRETS_JSON: ""
+          ALL_SECRETS_JSON: ${{ toJSON(secrets) }}
         run: python healthcheck.py
 
       - name: Build (3 attempts, resumes from checkpoints)
         env:
           # every secret, so GROQ_API_KEY_3..10 / ELEVEN_API_KEY_1..10 / XAI_... work without editing this file
-          ALL_SECRETS_JSON: ""
+          ALL_SECRETS_JSON: ${{ toJSON(secrets) }}
           # ---- LLM (research + script) ----
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_API_KEY_2: ${{ secrets.GROQ_API_KEY_2 }}
