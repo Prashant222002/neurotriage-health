@@ -207,6 +207,16 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
 
+      - name: Download - final Short video (always)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: SHORT-VIDEO-${{ github.run_id }}
+          path: |
+            output/final_reel*.mp4
+          retention-days: 7
+          if-no-files-found: ignore
+
       - name: Debug files (meta + report)
         if: always()
         uses: actions/upload-artifact@v4
@@ -228,4 +238,5 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
           git add topics_done.txt queue/ state/ 2>/dev/null || true
           git commit -m "build: topic log + queue manifests" || echo "nothing to commit"
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push && break || sleep 6; donenothing to commit"
           for i in 1 2 3 4 5; do git pull --rebase -q && git push && break || sleep 6; done
