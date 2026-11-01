@@ -84,13 +84,13 @@ jobs:
       - name: API key health check (which keys work, which secrets are named wrong)
         continue-on-error: true
         env:
-          ALL_SECRETS_JSON: ${{ toJSON(secrets) }}
+          ALL_SECRETS_JSON: ""
         run: python healthcheck.py
 
       - name: Build (3 attempts, resumes from checkpoints)
         env:
           # every secret, so GROQ_API_KEY_3..10 / ELEVEN_API_KEY_1..10 / XAI_... work without editing this file
-          ALL_SECRETS_JSON: ${{ toJSON(secrets) }}
+          ALL_SECRETS_JSON: ""
           # ---- LLM (research + script) ----
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_API_KEY_2: ${{ secrets.GROQ_API_KEY_2 }}
@@ -232,6 +232,13 @@ jobs:
           if-no-files-found: ignore
 
       - name: Save topic history + queue manifests
+        if: always()
+        run: |
+          git config user.name "reel-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add topics_done.txt queue/ state/ 2>/dev/null || true
+          git commit -m "build: topic log + queue manifests" || echo "nothing to commit"
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push && break || sleep 6; donequeue manifests
         if: always()
         run: |
           git config user.name "reel-bot"
