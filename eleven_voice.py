@@ -38,13 +38,15 @@ def load_keys():
 _LABEL = {}                       # key value -> secret name (for logs; the key itself is never printed)
 
 
-MODELS = _env_list("ELEVEN_MODELS", ["eleven_multilingual_v2", "eleven_v3",
+MODELS = _env_list("ELEVEN_MODELS", ["eleven_v3", "eleven_multilingual_v2",
                                      "eleven_turbo_v2_5", "eleven_flash_v2_5"])
 # Rachel + George are ElevenLabs premade voices (work on free keys). Put your Indian/Hindi
 # voice id FIRST in ELEVEN_VOICE_IDS.
 VOICES = _env_list("ELEVEN_VOICE_IDS", ["21m00Tcm4TlvDq8ikWAM", "JBFqnCBsd6RMkjVDRZzb"])
 SPEED = [1.0]          # bot raises this (1.0 -> 1.08 -> 1.15) when narration runs too long
 
+HINDI_IDS = _env_list("ELEVEN_HINDI_VOICE_IDS", [])   # v17: ONLY these (and only if verified professional+Hindi) are used for Hindi
+ACTIVE = {"voices": None, "lang": "hi"}               # bot sets this per run: Hindi pro voice or English
 _KEYS = load_keys()
 _BAD = set()           # keys dead for this run
 _REMAIN = {}           # key -> credits left (best effort)
@@ -98,12 +100,21 @@ def _settings(model):
     return s
 
 
+def _body(text, model):
+    """v16: bot sends DEVANAGARI Hindi text; language_code=hi pins Hindi pronunciation on models that support it
+    (multilingual_v2 detects the language from the script and rejects language_code)."""
+    b = {"text": text, "model_id": model, "voice_settings": _settings(model)}
+    if model in ("eleven_v3", "eleven_turbo_v2_5", "eleven_flash_v2_5") and ACTIVE["lang"]:
+        b["language_code"] = ACTIVE["lang"]
+    return b
+
+
 def _call(key, voice, model, text):
     r = requests.post(
         f"{API}/text-to-speech/{voice}/with-timestamps",
         params={"output_format": "mp3_44100_128"},
         headers={"xi-api-key": key, "Content-Type": "application/json"},
-        json={"text": text, "model_id": model, "voice_settings": _settings(model)},
+        json=_body(text, model),
         timeout=90)
     return r
 
@@ -135,7 +146,7 @@ def tts(text):
         raise ElevenError("no usable ElevenLabs key")
     errors = []
     for model in MODELS:
-        for voice in VOICES:
+        for voice in (ACTIVE["voices"] or VOICES):
             skip_voice = False
             for key in _ordered_keys(len(text)):
                 if skip_voice:
@@ -207,3 +218,32 @@ def health(test_voice=True):
                 test = {"ok": False, "why": str(e)[:120]}
     return {"configured_keys": len(_KEYS), "keys": rows, "test_generation": test,
             "voices": VOICES, "models": MODELS}
+
+
+_HI_CACHE = {}
+
+
+def find_hindi_pro_voice():
+    """v17 policy: return a voice id ONLY if ElevenLabs says it is a PROFESSIONAL voice that is verified for Hindi
+    (category == 'professional' and 'hi' in verified_languages). Otherwise None -> the bot makes ENGLISH content.
+    Set ELEVEN_HINDI_VOICE_IDS=id1,id2 (voices added to your account)."""
+    if "v" in _HI_CACHE:
+        return _HI_CACHE["v"]
+    found = None
+    for vid in HINDI_IDS:
+        for k in [x for x in _KEYS if x not in _BAD]:
+            try:
+                r = requests.get(f"{API}/voices/{vid}", headers={"xi-api-key": k}, timeout=20)
+            except requests.RequestException:
+                continue
+            if r.status_code != 200:
+                continue
+            j = r.json()
+            langs = {str(x.get("language", "")).lower() for x in (j.get("verified_languages") or [])}
+            if j.get("category") == "professional" and ("hi" in langs or "hindi" in langs):
+                found = vid
+            break
+        if found:
+            break
+    _HI_CACHE["v"] = found
+    return found
