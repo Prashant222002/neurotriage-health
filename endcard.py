@@ -7,7 +7,7 @@ from PIL import Image, ImageDraw
 
 from gfx import BLUE, GREEN, blit, clamp01, ease_out_back, font, pill, rounded, scaled, text_sprite
 
-Y_ROW, Y_TRY = 1200, 1315     # all inside y<1600: clear of the Shorts bottom UI
+Y_ROW, Y_TRY = 1215, 1295     # all inside y<1600: clear of the Shorts bottom UI
 BUTTONS = [("LIKE", "heart"), ("SHARE", "plane"), ("FOLLOW", "plus")]
 ROW_COLORS = {"heart": ((235, 64, 110), (255, 120, 90)), "plane": (BLUE, (80, 150, 255)), "plus": (GREEN, (60, 210, 160))}
 
@@ -45,15 +45,16 @@ def button(label, kind, size=40, padx=30, pady=18):
 class EndCard:
     def __init__(self, W=1080, site="www.neurotriage.in", brand="NeuroTriage"):
         self.W = W
-        self.btns = [button(l, k) for l, k in BUTTONS]
-        self.try_pill = pill(f"Try {brand}", 58, BLUE, GREEN, 70, 26)
-        self.site = text_sprite(site, 40, (235, 240, 250), 0, shadow=True)
+        # v16: everything ~55% of the old size (less crowded); order: row+Try pill, then www
+        self.btns = [button(l, k, size=24, padx=17, pady=10) for l, k in BUTTONS]
+        self.try_pill = pill(f"Try {brand}", 34, BLUE, GREEN, 42, 15)
+        self.site = text_sprite(site, 26, (235, 240, 250), 0, shadow=True)
 
     def draw(self, frame, t, alpha=1.0):
         """t = seconds since the end card started."""
         if t < 0 or alpha <= 0:
             return frame
-        gap = 18
+        gap = 10
         total = sum(b.shape[1] for b in self.btns) + gap * (len(self.btns) - 1)
         x = (self.W - total) / 2
         for i, b in enumerate(self.btns):
@@ -67,7 +68,8 @@ class EndCard:
             k = ease_out_back(u) * (1 + 0.025 * math.sin(t * 5))
             s = scaled(self.try_pill, max(0.05, k))
             blit(frame, s, (self.W - s.shape[1]) / 2, Y_TRY + (self.try_pill.shape[0] - s.shape[0]) / 2, alpha * min(1, u * 3))
-        u2 = clamp01((t - 0.8) / 0.4)
+        u2 = clamp01((t - 1.3) / 0.5)          # www comes last
+        slide = (1 - ease_out_back(u2, 1.2)) * 14 if u2 < 1 else 0
         if u2 > 0:
-            blit(frame, self.site, (self.W - self.site.shape[1]) / 2, Y_TRY + self.try_pill.shape[0] - 6, alpha * u2)
+            blit(frame, self.site, (self.W - self.site.shape[1]) / 2, Y_TRY + self.try_pill.shape[0] - 4 + slide, alpha * u2)
         return frame
