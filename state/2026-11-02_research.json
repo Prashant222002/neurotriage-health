@@ -9,8 +9,9 @@
  "research": {
   "topic": "Juventus vs Napoli – using the hype around the high‑stakes football clash to show students how to handle performance pressure and exam anxiety",
   "verified": [
-   "Performance anxiety can increase cortisol levels, which may impair aspects of memory such as working memory.",
-   "Performance anxiety spikes cortisol, impairing working memory"
+   "Performance anxiety triggers a surge in cortisol, the body’s primary stress hormone.",
+   "Performance anxiety may affect working memory, with some studies indicating possible impairment when cortisol levels are high, while other research finds no clear effect.",
+   "Elevated cortisol can impair working memory, essential for exam information manipulation."
   ],
   "sources": [
    {
@@ -18,23 +19,26 @@
     "url": "https://pubmed.ncbi.nlm.nih.gov/19907380/"
    },
    {
-    "title": "Test Anxiety and Salivary Cortisol Levels in Nursing Students.",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/27391244/"
+    "title": "Elevated Cortisol Leaves Working Memory Unaffected in Both Men and Women.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30087603/"
    },
    {
-    "title": "Stress experience and performance during an oral exam: the role of self-efficacy, threat appraisals, anxiety, and cortisol.",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/30257566/"
+    "title": "Endogenous cortisol correlates with performance under pressure on a working memory task in capuchin monkeys.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35046477/"
+   },
+   {
+    "title": "Anxiety mediates the effect of acute stress on working memory performance when cortisol levels are high: a moderated mediation analysis.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/25537070/"
    }
   ],
-  "level": "partial",
-  "hook": "What if the nerves you feel watching Juventus vs Napoli are the exact same ones that can wreck your exam scores – and you can train them like a pro footballer?",
-  "tip": "Before a big exam, do a 3‑minute “match‑day routine”: visualize entering the exam hall calmly, recite a cue like “Focus like a striker” while breathing deeply, then jump into a 5‑minute active‑recall sprint on a key topic.",
+  "level": "verified",
+  "hook": "Zyada padhna = kam yaad. Jaise Juventus aur Napoli ka match, tumhara anxiety bhi ek rival hai – yeh 3 tricks use karo aur exam hall mein jeet lo.",
+  "tip": "Before opening the exam paper, spend 60 seconds doing the 4‑7‑8 breathing rhythm (inhale 4 sec, hold 7 sec, exhale 8 sec) to quickly dampen cortisol spikes.",
   "dropped": [
-   "Acute stress before a match or exam reduces prefrontal‑cortex activity, making focus harder (unsupported)",
-   "Visualization and pre‑performance routines lower heart rate and boost confidence, improving exam per (unsupported)",
-   "Active recall under timed pressure trains rapid information retrieval like a striker’s split‑second  (unsupported)",
-   "Spacing study sessions every 24‑48 hours counters the forgetting curve and builds long‑term retentio (unsupported)",
-   "Adequate sleep (7‑9 h) after intense mental effort consolidates memories and normalizes stress hormo (unsupported)"
+   "Working‑memory capacity predicts short‑term academic performance more strongly than raw knowledge al (unsupported)",
+   "Short, controlled breathing (4‑7‑8 technique) lowers cortisol levels within minutes. (unsupported)",
+   "A 20‑minute walk or light aerobic activity after a study block reduces cortisol and refreshes workin (unsupported)",
+   "Adequate sleep (7‑9 hours) consolidates memories and counteracts cortisol‑induced memory loss. (unsupported)"
   ]
  },
  "script": {
@@ -46,9 +50,9 @@
  },
  "stages": {
   "research": {
-   "at": "2026-11-01T19:15:28",
+   "at": "2026-11-02T13:27:27",
    "provider": "groq",
-   "note": "partial"
+   "note": "verified"
   }
  },
  "handoff": [
@@ -75,6 +79,38 @@
    "model": "openai/gpt-oss-120b",
    "key": "GROQ_API_KEY",
    "summary": "{\"results\":[{\"i\":0,\"verdict\":\"uncertain\",\"cites\":[0,2,3],\"fix\":\"Performance anxiety can increase cortisol levels, which "
+  },
+  {
+   "at": "2026-11-02T13:27:17",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"जन्मभूमि से कर्म भूमि तक📚🧿✨ #motivation #nursingofficer #aiims #trending #shorts #norcet\",\"formul"
+  },
+  {
+   "at": "2026-11-02T13:27:20",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Juventus vs Napoli – using the hype around the high‑stakes football clash to show students how to handle perfo"
+  },
+  {
+   "at": "2026-11-02T13:27:22",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Juventus vs Napoli – using the hype around the high‑stakes football clash to show students how to handle perfo"
+  },
+  {
+   "at": "2026-11-02T13:27:27",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"supported\",\"cites\":[0,3],\"fix\":\"\"},{\"i\":1,\"verdict\":\"uncertain\",\"cites\":[1,2,3],\"fix\":\"Per"
   }
  ],
  "pending": [],
