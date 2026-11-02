@@ -1,0 +1,772 @@
+{
+ "key": "2026-11-02",
+ "kind": "long",
+ "created": "2026-11-02T13:27:27",
+ "request": {
+  "kind": "long",
+  "mode": "student",
+  "language": "eleven"
+ },
+ "research": {
+  "topic": "Juventus vs Napoli – using the hype around the high‑stakes football clash to show students how to handle performance pressure and exam anxiety",
+  "verified": [
+   "Performance anxiety triggers a surge in cortisol, the body’s primary stress hormone.",
+   "Performance anxiety may affect working memory, with some studies indicating possible impairment when cortisol levels are high, while other research finds no clear effect.",
+   "Elevated cortisol can impair working memory, essential for exam information manipulation."
+  ],
+  "sources": [
+   {
+    "title": "The effects of acute stress on performance: implications for health professions education.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/19907380/"
+   },
+   {
+    "title": "Elevated Cortisol Leaves Working Memory Unaffected in Both Men and Women.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30087603/"
+   },
+   {
+    "title": "Endogenous cortisol correlates with performance under pressure on a working memory task in capuchin monkeys.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35046477/"
+   },
+   {
+    "title": "Anxiety mediates the effect of acute stress on working memory performance when cortisol levels are high: a moderated mediation analysis.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/25537070/"
+   }
+  ],
+  "level": "verified",
+  "hook": "Zyada padhna = kam yaad. Jaise Juventus aur Napoli ka match, tumhara anxiety bhi ek rival hai – yeh 3 tricks use karo aur exam hall mein jeet lo.",
+  "tip": "Before opening the exam paper, spend 60 seconds doing the 4‑7‑8 breathing rhythm (inhale 4 sec, hold 7 sec, exhale 8 sec) to quickly dampen cortisol spikes.",
+  "dropped": [
+   "Working‑memory capacity predicts short‑term academic performance more strongly than raw knowledge al (unsupported)",
+   "Short, controlled breathing (4‑7‑8 technique) lowers cortisol levels within minutes. (unsupported)",
+   "A 20‑minute walk or light aerobic activity after a study block reduces cortisol and refreshes workin (unsupported)",
+   "Adequate sleep (7‑9 hours) consolidates memories and counteracts cortisol‑induced memory loss. (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "6195d77db567a41a",
+  "data": {
+   "title": "Juventus vs Napoli: Exam Anxiety ko Jeetne ke 3 Tricks",
+   "hook_formula": "Counterintuitive",
+   "chapters": [
+    {
+     "name": "Hook & Promise",
+     "goal": "Capture attention and promise 3 tricks using football hype",
+     "beats": [
+      "Zyada padhna = kam yaad. Here's why",
+      "Juventus aur Napoli ka match tumhare anxiety ko challenge karta hai",
+      "Agle 60 seconds mein main 3 winning tricks dunga"
+     ]
+    },
+    {
+     "name": "Relate to Student Life",
+     "goal": "Connect exam pressure to everyday medical student experience",
+     "beats": [
+      "Hostel ki raat, duty ka stress, aur exam ka pressure sab ek hi rival hai",
+      "Jaise fans match dekhte hain, tum bhi apne anxiety ko dekh rahe ho",
+      "Yeh anxiety tumhara real opponent hai"
+     ]
+    },
+    {
+     "name": "Science of Stress",
+     "goal": "Explain cortisol surge and its impact on working memory",
+     "beats": [
+      "Performance anxiety triggers a surge in cortisol, the body’s primary stress hormone",
+      "Elevated cortisol can impair working memory, jo exam info manipulate karne mein zaroori hai",
+      "Kuch research kehti hai cortisol high hone par working memory affect ho sakti hai"
+     ]
+    },
+    {
+     "name": "Pre‑match (Exam) Routine",
+     "goal": "Teach 4‑7‑8 breathing to dampen cortisol spikes",
+     "beats": [
+      "Exam paper kholne se pehle 60 seconds 4‑7‑8 breathing karo",
+      "Inhale 4 seconds, hold 7 seconds, exhale 8 seconds – repeat",
+      "Yeh technique cortisol spikes ko quickly kam karti hai"
+     ]
+    },
+    {
+     "name": "Football Analogy",
+     "goal": "Tie breathing routine to Juventus vs Napoli match preparation",
+     "beats": [
+      "Jaise players warm‑up karte hain, tumhara breath bhi warm‑up hai",
+      "Focused breathing se tumhara mind clear hota hai, jaise striker ka vision",
+      "Isse tum match (exam) mein calm aur sharp rehte ho"
+     ]
+    },
+    {
+     "name": "Call to Action",
+     "goal": "Prompt one practical action and soft NeuroTriage mention",
+     "beats": [
+      "Ab har exam se pehle 4‑7‑8 breathing try karo – comment 'practice'",
+      "Agar tumhe aur tips chahiye, comment karo ya like karo",
+      "Soft NeuroTriage aapko personalized stress management plan dega"
+     ]
+    }
+   ],
+   "scenes": [
+    {
+     "text": "Zyada padhna = kam yaad. Here's why – jab cortisol spike hota hai, brain ki memory thodi dull ho jati hai.",
+     "text_en": "Studying too much reduces recall. Research suggests high cortisol spikes make memory processing less efficient.",
+     "queries": [
+      "cortisol stress animation",
+      "student studying stressed",
+      "brain memory illustration"
+     ],
+     "emphasis": "cortisol, memory",
+     "chapter": 1
+    },
+    {
+     "text": "Socho, aapka brain ek football stadium, aur cortisol ek heavy rainstorm! Sab players ko thoda slippery bana deta hai.",
+     "text_en": "Imagine your brain as a stadium and cortisol as a heavy rainstorm that makes every player slip.",
+     "queries": [
+      "brain stadium metaphor",
+      "rainstorm over football field",
+      "players slipping in rain"
+     ],
+     "emphasis": "brain, rainstorm",
+     "chapter": 1
+    },
+    {
+     "text": "Juventus aur Napoli ka match tumhare anxiety ko challenge karta hai – dono teams pressure mein shine karte hain, jaise tum exam hall mein.",
+     "text_en": "The Juventus vs Napoli clash tests your anxiety – both teams shine under pressure, just like you in the exam hall.",
+     "queries": [
+      "Juventus Napoli match highlights",
+      "students feeling exam pressure",
+      "stadium crowd tension"
+     ],
+     "emphasis": "pressure, match",
+     "chapter": 1
+    },
+    {
+     "text": "Lekin ek secret hai jo top players use karte hain, jo aapke exams me bhi kaam aa sakta hai – aapko abhi batata hoon.",
+     "text_en": "But there's a secret top players use that can also help you in exams, and I'm about to reveal it.",
+     "queries": [
+      "secret reveal animation",
+      "coach whispering secret",
+      "mystery box opening"
+     ],
+     "emphasis": "secret",
+     "chapter": 1
+    },
+    {
+     "text": "Agle 60 seconds mein main 3 winning tricks dunga, jo aapke exam stress ko kam karenge aur performance boost karenge.",
+     "text_en": "In the next 60 seconds, I'll share three winning tricks that will reduce your exam stress and boost performance.",
+     "queries": [
+      "timer countdown 60 seconds",
+      "quick tip graphic",
+      "exam stress relief"
+     ],
+     "emphasis": "60 seconds, tricks",
+     "chapter": 1
+    },
+    {
+     "text": "Trick #1: Controlled breathing, jaise aap half-time break mein deep breaths lete ho, cortisol ko calm karne ke liye.",
+     "text_en": "Trick #1: Practice controlled breathing, like taking deep breaths during half-time, to calm cortisol levels.",
+     "queries": [
+      "controlled breathing exercise",
+      "half-time break football",
+      "cortisol calming visual"
+     ],
+     "emphasis": "breathing",
+     "chapter": 1
+    },
+    {
+     "text": "Hostel ki raat, duty ka stress, aur exam ka pressure sab ek hi rival hai, jaise derby ka opponent.",
+     "text_en": "Late night in the hostel, duty stress and exam pressure are one rival, just like a derby opponent.",
+     "queries": [
+      "hostel night study stress",
+      "students on duty late night",
+      "exam pressure visual metaphor"
+     ],
+     "emphasis": "rival",
+     "chapter": 2
+    },
+    {
+     "text": "Jaise fans match dekhte hain, tum bhi apne anxiety ko dekh rahe ho, har heartbeat stadium ki tarah.",
+     "text_en": "Just as fans watch the match, you watch your anxiety, every heartbeat echoing the stadium.",
+     "queries": [
+      "students watching football anxiety",
+      "heartbeat stadium metaphor",
+      "young adult stress visual"
+     ],
+     "emphasis": "heartbeat",
+     "chapter": 2
+    },
+    {
+     "text": "Yeh anxiety tumhara real opponent hai; usko samajhkar hi tum jeet ki strategy bana sakte ho.",
+     "text_en": "This anxiety is your real opponent; understanding it lets you craft a winning strategy.",
+     "queries": [
+      "student facing anxiety opponent",
+      "strategy to overcome exam stress",
+      "visual of mental opponent"
+     ],
+     "emphasis": "opponent",
+     "chapter": 2
+    },
+    {
+     "text": "Research suggests cortisol spike jab stress badhta hai, working memory thodi dull ho sakti hai, par hum isko manage kar sakte hain.",
+     "text_en": "Research suggests cortisol spikes during stress can dull working memory, but we can manage it effectively.",
+     "queries": [
+      "cortisol stress brain illustration",
+      "working memory decline stress",
+      "student managing cortisol"
+     ],
+     "emphasis": "cortisol",
+     "chapter": 2
+    },
+    {
+     "text": "Ab socho, agar tum apne cortisol ko control kar sako, toh exam ki performance ka score kaise badhega?",
+     "text_en": "Now imagine, if you could control cortisol, how would your exam performance score improve?",
+     "queries": [
+      "cortisol control student",
+      "exam performance improvement graphic",
+      "brain stress management animation"
+     ],
+     "emphasis": "control",
+     "chapter": 2
+    },
+    {
+     "text": "Ruko! 5 seconds ke liye deep breath le, feel the change, sabko, phir aage.",
+     "text_en": "Stop! Take a deep breath for five seconds, feel the shift, then continue forward.",
+     "queries": [
+      "student breathing exercise",
+      "quick stress relief visual",
+      "pause pattern interrupt video"
+     ],
+     "emphasis": "breath",
+     "chapter": 2
+    },
+    {
+     "text": "Jaise team halftime mein strategy change karti hai, tum bhi cortisol ko reset karke focus badha sakte ho.",
+     "text_en": "Just like a team changes strategy at halftime, you can reset cortisol and boost focus.",
+     "queries": [
+      "halftime strategy football metaphor",
+      "cortisol reset student",
+      "focus boost illustration"
+     ],
+     "emphasis": "focus",
+     "chapter": 2
+    },
+    {
+     "text": "Ek simple tip: exam se pehle 10 minute walk, cortisol level ko naturally lower karta hai, research suggests.",
+     "text_en": "A simple tip: a 10‑minute walk before the exam naturally lowers cortisol, research suggests.",
+     "queries": [
+      "student walking before exam",
+      "cortisol lowering walk",
+      "quick outdoor break stress"
+     ],
+     "emphasis": "walk",
+     "chapter": 2
+    },
+    {
+     "text": "Toh, agla part mein jaanenge kaise yeh techniques ko daily routine mein daale, aur anxiety ko jeet le.",
+     "text_en": "Next, we’ll learn how to embed these techniques into your daily routine and beat anxiety.",
+     "queries": [
+      "daily routine anxiety technique",
+      "student habit building",
+      "beat anxiety animation"
+     ],
+     "emphasis": "beat",
+     "chapter": 2
+    },
+    {
+     "text": "Chalo, aaj hum samjhenge stress ka science, jaise Juventus‑Napoli derby ki intensity aur kaise yeh humare exam ke dimaag ko affect karta hai.",
+     "text_en": "Let's explore the science of stress, like the intensity of a Juventus‑Napoli derby, and its effect on exams.",
+     "queries": [
+      "cortisol release animation",
+      "student stress illustration",
+      "football stadium tension"
+     ],
+     "emphasis": "cortisol",
+     "chapter": 3
+    },
+    {
+     "text": "Jab exam ya match ka pressure aata hai, body cortisol release karta hai, stress hormone ki tarah.",
+     "text_en": "When exam or match pressure hits, the body releases cortisol, acting as the main stress hormone.",
+     "queries": [
+      "cortisol stress hormone diagram",
+      "student anxiety visual",
+      "football match tension"
+     ],
+     "emphasis": "cortisol",
+     "chapter": 3
+    },
+    {
+     "text": "Zyada cortisol dimaag ki working memory ko kamzor karta hai, exam ki info manipulate karna mushkil ho jata.",
+     "text_en": "High cortisol weakens working memory, making it harder to manipulate exam information.",
+     "queries": [
+      "brain working memory diagram",
+      "cortisol effect animation",
+      "student studying stressed"
+     ],
+     "emphasis": "working memory",
+     "chapter": 3
+    },
+    {
+     "text": "Kuch research kehti hai ki high cortisol sabke memory ko equally affect nahi karta, individual differences hoti hain.",
+     "text_en": "Some research suggests high cortisol doesn't affect everyone's memory equally; individual differences exist.",
+     "queries": [
+      "scientific study cortisol memory",
+      "individual differences stress",
+      "lab experiment cortisol"
+     ],
+     "emphasis": "research",
+     "chapter": 3
+    },
+    {
+     "text": "Picture karo, ek football jab goal karta hai, uski energy aapke dimaag mein flash hoti!",
+     "text_en": "Imagine a football scoring a goal, its energy flashing inside your brain like a burst!",
+     "queries": [
+      "football goal slow motion",
+      "brain flash animation",
+      "energy burst visual"
+     ],
+     "emphasis": "flash",
+     "chapter": 3
+    },
+    {
+     "text": "Jaise striker pressure mein perfect shot lagata hai, aapko calm rehkar facts retrieve karne chahiye.",
+     "text_en": "Just as a striker scores under pressure, you should stay calm to retrieve facts accurately.",
+     "queries": [
+      "striker pressure shot",
+      "student calm exam",
+      "focus technique illustration"
+     ],
+     "emphasis": "calm",
+     "chapter": 3
+    },
+    {
+     "text": "Napoli ka defence tight ho, par Juventus ka forward confidence se pass find karta, waise hi aap focus banaye.",
+     "text_en": "When Napoli's defense is tight, Juventus's forward finds a confident pass—similarly, keep your focus.",
+     "queries": [
+      "football defense tight",
+      "forward finding pass",
+      "student focus diagram"
+     ],
+     "emphasis": "focus",
+     "chapter": 3
+    },
+    {
+     "text": "Ek simple trick: 4‑second deep breath, count, aur phir dhyan se ek point repeat karo, brain reset hota.",
+     "text_en": "Try this simple trick: a 4‑second deep breath, count, then repeat a point to reset your brain.",
+     "queries": [
+      "deep breathing exercise",
+      "student breathing technique",
+      "brain reset animation"
+     ],
+     "emphasis": "breath",
+     "chapter": 3
+    },
+    {
+     "text": "Ab hum dekhenge kaise routine changes aapke cortisol ko control karte hain – agla part miss mat karo!",
+     "text_en": "Next, we'll see how routine changes can control cortisol—don't miss the upcoming segment!",
+     "queries": [
+      "daily routine stress",
+      "cortisol control habits",
+      "exam preparation schedule"
+     ],
+     "emphasis": "cortisol",
+     "chapter": 3
+    },
+    {
+     "text": "Jab aap exam paper kholte hain, ek minute pehle 4‑7‑8 breathing se dimaag ko reset karna start karo.",
+     "text_en": "When you open the exam paper, begin a 60‑second 4‑7‑8 breathing to reset your mind.",
+     "queries": [
+      "student opening exam paper",
+      "4-7-8 breathing tutorial",
+      "close-up of nervous student"
+     ],
+     "emphasis": "4-7-8, reset",
+     "chapter": 4
+    },
+    {
+     "text": "Inhale for four seconds, phir hold karo saat seconds, aur dhire‑dhire exhale karo aath seconds, yeh cycle repeat karo.",
+     "text_en": "Inhale for four seconds, hold for seven, then exhale slowly for eight seconds, and repeat.",
+     "queries": [
+      "slow breathing animation",
+      "timer counting seconds",
+      "student practicing breathing"
+     ],
+     "emphasis": "inhale, hold, exhale",
+     "chapter": 4
+    },
+    {
+     "text": "Research suggests yeh pattern cortisol spikes ko jaldi kam karta hai, jo aapke working memory ko protect karta hai.",
+     "text_en": "Research suggests this pattern quickly lowers cortisol spikes, helping protect your working memory during exams.",
+     "queries": [
+      "cortisol hormone animation",
+      "working memory brain diagram",
+      "student studying calmly"
+     ],
+     "emphasis": "cortisol, working memory",
+     "chapter": 4
+    },
+    {
+     "text": "Ab ek second ke liye, aankhen band karo aur sirf apni saans ka sound suno—silence mein power hai.",
+     "text_en": "Now close your eyes for a second and just listen to your breath—silence holds power.",
+     "queries": [
+      "close eyes meditation",
+      "breathing sound audio",
+      "student in quiet room"
+     ],
+     "emphasis": "silence, power",
+     "chapter": 4
+    },
+    {
+     "text": "Ek minute ke liye, timer set karo, aur har cycle ko exactly 19 seconds tak chalne do.",
+     "text_en": "Set a timer for one minute and let each breathing cycle run exactly 19 seconds.",
+     "queries": [
+      "timer countdown video",
+      "student using phone timer",
+      "breathing cycle graphic"
+     ],
+     "emphasis": "timer, 19 seconds",
+     "chapter": 4
+    },
+    {
+     "text": "Jaise Juventus players half‑time pe stretch karte hain, aapka brain bhi is short routine se recharge hota hai.",
+     "text_en": "Just as Juventus players stretch at half‑time, your brain recharges with this short routine.",
+     "queries": [
+      "football half time stretch",
+      "students recharging brain",
+      "Juventus training footage"
+     ],
+     "emphasis": "recharges, routine",
+     "chapter": 4
+    },
+    {
+     "text": "Agar aapko ab bhi tension mehsoos hoti hai, ek trusted teacher ya counselor se baat karna helpful ho sakta hai for you.",
+     "text_en": "If tension remains, talking to a trusted teacher or counselor can be helpful for you.",
+     "queries": [
+      "student counseling session",
+      "teacher supportive conversation",
+      "mental health support in school"
+     ],
+     "emphasis": "talk, counselor",
+     "chapter": 4
+    },
+    {
+     "text": "Now you're ready—next chapter will teach match‑day visualization to boost confidence for exams, stay tuned!",
+     "text_en": "Now you're ready—next chapter will teach match‑day visualization to boost confidence for exams, stay tuned!",
+     "queries": [
+      "exam confidence visualization",
+      "football match day hype",
+      "student imagining success"
+     ],
+     "emphasis": "visualization, confidence",
+     "chapter": 4
+    },
+    {
+     "text": "Jab Juventus aur Napoli ke match ka hype aapke kaan tak pahunchta, exam ka pressure bhi waise hi hota.",
+     "text_en": "When the hype of the Juventus vs Napoli match reaches your ears, exam pressure feels just as intense.",
+     "queries": [
+      "Juventus Napoli stadium crowd",
+      "students studying anxiously",
+      "high pressure exam hall"
+     ],
+     "emphasis": "hype, pressure",
+     "chapter": 5
+    },
+    {
+     "text": "Higher stress, jaise match ke final minute, aapke body mein cortisol ka surge hota, jo anxiety ko badhata.",
+     "text_en": "High stress, like the final minutes of a match, triggers a cortisol surge in your body, increasing anxiety.",
+     "queries": [
+      "cortisol animation",
+      "stress hormone diagram",
+      "football final minute tension"
+     ],
+     "emphasis": "cortisol, anxiety",
+     "chapter": 5
+    },
+    {
+     "text": "Jab cortisol high ho jata, research suggest karta hai ki working memory thodi dull ho sakti, exam ke liye crucial.",
+     "text_en": "When cortisol is high, research suggests working memory can become slightly dull, which is crucial for exams.",
+     "queries": [
+      "working memory brain",
+      "cortisol effect on brain",
+      "students forgetting during exam"
+     ],
+     "emphasis": "working memory",
+     "chapter": 5
+    },
+    {
+     "text": "Jaise players warm‑up karte hain, tumhara breath bhi warm‑up karo, taaki cortisol level ko control kiya ja sake.",
+     "text_en": "Just like players warm up, warm up your breath to help control cortisol levels.",
+     "queries": [
+      "football warm up drills",
+      "student breathing exercises",
+      "cortisol control visualization"
+     ],
+     "emphasis": "warm-up, breath",
+     "chapter": 5
+    },
+    {
+     "text": "Ab socho, ek striker ki tarah, tumhara heart beat bhi ek beat pe sync ho – weird, right?",
+     "text_en": "Now imagine, like a striker, your heart beats in sync with a single rhythm – weird, right?",
+     "queries": [
+      "striker scoring goal slow motion",
+      "heartbeat sync animation",
+      "students surprised reaction"
+     ],
+     "emphasis": "striker, sync",
+     "chapter": 5
+    },
+    {
+     "text": "Yeh sync ka secret technique aage aayega, lekin pehle jaan lo kaise focused breathing aapke mind ko clear karta.",
+     "text_en": "The secret technique for this sync will appear later, but first learn how focused breathing clears your mind.",
+     "queries": [
+      "focused breathing tutorial",
+      "mind clearing animation",
+      "football strategy secret reveal"
+     ],
+     "emphasis": "secret, breathing",
+     "chapter": 5
+    },
+    {
+     "text": "4‑7‑8 breathing se aapka nervous system reset hota, cortisol kam hota, aur working memory fir fresh hoti.",
+     "text_en": "With 4‑7‑8 breathing, your nervous system resets, cortisol drops, and working memory becomes fresh again.",
+     "queries": [
+      "4-7-8 breathing guide",
+      "nervous system reset illustration",
+      "students breathing in exam hall"
+     ],
+     "emphasis": "breathing, cortisol",
+     "chapter": 5
+    },
+    {
+     "text": "Jab exam hall ka pressure aata, ek minute ke liye deep inhale, pause, exhale – jaise free‑kick ki taiyari.",
+     "text_en": "When exam hall pressure rises, take a minute for deep inhale, pause, exhale – like preparing a free‑kick.",
+     "queries": [
+      "free kick preparation",
+      "student taking deep breath exam",
+      "stress relief breathing"
+     ],
+     "emphasis": "deep breath, free‑kick",
+     "chapter": 5
+    },
+    {
+     "text": "Toh jaise Juventus aur Napoli field pe balance banate hain, tum bhi breathing se balance paoge, exam jeet jaoge.",
+     "text_en": "So just as Juventus and Napoli find balance on the field, you’ll gain balance through breathing and ace the exam.",
+     "queries": [
+      "Juventus Napoli balanced play",
+      "student celebrating exam success",
+      "breathing balance concept"
+     ],
+     "emphasis": "balance, breathing",
+     "chapter": 5
+    },
+    {
+     "text": "Dekho, exam se pehle 4‑7‑8 breathing technique bahut effective hai, try karo aur comment 'practice'",
+     "text_en": "Listen, try the 4‑7‑8 breathing before every exam and comment 'practice'.",
+     "queries": [
+      "student doing breathing exercise",
+      "4-7-8 breathing technique animation",
+      "exam preparation study room"
+     ],
+     "emphasis": [
+      "4‑7‑8 breathing",
+      "practice"
+     ],
+     "chapter": 6
+    },
+    {
+     "text": "Yeh technique tumhara cortisol level kam karti hai, isse working memory bhi sudhar sakti hai",
+     "text_en": "This technique lowers your cortisol, which can improve your working memory for exams.",
+     "queries": [
+      "cortisol level graphic",
+      "working memory brain animation",
+      "student studying calmly"
+     ],
+     "emphasis": [
+      "cortisol",
+      "working memory"
+     ],
+     "chapter": 6
+    },
+    {
+     "text": "Agar tumhe aur tips chahiye, comment karo ya video ko like karo, main sunta rahunga",
+     "text_en": "If you want more tips, comment below or like the video; I’ll keep listening.",
+     "queries": [
+      "comment section animation",
+      "thumbs up icon",
+      "student asking for advice"
+     ],
+     "emphasis": [
+      "more tips",
+      "comment",
+      "like"
+     ],
+     "chapter": 6
+    },
+    {
+     "text": "Soft NeuroTriage aapko personalized stress management plan dega, bas ek click se shuru karo",
+     "text_en": "Soft NeuroTriage will give you a personalized stress plan, just start with one click.",
+     "queries": [
+      "soft neurotriage app interface",
+      "personalized stress plan illustration",
+      "click button animation"
+     ],
+     "emphasis": [
+      "personalized",
+      "stress plan"
+     ],
+     "chapter": 6
+    },
+    {
+     "text": "Par ek secret technique hai jo sirf top performers jaante hain, agla video mein uska raaz kholenge",
+     "text_en": "But there’s a secret technique top performers use; I’ll reveal it in the next video.",
+     "queries": [
+      "secret technique silhouette",
+      "top performer athlete focus",
+      "next video teaser graphic"
+     ],
+     "emphasis": [
+      "secret technique",
+      "top performers"
+     ],
+     "chapter": 6
+    },
+    {
+     "text": "Socho, agar aapka heart beat 120 bpm ho, kya aap exam likh paoge?",
+     "text_en": "Imagine your heart racing at 120 bpm—can you still write the exam?",
+     "queries": [
+      "heart rate monitor fast",
+      "student nervous exam hall",
+      "stopwatch ticking fast"
+     ],
+     "emphasis": [
+      "heart rate",
+      "exam"
+     ],
+     "chapter": 6
+    },
+    {
+     "text": "Research suggests, jab aap calm breathing karte ho, cortisol kam hota, memory clear hoti hai",
+     "text_en": "Research suggests calm breathing reduces cortisol and clears memory, helping exam performance.",
+     "queries": [
+      "research paper animation",
+      "calm breathing benefits",
+      "memory clearing graphic"
+     ],
+     "emphasis": [
+      "calm breathing",
+      "cortisol",
+      "memory"
+     ],
+     "chapter": 6
+    },
+    {
+     "text": "Har din 5 minute is practice se aapka confidence level automatically boost ho jayega, try karo",
+     "text_en": "Practicing five minutes daily automatically boosts confidence; give it a try.",
+     "queries": [
+      "timer 5 minutes",
+      "confident student walking",
+      "daily practice habit"
+     ],
+     "emphasis": [
+      "confidence",
+      "daily practice"
+     ],
+     "chapter": 6
+    },
+    {
+     "text": "Toh abhi comment 'practice', like dabao, aur Soft NeuroTriage se apna plan leke aage badho!",
+     "text_en": "Now comment 'practice', hit like, and get your plan from Soft NeuroTriage to move forward.",
+     "queries": [
+      "comment box typing",
+      "like button click",
+      "soft neurotriage dashboard"
+     ],
+     "emphasis": [
+      "comment",
+      "like",
+      "plan"
+     ],
+     "chapter": 6
+    }
+   ]
+  },
+  "history": [],
+  "locked_at": "2026-11-02T13:28:05",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-02T13:28:05",
+   "provider": "groq",
+   "note": "v1 locked"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-02T13:27:29",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Juventus vs Napoli: Exam Anxiety ko Jeetne ke 3 Tricks\",\"hook_formula\":\"Counterintuitive\",\"chapters\":[{\"name\":"
+  },
+  {
+   "at": "2026-11-02T13:27:36",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"scenes\":[{\"text\":\"Zyada padhna = kam yaad. Here's why – jab cortisol spike hota hai, brain ki memory thodi dull ho jat"
+  },
+  {
+   "at": "2026-11-02T13:27:42",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"scenes\":[{\"text\":\"Hostel ki raat, duty ka stress, aur exam ka pressure sab ek hi rival hai, jaise derby ka opponent.\","
+  },
+  {
+   "at": "2026-11-02T13:27:48",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"scenes\":[{\"text\":\"Chalo, aaj hum samjhenge stress ka science, jaise Juventus‑Napoli derby ki intensity aur kaise yeh h"
+  },
+  {
+   "at": "2026-11-02T13:27:54",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"scenes\":[{\"text\":\"Jab aap exam paper kholte hain, ek minute pehle 4‑7‑8 breathing se dimaag ko reset karna start karo."
+  },
+  {
+   "at": "2026-11-02T13:27:59",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"scenes\":[{\"text\":\"Jab Juventus aur Napoli ke match ka hype aapke kaan tak pahunchta, exam ka pressure bhi waise hi hot"
+  },
+  {
+   "at": "2026-11-02T13:28:05",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"scenes\":[{\"text\":\"Dekho, exam se pehle 4‑7‑8 breathing technique bahut effective hai, try karo aur comment 'practice'\""
+  },
+  {
+   "at": "2026-11-02T13:28:08",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"titles\":[\"Juventus vs Napoli: 3 Proven Tricks to Beat Exam Anxiety\",\"How Juventus' Pressure Play Can Help You Crush Te"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "script"
+}
