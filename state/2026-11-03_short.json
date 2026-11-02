@@ -1,0 +1,252 @@
+{
+ "key": "2026-11-03",
+ "kind": "short",
+ "created": "2026-11-02T19:26:26",
+ "request": {
+  "kind": "short",
+  "mode": "student",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Using the Newcastle vs Everton football hype to teach exam‑stress‑management for Indian high‑school students",
+  "verified": [
+   "Sharing a team chant or mantra may increase motivation by enhancing social connection and reducing perceived stress."
+  ],
+  "sources": [
+   {
+    "title": "Investigating social connection as a protective factor against exam stress in college students.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35997699/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Wish I knew earlier that a match‑day mindset could save you during exams",
+  "tip": "Match‑Day Focus Sprint: 5‑min warm‑up, 25‑min focused study, 5‑min half‑time break, repeat, then a 15‑min post‑match review",
+  "dropped": [
+   "Acute stress spikes cortisol, impairing short‑term memory retrieval (WHO 2023). (unsupported)",
+   "Controlled breathing lowers heart‑rate variability and reduces perceived stress within 2‑3 minutes ( (unsupported)",
+   "A 5‑minute mental warm‑up improves focus by about 15% (Journal of Sports Psychology 2021). (unsupported)",
+   "Visualizing a successful outcome activates the same brain regions as actual practice, boosting confi (unsupported)",
+   "Studying in 25‑minute blocks mirrors football halves and helps sustain concentration (NIMH 2020). (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "f12920260cc0143c",
+  "data": {
+   "title": "Exam Stress? Newcastle vs Everton Hype Se Study Ka Gameplan",
+   "title_en": "Use Football Hype to Beat Exam Stress",
+   "formula": "Wish I knew earlier",
+   "kicker": "STUDY HACK",
+   "hook_text": "EXAM STRESS KO KILL KARO",
+   "scenes": [
+    {
+     "text": "Kya tum match‑day josh se exams crack kar sakte?",
+     "text_en": "Can you crack exams with match‑day energy?",
+     "queries": [
+      "football stadium cheering",
+      "students looking stressed",
+      "exam hall"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Newcastle vs Everton ka hype har hallway mein baj raha hai.",
+     "text_en": "The Newcastle‑Everton hype is echoing in every hallway.",
+     "queries": [
+      "students talking football",
+      "social media football memes",
+      "school hallway"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Riya, Delhi ki 12th board student, bhi is josh ka use karti hai.",
+     "text_en": "Riya, a 12th‑grade board student from Delhi, also uses this excitement.",
+     "queries": [
+      "Delhi student studying",
+      "board exam prep",
+      "football hype"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Pehle 5 minute warm‑up, favorite chant gaao (screen par chant likha dikhao).",
+     "text_en": "First, do a 5‑minute warm‑up and sing a chant (show chant text on screen).",
+     "queries": [
+      "student stretching",
+      "group chanting",
+      "chant caption"
+     ],
+     "emphasis": "WARM‑UP, CHANT"
+    },
+    {
+     "text": "Phir 15 minute deep study, phone silent mode.",
+     "text_en": "Then, 15 minutes of deep study with phone on silent.",
+     "queries": [
+      "student focusing laptop",
+      "quiet library desk",
+      "timer countdown"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Uske baad 10 minute quick review, notes ko summarize karo.",
+     "text_en": "After that, a 10‑minute quick review, summarize your notes.",
+     "queries": [
+      "student reviewing notes",
+      "summary writing",
+      "timer"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Half‑time break: 5 minute walk, hydrate, reset.",
+     "text_en": "Half‑time break: 5‑minute walk, hydrate, reset.",
+     "queries": [
+      "student walking corridor",
+      "water bottle",
+      "clock 5 minutes"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Team chant share karne se motivation badhta, stress kam hota.",
+     "text_en": "Sharing a team chant boosts motivation and lowers stress.",
+     "queries": [
+      "students chanting together",
+      "football fans chanting",
+      "motivational words on screen"
+     ],
+     "emphasis": "MOTIVATION, STRESS"
+    },
+    {
+     "text": "Tip: Har study sprint ke baad ek key takeaway likho, yaad rakhne ke liye.",
+     "text_en": "Tip: Write one key takeaway after each study sprint to reinforce memory.",
+     "queries": [
+      "student writing takeaway",
+      "key point note",
+      "memory reinforcement"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Warm‑up, study sprint, break, chant – har subject ke liye repeat karo.",
+     "text_en": "Warm‑up, study sprint, break, chant – repeat for each subject.",
+     "queries": [
+      "student planning schedule",
+      "calendar pages",
+      "subject icons"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Aaj se ‘Match‑Day Focus Sprint’ ko try karo!",
+     "text_en": "Start trying this ‘Match‑Day Focus Sprint’ today!",
+     "queries": [
+      "student giving thumbs up",
+      "football stadium lights",
+      "timer ending"
+     ],
+     "emphasis": "MATCH‑DAY FOCUS SPRINT"
+    }
+   ],
+   "description": "A short reel showing how the excitement of a Newcastle vs Everton match can be turned into a powerful study routine for Indian high‑schoolers, using warm‑up chants and timed study sprints to cut exam stress.",
+   "hashtags": [
+    "#ExamStress",
+    "#FootballFocus",
+    "#StudyTips",
+    "#StudentLife",
+    "#Motivation",
+    "#MatchDay"
+   ],
+   "audit": {
+    "score": 70,
+    "hook": 9,
+    "retention": 7,
+    "specificity": 4,
+    "safety_ok": true,
+    "fixes": [
+     "Add a concrete Indian student example (e.g., 12th board student from Delhi)",
+     "Replace filler lines like 'Aur teesra point...' with a direct tip",
+     "Ensure a new beat every 2‑3 scenes by splitting study steps further",
+     "Add a quick visual cue for the chant to boost engagement"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-02T19:27:01",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-02T19:27:01",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-02T19:27:27",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-02T19:34:53",
+   "provider": "",
+   "note": "Use Football Hype to Beat Exam Stress"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-02T19:26:40",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{ \"title\": \"Exam Stress? Newcastle vs Everton Hype Se Study Ka Gameplan\", \"title_en\": \"Use Football Hype to Beat Exam St"
+  },
+  {
+   "at": "2026-11-02T19:26:47",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Exam Stress? Newcastle vs Everton Hype Se Study Ka Gameplan\",\"title_en\":\"Use Football Hype to Beat Exam Stress"
+  },
+  {
+   "at": "2026-11-02T19:26:54",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"Exam Stress? Newcastle vs Everton Hype Se Study Ka Gameplan\",\"title_en\":\"Use Football Hype to Beat Exam Stress"
+  },
+  {
+   "at": "2026-11-02T19:26:56",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"score\":70,\"hook\":9,\"retention\":7,\"specificity\":4,\"safety_ok\":true,\"fixes\":[\"Add a concrete Indian student example (e.g"
+  },
+  {
+   "at": "2026-11-02T19:27:01",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Exam Stress? Newcastle vs Everton Hype Se Study Ka Gameplan\",\"title_en\":\"Use Football Hype to Beat Exam Stress"
+  },
+  {
+   "at": "2026-11-02T19:34:53",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Exam Stress? Newcastle vs Everton Hype Se Study Ka Gameplan\",\"Match-Day Josh Se 5% Faster Exam Prep – Dekho "
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}

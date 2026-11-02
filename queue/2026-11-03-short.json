@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-03-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-03T01:04:53+05:30",
+  "publish_at": "2026-11-03T10:00+05:30",
+  "publish_at_utc": "2026-11-03T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-03-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "Use Football Hype to Beat Exam Stress",
+    "yt_description": "A short reel showing how the excitement of a Newcastle vs Everton match can be turned into a powerful study routine for Indian high‑schoolers, using warm‑up chants and timed study sprints to cut exam stress.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/35997699/\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\n#ExamStress #FootballFocus #StudyTips #StudentLife #Motivation #Shorts",
+    "ig_caption": "A short reel showing how the excitement of a Newcastle vs Everton match can be turned into a powerful study routine for Indian high‑schoolers, using warm‑up chants and timed study sprints to cut exam stress.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#ExamStress #FootballFocus #StudyTips #StudentLife #Motivation",
+    "hashtags": [
+      "#ExamStress",
+      "#FootballFocus",
+      "#StudyTips",
+      "#StudentLife",
+      "#Motivation",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "mKXTnZsYOxU",
+        "url": "https://youtube.com/watch?v=mKXTnZsYOxU",
+        "scheduled": true
+      },
+      "at": "2026-11-02T19:34:56+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-02T19:34:56+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-02T19:34:56+00:00"
+    }
+  },
+  "status": "pending"
+}

@@ -1,0 +1,83 @@
+{
+ "key": "2026-11-03",
+ "kind": "research",
+ "created": "2026-11-02T19:26:08",
+ "request": {
+  "kind": "research",
+  "mode": "student"
+ },
+ "research": {
+  "topic": "Using the Newcastle vs Everton football hype to teach exam‑stress‑management for Indian high‑school students",
+  "verified": [
+   "Sharing a team chant or mantra may increase motivation by enhancing social connection and reducing perceived stress."
+  ],
+  "sources": [
+   {
+    "title": "Investigating social connection as a protective factor against exam stress in college students.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35997699/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Wish I knew earlier that a match‑day mindset could save you during exams",
+  "tip": "Match‑Day Focus Sprint: 5‑min warm‑up, 25‑min focused study, 5‑min half‑time break, repeat, then a 15‑min post‑match review",
+  "dropped": [
+   "Acute stress spikes cortisol, impairing short‑term memory retrieval (WHO 2023). (unsupported)",
+   "Controlled breathing lowers heart‑rate variability and reduces perceived stress within 2‑3 minutes ( (unsupported)",
+   "A 5‑minute mental warm‑up improves focus by about 15% (Journal of Sports Psychology 2021). (unsupported)",
+   "Visualizing a successful outcome activates the same brain regions as actual practice, boosting confi (unsupported)",
+   "Studying in 25‑minute blocks mirrors football halves and helps sustain concentration (NIMH 2020). (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-02T19:26:26",
+   "provider": "groq",
+   "note": "partial"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-02T19:26:18",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"जन्मभूमि से कर्म भूमि तक📚🧿✨ #motivation #nursingofficer #aiims #trending #shorts #norcet\",\"formul"
+  },
+  {
+   "at": "2026-11-02T19:26:21",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Newcastle vs Everton – using the hype of a big football clash to teach exam‑stress‑management for Indian high‑"
+  },
+  {
+   "at": "2026-11-02T19:26:22",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Using the Newcastle vs Everton football hype to teach exam‑stress‑management for Indian high‑school students\","
+  },
+  {
+   "at": "2026-11-02T19:26:26",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\":1,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\""
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}
