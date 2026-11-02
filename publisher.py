@@ -14,9 +14,14 @@ from pathlib import Path
 import requests
 
 GRAPH = os.environ.get("GRAPH_VERSION", "v25.0")
-# Instagram posting host. "graph.instagram.com" = token from "API setup with Instagram login" (default).
-# If you ever use a Facebook-login token instead, set the env var IG_GRAPH_HOST=graph.facebook.com
-IG_HOST = os.environ.get("IG_GRAPH_HOST", "graph.instagram.com")
+# Instagram posting host, picked from the token type (override with env IG_GRAPH_HOST):
+#   token "IGAA..." (Instagram Login)  -> graph.instagram.com
+#   token "EAA..."  (Facebook Login / Unified Login) -> graph.facebook.com
+def _ig_host(tok):
+    forced = os.environ.get("IG_GRAPH_HOST", "").strip()
+    if forced:
+        return forced
+    return "graph.instagram.com" if (tok or "").startswith("IG") else "graph.facebook.com"
 
 
 def log(*a):
@@ -75,9 +80,10 @@ def youtube(video, title, desc, tags, privacy="private", thumb=None, category="2
 
 # --------------------------------------------------------------------------- Instagram Reels (resumable upload)
 def instagram_reel(video, caption):
-    uid, tok = os.environ.get("IG_USER_ID"), os.environ.get("META_ACCESS_TOKEN")
+    uid, tok = os.environ.get("IG_USER_ID", "").strip(), os.environ.get("META_ACCESS_TOKEN", "").strip().strip("\"'")
     if not (uid and tok):
         return {"ok": False, "skipped": "IG_USER_ID / META_ACCESS_TOKEN missing"}
+    IG_HOST = _ig_host(tok)
     size = os.path.getsize(video)
     r = requests.post(f"https://{IG_HOST}/{GRAPH}/{uid}/media", timeout=60, data={
         "media_type": "REELS", "upload_type": "resumable", "caption": caption[:2200],
@@ -110,7 +116,7 @@ def instagram_reel(video, caption):
 
 # --------------------------------------------------------------------------- Facebook Page Reels
 def facebook_reel(video, description, publish_at=None):
-    pid, tok = os.environ.get("FB_PAGE_ID"), os.environ.get("FB_PAGE_TOKEN")
+    pid, tok = os.environ.get("FB_PAGE_ID", "").strip(), os.environ.get("FB_PAGE_TOKEN", "").strip().strip("\"'")
     if not (pid and tok):
         return {"ok": False, "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"}
     size = os.path.getsize(video)
