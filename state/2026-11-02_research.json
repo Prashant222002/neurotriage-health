@@ -75,6 +75,30 @@
    "model": "openai/gpt-oss-120b",
    "key": "GROQ_API_KEY",
    "summary": "{\"results\":[{\"i\":0,\"verdict\":\"uncertain\",\"cites\":[0,2,3],\"fix\":\"Performance anxiety can increase cortisol levels, which "
+  },
+  {
+   "at": "2026-11-02T13:25:30",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"जन्मभूमि से कर्म भूमि तक📚🧿✨ #motivation #nursingofficer #aiims #trending #shorts #norcet\",\"formul"
+  },
+  {
+   "at": "2026-11-02T13:25:33",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Juventus vs Napoli – using the hype around the high‑stakes football clash to show students how to handle perfo"
+  },
+  {
+   "at": "2026-11-02T13:25:35",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Juventus vs Napoli – using the hype around the high‑stakes football clash to show students how to handle perfo"
   }
  ],
  "pending": [],
