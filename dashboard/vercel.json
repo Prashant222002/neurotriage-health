@@ -1,1 +1,0 @@
-{ "functions": { "api/*.js": { "maxDuration": 15 } }, "rewrites": [{ "source": "/control", "destination": "/control.html" }] }
