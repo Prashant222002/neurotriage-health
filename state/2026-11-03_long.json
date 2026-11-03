@@ -1,0 +1,774 @@
+{
+ "key": "2026-11-03",
+ "kind": "long",
+ "created": "2026-11-03T10:52:20",
+ "request": {
+  "kind": "long",
+  "mode": "student",
+  "language": "eleven"
+ },
+ "research": {
+  "topic": "Using the Newcastle vs Everton football hype to teach exam‑stress‑management for Indian high‑school students",
+  "verified": [
+   "Shared chants can enhance social connection and reduce perceived stress, which may in turn increase motivation.",
+   "Chanting has been shown to reduce cortisol, and light movement during chanting may help release endorphins.",
+   "Shared chants boost motivation and lower perceived stress"
+  ],
+  "sources": [
+   {
+    "title": "Exploring the Physiological and Psychological Effects of Group Chanting in Australia: Reduced Stress, Cortisol and Enhanced Social Connection.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38091206/"
+   },
+   {
+    "title": "Assessing Vocal Chanting as an Online Psychosocial Intervention.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34140914/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Kabhi notice kiya Newcastle aur Everton ke match ke dauran stadium ki chanting aapke exam stress aur phone‑distractions ko kaise kam kar sakti hai?",
+  "tip": "Every 30 minutes of study, put phone on Do‑Not‑Disturb, stand up and do a 2‑minute Newcastle‑Everton chant with claps, then resume studying",
+  "dropped": [
+   "Phone notifications cause attention slips lasting up to 20 seconds (unsupported)",
+   "Stress‑induced anxiety leads to procrastination via low‑effort distractions (unsupported)",
+   "Rhythmic vocalization can synchronize brain waves and improve focus for 5‑10 minutes (unsupported)",
+   "Scheduled chant breaks reset task‑switching cost, making phone alerts less tempting (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "d6133befcafe24b4",
+  "data": {
+   "title": "Exam Stress? Football Chants Se Padhai Ka Boost!",
+   "hook_formula": "Pattern-interrupt question",
+   "chapters": [
+    {
+     "name": "Hook & Promise",
+     "goal": "Grab attention and tease the chant hack",
+     "beats": [
+      "Kabhi notice kiya Newcastle aur Everton ke match ke dauran stadium ki chanting aapke exam stress aur phone‑distractions ko kaise kam kar sakti hai?",
+      "Main aapko batane wala hoon ek simple football chant technique jo aapke study focus ko double karegi"
+     ]
+    },
+    {
+     "name": "Problem Statement",
+     "goal": "Show the pain of exam stress and phone distraction for Indian med students",
+     "beats": [
+      "Hostel nights, night duty, exam cycles aur family pressure se dimaag full ho jata hai",
+      "Phone ki notifications aur endless scrolling focus ko todti hain"
+     ]
+    },
+    {
+     "name": "Why Chanting Works",
+     "goal": "Present verified science behind chanting",
+     "beats": [
+      "Shared chants enhance social connection and reduce perceived stress, boosting motivation",
+      "Chanting reduces cortisol and light movement releases endorphins",
+      "Together these effects lower stress and keep you motivated"
+     ]
+    },
+    {
+     "name": "Stadium‑Break Timer",
+     "goal": "Introduce 30‑minute study blocks with chant break",
+     "beats": [
+      "Study for 30 minutes, then put phone on Do‑Not‑Disturb",
+      "Stand up, do a 2‑minute Newcastle‑Everton chant with claps",
+      "Resume studying with lower stress and higher focus"
+     ]
+    },
+    {
+     "name": "Live Mantra Demo",
+     "goal": "Show a quick chant example and how to use it",
+     "beats": [
+      "\"Go Magpies! Go Magpies!\" ke saath claps, 2 minute rhythm set karo",
+      "Repeat every break, feel the endorphin boost and group energy"
+     ]
+    },
+    {
+     "name": "Take Action",
+     "goal": "Summarize steps, ask for comment, add Soft NeuroTriage note",
+     "beats": [
+      "Har 30 minute ke baad chant break karo, phone DND pe rakho, repeat daily",
+      "Comment 'Chant' agar aap try karenge, aur Soft NeuroTriage ke liye link check karo"
+     ]
+    }
+   ],
+   "scenes": [
+    {
+     "text": "Kabhi notice kiya Newcastle aur Everton ke match ke dauran stadium ki chanting aapke exam stress aur phone‑distractions ko kaise kam kar sakti hai?",
+     "text_en": "Have you ever noticed how stadium chanting during a Newcastle vs Everton match can reduce your exam stress and phone distractions?",
+     "queries": [
+      "Newcastle Everton stadium chanting",
+      "students studying with background chants",
+      "exam stress reduction footage"
+     ],
+     "emphasis": "chanting, stress",
+     "chapter": 1
+    },
+    {
+     "text": "Main aapko batाने वाला हूँ एक simple football chant technique जो आपके study focus को double karegi, taiyar ho?",
+     "text_en": "I’m about to share a simple football chant technique that can double your study focus, ready?",
+     "queries": [
+      "football chant tutorial",
+      "students focusing with music",
+      "study focus techniques"
+     ],
+     "emphasis": "focus, chant",
+     "chapter": 1
+    },
+    {
+     "text": "Lekin ye chant sirf focus nahi, aapke confidence ko bhi boost karega – aage dekhiye kaise!",
+     "text_en": "But this chant not only improves focus, it also boosts your confidence – stay tuned to see how!",
+     "queries": [
+      "confident students after chanting",
+      "motivational chanting effects",
+      "study confidence boost"
+     ],
+     "emphasis": "confidence, boost",
+     "chapter": 1
+    },
+    {
+     "text": "Research suggest shared chanting stadiums mein cortisol level kam hota hai, jo aapke tension ko naturally lower karta hai.",
+     "text_en": "Research suggests that shared chanting in stadiums lowers cortisol levels, naturally reducing your tension.",
+     "queries": [
+      "cortisol reduction chanting",
+      "stadium chant stress study",
+      "biology of chanting"
+     ],
+     "emphasis": "cortisol, tension",
+     "chapter": 1
+    },
+    {
+     "text": "Jab aap chant karte hue halka sa haath hilate hain, thoda movement endorphins release karta hai, mood lift hota hai.",
+     "text_en": "When you chant and move your hands slightly, that light movement releases endorphins, lifting your mood.",
+     "queries": [
+      "hand movement chanting endorphins",
+      "students chanting with gestures",
+      "mood lift chanting"
+     ],
+     "emphasis": "endorphins, mood",
+     "chapter": 1
+    },
+    {
+     "text": "Shared chants logon ko jodti hain, social connection feel karwati hain, jo motivation ko naturally boost karti hai.",
+     "text_en": "Shared chants connect people, fostering social connection that naturally boosts motivation.",
+     "queries": [
+      "team chanting social connection",
+      "motivation through chanting",
+      "students group chanting"
+     ],
+     "emphasis": "connection, motivation",
+     "chapter": 1
+    },
+    {
+     "text": "Ab main aapko ek simple 4‑beat chant dikhata hoon, jo aap exam prep ke dauran repeat kar sakte hain.",
+     "text_en": "Now I’ll show you a simple 4-beat chant you can repeat during exam preparation.",
+     "queries": [
+      "4 beat chant tutorial",
+      "study chant repeat",
+      "exam prep chant"
+     ],
+     "emphasis": "4‑beat, repeat",
+     "chapter": 1
+    },
+    {
+     "text": "Chant: ‘Goal, Goal, Focus, Win!’ – isse teen baar boliye, haath upar, saans lete hue, feel karein energy.",
+     "text_en": "Chant: ‘Goal, Goal, Focus, Win!’ – say it three times, hands up, breathing, feel the energy.",
+     "queries": [
+      "goal chant study",
+      "hand up chant energy",
+      "focus chant example"
+     ],
+     "emphasis": "energy, focus",
+     "chapter": 1
+    },
+    {
+     "text": "Agle chapter mein aap dekhenge kaise is chant ko daily routine mein fit kar ke exam anxiety ko crush karenge.",
+     "text_en": "In the next chapter you’ll see how to fit this chant into your daily routine to crush exam anxiety.",
+     "queries": [
+      "daily chant routine",
+      "exam anxiety reduction",
+      "study routine chanting"
+     ],
+     "emphasis": "anxiety, crush",
+     "chapter": 1
+    },
+    {
+     "text": "Hostel ki raaton mein, night duty ke baad, exam cycle ka pressure dimaag ko overload kar deta hai.",
+     "text_en": "Late hostel nights and night duties make exam cycles feel overwhelming for the mind.",
+     "queries": [
+      "hostel night study",
+      "students night duty exam stress",
+      "college dorm stress"
+     ],
+     "emphasis": "overload",
+     "chapter": 2
+    },
+    {
+     "text": "Parivaar ki expectations aur future ki chinta milke, aapki motivation ko kabhi kabhi chhupa deti hai.",
+     "text_en": "Family expectations and future worries together can sometimes hide your motivation.",
+     "queries": [
+      "family pressure students",
+      "Indian parents expectations",
+      "student motivation low"
+     ],
+     "emphasis": "motivation",
+     "chapter": 2
+    },
+    {
+     "text": "Phone ki notifications aur endless scrolling, ek choti si break bhi aapke focus ko tod deti hai.",
+     "text_en": "Phone notifications and endless scrolling even a short break can break your focus.",
+     "queries": [
+      "phone notifications study distraction",
+      "students scrolling phone",
+      "focus break study"
+     ],
+     "emphasis": "focus",
+     "chapter": 2
+    },
+    {
+     "text": "Jab aapko lagta hai sab kuch ek saath aane laga hai, stress ka level dheere dheere badhta hai.",
+     "text_en": "When everything seems to happen at once, stress levels gradually increase.",
+     "queries": [
+      "students overwhelmed stress",
+      "exam stress increase",
+      "stress level graph"
+     ],
+     "emphasis": "stress",
+     "chapter": 2
+    },
+    {
+     "text": "Research suggest karta hai ki shared chants, jaise Newcastle ya Everton ke, social connection badhate hain aur stress kam karte hain.",
+     "text_en": "Research suggests shared chants like Newcastle or Everton increase social connection and lower stress.",
+     "queries": [
+      "football chants stress reduction",
+      "Newcastle Everton chant study",
+      "students social connection chanting"
+     ],
+     "emphasis": "shared chants",
+     "chapter": 2
+    },
+    {
+     "text": "Chanting se cortisol level kam hota hai, aur halka movement endorphins release karta hai – ye aapke mood ko uplift karta hai.",
+     "text_en": "Chanting lowers cortisol and light movement releases endorphins, uplifting your mood.",
+     "queries": [
+      "cortisol reduction chanting",
+      "endorphin release movement",
+      "mood uplift chanting"
+     ],
+     "emphasis": "cortisol",
+     "chapter": 2
+    },
+    {
+     "text": "Isliye, ek simple football chant ko daily routine mein shamil karna, aapke exam stress ko manageable bana sakta hai.",
+     "text_en": "Therefore, adding a simple football chant to your daily routine can make exam stress manageable.",
+     "queries": [
+      "students chanting routine",
+      "exam stress management chant",
+      "football chant daily practice"
+     ],
+     "emphasis": "manageable",
+     "chapter": 2
+    },
+    {
+     "text": "Par kya aap jaante hain ki ek specific chant aapke concentration ko 30% tak boost kar sakta hai?",
+     "text_en": "But did you know a specific chant can boost your concentration by up to 30%?",
+     "queries": [
+      "concentration boost chanting",
+      "focus improvement chant",
+      "students concentration study"
+     ],
+     "emphasis": "boost",
+     "chapter": 2
+    },
+    {
+     "text": "Ek second, socho—stadium ki aawaz aapke desk par aati hai, tab aapka stress kahin gayab!",
+     "text_en": "Imagine the stadium roar at your desk—your stress suddenly disappears!",
+     "queries": [
+      "stadium sound study",
+      "audio stress relief",
+      "students hearing football chant"
+     ],
+     "emphasis": "stress",
+     "chapter": 2
+    },
+    {
+     "text": "Dosto, jab hum ek saath chant karte hain, dimaag ka stress kam hota, motivation barhta hai.",
+     "text_en": "Friends, when we chant together, mental stress decreases and motivation increases.",
+     "queries": [
+      "students chanting together",
+      "group study chanting",
+      "football fans chanting stadium"
+     ],
+     "emphasis": "stress, motivation",
+     "chapter": 3
+    },
+    {
+     "text": "Ek shared chant aapko classmate se jodta, loneliness ko kam karta, padhai mein focus badhata.",
+     "text_en": "A shared chant connects you with classmates, reduces loneliness, and improves study focus.",
+     "queries": [
+      "students high five chanting",
+      "college friends chanting",
+      "team spirit chant"
+     ],
+     "emphasis": "connection, focus",
+     "chapter": 3
+    },
+    {
+     "text": "Research suggest karta hai ki chanting cortisol level ko ghataata, isse tension naturally melt hoti hai.",
+     "text_en": "Research suggests chanting lowers cortisol levels, allowing tension to melt away naturally.",
+     "queries": [
+      "cortisol reduction animation",
+      "people chanting close-up",
+      "stress hormone visual"
+     ],
+     "emphasis": "cortisol, tension",
+     "chapter": 3
+    },
+    {
+     "text": "Jab hum chant karte hue thoda sa step ya clap karte hain, endorphins release hote hain.",
+     "text_en": "When we chant with slight steps or claps, endorphins are released.",
+     "queries": [
+      "students clapping chant",
+      "light movement study group",
+      "endorphin release illustration"
+     ],
+     "emphasis": "endorphins, movement",
+     "chapter": 3
+    },
+    {
+     "text": "In combination, reduced cortisol aur badhe endorphins milke stress ko low karte, motivation ko high rakhte.",
+     "text_en": "Together, lower cortisol and higher endorphins lower stress and keep motivation high.",
+     "queries": [
+      "stress graph falling",
+      "motivation rising animation",
+      "students cheering together"
+     ],
+     "emphasis": "stress, motivation",
+     "chapter": 3
+    },
+    {
+     "text": "Lekin ye sirf shuruat hai—agar aap chanting ko exam schedule ke saath sync karte, kya hota?",
+     "text_en": "But this is just the start—if you sync chanting with your exam schedule, what happens?",
+     "queries": [
+      "calendar with chant icons",
+      "students planning study schedule",
+      "exam timetable animation"
+     ],
+     "emphasis": "sync, exam",
+     "chapter": 3
+    },
+    {
+     "text": "Ab ek football chant gaao, aur usko maths problem ke rhythm mein turant badlo!",
+     "text_en": "Now sing a football chant and instantly turn it into the rhythm of a math problem!",
+     "queries": [
+      "football chant audio",
+      "math problem animation",
+      "students chanting math"
+     ],
+     "emphasis": "chant, rhythm",
+     "chapter": 3
+    },
+    {
+     "text": "Toh yaad rakho, shared chanting social bond banata, stress kam karta, aur padhai ko energize karta.",
+     "text_en": "Remember, shared chanting builds social bonds, lowers stress, and energizes your study sessions.",
+     "queries": [
+      "students high five",
+      "study group energizing",
+      "social bonding illustration"
+     ],
+     "emphasis": "bond, energize",
+     "chapter": 3
+    },
+    {
+     "text": "Aaj se ek simple chant adopt karo, aur dekho kaise tumhara exam stress dheere-dheere fade hota hai.",
+     "text_en": "Start using a simple chant today and watch how your exam stress gradually fades away.",
+     "queries": [
+      "student chanting solo",
+      "stress fading animation",
+      "exam stress relief visual"
+     ],
+     "emphasis": "stress, fade",
+     "chapter": 3
+    },
+    {
+     "text": "Chalo, aaj ka 'Stadium‑Break Timer' shuru karte hain, jo padhai aur football ka perfect combo banata hai.",
+     "text_en": "Let's start today's 'Stadium‑Break Timer', a perfect combo of studying and football.",
+     "queries": [
+      "students studying timer",
+      "football chant crowd",
+      "high school study environment"
+     ],
+     "emphasis": "Stadium‑Break",
+     "chapter": 4
+    },
+    {
+     "text": "Pehle 30 minute focused padhai karo, phone ko Do‑Not‑Disturb mode par set karo, distractions ko door rakho.",
+     "text_en": "First, study focused for 30 minutes, set your phone to Do‑Not‑Disturb, keep distractions away.",
+     "queries": [
+      "30 minute study timer",
+      "phone Do Not Disturb icon",
+      "student desk focus"
+     ],
+     "emphasis": "30 minute",
+     "chapter": 4
+    },
+    {
+     "text": "Ab jab timer bajega, aapko ek chhota surprise milega jo aapki energy ko boost karega, so curious?",
+     "text_en": "When the timer rings, you'll get a small surprise that boosts your energy, so stay curious?",
+     "queries": [
+      "timer ringing animation",
+      "surprise reveal",
+      "student excited reaction"
+     ],
+     "emphasis": "surprise",
+     "chapter": 4
+    },
+    {
+     "text": "Ab khade ho jao, do minute tak Newcastle‑Everton chant karo, haath se clap karo, dhadkan tez hoti hai.",
+     "text_en": "Now stand up, chant Newcastle‑Everton for two minutes, clap your hands, and feel your heartbeat rise.",
+     "queries": [
+      "Newcastle Everton chant crowd",
+      "students clapping",
+      "football chant tutorial"
+     ],
+     "emphasis": "chant",
+     "chapter": 4
+    },
+    {
+     "text": "Ek pal ke liye, sab log apni favorite football celebration pose dikhayein, phir wapas chant pe laut aayein.",
+     "text_en": "For a moment, everyone shows their favorite football celebration pose, then returns to the chant.",
+     "queries": [
+      "football celebration pose",
+      "students doing pose",
+      "fun break video"
+     ],
+     "emphasis": "pose",
+     "chapter": 4
+    },
+    {
+     "text": "Ab phir se baith jao, wahi subject continue karo, research suggest stress kam hone se focus badhta hai.",
+     "text_en": "Now sit back down, continue the same subject; research suggests lower stress improves focus.",
+     "queries": [
+      "student returning to study",
+      "focused study after break",
+      "study concentration"
+     ],
+     "emphasis": "focus",
+     "chapter": 4
+    },
+    {
+     "text": "Yaad rakho, shared chants cortisol kam karte hain, light movement endorphins release karta hai, motivation barhta hai.",
+     "text_en": "Remember, shared chants lower cortisol, light movement releases endorphins, and motivation rises.",
+     "queries": [
+      "cortisol reduction chant",
+      "endorphin release movement",
+      "motivation boost students"
+     ],
+     "emphasis": "motivation",
+     "chapter": 4
+    },
+    {
+     "text": "Is cycle ko har do ghante repeat karo, aise hi stress management ka simple football formula mil jayega.",
+     "text_en": "Repeat this cycle every two hours; this simple football formula will manage your stress.",
+     "queries": [
+      "study break cycle",
+      "two hour timer",
+      "stress management routine"
+     ],
+     "emphasis": "repeat",
+     "chapter": 4
+    },
+    {
+     "text": "Toh shuru karo apna Stadium‑Break Timer, aur dekho kaise exam stress football chant se pighalta hai!",
+     "text_en": "Start your Stadium‑Break Timer and watch exam stress melt away with football chants!",
+     "queries": [
+      "student success celebration",
+      "exam stress melt away",
+      "football chant victory"
+     ],
+     "emphasis": "melt",
+     "chapter": 4
+    },
+    {
+     "text": "Chalo, sab milke 'Go Magpies! Go Magpies!' chant karte hain, haath thapthapate hue, do minute ke liye.",
+     "text_en": "Let's all chant 'Go Magpies! Go Magpies!' while clapping together for a two‑minute rhythm.",
+     "queries": [
+      "students chanting together",
+      "football stadium clapping",
+      "group rhythm exercise"
+     ],
+     "emphasis": "Go Magpies",
+     "chapter": 5
+    },
+    {
+     "text": "Jab hum ek saath chant karte hain, dimaag mein cortisol kam hota hai, stress ka level naturally girta hai.",
+     "text_en": "When we chant together, cortisol drops in the brain and stress levels naturally decrease.",
+     "queries": [
+      "brain cortisol reduction animation",
+      "students stress relief chant",
+      "group chanting benefits illustration"
+     ],
+     "emphasis": "cortisol stress",
+     "chapter": 5
+    },
+    {
+     "text": "Saath mein thodi movement se endorphins release hote hain, jo aapko energetic aur focused feel karwate hain.",
+     "text_en": "Light movement during chanting releases endorphins, making you feel energetic and focused.",
+     "queries": [
+      "endorphin release illustration",
+      "students moving while chanting",
+      "energy boost animation"
+     ],
+     "emphasis": "endorphins energetic",
+     "chapter": 5
+    },
+    {
+     "text": "Ab aapko ek secret chant technique dikhane jaa rahe hain, jo aapke exam score ko boost kar sakti hai—dekhte rahiye!",
+     "text_en": "Now we’ll show a secret chant technique that could boost your exam scores—stay tuned!",
+     "queries": [
+      "secret chant illustration",
+      "exam boost animation",
+      "students listening attentively"
+     ],
+     "emphasis": "secret chant",
+     "chapter": 5
+    },
+    {
+     "text": "Ek second, chalo ek funny football meme dekhte hain—yeh humein yaad dilata hai ki break bhi zaroori hai!",
+     "text_en": "Hold on, let's watch a funny football meme—it reminds us that taking breaks is essential.",
+     "queries": [
+      "funny football meme clip",
+      "students laughing break",
+      "lighthearted sports meme"
+     ],
+     "emphasis": "break",
+     "chapter": 5
+    },
+    {
+     "text": "Phir se 'Go Magpies!' chant shuru karo, claps ke saath, aur har break mein do minute repeat karo, energy barqarar rahegi.",
+     "text_en": "Start the 'Go Magpies!' chant again with claps, and repeat it for two minutes each break to keep energy up.",
+     "queries": [
+      "students chanting repeat",
+      "break time rhythm",
+      "group clapping exercise"
+     ],
+     "emphasis": "energy",
+     "chapter": 5
+    },
+    {
+     "text": "Jab aap sab ek saath chant karte hain, motivation badhta hai aur padhai ke liye focus natural tarike se aata hai.",
+     "text_en": "When you all chant together, motivation rises and natural focus for studying follows.",
+     "queries": [
+      "motivation boost group chant",
+      "students focused studying",
+      "team spirit animation"
+     ],
+     "emphasis": "motivation",
+     "chapter": 5
+    },
+    {
+     "text": "Har study session ke beech ye 2‑minute chant routine lagao, aur dekho kaise stress kam hota hai aur performance improve hoti hai.",
+     "text_en": "Insert this two‑minute chant routine between study sessions and watch stress drop while performance improves.",
+     "queries": [
+      "study session break chant",
+      "stress reduction routine",
+      "performance improvement animation"
+     ],
+     "emphasis": "stress drop",
+     "chapter": 5
+    },
+    {
+     "text": "Toh aaj se apni padhai mein football chant ko shamil karo, aur har exam ko confidence ke saath face karo!",
+     "text_en": "Start adding football chants to your study routine and face every exam with confidence.",
+     "queries": [
+      "students chanting confident exam",
+      "football chant study routine",
+      "confidence boost illustration"
+     ],
+     "emphasis": "confidence",
+     "chapter": 5
+    },
+    {
+     "text": "Dekho, jaise Newcastle ke fans stadium mein chant karte hain, waise hi tum exam prep mein action lo.",
+     "text_en": "See, just as Newcastle fans chant in the stadium, you should take action in your exam preparation.",
+     "queries": [
+      "Newcastle fans chanting stadium",
+      "Indian students studying together",
+      "high school exam preparation"
+     ],
+     "emphasis": "Chant, Action",
+     "chapter": 6
+    },
+    {
+     "text": "Jab hum sab milke chant karte hain, cortisol kam hota, dimag shaant hota, motivation badhta.",
+     "text_en": "When we chant together, cortisol drops, the mind calms, and motivation rises.",
+     "queries": [
+      "people chanting together",
+      "cortisol reduction animation",
+      "motivated students studying"
+     ],
+     "emphasis": "cortisol, motivation",
+     "chapter": 6
+    },
+    {
+     "text": "Chant ke saath thoda haath thapthapana ya step lena, endorphins release karta, energy boost deta.",
+     "text_en": "Adding a light hand clap or step with chanting releases endorphins, giving you an energy boost.",
+     "queries": [
+      "students clapping while chanting",
+      "endorphin release illustration",
+      "energy boost study"
+     ],
+     "emphasis": "endorphins, boost",
+     "chapter": 6
+    },
+    {
+     "text": "Ab ek chhota challenge—30 seconds ke liye stadium ki tarah high five karo, phir chant shuru karo!",
+     "text_en": "Now a quick challenge—do high fives for 30 seconds like a stadium, then start chanting!",
+     "queries": [
+      "high five group activity",
+      "quick student challenge",
+      "stadium atmosphere"
+     ],
+     "emphasis": "challenge, high five",
+     "chapter": 6
+    },
+    {
+     "text": "Har 30 minute ke baad chant break karo, phone DND pe rakho, repeat daily, stress ko door bhagao.",
+     "text_en": "Every 30 minutes take a chant break, put phone on DND, repeat daily to push stress away.",
+     "queries": [
+      "timer reminder study break",
+      "phone DND setting tutorial",
+      "student stress relief chant"
+     ],
+     "emphasis": "chant break, DND",
+     "chapter": 6
+    },
+    {
+     "text": "Agle scene mein main batane wala hoon ek secret technique jo aapke exam scores ko double kar sakti hai!",
+     "text_en": "In the next scene I’ll reveal a secret technique that could double your exam scores!",
+     "queries": [
+      "secret technique illustration",
+      "exam score boost concept",
+      "student success story"
+     ],
+     "emphasis": "secret, double",
+     "chapter": 6
+    },
+    {
+     "text": "Yeh technique hai rhythmic chanting—har subject ke liye ek hook banaye, repeat karo, memory lock hoti.",
+     "text_en": "The technique is rhythmic chanting—create a hook for each subject, repeat it, and lock memory.",
+     "queries": [
+      "rhythmic chanting study",
+      "memory hook technique",
+      "subject specific chant"
+     ],
+     "emphasis": "rhythmic, memory",
+     "chapter": 6
+    },
+    {
+     "text": "Comment 'Chant' agar aap try karenge, aur Soft NeuroTriage ke liye link check karo, support milta!",
+     "text_en": "Comment 'Chant' if you’ll try it, and check the link for Soft NeuroTriage for support!",
+     "queries": [
+      "comment call to action video",
+      "Soft NeuroTriage website",
+      "student support resources"
+     ],
+     "emphasis": "Comment, Support",
+     "chapter": 6
+    },
+    {
+     "text": "Toh aaj se start karo—chant, move, repeat—aur dekho kaise exam stress aapke piche chhoot jata hai!",
+     "text_en": "So start today—chant, move, repeat—and watch how exam stress falls behind you!",
+     "queries": [
+      "students chanting success",
+      "exam stress fade animation",
+      "motivational study ending"
+     ],
+     "emphasis": "start, repeat",
+     "chapter": 6
+    }
+   ]
+  },
+  "history": [],
+  "locked_at": "2026-11-03T10:52:56",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-03T10:52:56",
+   "provider": "groq",
+   "note": "v1 locked"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-03T10:52:23",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Exam Stress? Football Chants Se Padhai Ka Boost!\",\"hook_formula\":\"Pattern-interrupt question\",\"chapters\":[{\"na"
+  },
+  {
+   "at": "2026-11-03T10:52:28",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"scenes\":[{\"text\":\"Kabhi notice kiya Newcastle aur Everton ke match ke dauran stadium ki chanting aapke exam stress aur"
+  },
+  {
+   "at": "2026-11-03T10:52:33",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"scenes\":[{\"text\":\"Hostel ki raaton mein, night duty ke baad, exam cycle ka pressure dimaag ko overload kar deta hai.\","
+  },
+  {
+   "at": "2026-11-03T10:52:39",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"scenes\":[{\"text\":\"Dosto, jab hum ek saath chant karte hain, dimaag ka stress kam hota, motivation barhta hai.\",\"text_e"
+  },
+  {
+   "at": "2026-11-03T10:52:44",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"scenes\":[{\"text\":\"Chalo, aaj ka 'Stadium‑Break Timer' shuru karte hain, jo padhai aur football ka perfect combo banata"
+  },
+  {
+   "at": "2026-11-03T10:52:51",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"scenes\":[{\"text\":\"Chalo, sab milke 'Go Magpies! Go Magpies!' chant karte hain, haath thapthapate hue, do minute ke liy"
+  },
+  {
+   "at": "2026-11-03T10:52:56",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"scenes\":[{\"text\":\"Dekho, jaise Newcastle ke fans stadium mein chant karte hain, waise hi tum exam prep mein action lo."
+  },
+  {
+   "at": "2026-11-03T10:53:00",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Exam Stress? Football Chants Se Padhai Ka Boost!\",\"Newcastle vs Everton Hype: 5 Ways to Crush Exam Anxiety\","
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "script"
+}

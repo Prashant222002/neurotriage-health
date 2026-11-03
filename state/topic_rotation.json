@@ -74,5 +74,87 @@
    "ts": 1793698046.77279
   }
  ],
- "last_kind": ""
+ "last_kind": "",
+ "history": {
+  "Generalized anxiety (constant worry)": [
+   "legacy"
+  ],
+  "Panic attacks": [
+   "legacy"
+  ],
+  "Social anxiety": [
+   "legacy"
+  ],
+  "Depression vs normal sadness": [
+   "legacy"
+  ],
+  "ADHD in adults and students": [
+   "legacy"
+  ],
+  "OCD (it is not just being neat)": [
+   "legacy"
+  ],
+  "Burnout": [
+   "legacy"
+  ],
+  "Insomnia and racing thoughts": [
+   "legacy"
+  ],
+  "Bipolar disorder basics": [
+   "legacy"
+  ],
+  "PTSD and trauma response": [
+   "legacy"
+  ],
+  "Health anxiety": [
+   "legacy"
+  ],
+  "Exam / test anxiety": [
+   "legacy"
+  ],
+  "Perfectionism and anxiety": [
+   "legacy"
+  ],
+  "Active recall": [
+   "legacy"
+  ],
+  "Spaced repetition": [
+   "legacy"
+  ],
+  "Pomodoro and focus blocks": [
+   "legacy"
+  ],
+  "Sleep and memory": [
+   "legacy"
+  ],
+  "Phone distraction": [
+   "legacy"
+  ],
+  "Morning routine": [
+   "legacy"
+  ],
+  "Deep work": [
+   "legacy"
+  ],
+  "Habit stacking": [
+   "legacy"
+  ],
+  "The 2-minute rule": [
+   "legacy"
+  ],
+  "Feynman technique": [
+   "legacy"
+  ],
+  "Exercise and focus": [
+   "legacy"
+  ],
+  "Note-taking that works": [
+   "legacy"
+  ]
+ },
+ "reserved": {
+  "Beating procrastination": 1793703117.45651
+ },
+ "slot": 0,
+ "migrated_v3": true
 }

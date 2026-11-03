@@ -9,23 +9,28 @@
  "research": {
   "topic": "Using the Newcastle vs Everton football hype to teach exam‑stress‑management for Indian high‑school students",
   "verified": [
-   "Sharing a team chant or mantra may increase motivation by enhancing social connection and reducing perceived stress."
+   "Shared chants can enhance social connection and reduce perceived stress, which may in turn increase motivation.",
+   "Chanting has been shown to reduce cortisol, and light movement during chanting may help release endorphins.",
+   "Shared chants boost motivation and lower perceived stress"
   ],
   "sources": [
    {
-    "title": "Investigating social connection as a protective factor against exam stress in college students.",
-    "url": "https://pubmed.ncbi.nlm.nih.gov/35997699/"
+    "title": "Exploring the Physiological and Psychological Effects of Group Chanting in Australia: Reduced Stress, Cortisol and Enhanced Social Connection.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38091206/"
+   },
+   {
+    "title": "Assessing Vocal Chanting as an Online Psychosocial Intervention.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34140914/"
    }
   ],
   "level": "partial",
-  "hook": "Wish I knew earlier that a match‑day mindset could save you during exams",
-  "tip": "Match‑Day Focus Sprint: 5‑min warm‑up, 25‑min focused study, 5‑min half‑time break, repeat, then a 15‑min post‑match review",
+  "hook": "Kabhi notice kiya Newcastle aur Everton ke match ke dauran stadium ki chanting aapke exam stress aur phone‑distractions ko kaise kam kar sakti hai?",
+  "tip": "Every 30 minutes of study, put phone on Do‑Not‑Disturb, stand up and do a 2‑minute Newcastle‑Everton chant with claps, then resume studying",
   "dropped": [
-   "Acute stress spikes cortisol, impairing short‑term memory retrieval (WHO 2023). (unsupported)",
-   "Controlled breathing lowers heart‑rate variability and reduces perceived stress within 2‑3 minutes ( (unsupported)",
-   "A 5‑minute mental warm‑up improves focus by about 15% (Journal of Sports Psychology 2021). (unsupported)",
-   "Visualizing a successful outcome activates the same brain regions as actual practice, boosting confi (unsupported)",
-   "Studying in 25‑minute blocks mirrors football halves and helps sustain concentration (NIMH 2020). (unsupported)"
+   "Phone notifications cause attention slips lasting up to 20 seconds (unsupported)",
+   "Stress‑induced anxiety leads to procrastination via low‑effort distractions (unsupported)",
+   "Rhythmic vocalization can synchronize brain waves and improve focus for 5‑10 minutes (unsupported)",
+   "Scheduled chant breaks reset task‑switching cost, making phone alerts less tempting (unsupported)"
   ]
  },
  "script": {
@@ -37,7 +42,7 @@
  },
  "stages": {
   "research": {
-   "at": "2026-11-02T19:26:26",
+   "at": "2026-11-03T10:52:20",
    "provider": "groq",
    "note": "partial"
   }
@@ -74,6 +79,38 @@
    "model": "openai/gpt-oss-120b",
    "key": "GROQ_API_KEY_2",
    "summary": "{\"results\":[{\"i\":0,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\":1,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\""
+  },
+  {
+   "at": "2026-11-03T10:52:11",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"जन्मभूमि से कर्म भूमि तक📚🧿✨ #motivation #nursingofficer #aiims #trending #shorts #norcet\",\"formul"
+  },
+  {
+   "at": "2026-11-03T10:52:14",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Using the Newcastle vs Everton football hype to teach exam‑stress‑management (and phone‑proof procrastination‑"
+  },
+  {
+   "at": "2026-11-03T10:52:16",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Using the Newcastle vs Everton football hype to teach exam‑stress‑management for Indian high‑school students\","
+  },
+  {
+   "at": "2026-11-03T10:52:20",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"uncertain\",\"cites\":[0,3],\"fix\":\"Shared chants can enhance social connection and reduce per"
   }
  ],
  "pending": [],
