@@ -1,0 +1,55 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1020"><link rel="icon" href="icon.png">
+<title>NeuroTriage Post</title>
+<style>
+:root{--bg:#0b1020;--card:#151c33;--tx:#e8ecff;--mu:#8a93b8;--ac:#6c8cff;--ok:#3ecf8e;--bad:#ff6b6b;--warn:#ffb454}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px system-ui,sans-serif;padding:14px;max-width:600px;margin:auto}
+h1{font-size:19px;margin:6px 0}.c{background:var(--card);border-radius:14px;padding:14px;margin:12px 0}
+input{width:100%;padding:10px;border-radius:9px;border:1px solid #2a3560;background:#0e1427;color:var(--tx)}
+textarea{width:100%;min-height:110px;padding:10px;border-radius:9px;border:1px solid #2a3560;background:#0e1427;color:var(--tx);font:13px/1.45 system-ui,sans-serif;resize:vertical}
+button,a.b{display:block;text-align:center;text-decoration:none;background:var(--ac);color:#fff;border:0;border-radius:10px;padding:10px 12px;font-weight:600;font-size:14px;margin:6px 0}
+button.s{background:#222c52}button.ok{background:var(--ok);color:#06210f}
+.row{display:flex;gap:8px;align-items:center;justify-content:space-between}.row>*{margin:0}
+.mu{color:var(--mu);font-size:12px}.lbl{font-weight:700;font-size:13px;margin:12px 0 4px}
+.chip{display:inline-block;font-size:11px;padding:2px 8px;border-radius:99px;background:#222c52;margin:2px 4px 2px 0}
+.chip.ok{background:#12372a;color:var(--ok)}.chip.bad{background:#3a1d22;color:var(--bad)}.chip.warn{background:#3a2d12;color:var(--warn)}
+.when{font-size:16px;font-weight:700;margin:6px 0}.badge{font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;background:#222c52}
+#msg{min-height:18px;font-size:13px}
+</style></head><body>
+<h1>NeuroTriage: Post manually</h1>
+<div class="c"><input id="pw" type="password" placeholder="Dashboard password"><div id="msg" class="mu"></div>
+<button onclick="load()">Refresh</button></div>
+<div id="list"></div>
+<div class="c mu">Steps: 1) Video download karo (zip hai, Files app se extract). 2) Caption copy karo. 3) Instagram: + , Reel, video chuno, caption paste, time par Share.
+Instagram app mein professional account par Advanced settings ke andar Schedule option bhi aa sakta hai (account type par depend karta hai).</div>
+<script>
+const $=id=>document.getElementById(id),esc=s=>String(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+if(localStorage.pw)$("pw").value=localStorage.pw;
+const DAYS=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function whenIst(s){ // "2026-11-02T10:00+05:30" -> "Mon 2 Nov, 10:00 AM IST"
+  const m=/^(\d{4})-(\d\d)-(\d\d)T(\d\d):(\d\d)/.exec(s||"");if(!m)return "time set nahi";
+  const d=new Date(Date.UTC(+m[1],+m[2]-1,+m[3]));let h=+m[4];const ap=h>=12?"PM":"AM";h=h%12||12;
+  return `${DAYS[d.getUTCDay()]} ${+m[3]} ${MON[+m[2]-1]}, ${h}:${m[5]} ${ap} IST`}
+function rel(s){const t=Date.parse(s);if(isNaN(t))return"";const mins=Math.round((t-Date.now())/60000),a=Math.abs(mins);
+  const x=a>=1440?Math.round(a/1440)+" din":a>=60?Math.round(a/60)+" ghante":a+" min";return mins>=0?"("+x+" baad)":"("+x+" pehle, time nikal gaya)"}
+function field(label,text,id){if(!text)return"";return `<div class="lbl">${label}</div><textarea id="${id}" readonly>${esc(text)}</textarea>
+ <button class="s" onclick="cp('${id}',this)">Copy ${label}</button>`}
+async function cp(id,b){const t=$(id).value;try{await navigator.clipboard.writeText(t)}catch(e){$(id).select();document.execCommand("copy")}
+  const o=b.textContent;b.textContent="Copied!";b.className="ok";setTimeout(()=>{b.textContent=o;b.className="s"},1400)}
+function chips(p){const k=Object.keys(p||{});if(!k.length)return"";return k.map(n=>{const s=p[n];
+  const ok=/ok|done|posted|complete|scheduled/i.test(s),sk=/skip/i.test(s);
+  return `<span class="chip ${ok?"ok":sk?"warn":"bad"}">${n}: ${ok?"posted":sk?"skipped (manual karo)":esc(s)||"?"}</span>`}).join("")}
+async function load(){const pw=$("pw").value.trim();localStorage.pw=pw;$("msg").textContent="Loading...";
+  try{const r=await fetch("/api/queue",{headers:{"x-pass":pw}});const j=await r.json();if(!r.ok)throw new Error(j.error||r.status);
+    $("msg").textContent=j.items.length+" video(s) | "+new Date().toLocaleTimeString();
+    $("list").innerHTML=j.items.map((it,i)=>{const m=it.meta,full=[m.title,"",m.ig_caption||m.yt_description].join("\n");
+      return `<div class="c"><div class="row"><span class="badge">${esc(it.kind).toUpperCase()}</span><span class="mu">${esc(it.id)}</span></div>
+      <div class="when">${whenIst(it.publish_at)} <span class="mu">${rel(it.publish_at)}</span></div>
+      <div>${chips(it.platforms)}</div>
+      ${it.art?`<a class="b" href="/api/download?id=${it.art.id}&p=${encodeURIComponent(pw)}">Download video (${it.art.mb} MB, zip)</a>`:`<div class="mu">Video artifact expire ho gaya (7 din baad hata diya jata hai)</div>`}
+      ${field("Title",m.title,"t"+i)}${field("Instagram caption",m.ig_caption||m.yt_description,"i"+i)}
+      ${it.kind==="long"?"":""}${field("YouTube description",m.yt_description,"y"+i)}
+      ${field("Hashtags",(m.hashtags||[]).join(" "),"h"+i)}</div>`}).join("")||"<div class='c mu'>Abhi koi video queue mein nahi hai.</div>"
+  }catch(e){$("msg").textContent="Error: "+e.message}}
+if($("pw").value)load();
+</script></body></html>
