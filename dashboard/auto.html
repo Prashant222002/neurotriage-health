@@ -88,7 +88,7 @@ const fmtEta=s=>s<=0?"":s<90?"~"+s+" sec":"~"+Math.ceil(s/60)+" min";
 const KIND={short:"Short",long:"Long",publish:"Publish"};
 async function loadRuns(){
   if(!PW())return;
-  try{const j=await api("/api/build-status",{headers:H()});localStorage.pw=PW();$("rt").textContent=new Date().toLocaleTimeString();
+  try{const j=await api("/api/status?view=build",{headers:H()});localStorage.pw=PW();$("rt").textContent=new Date().toLocaleTimeString();
     $("runs").className="";$("runs").innerHTML=j.runs.map(r=>{
       const col=r.state==="done"?"ok":r.state==="failed"?"bad":"warn";
       const lab={queued:"queue mein",running:"chal raha hai",done:"ho gaya",failed:"fail",cancelled:"cancel"}[r.state];
