@@ -1,0 +1,87 @@
+{
+ "key": "2026-11-03-m41664435650",
+ "kind": "research",
+ "created": "2026-11-03T15:31:06",
+ "request": {
+  "kind": "research",
+  "mode": "awareness"
+ },
+ "research": {
+  "topic": "Bipolar Disorder",
+  "verified": [
+   "The first episode often begins in adolescence or early adulthood, typically around the late teens to early thirties.",
+   "Bipolar disorder is characterized by episodes of mania/hypomania and depression, which may occur in various sequences.",
+   "A notable proportion of individuals are initially misdiagnosed as having unipolar depression."
+  ],
+  "sources": [
+   {
+    "title": "Bipolar disorder: Trimodal age-at-onset distribution.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33030292/"
+   },
+   {
+    "title": "Diagnosis and management of bipolar disorders.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37045450/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Wish I knew earlier – start with a relatable regret line promising simple life‑changing knowledge",
+  "tip": "Keep a daily Mood‑&‑Sleep Log: note bedtime, wake time and a one‑word mood rating each night",
+  "dropped": [
+   "Affects ~1% of adults worldwide and ~0.8‑1% in India (unsupported)",
+   "First‑degree relatives have ~10‑15× higher risk (unsupported)",
+   "Untreated cases can double risk of academic dropout or job loss within 5 years (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-03T15:31:31",
+   "provider": "groq",
+   "note": "partial"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-03T15:31:19",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"POV: Exam Is Tomorrow 😭 | Every Student Can Relate!\",\"formula\":\"Pattern-interrupt question\",\"trig"
+  },
+  {
+   "at": "2026-11-03T15:31:21",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Bipolar Disorder **ANGLE (why it is under‑used)** Mental‑health content in Indian short‑video channels often f"
+  },
+  {
+   "at": "2026-11-03T15:31:26",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Bipolar Disorder\",\"search_terms\":[\"bipolar disorder prevalence India\",\"bipolar disorder age of onset\",\"bipolar"
+  },
+  {
+   "at": "2026-11-03T15:31:31",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\":1,\"verdict\":\"uncertain\",\"cites\":[4],\"fix\":\"The firs"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}

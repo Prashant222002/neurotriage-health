@@ -1,0 +1,114 @@
+{
+ "key": "2026-11-03-m41664435650",
+ "kind": "short",
+ "created": "2026-11-03T15:31:31",
+ "request": {
+  "kind": "short",
+  "mode": "awareness",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Bipolar Disorder",
+  "verified": [
+   "The first episode often begins in adolescence or early adulthood, typically around the late teens to early thirties.",
+   "Bipolar disorder is characterized by episodes of mania/hypomania and depression, which may occur in various sequences.",
+   "A notable proportion of individuals are initially misdiagnosed as having unipolar depression."
+  ],
+  "sources": [
+   {
+    "title": "Bipolar disorder: Trimodal age-at-onset distribution.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33030292/"
+   },
+   {
+    "title": "Diagnosis and management of bipolar disorders.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37045450/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Wish I knew earlier – start with a relatable regret line promising simple life‑changing knowledge",
+  "tip": "Keep a daily Mood‑&‑Sleep Log: note bedtime, wake time and a one‑word mood rating each night",
+  "dropped": [
+   "Affects ~1% of adults worldwide and ~0.8‑1% in India (unsupported)",
+   "First‑degree relatives have ~10‑15× higher risk (unsupported)",
+   "Untreated cases can double risk of academic dropout or job loss within 5 years (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {},
+ "handoff": [
+  {
+   "at": "2026-11-03T15:32:33",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{\"title\":\"Bipolar Disorder: Mood Rollercoaster Ka Sach\",\"title_en\":\"Bipolar Disorder: The Truth About Mood Swings\",\"form"
+  },
+  {
+   "at": "2026-11-03T15:32:40",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Bipolar Disorder: Mood Swings Ka Sach\",\"title_en\":\"Bipolar Disorder: The Truth About Mood Swings\",\"formula\":\"W"
+  },
+  {
+   "at": "2026-11-03T15:34:49",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Bipolar Disorder Ka Sach: Mood Swings Ko Samjho\",\"title_en\":\"The Truth About Bipolar Disorder: Understanding M"
+  },
+  {
+   "at": "2026-11-03T15:35:03",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Bipolar Disorder Ka Sach: Mood Swings Samjho Aur Control Karo\",\"title_en\":\"Understanding Bipolar Disorder: Moo"
+  },
+  {
+   "at": "2026-11-03T15:35:18",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Bipolar Disorder Ka Sach: Mood Swings Samjho Aur Control Karo\",\"title_en\":\"Understanding Bipolar Disorder: Moo"
+  },
+  {
+   "at": "2026-11-03T15:38:08",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{ \"title\": \"Bipolar Disorder Ka Sach: Mood Swings Samjho Aur Control Karo\", \"title_en\": \"Understanding Bipolar Disorder:"
+  },
+  {
+   "at": "2026-11-03T15:39:06",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_5",
+   "summary": "{\"title\":\"Bipolar Disorder Ka Sach: Mood Swings Aur Unka Samna\",\"title_en\":\"The Truth About Bipolar Disorder: Understand"
+  },
+  {
+   "at": "2026-11-03T15:39:34",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{ \"title\": \"Bipolar Disorder Ka Sach: Mood Swings Ka Real Reason\", \"title_en\": \"The Truth About Bipolar Disorder: Unders"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "script"
+}
