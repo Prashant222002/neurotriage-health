@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-04-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-04T03:37:42+05:30",
+  "publish_at": "2026-11-04T10:00+05:30",
+  "publish_at_utc": "2026-11-04T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-04-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "What a Mental-Health Screening Test Really Shows",
+    "yt_description": "A short reel explaining what mental‑health screening tests measure, what they cannot diagnose, and a simple weekly check‑in habit to stay proactive.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/11556941/ | https://pubmed.ncbi.nlm.nih.gov/10568646/\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\nIf you are struggling, India's free 24x7 helpline Tele-MANAS: 14416.\n\n#MentalHealth #Screening #Wellbeing #SelfCare #HealthTips #Shorts",
+    "ig_caption": "A short reel explaining what mental‑health screening tests measure, what they cannot diagnose, and a simple weekly check‑in habit to stay proactive.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#MentalHealth #Screening #Wellbeing #SelfCare #HealthTips",
+    "hashtags": [
+      "#MentalHealth",
+      "#Screening",
+      "#Wellbeing",
+      "#SelfCare",
+      "#HealthTips",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "E-c3M_ARq2s",
+        "url": "https://youtube.com/watch?v=E-c3M_ARq2s",
+        "scheduled": true
+      },
+      "at": "2026-11-03T22:07:46+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-03T22:07:46+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-03T22:07:46+00:00"
+    }
+  },
+  "status": "pending"
+}

@@ -1,0 +1,241 @@
+{
+ "key": "2026-11-04",
+ "kind": "short",
+ "created": "2026-11-03T21:58:44",
+ "request": {
+  "kind": "short",
+  "mode": "awareness",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "What a mental‑health screening test is (and what it cannot tell you)",
+  "verified": [
+   "Screening tests measure symptom severity but do not provide a clinical diagnosis",
+   "They are intended for early identification of possible mental‑health issues, typically assessing symptoms over the past two weeks.",
+   "They are designed for early identification of possible mental‑health issues after symptoms persist for at least two weeks"
+  ],
+  "sources": [
+   {
+    "title": "The PHQ-9: validity of a brief depression severity measure.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/11556941/"
+   },
+   {
+    "title": "Validation and utility of a self-report version of PRIME-MD: the PHQ primary care study. Primary Care Evaluation of Mental Disorders. Patient Health Questionnai",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/10568646/"
+   }
+  ],
+  "level": "verified",
+  "hook": "Kabhi aisa laga ki bas ek 5‑minute quiz se tum apni mental health ka ‘scorecard’ mil jayega?",
+  "tip": "Set a weekly “mental‑check‑in”: spend 5 minutes completing a brief screen (e.g., PHQ‑2) and note the score; if it crosses the cutoff or you notice a sudden change, arrange a 15‑minute tele‑consultation within 48 hours.",
+  "dropped": [
+   "Common screens like PHQ‑9 and GAD‑7 have been validated in diverse cultural populations, including S (unsupported)",
+   "Screening questionnaires are not intended to detect imminent risk of self‑harm or psychosis (unsupported)",
+   "Up to 15% of respondents may receive false‑positive or false‑negative scores (unsupported)",
+   "Repeating the same screen every 4‑6 weeks can track symptom change and guide help‑seeking (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "850e60a95122a4ca",
+  "data": {
+   "title": "Mental Health Screening Ka Sach: Kya Bata Sakta Hai, Kya Nahi",
+   "title_en": "What a Mental-Health Screening Test Really Shows",
+   "formula": "Pattern-interrupt question",
+   "kicker": "MENTAL HEALTH",
+   "hook_text": "5 MINUTE QUIZ SE?",
+   "scenes": [
+    {
+     "text": "Kabhi laga quiz se sab pata chalega?",
+     "text_en": "Ever thought a quiz could reveal everything?",
+     "queries": [
+      "person looking confused",
+      "quiz app phone",
+      "thinking student"
+     ],
+     "emphasis": "QUIZ PATA"
+    },
+    {
+     "text": "Screening test sirf symptoms ki severity ko mapta hai—par kya yeh aapko madad karega?",
+     "text_en": "A screening test only measures symptom severity—but can it help you?",
+     "queries": [
+      "paper questionnaire",
+      "hand filling form",
+      "close-up checklist"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Ye test 2 hafton ke symptoms ko assess karta hai.",
+     "text_en": "It assesses symptoms over the past two weeks.",
+     "queries": [
+      "calendar two weeks",
+      "clock ticking",
+      "person reflecting"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Engineering student Rohan, 2 hafton se low mood feel kar raha hai.",
+     "text_en": "Engineering student Rohan has felt low mood for two weeks.",
+     "queries": [
+      "young adult looking out window",
+      "coffee mug on desk",
+      "city street morning"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Ye koi clinical diagnosis nahi deta, doctor ki zaroorat hoti hai.",
+     "text_en": "It doesn't give a clinical diagnosis; a doctor is needed.",
+     "queries": [
+      "doctor office sign",
+      "stethoscope on table",
+      "medical chart"
+     ],
+     "emphasis": "DIAGNOSIS DOCTOR"
+    },
+    {
+     "text": "Screening sirf severity batata hai, disease ka label nahi.",
+     "text_en": "Screening only shows severity, not a disease label.",
+     "queries": [
+      "severity meter gauge",
+      "graph rising line",
+      "neutral background"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Early identification se help mil sakti hai, par treatment decide nahi.",
+     "text_en": "Early identification can help, but it doesn't decide treatment.",
+     "queries": [
+      "hand holding lightbulb",
+      "person stepping forward",
+      "supportive handshake"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Set karo weekly mental‑check‑in, 5 minute screen karo.",
+     "text_en": "Set a weekly mental check‑in, do a 5‑minute screen.",
+     "queries": [
+      "calendar weekly reminder",
+      "timer counting down",
+      "person using phone"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Pehle PHQ‑2 ya similar test fill karo.",
+     "text_en": "First, fill a PHQ‑2 or similar test.",
+     "queries": [
+      "PHQ‑2 form close up",
+      "person writing answers",
+      "paper questionnaire"
+     ],
+     "emphasis": "PHQ‑2"
+    },
+    {
+     "text": "Score ya change note karo; agar high ho to doctor ko call karo.",
+     "text_en": "Note the score or change; if high, call a doctor.",
+     "queries": [
+      "score sheet highlighted",
+      "phone dialing doctor",
+      "alert notification"
+     ],
+     "emphasis": "SCORE HIGH DOCTOR"
+    },
+    {
+     "text": "5‑minute PHQ‑2 karo; agar score 3 ya usse zyada ho, doctor ko book karo.",
+     "text_en": "Take a 5‑minute PHQ‑2; if your score is 3 or higher, book a doctor.",
+     "queries": [
+      "person tapping phone",
+      "doctor appointment calendar",
+      "notification alert"
+     ],
+     "emphasis": "CTA"
+    }
+   ],
+   "description": "A short reel explaining what mental‑health screening tests measure, what they cannot diagnose, and a simple weekly check‑in habit to stay proactive.",
+   "hashtags": [
+    "#MentalHealth",
+    "#Screening",
+    "#Wellbeing",
+    "#SelfCare",
+    "#HealthTips",
+    "#MindfulLiving"
+   ],
+   "audit": {
+    "score": 55,
+    "hook": 30,
+    "retention": 60,
+    "specificity": 40,
+    "safety_ok": true,
+    "fixes": [
+     "Reduce first line to ≤9 words for stronger hook",
+     "Add a concrete Indian student or professional example (e.g., engineering student, IT professional)",
+     "Make the final call‑to‑action explicit (e.g., ‘Take a 5‑minute PHQ‑2 today and book a doctor if score ≥3’)",
+     "Ensure open loop is introduced by scene 2 instead of scene 3"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-03T21:59:24",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-03T21:59:24",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-03T21:59:48",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-03T22:07:42",
+   "provider": "",
+   "note": "What a Mental-Health Screening Test Really Shows"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-03T21:59:17",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{\"title\":\"Mental Health Screening Ka Sach: Kya Bata Sakta Hai, Kya Nahi\",\"title_en\":\"What a Mental-Health Screening Test"
+  },
+  {
+   "at": "2026-11-03T21:59:18",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"score\":55,\"hook\":30,\"retention\":60,\"specificity\":40,\"safety_ok\":true,\"fixes\":[\"Reduce first line to ≤9 words for stron"
+  },
+  {
+   "at": "2026-11-03T21:59:24",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Mental Health Screening Ka Sach: Kya Bata Sakta Hai, Kya Nahi\",\"title_en\":\"What a Mental-Health Screening Test"
+  },
+  {
+   "at": "2026-11-03T22:07:42",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Mental Health Screening Ka Sach: 3 Cheezein Jo Yeh Test Nahi Bata Sakta\",\"Kya Screening Test Aapke Depressio"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}

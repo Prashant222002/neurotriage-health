@@ -1,0 +1,88 @@
+{
+ "key": "2026-11-04",
+ "kind": "research",
+ "created": "2026-11-03T21:58:21",
+ "request": {
+  "kind": "research",
+  "mode": "awareness"
+ },
+ "research": {
+  "topic": "What a mental‑health screening test is (and what it cannot tell you)",
+  "verified": [
+   "Screening tests measure symptom severity but do not provide a clinical diagnosis",
+   "They are intended for early identification of possible mental‑health issues, typically assessing symptoms over the past two weeks.",
+   "They are designed for early identification of possible mental‑health issues after symptoms persist for at least two weeks"
+  ],
+  "sources": [
+   {
+    "title": "The PHQ-9: validity of a brief depression severity measure.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/11556941/"
+   },
+   {
+    "title": "Validation and utility of a self-report version of PRIME-MD: the PHQ primary care study. Primary Care Evaluation of Mental Disorders. Patient Health Questionnai",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/10568646/"
+   }
+  ],
+  "level": "verified",
+  "hook": "Kabhi aisa laga ki bas ek 5‑minute quiz se tum apni mental health ka ‘scorecard’ mil jayega?",
+  "tip": "Set a weekly “mental‑check‑in”: spend 5 minutes completing a brief screen (e.g., PHQ‑2) and note the score; if it crosses the cutoff or you notice a sudden change, arrange a 15‑minute tele‑consultation within 48 hours.",
+  "dropped": [
+   "Common screens like PHQ‑9 and GAD‑7 have been validated in diverse cultural populations, including S (unsupported)",
+   "Screening questionnaires are not intended to detect imminent risk of self‑harm or psychosis (unsupported)",
+   "Up to 15% of respondents may receive false‑positive or false‑negative scores (unsupported)",
+   "Repeating the same screen every 4‑6 weeks can track symptom change and guide help‑seeking (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-03T21:58:44",
+   "provider": "groq",
+   "note": "verified"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-03T21:58:34",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"POV: Exam Is Tomorrow 😭 | Every Student Can Relate! | Exam Memes | Student Life\",\"formula\":\"Patte"
+  },
+  {
+   "at": "2026-11-03T21:58:37",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** What a mental‑health screening test is (and what it cannot tell you) **ANGLE (why it is under‑used)** Many stu"
+  },
+  {
+   "at": "2026-11-03T21:58:38",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"What a mental‑health screening test is (and what it cannot tell you)\",\"search_terms\":[\"PHQ-9 validation study\""
+  },
+  {
+   "at": "2026-11-03T21:58:44",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"supported\",\"cites\":[0,8],\"fix\":\"\"},{\"i\":1,\"verdict\":\"uncertain\",\"cites\":[0],\"fix\":\"They ar"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}
