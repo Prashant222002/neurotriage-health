@@ -1,0 +1,263 @@
+{
+ "key": "2026-11-03-m41644845038",
+ "kind": "short",
+ "created": "2026-11-03T13:31:34",
+ "request": {
+  "kind": "short",
+  "mode": "awareness",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Schizophrenia",
+  "verified": [
+   "Schizophrenia often begins in late adolescence or early adulthood, typically between the mid‑teens and early thirties.",
+   "A substantial proportion of individuals with schizophrenia exhibit positive symptoms such as hallucinations and delusions, and many also display negative symptoms like social withdrawal and flat affect.",
+   "Having a first‑degree relative with schizophrenia is associated with a markedly increased risk compared with the general population.",
+   "Only a minority of people with schizophrenia in India receive continuous evidence‑based care, with estimates suggesting coverage may be around or below one‑third.",
+   "With early psychosocial support and medication adherence, many individuals achieve functional improvement within two years, though precise rates are not well documented."
+  ],
+  "sources": [
+   {
+    "title": "Low Treatment Gap for Schizophrenia in Rural India: A Step Toward Taluk Mental Health Program.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41574179/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Did you know that 1 in 100 young adults in India will experience schizophrenia, yet most of us still think it’s just “hearing voices” from movies?",
+  "tip": "Create a “3‑2‑1 Reset” grounding routine: name 3 things you see, 2 things you can touch, and take 1 deep breath whenever you feel overwhelmed.",
+  "dropped": [
+   "≈0.5% of Indians develop schizophrenia (≈1 in 200) (uncertain + number not backed)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "8f24710f2ea1a425",
+  "data": {
+   "title": "Schizophrenia: Myth Busters & Simple Grounding Tip",
+   "title_en": "Schizophrenia: Myth Busters & Simple Grounding Tip",
+   "formula": "Myth vs fact",
+   "kicker": "MIND HEALTH",
+   "hook_text": "MYTH: SCHIZOPHRENIA KE KEVAL HALLUCINATIONS",
+   "scenes": [
+    {
+     "text": "Kya aap jaante hain schizophrenia sirf hallucinations nahi?",
+     "queries": [
+      "young adult thinking",
+      "college hallway",
+      "brain graphic"
+     ],
+     "text_en": "Did you know schizophrenia isn’t just hallucinations?",
+     "text_hi": "क्या आप जानते हैं स्किज़ोफ़्रेनिया सिर्फ़ हॉलुसिनेशन्स नहीं?",
+     "emphasis": ""
+    },
+    {
+     "text": "College ya office mein stress hota, par ye alag hota.",
+     "queries": [
+      "student stressed desk",
+      "office cubicle",
+      "stress concept"
+     ],
+     "text_en": "College or office stress exists, but this is different.",
+     "text_hi": "कॉलेज या ऑफिस में स्ट्रेस होता, पर ये अलग होता।",
+     "emphasis": ""
+    },
+    {
+     "text": "Ye disorder taur par late teens se early thirties tak aata.",
+     "queries": [
+      "teenager portrait",
+      "young adult walking",
+      "timeline graphic"
+     ],
+     "text_en": "It usually starts in late teens to early thirties.",
+     "text_hi": "ये डिसऑर्डर तौर पर लेट टीन से अर्ली थर्टीज़ तक आता है।",
+     "emphasis": "LATE TEENS"
+    },
+    {
+     "text": "Kuch log hallucinations, delusions dekhte, aur kuch social withdrawal bhi.",
+     "queries": [
+      "person hearing voices",
+      "person alone room",
+      "social isolation"
+     ],
+     "text_en": "Some see hallucinations, delusions, others withdraw socially.",
+     "text_hi": "कुछ लोग हॉलुसिनेशन्स, डिल्यूज़न्स देखते, और कुछ सोशल विड्रॉवल भी।",
+     "emphasis": ""
+    },
+    {
+     "text": "First-degree relative hone se risk kaafi badh jaata hai.",
+     "queries": [
+      "family tree diagram",
+      "genetics concept",
+      "relatives together"
+     ],
+     "text_en": "Having a close relative raises the risk a lot.",
+     "text_hi": "फ़र्स्ट-डिग्री रिलेटिव होने से रिस्क काफी बढ़ जाता है।",
+     "emphasis": "RISK"
+    },
+    {
+     "text": "India mein sirf ek‑third ya kam log continuous care lete hain.",
+     "queries": [
+      "Indian clinic exterior",
+      "doctor consulting patient",
+      "healthcare statistics"
+     ],
+     "text_en": "In India, only about a third get continuous care.",
+     "text_hi": "इंडिया में सिर्फ़ एक‑थर्ड या कम लोग कंटीन्यूअस केयर लेते हैं।",
+     "emphasis": ""
+    },
+    {
+     "text": "Shuruati support aur medication se do saal mein function behtar hota.",
+     "queries": [
+      "medicine bottle",
+      "counselling session",
+      "progress chart"
+     ],
+     "text_en": "Early support and meds improve function within two years.",
+     "text_hi": "शुरुआती सपोर्ट और मेडिकेशन से दो साल में फ़ंक्शन बेहतर होता।",
+     "emphasis": ""
+    },
+    {
+     "text": "Sahi madad se zindagi phir se khil sakti hai.",
+     "queries": [
+      "sunrise over city",
+      "happy family",
+      "rebirth metaphor"
+     ],
+     "text_en": "With proper help, life can flourish again.",
+     "text_hi": "सही मदद से ज़िन्दगी फिर से खिल सकती है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Aap bhi try kar sakte hain ek simple grounding technique.",
+     "queries": [
+      "person breathing exercise",
+      "hands on table",
+      "grounding practice"
+     ],
+     "text_en": "You can try a simple grounding technique too.",
+     "text_hi": "आप भी ट्राय कर सकते हैं एक सिम्पल ग्राउंडिंग टेक्निक।",
+     "emphasis": ""
+    },
+    {
+     "text": "Pehle 3 cheezein dekho, 2 chhoo, phir 1 gehri saans lo.",
+     "queries": [
+      "close-up objects",
+      "hand touching surface",
+      "person inhaling"
+     ],
+     "text_en": "First see 3 things, touch 2, then take 1 deep breath.",
+     "text_hi": "पहले 3 चीज़ें देखो, 2 छू, फिर 1 गहरी साँस लो।",
+     "emphasis": "3 CHEEZEIN"
+    },
+    {
+     "text": "Ye tip apne dost ko bhejo jo kabhi overwhelmed feel karta.",
+     "queries": [
+      "friend texting phone",
+      "supportive message",
+      "people sharing"
+     ],
+     "text_en": "Send this tip to a friend who feels overwhelmed.",
+     "text_hi": "ये टिप अपने दोस्त को भेजो जो कभी ओवरवेल्म्ड फील करता।",
+     "emphasis": ""
+    }
+   ],
+   "description": "A short reel debunks common myths about schizophrenia, shares key facts, and offers a quick 3‑2‑1 grounding tip for anyone feeling overwhelmed. Simple, stigma‑free, and practical for young adults.",
+   "hashtags": [
+    "#Schizophrenia",
+    "#MentalHealthIndia",
+    "#MythBusting",
+    "#GroundingTechnique",
+    "#YouthWellness",
+    "#MindCare"
+   ],
+   "audit": {
+    "score": 77,
+    "hook": 9,
+    "retention": 8,
+    "specificity": 6,
+    "safety_ok": true,
+    "fixes": [
+     "Add a concrete Indian student or professional example (e.g., a Delhi college student coping with exam stress)",
+     "Ensure beats change every 2‑3 scenes by merging or splitting lines for smoother pacing",
+     "Cite the Indian care coverage estimate more clearly (e.g., \"only about one‑third\")",
+     "Strengthen the final CTA with a direct prompt like \"Try this grounding tip now and share it with a friend\""
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-03T13:35:48",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-03T13:35:48",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-03T13:36:24",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-03T13:43:12",
+   "provider": "",
+   "note": "Schizophrenia: Myth Busters & Simple Grounding Tip"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-03T13:31:40",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Schizophrenia ki pehli nishaniyan aur simple help tips\",\"title_en\":\"Early signs of schizophrenia and simple he"
+  },
+  {
+   "at": "2026-11-03T13:32:09",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{ \"title\": \"Schizophrenia: Sirf Hawa Mein Na, Samjho Real Truth\", \"title_en\": \"Schizophrenia: Not Just Hearing Voices\", "
+  },
+  {
+   "at": "2026-11-03T13:32:44",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{ \"title\": \"Schizophrenia: Sir"
+  },
+  {
+   "at": "2026-11-03T13:35:47",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_5",
+   "summary": "{\"title\":\"Schizophrenia: Myth Busters & Simple Grounding Tip\",\"title_en\":\"Schizophrenia: Myth Busters & Simple Grounding"
+  },
+  {
+   "at": "2026-11-03T13:35:48",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"score\":77,\"hook\":9,\"retention\":8,\"specificity\":6,\"safety_ok\":true,\"fixes\":[\"Add a concrete Indian student or professio"
+  },
+  {
+   "at": "2026-11-03T13:43:12",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Schizophrenia Myths: 5 Surprising Truths Indian Students Must Know\",\"Why Schizophrenia Isn't Just Hallucinat"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}

@@ -1,0 +1,83 @@
+{
+ "key": "2026-11-03-m41644845038",
+ "kind": "research",
+ "created": "2026-11-03T13:31:09",
+ "request": {
+  "kind": "research",
+  "mode": "awareness"
+ },
+ "research": {
+  "topic": "Schizophrenia",
+  "verified": [
+   "Schizophrenia often begins in late adolescence or early adulthood, typically between the mid‑teens and early thirties.",
+   "A substantial proportion of individuals with schizophrenia exhibit positive symptoms such as hallucinations and delusions, and many also display negative symptoms like social withdrawal and flat affect.",
+   "Having a first‑degree relative with schizophrenia is associated with a markedly increased risk compared with the general population.",
+   "Only a minority of people with schizophrenia in India receive continuous evidence‑based care, with estimates suggesting coverage may be around or below one‑third.",
+   "With early psychosocial support and medication adherence, many individuals achieve functional improvement within two years, though precise rates are not well documented."
+  ],
+  "sources": [
+   {
+    "title": "Low Treatment Gap for Schizophrenia in Rural India: A Step Toward Taluk Mental Health Program.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41574179/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Did you know that 1 in 100 young adults in India will experience schizophrenia, yet most of us still think it’s just “hearing voices” from movies?",
+  "tip": "Create a “3‑2‑1 Reset” grounding routine: name 3 things you see, 2 things you can touch, and take 1 deep breath whenever you feel overwhelmed.",
+  "dropped": [
+   "≈0.5% of Indians develop schizophrenia (≈1 in 200) (uncertain + number not backed)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-03T13:31:34",
+   "provider": "groq",
+   "note": "partial"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-03T13:31:20",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"POV: Exam Is Tomorrow 😭 | Every Student Can Relate! | Exam Memes | Student Life\",\"formula\":\"Patte"
+  },
+  {
+   "at": "2026-11-03T13:31:23",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Schizophrenia **ANGLE (why it is under‑used)** Schizophrenia is often lumped together with “mental illness” in"
+  },
+  {
+   "at": "2026-11-03T13:31:25",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Schizophrenia\",\"search_terms\":[\"schizophrenia prevalence India\",\"schizophrenia onset age 15-30\",\"schizophrenia"
+  },
+  {
+   "at": "2026-11-03T13:31:34",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"uncertain\",\"cites\":[8],\"fix\":\"Approximately 0.25% of Indians are estimated to have schizop"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}
