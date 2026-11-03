@@ -1,0 +1,155 @@
+<!doctype html><html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0f191b"><link rel="icon" href="icon.png">
+<title>NeuroTriage Auto</title>
+<style>
+*{box-sizing:border-box}
+:root{--bg1:#0f191b;--bg2:#162427;--card:#1a2a2d;--line:#2b4044;--tx:#dde9e8;--mu:#8ea8aa;--ac:#78c2b0;--ac2:#a7b8e6;--warn:#e3c98f;--bad:#e09a9a;--ok:#7fd1a0}
+body{margin:0;min-height:100vh;color:var(--tx);font:16px/1.5 system-ui,-apple-system,sans-serif;padding:16px 14px 80px;background:linear-gradient(160deg,var(--bg1),var(--bg2))}
+.w{max-width:560px;margin:auto}
+h1{font-size:23px;margin:6px 0 2px;font-weight:650}h1 b{color:var(--ac)}
+.sub{color:var(--mu);font-size:14px;margin-bottom:8px}
+nav{display:flex;gap:14px;font-size:14px;margin:4px 0 8px}nav a{color:var(--mu)}nav a.on{color:var(--tx);text-decoration:none;font-weight:600}
+.c{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:12px 0}
+h2{font-size:16px;margin:0 0 10px;font-weight:600;color:#eef6f5}
+input,select,textarea{width:100%;padding:12px 13px;margin:5px 0 9px;border-radius:12px;border:1px solid var(--line);background:#132023;color:var(--tx);font:inherit}
+textarea{min-height:84px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid #3e6b66;border-color:transparent}
+button,.btn{display:block;text-align:center;text-decoration:none;width:100%;border:0;border-radius:12px;padding:13px;font:600 15px system-ui;color:#0d1c1b;cursor:pointer;background:var(--ac);margin-top:8px}
+button.q,.btn.q{background:#2c4a4e;color:var(--tx)}button.d{background:#3a2326;color:var(--bad)}button.sm{padding:9px;font-size:13px;margin-top:4px}
+button:disabled{opacity:.45;cursor:default}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:6px;margin:5px 0 10px}
+.seg label{margin:0;text-align:center;padding:10px 4px;border-radius:11px;background:#132023;border:1px solid var(--line);color:var(--mu);font-size:14px;cursor:pointer}
+.seg input{display:none}.seg input:checked+span{color:var(--tx)}.seg label:has(input:checked){background:#2c4a4e;color:var(--tx);border-color:#3e6b66}
+.m{font-size:13px;color:var(--mu);min-height:18px}.ok{color:var(--ok)}.bad{color:var(--bad)}.warn{color:var(--warn)}
+.bar{height:10px;border-radius:9px;background:#132023;overflow:hidden;margin:8px 0 4px;border:1px solid var(--line)}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#5aa898,#8fd0be);border-radius:9px;transition:width .8s}
+.row{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.chip{display:inline-block;font-size:12px;padding:2px 9px;border-radius:20px;background:#223539;margin:2px 4px 2px 0}
+.chip.ok{background:#17362a;color:var(--ok)}.chip.bad{background:#3a2326;color:var(--bad)}.chip.warn{background:#3a3120;color:var(--warn)}
+.lbl{font-weight:600;font-size:13px;margin:12px 0 2px;color:var(--ac2)}
+.vid{border-top:1px solid var(--line);padding:14px 0}.vid:first-child{border-top:0;padding-top:2px}
+.man{background:#142126;border:1px dashed #3b5a5e;border-radius:13px;padding:12px;margin-top:10px}
+.when{font-size:17px;font-weight:650}
+.run{padding:10px 0;border-top:1px solid var(--line)}.run:first-child{border-top:0}
+details summary{cursor:pointer;color:var(--ac);font-size:14px;margin:8px 0}
+a{color:var(--ac)}.hide{display:none}
+</style></head><body><div class="w">
+<h1>NeuroTriage <b>Auto</b></h1>
+<div class="sub">Topic do &rarr; research + stock footage &rarr; video &rarr; jahan ho sake wahan auto upload, baaki ki copy-paste info yahin.</div>
+<nav><a class="on" href="/auto">Auto</a><a href="/">Studio (raw video edit)</a><a href="/control">Control</a></nav>
+
+<div class="c"><input id="pw" type="password" placeholder="Dashboard password" autocomplete="current-password"><div class="m" id="pwm">Wahi password jo Control / Post page par chalta hai (DASH_PASSWORD).</div></div>
+
+<div class="c"><h2>Naya video banao</h2>
+<textarea id="topic" placeholder="Topic likho. Jaise: Brain rot kya hai aur students isse kaise bachein (khali chhodo = automatic topic)"></textarea>
+<input id="notes" placeholder="Extra instruction (optional): angle, audience, kya dikhana hai">
+<div class="lbl">Kaisa video</div>
+<div class="seg"><label><input type="radio" name="vt" value="short" checked><span>Short</span></label><label><input type="radio" name="vt" value="long"><span>Long</span></label><label><input type="radio" name="vt" value="both"><span>Dono</span></label></div>
+<div class="lbl">Upload kab</div>
+<div class="seg"><label><input type="radio" name="pw2" value="scheduled" checked><span>Schedule</span></label><label><input type="radio" name="pw2" value="asap"><span>~25 min baad</span></label><label><input type="radio" name="pw2" value="now"><span>Turant</span></label></div>
+<div id="tmw"><input id="tm" type="time" placeholder="Time (IST)"><div class="m">Time (IST) khali = Short 10:00, Long 19:00. Nikal gaya ho to agle din.</div></div>
+<button id="go" onclick="build()">Video banao</button>
+<div class="m" id="gm"></div>
+<div class="two"><button class="q sm" onclick="quick('build.yml',{},'Daily Short (auto topic)')">Auto Short abhi</button><button class="q sm" onclick="quick('build_long.yml',{},'Auto Long')">Auto Long abhi</button></div>
+<button class="q sm" onclick="quick('publish.yml',{},'Publish due')">Jo due hai wo abhi publish karo</button>
+</div>
+
+<div class="c"><div class="row"><h2>Chal raha hai</h2><span class="m" id="rt"></span></div><div id="runs" class="m">Password daalo...</div></div>
+
+<div class="c"><div class="row"><h2>Videos aur upload status</h2><button class="q sm" style="width:auto;padding:7px 14px;margin:0" onclick="loadQ()">Refresh</button></div><div id="q" class="m">Password daalo...</div></div>
+
+<div class="c"><h2>Storage khali karo</h2><div id="st" class="m">Password daalo...</div>
+<div class="two"><button class="q sm" onclick="clean('clean_github')">GitHub ki extra files</button><button class="q sm" onclick="clean('clean_blob')">Vercel Blob (raw uploads)</button></div>
+<div class="m" style="margin-top:8px">Sirf wahi video hatti hai jiska upload poora ho chuka. Jis video par manual upload baaki hai wo safe rehti hai.</div></div>
+</div>
+<script>
+const $=id=>document.getElementById(id),esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const val=n=>document.querySelector(`input[name=${n}]:checked`).value;
+const PW=()=>$("pw").value.trim(),H=()=>({"x-pass":PW(),"Content-Type":"application/json"});
+if(localStorage.pw)$("pw").value=localStorage.pw;
+async function api(u,o){const r=await fetch(u,o);let j={};try{j=await r.json()}catch(e){}if(!r.ok){const e=new Error(j.error||r.status);e.data=j;throw e}return j}
+document.querySelectorAll("input[name=pw2]").forEach(x=>x.onchange=()=>$("tmw").classList.toggle("hide",val("pw2")!=="scheduled"));
+
+async function dispatch(wf,inputs){await api("/api/run",{method:"POST",headers:H(),body:JSON.stringify({workflow:wf,inputs})})}
+async function build(){
+  localStorage.pw=PW();const topic=$("topic").value.trim(),vt=val("vt"),when=val("pw2");
+  const inp={topic,topic_notes:$("notes").value.trim()};
+  if(when==="now")inp.publish_when="now";else if(when==="asap")inp.publish_asap="1";else if($("tm").value)inp.publish_time_ist=$("tm").value;
+  const wfs=vt==="short"?["build.yml"]:vt==="long"?["build_long.yml"]:["build.yml","build_long.yml"];
+  $("go").disabled=true;$("gm").className="m";$("gm").textContent="Shuru kar raha hoon...";
+  try{for(const w of wfs)await dispatch(w,inp);
+    $("gm").className="m ok";$("gm").textContent=(topic?"Topic par video ban rahi hai. ":"Auto topic par video ban rahi hai. ")+(wfs.length>1?"Dono ek ke baad ek banenge (ek saath nahi). ":"")+"Neeche progress dikhega.";
+    setTimeout(loadRuns,8000)}catch(e){$("gm").className="m bad";$("gm").textContent="Error: "+e.message}
+  $("go").disabled=false}
+async function quick(wf,inp,name){localStorage.pw=PW();$("gm").className="m";try{await dispatch(wf,inp);$("gm").className="m ok";$("gm").textContent=name+": shuru ho gaya";setTimeout(loadRuns,8000)}catch(e){$("gm").className="m bad";$("gm").textContent="Error: "+e.message}}
+
+const fmtEta=s=>s<=0?"":s<90?"~"+s+" sec":"~"+Math.ceil(s/60)+" min";
+const KIND={short:"Short",long:"Long",publish:"Publish"};
+async function loadRuns(){
+  if(!PW())return;
+  try{const j=await api("/api/build-status",{headers:H()});localStorage.pw=PW();$("rt").textContent=new Date().toLocaleTimeString();
+    $("runs").className="";$("runs").innerHTML=j.runs.map(r=>{
+      const col=r.state==="done"?"ok":r.state==="failed"?"bad":"warn";
+      const lab={queued:"queue mein",running:"chal raha hai",done:"ho gaya",failed:"fail",cancelled:"cancel"}[r.state];
+      return `<div class="run"><div class="row"><b>${KIND[r.kind]||""}: ${esc(String(r.title).replace(/^Topic: /,"")).slice(0,70)}</b><span class="${col}">${lab}</span></div>
+      ${r.state==="running"||r.state==="queued"?`<div class="bar"><i style="width:${r.pct}%"></i></div><div class="row m"><span>${esc(r.stage)}</span><span>${r.pct}% ${fmtEta(r.eta)}</span></div>`:""}
+      ${r.state==="failed"?`<div class="m"><a href="${r.url}" target="_blank">Log dekho</a></div>`:""}</div>`}).join("")||'<div class="m">Abhi kuch nahi chal raha.</div>';
+    if(j.runs.some(r=>r.state==="running"||r.state==="queued")){clearTimeout(loadRuns.t);loadRuns.t=setTimeout(loadRuns,15000)}else loadQ()
+  }catch(e){$("runs").className="m bad";$("runs").textContent="Error: "+e.message}}
+
+const DAYS=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function whenIst(s){const m=/^(\d{4})-(\d\d)-(\d\d)T(\d\d):(\d\d)/.exec(s||"");if(!m)return"time set nahi";const d=new Date(Date.UTC(+m[1],+m[2]-1,+m[3]));let h=+m[4];const ap=h>=12?"PM":"AM";h=h%12||12;return`${DAYS[d.getUTCDay()]} ${+m[3]} ${MON[+m[2]-1]}, ${h}:${m[5]} ${ap} IST`}
+function rel(s){const t=Date.parse(s);if(isNaN(t))return"";const mins=Math.round((t-Date.now())/60000),a=Math.abs(mins);const x=a>=1440?Math.round(a/1440)+" din":a>=60?Math.round(a/60)+" ghante":a+" min";return mins>=0?x+" baad":"time ho gaya, ab upload kar sakte ho"}
+const PN={youtube:"YouTube",instagram:"Instagram",facebook:"Facebook"};
+function copyBox(label,text,id){if(!text)return"";return`<div class="lbl">${label}</div><textarea id="${id}" readonly>${esc(text)}</textarea><button class="q sm" onclick="cp('${id}',this)">Copy</button>`}
+async function cp(id,b){const t=$(id).value;try{await navigator.clipboard.writeText(t)}catch(e){$(id).select();document.execCommand("copy")}const o=b.textContent;b.textContent="Copied";setTimeout(()=>b.textContent=o,1300)}
+function ytTags(m){const t=(m.hashtags||[]).map(h=>h.replace(/^#/,"")).filter(Boolean);return[...new Set([...t,"neurotriage","shorts"])].join(", ")}
+let ITEMS=[];
+async function loadQ(){
+  if(!PW())return;
+  try{const j=await api("/api/queue",{headers:H()});ITEMS=j.items;localStorage.pw=PW();
+    $("q").className="";$("q").innerHTML=j.items.map((it,i)=>card(it,i)).join("")||'<div class="m">Abhi koi video nahi.</div>';loadSt();
+  }catch(e){$("q").className="m bad";$("q").textContent="Error: "+e.message}}
+function card(it,i){
+  const m=it.meta,pl=it.pl||{},names=Object.keys(pl);
+  const manual=names.filter(n=>{const s=pl[n].status;return s==="failed"||s==="skipped"||s==="pending"&&Date.parse(it.publish_at)<Date.now()-9e5});
+  const waiting=names.filter(n=>pl[n].status==="pending"&&!manual.includes(n));
+  const chips=names.map(n=>{const p=pl[n],s=p.status,c=s==="done"||s==="scheduled"?"ok":s==="pending"?"warn":"bad";
+    const t=s==="scheduled"?"schedule ho gaya":s==="done"?"upload ho gaya":s==="pending"?"auto upload hoga":s==="skipped"?"auto nahi (manual)":"fail (manual)";
+    return`<span class="chip ${c}">${PN[n]||n}: ${t}</span>`+(p.url?` <a href="${esc(p.url)}" target="_blank" class="m">link</a>`:"")}).join("");
+  const art=it.art?`<a class="btn q sm" href="/api/download?id=${it.art.id}&p=${encodeURIComponent(PW())}">Download video (${it.art.mb} MB zip)</a>`:`<div class="m">Video file expire/delete ho chuki.</div>`;
+  let man="";
+  if(manual.length){
+    const needYT=manual.includes("youtube"),others=manual.filter(n=>n!=="youtube");
+    man=`<div class="man"><b class="warn">Manual upload karo: ${manual.map(n=>PN[n]||n).join(", ")}</b>
+    <div class="m">Time: <b>${whenIst(it.publish_at)}</b> (${rel(it.publish_at)}). Upar se video download karo, phir neeche se copy-paste.</div>
+    ${manual.map(n=>pl[n].error?`<div class="m bad">${PN[n]}: ${esc(pl[n].error)}</div>`:"").join("")}
+    ${copyBox("Title",m.title,"t"+i)}
+    ${needYT?copyBox("YouTube description",m.yt_description,"y"+i)+copyBox("YouTube tags (comma)",ytTags(m),"g"+i):""}
+    ${others.includes("instagram")?copyBox("Instagram caption (hashtags ke saath)",m.ig_caption||m.yt_description,"i"+i):""}
+    ${others.includes("facebook")?copyBox("Facebook description",m.ig_caption||m.yt_description,"f"+i):""}
+    </div>`}
+  else if(waiting.length)man=`<div class="m" style="margin-top:6px">${waiting.map(n=>PN[n]).join(", ")} par ${whenIst(it.publish_at)} ko khud upload hoga (${rel(it.publish_at)}).</div>`;
+  const all=`${esc(m.title)}\n\n${m.ig_caption||m.yt_description||""}`;
+  return`<div class="vid"><div class="row"><b>${esc(m.title||it.id)}</b><span class="chip">${esc(it.kind)}</span></div>
+  <div class="m">${esc(it.id)} &middot; ${whenIst(it.publish_at)}</div><div>${chips}</div>${man}
+  <div class="two">${art}${it.art?`<button class="d sm" onclick="delArt(${it.art.id},'${esc(it.id)}',false)">Delete (storage khali)</button>`:""}</div>
+  <div class="m" id="dm${it.art?it.art.id:i}"></div></div>`}
+async function delArt(id,manifest,force){
+  if(!force&&!confirm("Pehle download kar liya? Delete ke baad ye video wapas nahi milegi."))return;
+  const el=$("dm"+id);el.className="m";el.textContent="Delete ho raha hai...";
+  try{const j=await api("/api/storage",{method:"POST",headers:H(),body:JSON.stringify({action:"delete_artifact",id,manifest,force})});el.className="m ok";el.textContent=`Delete ho gaya, ${j.freed_mb} MB khali.`;setTimeout(loadQ,1200)}
+  catch(e){el.className="m bad";el.innerHTML=esc(e.message)+(e.data&&e.data.need_force?` <a href="#" onclick="delArt(${id},'${esc(manifest)}',true);return false">Phir bhi delete</a>`:"")}}
+async function loadSt(){
+  try{const j=await api("/api/storage",{headers:H()});
+    const keep=j.github.items.filter(x=>x.keep).length,junk=j.github.items.filter(x=>!x.keep);
+    $("st").className="m";$("st").innerHTML=`GitHub: <b>${j.github.total_mb} MB</b> (${j.github.items.length} files, ${junk.length} hatne layak, ${keep} safe rakhi)<br>Vercel Blob: `+(j.blob.ok?`<b>${j.blob.total_mb} MB</b> (${j.blob.count} files)`:esc(j.blob.note||"nahi mila"))}
+  catch(e){$("st").className="m bad";$("st").textContent="Error: "+e.message}}
+async function clean(a){
+  if(!confirm(a==="clean_blob"?"Pichle 1 ghante se purani raw uploads delete hongi. Theek hai?":"Jo videos poori upload ho chuki / extra copies hain wo delete hongi. Theek hai?"))return;
+  try{const j=await api("/api/storage",{method:"POST",headers:H(),body:JSON.stringify({action:a})});$("st").className="m ok";$("st").textContent=`${j.deleted} file delete, ${j.freed_mb} MB khali.`;setTimeout(loadQ,1500)}catch(e){$("st").className="m bad";$("st").textContent="Error: "+e.message}}
+$("pw").addEventListener("change",()=>{loadRuns();loadQ()});
+if(PW()){loadRuns();loadQ()}
+if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js");
+</script></body></html>

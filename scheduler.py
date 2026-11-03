@@ -62,7 +62,10 @@ def schedule_for(kind, built_at=None):
 
 
 def item_id(kind, day=None):
-    return f"{(day or now_ist().date()).isoformat()}-{kind}"
+    """<date>-<kind>. A dashboard 'own topic' run (env MANUAL_TOPIC) adds -<MANUAL_ID> so it never overwrites the daily video."""
+    mid = os.environ.get("MANUAL_ID", "").strip() if os.environ.get("MANUAL_TOPIC", "").strip() else ""
+    mid = "".join(c for c in mid if c.isalnum())[:20] or ("manual" if os.environ.get("MANUAL_TOPIC", "").strip() else "")
+    return f"{(day or now_ist().date()).isoformat()}-{kind}" + (f"-{mid}" if mid else "")
 
 
 def manifest_path(iid):

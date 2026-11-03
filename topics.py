@@ -10,6 +10,7 @@ built (short + long on one day never share a subject) and are recorded only in r
 Public API unchanged: plan(), record(), directive(), fetch_trends(), judge_trend(), DISORDERS, HABITS, STUDENTS, BLOCK.
 """
 import json
+import os
 import re
 import time
 import xml.etree.ElementTree as ET
@@ -21,6 +22,8 @@ HISTORY = Path(__file__).parent / "topics_done.txt"        # old log, imported o
 TRENDS_RSS = "https://trends.google.com/trending/rss?geo=IN"
 TREND_COOLDOWN_DAYS = 30                                    # a trending topic is not reused for a month
 RESERVE_HOURS = 24
+# Round 16: trends are a SPICE, not the menu. Default: only every 5th video may be a trending topic (0 = never).
+TREND_EVERY = int(os.environ.get("TREND_EVERY", "5") or 0)
 IST = timezone(timedelta(hours=5, minutes=30))
 
 DISORDERS = [
@@ -32,6 +35,36 @@ DISORDERS = [
     "Loneliness and its effect on the brain", "Chronic stress and the body", "Anger and emotional regulation",
     "Dissociation and feeling numb", "Adjustment disorder (big life change)", "Procrastination and ADHD overlap",
     "Seasonal low mood", "Panic vs anxiety: how to tell the difference",
+    "Overthinking and rumination", "Low self-esteem and self-worth", "Grief and loss", "Social media and mental health",
+    "Work stress and burnout in professionals", "Postpartum and new-parent mental health", "Teen mental health basics",
+    "Substance use and mental health (awareness only)", "Sleep problems and mental health", "Emotional numbness and anhedonia",
+    "Fear of failure and performance anxiety", "Homesickness and moving abroad (international students)",
+    "Stress in caregivers and carers", "Anxiety vs excitement: reading body signals",
+]
+# the app side of mental health: screening, AI psychologist, professionals, therapy, how to get help
+CARE = [
+    "What a mental health screening test is (and what it cannot tell you)",
+    "Psychologist vs psychiatrist vs counsellor: who to see for what",
+    "AI psychologist / AI mental-health chat: what it can do, what it cannot, how to use it safely",
+    "How to prepare for your first therapy session",
+    "Types of therapy explained simply (CBT, talk therapy and others)",
+    "Psychiatric medicines: myths and facts (no doses, no advice to start or stop)",
+    "Signs it is time to talk to a professional",
+    "Online therapy vs in-person therapy",
+    "How to talk to your family about mental health",
+    "Self-assessment vs diagnosis: why a score is not a label",
+    "What happens in a psychiatric evaluation",
+    "Mindfulness and meditation: what research really says",
+    "Journaling for mental health",
+    "Grounding and breathing techniques for anxiety (gentle, safe ones)",
+    "Mental health apps: how to choose one safely",
+    "Building a support system around you",
+    "Mental health first aid: helping a friend who is struggling",
+    "Mood tracking: why it helps and how to start",
+    "Therapy myths that stop people from getting help",
+    "How to find affordable mental health support",
+    "Questions to ask a therapist or doctor",
+    "Why regular mental check-ins matter, even when you feel fine",
 ]
 HABITS = [
     "Active recall", "Spaced repetition", "Pomodoro and focus blocks", "Sleep and memory", "Phone distraction",
@@ -40,11 +73,18 @@ HABITS = [
     "Morning sunlight and body clock", "Eat the frog (hardest task first)", "Single-tasking", "Interleaved practice",
     "Breaks and rest", "Implementation intentions (if-then plans)", "Social media comparison", "Breathing before an exam",
     "Study environment design", "Saying no and boundaries", "Consistency over motivation", "Learning from failure",
+    "Time blocking with a calendar", "To-do list systems that actually work", "Eisenhower matrix (urgent vs important)",
+    "Weekly review habit", "Focus apps and website blockers", "AI tools for studying and work (use them without losing your skills)",
+    "Digital note-taking and a second brain", "Flashcard apps and spaced practice", "Goal setting that does not burn you out",
+    "Batching similar tasks", "Working and learning from home", "Perfectionism vs progress", "Energy management, not just time management",
+    "Starting before you feel ready", "Reducing decision fatigue", "Learning a new skill in 30 days",
 ]
 STUDENTS = [
-    "school student (class 9-12)", "board-exam student", "JEE aspirant", "NEET aspirant",
-    "UPSC / SSC / government-exam aspirant", "college student", "MBBS / medical student", "CA / CS / law student",
-    "self-learner building skills", "fresher or working professional", "gap-year student", "placement / coding aspirant",
+    "school student (middle / high school)", "college or university student", "graduate or PhD student",
+    "medical / nursing / health-science student", "engineering / computer-science student", "law / business / commerce student",
+    "competitive-exam aspirant (any exam, any country)", "international student living abroad", "self-learner building skills online",
+    "fresher or young working professional", "gap-year student or career switcher", "freelancer / creator working alone",
+    "teenager balancing school and life", "student who also works part-time",
 ]
 
 # trends we never touch (tragedy, politics, religion, crime, betting) - dropped BEFORE any LLM sees them
@@ -56,16 +96,16 @@ BLOCK = re.compile(
     r"porn|sex|nude|weather|earthquake|flood|cyclone|sale\b|offer\b)", re.I)
 
 MENTAL_ANGLES = [
-    "MYTH vs FACT: bust 3 myths that Indian families and friends commonly believe about it",
+    "MYTH vs FACT: bust 3 myths that families and friends commonly believe about it",
     "EARLY SIGNS: 3 to 5 early signs in students that are easy to miss or to blame on laziness",
     "A DAY IN THE LIFE: a short, relatable made-up story of a student living with it (no real person, no diagnosis)",
     "WHAT HAPPENS INSIDE: the simple brain/body science explained with one everyday analogy",
     "HOW TO SUPPORT SOMEONE: what to say and what NOT to say to a friend or family member",
     "WHEN TO SEE A DOCTOR: normal vs needs-professional-help, and what a psychiatrist or psychologist actually does",
     "COMMON MISTAKES: 3 things people do that quietly make it worse",
-    "EXAM-TIME VERSION: how it shows up before exams, during preparation and on results day",
+    "PRESSURE-TIME VERSION: how it shows up before exams, deadlines, interviews or results day",
     "SMALL DAILY HABITS: 3 science-backed micro-habits that help (support, not a cure)",
-    "STIGMA IN INDIA: why people hide it, and how to start the conversation at home",
+    "STIGMA: why people hide it in many cultures, and how to start the conversation at home",
     "TREATMENT WITHOUT FEAR: therapy and medicines explained simply (educational, no doses, no advice to start or stop)",
     "REFLECTION QUESTIONS: 3 questions to think about (NOT a diagnosis) and the next step if the answers worry you",
     "THE 3 AM QUESTIONS: answer the 3 things people secretly search at night about it",
@@ -75,9 +115,9 @@ STUDY_ANGLES = [
     "MYTH vs FACT: bust 3 study myths students believe about it",
     "THE 5-MINUTE START: the smallest possible version a tired student can begin today",
     "COMMON MISTAKES: 3 mistakes that waste hours while feeling productive",
-    "A REAL STUDY DAY: a step-by-step routine with times for a student in India",
+    "A REAL DAY: a step-by-step routine with times for a student or young professional",
     "THE SCIENCE: why it works, explained with one everyday analogy",
-    "30 DAYS BEFORE EXAMS: how to apply it when time is short",
+    "30 DAYS TO A DEADLINE: how to apply it before an exam, project or interview when time is short",
     "ONLY ONE HOUR A DAY: a version for students with very little time",
     "TRACK IT: how to measure whether it is working, with a simple weekly check",
     "TOPPERS vs MYTH: what high scorers actually do versus what people assume",
@@ -87,16 +127,32 @@ STUDY_ANGLES = [
     "SLEEP AND BREAKS: combining it with rest so it sticks",
     "BEGINNER CHECKLIST: a short do-and-avoid list for first-timers",
 ]
-NICHE_ORDER = ["mental_health", "productivity"]
+CARE_ANGLES = [
+    "MYTH vs FACT: bust 3 myths people believe about it",
+    "WHAT TO EXPECT: a simple step-by-step of what actually happens, so it feels less scary",
+    "WHO IT IS FOR (and who it is NOT for): clear limits, honest about what it cannot do",
+    "QUESTIONS TO ASK: 3 to 5 smart questions to ask before, during or after",
+    "COMMON MISTAKES: 3 things people get wrong about it",
+    "A SHORT STORY: a relatable made-up student or young adult using it (no real person, no diagnosis)",
+    "HOW TO CHOOSE: a short checklist for picking a safe, good option",
+    "SAFETY FIRST: what to watch out for, and when to get urgent in-person help instead",
+    "THE 5-MINUTE VERSION: the single most useful takeaway someone can act on today",
+    "FIRST STEP TODAY: one tiny, realistic action the viewer can take, no pressure",
+]
+# 3-day cycle by date: mental-health conditions -> mental-health care (screening, AI psychologist, professionals) -> productivity
+NICHE_ORDER = ["mental_health", "mental_care", "productivity"]
 NICHES = {
-    "mental_health": {"label": "Psychiatry / mental health awareness", "mode": "awareness", "pool": DISORDERS,
+    "mental_health": {"label": "Mental health conditions and awareness (all common problems)", "mode": "awareness", "pool": DISORDERS,
                       "angles": MENTAL_ANGLES,
                       "fit": "anxiety, panic, depression, ADHD, OCD, burnout, insomnia, loneliness, stress, exam stress, mood, overthinking"},
-    "productivity": {"label": "Study productivity and habits", "mode": "student", "pool": HABITS,
+    "mental_care": {"label": "Mental health care: screening, AI psychologist, psychologist and psychiatrist, therapy, getting help",
+                    "mode": "awareness", "pool": CARE, "angles": CARE_ANGLES,
+                    "fit": "mental health screening, AI psychologist, therapy, psychologist vs psychiatrist, getting help, self-care tools, mental health apps"},
+    "productivity": {"label": "Productivity, study and work habits (students worldwide)", "mode": "student", "pool": HABITS,
                      "angles": STUDY_ANGLES,
-                     "fit": "exam preparation, study technique, focus, phone addiction, sleep and memory, time management, procrastination, daily routine"},
+                     "fit": "study technique, productivity tools and apps, focus, phone addiction, sleep and memory, time management, procrastination, daily routine, exams and deadlines"},
 }
-FORCED_TO_NICHE = {"awareness": "mental_health", "student": "productivity"}
+FORCED_TO_NICHE = {"awareness": "mental_health", "student": "productivity"}   # forced awareness alternates conditions/care, see plan()
 
 
 def _now():
@@ -108,7 +164,7 @@ def _norm(t):
 
 
 def today_niche(now=None):
-    return NICHE_ORDER[(now or datetime.now(IST)).date().toordinal() % 2]
+    return NICHE_ORDER[(now or datetime.now(IST)).date().toordinal() % len(NICHE_ORDER)]
 
 
 def audience_for(now=None):
@@ -266,7 +322,8 @@ def directive(p):
              f"wording: {' | '.join(prev)}." if prev else "")
     return (f"MANDATORY TOPIC ({label}): \"{p['subject']}\". MANDATORY ANGLE: {p['angle']}. "
             f"Build the whole script around this angle with a fresh hook, new examples and new wording.{avoid} "
-            f"Target viewer: {p['audience']} - make the examples fit their daily life.")
+            f"Target viewer: {p['audience']} - make the examples fit their daily life. The audience is students and young people "
+            f"worldwide, so keep examples universal (do not assume only Indian exams like JEE/NEET unless the topic is about them).")
 
 
 # ---------------------------------------------------------------- plan / record
@@ -277,15 +334,22 @@ def plan(ask, http_get, yt_key="", forced_mode=None, state_path=None, log=print,
     st["reserved"] = {k: v for k, v in st["reserved"].items() if ts - float(v) < RESERVE_HOURS * 3600}
     taken = set(st["reserved"])
     niche = FORCED_TO_NICHE.get(forced_mode) or today_niche(dt)
+    if forced_mode == "awareness" and dt.date().toordinal() % 2:
+        niche = "mental_care"
     recent = {t["t"].lower() for t in st["trends"] if ts - t.get("ts", 0) < TREND_COOLDOWN_DAYS * 86400}
 
     trend = None
-    try:
-        trends = [t for t in fetch_trends(http_get, yt_key) if t.lower() not in recent and t not in taken]
-        log(f"[topics] {niche}: {len(trends)} usable trends")
-        trend = judge_trend(ask, trends, niche) if trends else None
-    except Exception as e:
-        log("[topics] trend step failed:", str(e)[:100])
+    slot = int(st.get("slot", 0))
+    trend_turn = TREND_EVERY > 0 and slot % TREND_EVERY == TREND_EVERY - 1     # only every Nth video may be a trending one
+    if not trend_turn:
+        log(f"[topics] rotation turn (trend allowed every {TREND_EVERY or 'never'} videos, slot {slot})")
+    else:
+        try:
+            trends = [t for t in fetch_trends(http_get, yt_key) if t.lower() not in recent and t not in taken]
+            log(f"[topics] {niche}: {len(trends)} usable trends")
+            trend = judge_trend(ask, trends, niche) if trends else None
+        except Exception as e:
+            log("[topics] trend step failed:", str(e)[:100])
 
     if trend:
         p = {"kind": "trending", "niche": niche, "mode": NICHES[niche]["mode"], "trend": trend["trend"],
