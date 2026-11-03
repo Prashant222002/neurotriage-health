@@ -38,6 +38,7 @@ jobs:
           IN_PLATS: ${{ inputs.platforms }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          IG_GRAPH_HOST: ${{ secrets.IG_GRAPH_HOST || 'graph.facebook.com' }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
         run: |

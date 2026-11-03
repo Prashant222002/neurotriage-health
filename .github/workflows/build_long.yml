@@ -94,6 +94,7 @@ jobs:
         continue-on-error: true
         env:
           ALL_SECRETS_JSON: ${{ toJSON(secrets) }}
+          IG_GRAPH_HOST: ${{ secrets.IG_GRAPH_HOST || 'graph.facebook.com' }}
         run: python healthcheck.py
 
       - name: Build (3 attempts, resumes from checkpoints)
@@ -133,6 +134,7 @@ jobs:
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          IG_GRAPH_HOST: ${{ secrets.IG_GRAPH_HOST || 'graph.facebook.com' }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
           # ---- Schedule ----
