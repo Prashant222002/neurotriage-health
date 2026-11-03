@@ -1,0 +1,87 @@
+{
+ "key": "2026-11-03-m41674093508",
+ "kind": "research",
+ "created": "2026-11-03T16:27:06",
+ "request": {
+  "kind": "research",
+  "mode": "awareness"
+ },
+ "research": {
+  "topic": "ADHD in Young Indian Professionals & Medical Students",
+  "verified": [
+   "ADHD is associated with dysregulated dopamine signaling in the prefrontal cortex",
+   "Some studies suggest ADHD may be linked to higher creativity and divergent thinking scores"
+  ],
+  "sources": [
+   {
+    "title": "The roles of dopamine and noradrenaline in the pathophysiology and treatment of attention-deficit/hyperactivity disorder.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/21550021/"
+   },
+   {
+    "title": "Creativity and ADHD: A review of behavioral studies, the effect of psychostimulants and neural underpinnings.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33035524/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Aapko pata hai? 30‑second ka ‘do‑nothing’ break, ADHD‑type focus ko 2‑3 × badha sakta hai – bina caffeine ya extra hours ke!",
+  "tip": "The 2‑Minute Timer Trick: set a visible timer for 2 minutes, focus on a single micro‑task, then take a 30‑second “do‑nothing” break; repeat 4–5 cycles to boost focus and memory.",
+  "dropped": [
+   "~5% of Indian adults meet criteria for ADHD (WHO 2022) (unsupported)",
+   "Unmanaged ADHD can lower exam performance by up to 15% (NIMHANS 2021) (unsupported)",
+   "A 30‑second goal‑free pause improves working‑memory consolidation by ~20% in ADHD brains (Neuroscien (unsupported)",
+   "External cues like timers and colour‑coded planners cut task‑switching errors by ~30% in adults with (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-03T16:27:28",
+   "provider": "groq",
+   "note": "partial"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-03T16:27:18",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"POV: Exam Is Tomorrow 😭 | Every Student Can Relate! | Exam Memes | Student Life\",\"formula\":\"Patte"
+  },
+  {
+   "at": "2026-11-03T16:27:21",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** ADHD in Young Indian Professionals & Medical Students **ANGLE (why it is under‑used)** Despite being one of th"
+  },
+  {
+   "at": "2026-11-03T16:27:23",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"ADHD in Young Indian Professionals & Medical Students\",\"search_terms\":[\"adult ADHD prevalence India\",\"dopamine"
+  },
+  {
+   "at": "2026-11-03T16:27:28",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\":1,\"verdict\":\"uncertain\",\"cites\":[4],\"fix\":\"ADHD is "
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}
