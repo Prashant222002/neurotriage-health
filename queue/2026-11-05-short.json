@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-05-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-05T01:16:15+05:30",
+  "publish_at": "2026-11-05T10:00+05:30",
+  "publish_at_utc": "2026-11-05T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-05-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "End Procrastination with a Phone‑Proof Box",
+    "yt_description": "A quick guide on how a simple lockable box can stop phone distractions and boost focus, backed by research on attention recovery cost. Follow the 3‑step mini‑plan and see immediate results.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/33554029/ | https://pubmed.ncbi.nlm.nih.gov/35183008/\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\n#FocusHack #Procrastination #PhoneProof #ProductivityTips #StudySmart #Shorts",
+    "ig_caption": "A quick guide on how a simple lockable box can stop phone distractions and boost focus, backed by research on attention recovery cost. Follow the 3‑step mini‑plan and see immediate results.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#FocusHack #Procrastination #PhoneProof #ProductivityTips #StudySmart",
+    "hashtags": [
+      "#FocusHack",
+      "#Procrastination",
+      "#PhoneProof",
+      "#ProductivityTips",
+      "#StudySmart",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "uX66PIK8hd8",
+        "url": "https://youtube.com/watch?v=uX66PIK8hd8",
+        "scheduled": true
+      },
+      "at": "2026-11-04T19:46:17+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-04T19:46:17+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-04T19:46:17+00:00"
+    }
+  },
+  "status": "pending"
+}

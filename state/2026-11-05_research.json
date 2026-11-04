@@ -1,0 +1,87 @@
+{
+ "key": "2026-11-05",
+ "kind": "research",
+ "created": "2026-11-04T19:33:09",
+ "request": {
+  "kind": "research",
+  "mode": "student"
+ },
+ "research": {
+  "topic": "Beating procrastination – the PHONE‑PROOF version",
+  "verified": [
+   "Shifting attention away from a task incurs a measurable recovery cost, though the exact duration is not specified in the cited studies."
+  ],
+  "sources": [
+   {
+    "title": "Scaling of the Parameters for Cost Balancing in Self-Organized Task Switching.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33554029/"
+   },
+   {
+    "title": "The subjective evaluation of task switch cues is related to voluntary task switching.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35183008/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Wish I knew earlier that a simple box could double my focus as a freelancer.",
+  "tip": "Place your phone in a lockable or timed‑lock box for a set work period to create a physical barrier.",
+  "dropped": [
+   "Smartphone notifications can reduce task performance by up to 20%. (unsupported)",
+   "Adults check their phone about 58 times per day. (unsupported)",
+   "Enabling Do‑Not‑Disturb reduces self‑reported distraction by roughly 30%. (unsupported)",
+   "Daily phone‑free work blocks increase job satisfaction and lower burnout among freelancers. (unsupported)",
+   "Limiting evening phone use improves sleep quality, enhancing next‑day concentration. (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-04T19:33:29",
+   "provider": "groq",
+   "note": "partial"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-04T19:33:20",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"जन्मभूमि से कर्म भूमि तक📚🧿✨ #motivation #nursingofficer #aiims #trending #shorts #norcet\",\"formul"
+  },
+  {
+   "at": "2026-11-04T19:33:23",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Beating procrastination – the PHONE‑PROOF version **ANGLE (why it is underused)** Most productivity advice tal"
+  },
+  {
+   "at": "2026-11-04T19:33:25",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Beating procrastination – the PHONE‑PROOF version\",\"search_terms\":[\"smartphone notification attention fragment"
+  },
+  {
+   "at": "2026-11-04T19:33:29",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\":1,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\""
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}
