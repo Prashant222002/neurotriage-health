@@ -1,0 +1,78 @@
+{
+ "key": "2026-11-06",
+ "kind": "research",
+ "created": "2026-11-05T23:45:30",
+ "request": {
+  "kind": "research",
+  "mode": "awareness"
+ },
+ "research": {
+  "topic": "Persistent low mood (dysthymia) – a long‑standing, mild but draining feeling of sadness that can hide behind “just being a teen”",
+  "verified": [],
+  "sources": [],
+  "level": "unstructured",
+  "hook": "Nobody tells you that feeling ‘just a bit sad’ for months can actually be a warning sign.",
+  "tip": "Set a 60‑second timer three times a day, pause, breathe, and silently label one thought and one feeling.",
+  "dropped": [
+   "Dysthymia is defined by a depressed mood most days for at least 2 years in adults and 1 year in adol (unsupported)",
+   "Approximately 2‑3 % of teens worldwide experience persistent low mood (WHO surveys). (uncertain + number not backed)",
+   "Common symptoms include low energy, poor concentration, low self‑esteem, and prolonged anhedonia. (unsupported)",
+   "Students with dysthymia score 5‑10 % lower on continuous assessment (NIMHANS). (unsupported)",
+   "Persistent low mood raises the risk of later major depressive episodes (APA longitudinal data). (unsupported)",
+   "Only about 30 % of teens with dysthymia seek professional help (WHO 2022). (uncertain + number not backed)",
+   "A 60‑second micro‑mindful pause three times daily can reduce rumination and improve mood stability i (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-05T23:45:51",
+   "provider": "groq",
+   "note": "unstructured"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-05T23:45:42",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"POV: Exam Is Tomorrow 😭 | Every Student Can Relate!\",\"formula\":\"Pattern-interrupt question\",\"trig"
+  },
+  {
+   "at": "2026-11-05T23:45:45",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Persistent low mood (dysthymia) – a long‑standing, mild but draining feeling of sadness that can hide behind “"
+  },
+  {
+   "at": "2026-11-05T23:45:48",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Persistent low mood (dysthymia) – a long‑standing, mild but draining feeling of sadness that can hide behind “"
+  },
+  {
+   "at": "2026-11-05T23:45:51",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\":1,\"verdict\":\"uncertain\",\"cites\":[0],\"fix\":\"Around 2"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}

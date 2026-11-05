@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-06-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-06T05:24:38+05:30",
+  "publish_at": "2026-11-06T10:00+05:30",
+  "publish_at_utc": "2026-11-06T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-06-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "Is feeling sad just a phase",
+    "yt_description": "Understanding persistent low mood in teens. A quick guide to identifying signs and taking the first step towards feeling better.\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\nIf you are struggling, India's free 24x7 helpline Tele-MANAS: 14416.\n\n#MentalHealth #TeenWellness #SelfCareTips #StudentLife #Mindfulness #Shorts",
+    "ig_caption": "Understanding persistent low mood in teens. A quick guide to identifying signs and taking the first step towards feeling better.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#MentalHealth #TeenWellness #SelfCareTips #StudentLife #Mindfulness",
+    "hashtags": [
+      "#MentalHealth",
+      "#TeenWellness",
+      "#SelfCareTips",
+      "#StudentLife",
+      "#Mindfulness",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "w5dGFaVBC9w",
+        "url": "https://youtube.com/watch?v=w5dGFaVBC9w",
+        "scheduled": true
+      },
+      "at": "2026-11-05T23:54:43+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-05T23:54:43+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-05T23:54:43+00:00"
+    }
+  },
+  "status": "pending"
+}

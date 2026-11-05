@@ -1,0 +1,249 @@
+{
+ "key": "2026-11-06",
+ "kind": "short",
+ "created": "2026-11-05T23:45:51",
+ "request": {
+  "kind": "short",
+  "mode": "awareness",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Persistent low mood (dysthymia) – a long‑standing, mild but draining feeling of sadness that can hide behind “just being a teen”",
+  "verified": [],
+  "sources": [],
+  "level": "unstructured",
+  "hook": "Nobody tells you that feeling ‘just a bit sad’ for months can actually be a warning sign.",
+  "tip": "Set a 60‑second timer three times a day, pause, breathe, and silently label one thought and one feeling.",
+  "dropped": [
+   "Dysthymia is defined by a depressed mood most days for at least 2 years in adults and 1 year in adol (unsupported)",
+   "Approximately 2‑3 % of teens worldwide experience persistent low mood (WHO surveys). (uncertain + number not backed)",
+   "Common symptoms include low energy, poor concentration, low self‑esteem, and prolonged anhedonia. (unsupported)",
+   "Students with dysthymia score 5‑10 % lower on continuous assessment (NIMHANS). (unsupported)",
+   "Persistent low mood raises the risk of later major depressive episodes (APA longitudinal data). (unsupported)",
+   "Only about 30 % of teens with dysthymia seek professional help (WHO 2022). (uncertain + number not backed)",
+   "A 60‑second micro‑mindful pause three times daily can reduce rumination and improve mood stability i (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "9a5874dba8ad9d46",
+  "data": {
+   "title": "Sad rehna kya sirf ek phase hai",
+   "title_en": "Is feeling sad just a phase",
+   "formula": "Nobody tells you...",
+   "kicker": "MENTAL WELLNESS",
+   "hook_text": "SAD REHNA SIRF PHASE NAHI",
+   "scenes": [
+    {
+     "text": "Koi nahi batata mahino tak sad rehna warning hai.",
+     "queries": [
+      "sad teen sitting alone",
+      "pensive student looking out",
+      "gloomy room lighting"
+     ],
+     "text_en": "Nobody tells you that being sad for months is a warning.",
+     "text_hi": "कोई नहीं बताता महीनों तक सैड रहना वार्निंग है।",
+     "emphasis": "WARNING"
+    },
+    {
+     "text": "Kya tumhein lagta hai board exam pressure se tum lazy ho rahe ho?",
+     "queries": [
+      "teen looking tired",
+      "student yawning at desk",
+      "tired person lying on bed"
+     ],
+     "text_en": "Do you think board exam pressure is making you feel lazy?",
+     "text_hi": "क्या तुम्हें लगता है बोर्ड एग्जाम प्रेशर से तुम लेज़ी हो रहे हो?",
+     "emphasis": "LAZY"
+    },
+    {
+     "text": "Ye ek lambe samay tak chala aane wala low mood hai.",
+     "queries": [
+      "calendar turning pages",
+      "clock ticking fast",
+      "blurred vision street"
+     ],
+     "text_en": "This is a long‑lasting low mood that can persist for years.",
+     "text_hi": "ये एक लंबे समय तक चलने वाला लो मूड है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Ye school ke grades par bhi impact daal sakta hai.",
+     "queries": [
+      "student looking at test paper",
+      "stressed student study",
+      "exam hall scene"
+     ],
+     "text_en": "It can also impact your school grades.",
+     "text_hi": "ये स्कूल के ग्रेड्स पर भी इम्पैक्ट डाल सकता है।",
+     "emphasis": "GRADES"
+    },
+    {
+     "text": "Aur teesra point sunna sabse zyada zaroori hai doston.",
+     "queries": [
+      "talking to best friend",
+      "group of friends hanging out",
+      "close up of phone screen"
+     ],
+     "text_en": "And the third point is the most important to hear, friends.",
+     "text_hi": "और तीसरा पॉइंट सुनना सबसे ज़्यादा ज़रूरी है दोस्तों।",
+     "emphasis": "SABSE ZYADA ZAROORI"
+    },
+    {
+     "text": "Kya tum bina wajah meh aur low feel karte ho?",
+     "queries": [
+      "person staring at wall",
+      "bored teenager phone",
+      "person looking moody"
+     ],
+     "text_en": "Do you feel meh and low without any reason?",
+     "text_hi": "क्या तुम बिना वजह मेह और लो फील करते हो?",
+     "emphasis": ""
+    },
+    {
+     "text": "Ye us dost ko bhejo jo har waqt tired hai.",
+     "queries": [
+      "friends talking whispering",
+      "person sharing phone",
+      "two people sitting together"
+     ],
+     "text_en": "Send this to that friend who is tired all the time.",
+     "text_hi": "ये उस दोस्त को भेजो जो हर वक़्त टायर्ड है।",
+     "emphasis": "DOST"
+    },
+    {
+     "text": "Concentration mein dikkat aur hobbies mein interest kam hona.",
+     "queries": [
+      "distracted student studying",
+      "person looking at books",
+      "art supplies unused"
+     ],
+     "text_en": "Difficulty in concentration and loss of interest in hobbies.",
+     "text_hi": "कंसंट्रेशन में दिक्कत और हॉबीज़ में इंटरेस्ट कम होना।",
+     "emphasis": ""
+    },
+    {
+     "text": "Apne feelings ko likho aur samjho.",
+     "queries": [
+      "person writing journal",
+      "teen reflecting",
+      "close up of notebook"
+     ],
+     "text_en": "Write down your feelings and try to understand them.",
+     "text_hi": "अपने फीलिंग्स को लिखो और समझो।",
+     "emphasis": ""
+    },
+    {
+     "text": "Pehle timer set karo, breath lo, aur feeling label karo.",
+     "queries": [
+      "stopwatch on screen",
+      "person taking deep breath",
+      "calm eyes closed"
+     ],
+     "text_en": "First set a timer, take a breath, and label the feeling.",
+     "text_hi": "पहले टाइमर सेट करो, ब्रीथ लो, और फीलिंग लेबल करो।",
+     "emphasis": "MICRO MIND FUL"
+    },
+    {
+     "text": "Aaj hi counselor se baat karo.",
+     "queries": [
+      "smiling student talking",
+      "person sitting in office",
+      "friendly conversation"
+     ],
+     "text_en": "Talk to a counselor today.",
+     "text_hi": "आज ही काउंसलर से बात करो।",
+     "emphasis": "COUNSELOR"
+    }
+   ],
+   "description": "Understanding persistent low mood in teens. A quick guide to identifying signs and taking the first step towards feeling better.",
+   "hashtags": [
+    "#MentalHealth",
+    "#TeenWellness",
+    "#SelfCareTips",
+    "#StudentLife",
+    "#Mindfulness"
+   ],
+   "audit": {
+    "score": 45,
+    "hook": 30,
+    "retention": 50,
+    "specificity": 40,
+    "safety_ok": false,
+    "fixes": [
+     "Reduce first line to ≤9 words, e.g., \"Koi nahi batata ki mahino tak sad rehna warning hai\"",
+     "Add a specific Indian context like board exam pressure or IT job stress",
+     "Replace medical claim with relatable description, avoid naming dysthymia",
+     "End with a single clear CTA: \"Aaj hi counselor se baat karo\""
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-05T23:47:55",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-05T23:47:55",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-05T23:48:21",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-05T23:54:38",
+   "provider": "",
+   "note": "Is feeling sad just a phase"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-05T23:46:25",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"Teen Dysthymia: Kabhi Nahi Bataya Gaya Sadness Ka Warning\",\"title_en\":\"Teen Dysthymia: The Hidden Sadness Warn"
+  },
+  {
+   "at": "2026-11-05T23:47:48",
+   "stage": "script",
+   "provider": "gemini",
+   "model": "gemini-3.1-flash-lite",
+   "key": "GEMINI_API_KEY",
+   "summary": "{ \"title\": \"Sad rehna kya sirf ek phase hai\", \"title_en\": \"Is feeling sad just a phase\", \"formula\": \"Nobody tells you..."
+  },
+  {
+   "at": "2026-11-05T23:47:49",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"score\":45,\"hook\":30,\"retention\":50,\"specificity\":40,\"safety_ok\":false,\"fixes\":[\"Reduce first line to ≤9 words, e.g., \\"
+  },
+  {
+   "at": "2026-11-05T23:47:55",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Sad rehna kya sirf ek phase hai\",\"title_en\":\"Is feeling sad just a phase\",\"formula\":\"Nobody tells you...\",\"kic"
+  },
+  {
+   "at": "2026-11-05T23:54:38",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Kya 3 Mahine Tak Sad Rehna Hai Warning Sign?\",\"Teen Mood Alert: 6 Weeks of Sadness Means?\",\"Dysthymia vs Pha"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}
