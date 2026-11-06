@@ -1,0 +1,100 @@
+{
+ "key": "2026-11-07",
+ "kind": "short",
+ "created": "2026-11-06T23:21:20",
+ "request": {
+  "kind": "short",
+  "mode": "awareness",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Psychologist vs Psychiatrist vs Counsellor: Who to See for What",
+  "verified": [
+   "Anxiety that significantly impairs functioning may be treated with both medication and psychotherapy, whereas mild situational anxiety often improves with counseling alone.",
+   "Counselling using evidence‑based methods can lower stress scores in student populations, though the exact magnitude of reduction varies across studies.",
+   "Anxiety that interferes with functioning may need medication + therapy, while mild situational anxiety often responds to counselling."
+  ],
+  "sources": [
+   {
+    "title": "A comparison of online and in-person counseling outcomes using solution-focused brief therapy for college students with anxiety.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32703092/"
+   },
+   {
+    "title": "The Effectiveness of a Brief Telehealth and Smartphone Intervention for College Students Receiving Traditional Therapy: Longitudinal Study Using Ecological Mome",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35767338/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Ever wondered why you’re still feeling anxious after seeing a ‘doctor’ for your stress? The answer might be you’re talking to the wrong expert.",
+  "tip": "Use the Help‑Match Checklist: assess if the issue needs medication (psychiatrist), therapy skills (psychologist), or short‑term support (counsellor) before booking.",
+  "dropped": [
+   "Psychiatrists are medical doctors with 4‑6 years of psychiatry residency and can prescribe medicatio (unsupported)",
+   "Psychologists hold a master’s or doctorate in psychology and cannot prescribe medication in India ex (unsupported)",
+   "Counsellors typically complete a 1‑2 year certification and provide short‑term support for everyday  (unsupported)",
+   "Only psychiatrists (and a few specially‑trained psychologists) have prescribing rights. (unsupported)",
+   "The Help‑Match Checklist matches issue type to the appropriate professional. (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {},
+ "handoff": [
+  {
+   "at": "2026-11-06T23:22:08",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{ \"title\": \"Psychologist, Psychiatrist ya Counsellor? Kaun Hai Best for Anxiety\", \"title_en\": \"Psychologist, Psychiatris"
+  },
+  {
+   "at": "2026-11-06T23:24:29",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Psychologist, Psychiatrist ya Counsellor? Kaun Hai Best for Anxiety\",\"title_en\":\"Psychologist, Psychiatrist or"
+  },
+  {
+   "at": "2026-11-06T23:24:37",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Psychologist, Psychiatrist ya Counsellor? Kaun Hai Best for Anxiety\",\"title_en\":\"Psychologist, Psychiatrist or"
+  },
+  {
+   "at": "2026-11-06T23:26:58",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Psychologist, Psychiatrist ya Counsellor? Kaun Hai Best for Anxiety\",\"title_en\":\"Psychologist, Psychiatrist or"
+  },
+  {
+   "at": "2026-11-06T23:27:05",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Psychologist, Psychiatrist ya Counsellor? Kaun Hai Best for Anxiety\",\"title_en\":\"Psychologist, Psychiatrist or"
+  },
+  {
+   "at": "2026-11-06T23:27:19",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{ \"title\": \"Psychologist, Psychiatrist ya Counsellor? Kaun Hai Best for Anxiety\", \"title_en\": \"Psychologist, Psychiatris"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "script"
+}
