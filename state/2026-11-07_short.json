@@ -36,13 +36,188 @@
   ]
  },
  "script": {
-  "locked": false,
-  "version": 0,
-  "hash": "",
-  "data": null,
-  "history": []
+  "locked": true,
+  "version": 1,
+  "hash": "7712077043078902",
+  "data": {
+   "title": "Psychologist, Psychiatrist ya Counsellor? Kaun Hai Best for Anxiety",
+   "title_en": "Psychologist, Psychiatrist or Counsellor? Who to See for Anxiety",
+   "formula": "Myth vs fact",
+   "kicker": "MENTAL HELP",
+   "hook_text": "GALAT EXPERT SE NAHI",
+   "scenes": [
+    {
+     "text": "Kya aap galat doctor ko pooch rahe ho anxiety?",
+     "queries": [
+      "anxious student",
+      "doctor office",
+      "question mark graphic"
+     ],
+     "text_en": "Are you asking the wrong doctor about anxiety?",
+     "text_hi": "क्या आप गलत डॉक्टर को पूछ रहे हो एंग्जायटी?",
+     "emphasis": ""
+    },
+    {
+     "text": "Exam stress ya job pressure se dil dhadak raha hai.",
+     "queries": [
+      "exam stress",
+      "young professional stressed",
+      "heartbeat monitor"
+     ],
+     "text_en": "Exam stress or job pressure makes your heart race.",
+     "text_hi": "एक्ज़ाम स्ट्रेस या जॉब प्रेशर से दिल धड़क रहा है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Myth: Sirf psychologist hi aapki anxiety theek kar sakte hain.",
+     "queries": [
+      "psychologist office",
+      "myth text overlay",
+      "confused student"
+     ],
+     "text_en": "Myth: Only a psychologist can fix your anxiety.",
+     "text_hi": "मिथ: सिर्फ साइकॉलॉजिस्ट ही आपकी एंग्जायटी ठीक कर सकते हैं।",
+     "emphasis": ""
+    },
+    {
+     "text": "Reality: Severe anxiety often needs medication + therapy, psychiatrist ke paas.",
+     "queries": [
+      "psychiatrist clinic",
+      "medication bottle",
+      "therapy session"
+     ],
+     "text_en": "Reality: Severe anxiety often needs medication plus therapy, see a psychiatrist.",
+     "text_hi": "रियलिटी: गंभीर एंग्जायटी अक्सर मेडिकेशन + थेरेपी की जरूरत होती है, साइकियाट्रिस्ट के पास।",
+     "emphasis": "['MEDICATION + THERAPY']"
+    },
+    {
+     "text": "Myth: Counsellor sirf school bachchon ke liye hota hai.",
+     "queries": [
+      "counsellor desk",
+      "school hallway",
+      "teen student"
+     ],
+     "text_en": "Myth: Counsellors are only for school kids.",
+     "text_hi": "मिथ: काउंसलर सिर्फ स्कूल बच्चों के लिए होता है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Fact: Evidence‑based counselling bhi students ke stress ko kam karta hai.",
+     "queries": [
+      "student counseling session",
+      "stress reduction chart",
+      "calm campus"
+     ],
+     "text_en": "Fact: Evidence‑based counselling also reduces student stress.",
+     "text_hi": "फैक्ट: एविडेंस‑बेस्ड काउंसलिंग भी स्टूडेंट्स के स्ट्रेस को कम करता है।",
+     "emphasis": "['STRESS']"
+    },
+    {
+     "text": "Myth: Sab experts ek jaise hain, koi farq nahi.",
+     "queries": [
+      "confused group",
+      "expert icons",
+      "comparison graphic"
+     ],
+     "text_en": "Myth: All experts are the same, no difference.",
+     "text_hi": "मिथ: सब एक्सपर्ट्स एक जैसे हैं, कोई फर्क नहीं।",
+     "emphasis": ""
+    },
+    {
+     "text": "Fact: Psychologist therapy deta, psychiatrist meds, counsellor short‑term support.",
+     "queries": [
+      "therapy session",
+      "prescription pad",
+      "short term support"
+     ],
+     "text_en": "Fact: Psychologists give therapy, psychiatrists prescribe meds, counsellors offer short‑term support.",
+     "text_hi": "फैक्ट: साइकॉलॉजिस्ट थेरेपी देता, साइकियाट्रिस्ट मेड्स, काउंसलर शॉर्ट‑टर्म सपोर्ट।",
+     "emphasis": ""
+    },
+    {
+     "text": "Ab aapka help‑match checklist: pehle decide medication?",
+     "queries": [
+      "checklist graphic",
+      "decision making",
+      "medical pills"
+     ],
+     "text_en": "Now your help‑match checklist: first decide medication?",
+     "text_hi": "अब आपका हेल्प‑मैच चेकलिस्ट: पहले डिसाइड मेडिकेशन?",
+     "emphasis": "['HELP‑MATCH']"
+    },
+    {
+     "text": "Agar nahi, therapy skills ke liye psychologist choose karo.",
+     "queries": [
+      "psychologist office",
+      "therapy tools",
+      "selection tick"
+     ],
+     "text_en": "If not, choose a psychologist for therapy skills.",
+     "text_hi": "अगर नहीं, थेरेपी स्किल्स के लिए साइकॉलॉजिस्ट चुनो।",
+     "emphasis": ""
+    },
+    {
+     "text": "Agar sirf short support chahiye, counsellor se milo.",
+     "queries": [
+      "counsellor meeting",
+      "short support",
+      "friendly chat"
+     ],
+     "text_en": "If you only need short support, see a counsellor.",
+     "text_hi": "अगर सिर्फ शॉर्ट सपोर्ट चाहिए, काउंसलर से मिलो।",
+     "emphasis": ""
+    },
+    {
+     "text": "Apni anxiety level samjho, sahi expert se milo, share karo!",
+     "queries": [
+      "self assessment",
+      "expert consultation",
+      "share on phone"
+     ],
+     "text_en": "Understand your anxiety level, meet the right expert, share it!",
+     "text_hi": "अपनी एंग्जायटी लेवल समझो, सही एक्सपर्ट से मिलो, शेयर करो!",
+     "emphasis": ""
+    }
+   ],
+   "description": "A quick guide to choosing between a psychologist, psychiatrist, or counsellor for anxiety. Learn myths, facts, and a simple checklist to get the right help.",
+   "hashtags": [
+    "#AnxietyHelp",
+    "#MentalHealth",
+    "#Psychology",
+    "#Psychiatry",
+    "#Counselling",
+    "#StudentStress"
+   ],
+   "audit": {
+    "score": 85,
+    "hook": 9,
+    "retention": 8,
+    "specificity": 7,
+    "safety_ok": true,
+    "fixes": [
+     "Add a concrete Indian student scenario (e.g., IIT JEE prep stress) in scene 2.",
+     "Make the final CTA more actionable (e.g., 'Comment your anxiety level below and tag a friend').",
+     "Ensure each beat spans only 2-3 scenes by grouping related myths and facts together.",
+     "Trim any redundant phrasing to keep pacing tight."
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-07T00:46:03",
+  "source": "groq"
  },
- "stages": {},
+ "stages": {
+  "script": {
+   "at": "2026-11-07T00:46:03",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-07T00:47:14",
+   "provider": "ELEVEN",
+   "note": "english"
+  }
+ },
  "handoff": [
   {
    "at": "2026-11-06T23:22:08",
@@ -91,10 +266,34 @@
    "model": "openai/gpt-oss-120b",
    "key": "GROQ_API_KEY_3",
    "summary": "{ \"title\": \"Psychologist, Psychiatrist ya Counsellor? Kaun Hai Best for Anxiety\", \"title_en\": \"Psychologist, Psychiatris"
+  },
+  {
+   "at": "2026-11-07T00:45:55",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{ \"title\": \"Psychologist, Psychiatrist ya Counsellor? Kaun Hai Best for Anxiety\", \"title_en\": \"Psychologist, Psychiatris"
+  },
+  {
+   "at": "2026-11-07T00:46:01",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Psychologist, Psychiatrist ya Counsellor? Kaun Hai Best for Anxiety\",\"title_en\":\"Psychologist, Psychiatrist or"
+  },
+  {
+   "at": "2026-11-07T00:46:03",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"score\":85,\"hook\":9,\"retention\":8,\"specificity\":7,\"safety_ok\":true,\"fixes\":[\"Add a concrete Indian student scenario (e."
   }
  ],
  "pending": [],
  "errors": [],
  "approved_changes": [],
- "stage_now": "script"
+ "stage_now": "voice"
 }
