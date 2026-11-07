@@ -1,0 +1,280 @@
+{
+ "key": "2026-11-08",
+ "kind": "short",
+ "created": "2026-11-07T22:07:11",
+ "request": {
+  "kind": "short",
+  "mode": "student",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Revision timetable – the phone‑proof version",
+  "verified": [
+   "Spaced repetition has been shown to improve long‑term retention compared with cramming, though the exact magnitude of improvement is not specified in the evidence."
+  ],
+  "sources": [
+   {
+    "title": "The Effect of Spaced Repetition on Learning and Knowledge Transfer in a Large Cohort of Practicing Physicians.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39250798/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Harsh truth: 80 % of students think a revision plan is enough, but if your phone is still buzzing, you’re only studying at 30 % efficiency.",
+  "tip": "Create a Phone‑Proof Revision Block: pick a 45‑minute slot, lock your phone in a box or set Airplane Mode, use a kitchen timer, study with paper notes only, then allow a 5‑minute phone check before the next block.",
+  "dropped": [
+   "A single smartphone notification interrupts focus for about 23 seconds and re‑engagement takes ~3 mi (unsupported)",
+   "Turning off or locking the phone for ≥45 minutes reduces perceived stress by 15 % and boosts concent (unsupported)",
+   "71 % of top‑scoring high‑school seniors set daily no‑phone study windows, averaging 2 hours per day (unsupported)",
+   "Following a structured revision timetable raises exam scores by ~0.4 SD on average (unsupported)",
+   "Multitasking with a phone reduces comprehension by ~25 % and memory recall by ~30 % (unsupported)",
+   "80 % of students think a revision plan is enough, but with a buzzing phone study efficiency drops to (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "ef209d1e5f03c36d",
+  "data": {
+   "title": "Phone-Proof Revision Timetable Kaise Banayein",
+   "title_en": "How to Build a Phone-Proof Revision Timetable",
+   "formula": "Harsh truth",
+   "kicker": "REVISION SECRET",
+   "hook_text": "PHONE-PROOF REVISION HACK",
+   "scenes": [
+    {
+     "text": "Harsh truth: phone paas ho toh JEE revision hamesha fail hoga.",
+     "queries": [
+      "student staring at phone",
+      "phone buzzing desk",
+      "distracted student desk"
+     ],
+     "text_en": "Harsh truth: if your phone is near, JEE revision will always fail.",
+     "text_hi": "Harsh truth: phone पास हो तो revision हमेशा fail होगा।",
+     "emphasis": "HARSH TRUTH"
+    },
+    {
+     "text": "Padhne baithte ho, aur ek notification saara focus tod deta hai.",
+     "queries": [
+      "smartphone notification screen",
+      "student losing concentration",
+      "glowing phone screen"
+     ],
+     "text_en": "You sit to study, and one notification breaks all your focus.",
+     "text_hi": "पढ़ने बैठते हो, और एक notification सारा focus तोड़ देता है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Galti tumhari nahi, bas revision block phone-proof nahi hai.",
+     "queries": [
+      "open study notebook",
+      "tired medical student",
+      "study desk top view"
+     ],
+     "text_en": "It is not your fault, your revision block is just not phone-proof.",
+     "text_hi": "गलती तुम्हारी नहीं, बस revision block phone-proof नहीं है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Ye video us JEE batchmate ko bhejo jo hamesha distracted rehta hai.",
+     "queries": [
+      "students talking library",
+      "classmates study group",
+      "friends studying together"
+     ],
+     "text_en": "Send this video to that JEE batchmate who is always distracted.",
+     "text_hi": "ये video उस batchmate को भेजो जो हमेशा distracted रहता है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Iska simple solution hai: forty-five minute ka Phone-Proof Block.",
+     "queries": [
+      "writing in planner",
+      "study schedule sheet",
+      "organized desk"
+     ],
+     "text_en": "Its simple solution is a forty-five minute Phone-Proof Block.",
+     "text_hi": "इसका simple solution है: forty-five minute का Phone-Proof Block।",
+     "emphasis": "PHONE-PROOF BLOCK"
+    },
+    {
+     "text": "Pehle, phone ko airplane mode par daal kar door rakh do.",
+     "queries": [
+      "switching airplane mode phone",
+      "phone in desk drawer",
+      "placing phone away"
+     ],
+     "text_en": "First, put your phone on airplane mode and keep it away.",
+     "text_hi": "पहले, phone को airplane mode पर डालकर दूर रख दो।",
+     "emphasis": ""
+    },
+    {
+     "text": "Phir ek kitchen timer lagao aur sirf paper notes se padho.",
+     "queries": [
+      "turning kitchen timer",
+      "student reading paper notes",
+      "highlighter on textbook"
+     ],
+     "text_en": "Then set a kitchen timer and study using only paper notes.",
+     "text_hi": "फिर एक kitchen timer लगाओ और सिर्फ paper notes से पढ़ो।",
+     "emphasis": ""
+    },
+    {
+     "text": "Research kehti hai spaced repetition cramming se behtar yaad rakhta hai.",
+     "queries": [
+      "medical books stacked",
+      "library study focus",
+      "brain memory concept"
+     ],
+     "text_en": "Research suggests spaced repetition retains better compared to cramming.",
+     "text_hi": "Research कहती है spaced repetition cramming से बेहतर याद रखता है।",
+     "emphasis": "SPACED REPETITION"
+    },
+    {
+     "text": "Isliye topics ko ratne ke bajay alag-alag din revise karo.",
+     "queries": [
+      "calendar planning revision",
+      "flipping calendar pages",
+      "marking study calendar"
+     ],
+     "text_en": "So instead of cramming topics, revise them across different days.",
+     "text_hi": "इसलिए topics को रटने के बजाय अलग-अलग दिन revise करो।",
+     "emphasis": ""
+    },
+    {
+     "text": "Har block ke baad paanch minute ka phone break lo.",
+     "queries": [
+      "stretching after studying",
+      "smiling student resting",
+      "quick coffee break"
+     ],
+     "text_en": "After every block, take a five-minute phone break.",
+     "text_hi": "हर block के बाद पांच minute का phone break लो।",
+     "emphasis": ""
+    },
+    {
+     "text": "Ab tumhara timetable phone-proof hai, distraction ka koi chance nahi. Abhi try karo aur apne JEE friends ko tag karo!",
+     "queries": [
+      "focused student smiling",
+      "clean organized desk",
+      "confident medical student"
+     ],
+     "text_en": "Now your timetable is phone-proof, with zero chance for distraction. Try it now and tag your JEE friends!",
+     "text_hi": "अब तुम्हारा timetable phone-proof है, distraction का कोई chance नहीं। अभी try करो और अपने JEE friends को tag करो!",
+     "emphasis": ""
+    }
+   ],
+   "description": "Struggling to stick to your revision schedule because of phone distractions? Learn how to structure a Phone-Proof Revision Block backed by spaced repetition science.",
+   "hashtags": [
+    "#StudyTips",
+    "#RevisionHacks",
+    "#FocusMode",
+    "#StudentLife",
+    "#SpacedRepetition",
+    "#ProductivityTips"
+   ],
+   "audit": {
+    "score": 55,
+    "hook": 40,
+    "retention": 60,
+    "specificity": 50,
+    "safety_ok": true,
+    "fixes": [
+     "Reduce hook to ≤9 words for stronger impact",
+     "Add a clear call‑to‑action at the end",
+     "Include specific Indian student context (e.g., JEE aspirants)",
+     "Ensure beats change every 2‑3 scenes for pacing"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-07T22:13:05",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-07T22:13:05",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-07T22:14:13",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-07T22:22:47",
+   "provider": "",
+   "note": "How to Build a Phone-Proof Revision Timetable"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-07T22:07:38",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{"
+  },
+  {
+   "at": "2026-11-07T22:08:13",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_5",
+   "summary": "{ \"title\": \"Phone‑Proof Revision Block se Padhai Kaise Badhe?\", \"title_en\": \"Phone‑Proof Revision Block to Boost Study\","
+  },
+  {
+   "at": "2026-11-07T22:08:33",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Phone‑Proof Revision Block se Padhai Kaise Badhe\",\"title_en\":\"How Phone‑Proof Revision Blocks Boost Study\",\"fo"
+  },
+  {
+   "at": "2026-11-07T22:10:41",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Phone‑Proof Revision Block se Padhai Kaise Badhe\",\"title_en\":\"How Phone‑Proof Revision Blocks Boost Study\",\"fo"
+  },
+  {
+   "at": "2026-11-07T22:12:59",
+   "stage": "script",
+   "provider": "gemini",
+   "model": "gemini-3.8-flash",
+   "key": "GEMINI_API_KEY_2",
+   "summary": "{ \"title\": \"Phone-Proof Revision Timetable Kaise Banayein\", \"title_en\": \"How to Build a Phone-Proof Revision Timetable\","
+  },
+  {
+   "at": "2026-11-07T22:13:01",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"score\":55,\"hook\":40,\"retention\":60,\"specificity\":50,\"safety_ok\":true,\"fixes\":[\"Reduce hook to ≤9 words for stronger im"
+  },
+  {
+   "at": "2026-11-07T22:13:05",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Phone-Proof Revision Timetable Kaise Banayein\",\"title_en\":\"How to Build a Phone-Proof Revision Timetable\",\"for"
+  },
+  {
+   "at": "2026-11-07T22:22:47",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Phone Paas? 5 Steps Se JEE Revision Fail Na Ho\",\"Phone‑Free Timetable: 30‑Minute Study Hacks for Med Student"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}

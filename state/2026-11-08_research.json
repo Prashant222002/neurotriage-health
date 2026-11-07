@@ -7,19 +7,26 @@
   "mode": "student"
  },
  "research": {
-  "topic": "Digital detox – why top‑scoring students actually unplug more than you think",
-  "verified": [],
-  "sources": [],
-  "level": "unstructured",
-  "hook": "Myth‑vs‑Reality Hook: “Everyone thinks the secret to top marks is nonstop scrolling for study hacks… but the real habit of the highest‑scorers is the exact opposite.”",
-  "tip": "Set a 45‑minute study block, turn off notifications and place the phone elsewhere, then take a 10‑minute screen‑free break before the next block.",
+  "topic": "Revision timetable – the phone‑proof version",
+  "verified": [
+   "Spaced repetition has been shown to improve long‑term retention compared with cramming, though the exact magnitude of improvement is not specified in the evidence."
+  ],
+  "sources": [
+   {
+    "title": "The Effect of Spaced Repetition on Learning and Knowledge Transfer in a Large Cohort of Practicing Physicians.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39250798/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Harsh truth: 80 % of students think a revision plan is enough, but if your phone is still buzzing, you’re only studying at 30 % efficiency.",
+  "tip": "Create a Phone‑Proof Revision Block: pick a 45‑minute slot, lock your phone in a box or set Airplane Mode, use a kitchen timer, study with paper notes only, then allow a 5‑minute phone check before the next block.",
   "dropped": [
-   "Each smartphone check adds ~25 seconds of re‑orientation penalty, lowering study efficiency (Rosen 2 (uncertain + number not backed)",
-   "Screen exposure within 1 hour of bedtime can cut deep‑sleep duration by up to 30 % (Harvard 2020). (unsupported)",
-   "Offline low‑stimulus periods boost hippocampal replay and improve memory consolidation (Diekelmann & (unsupported)",
-   "A daily 30‑minute phone‑free window reduces cortisol by ~15 % in adolescents (Kushlev et al. 2016). (unsupported)",
-   "Students limiting non‑educational screen time to ≤2 hours/day score about 7 % higher on standardized (uncertain + number not backed)",
-   "84 % of top‑ranking students keep a tech‑off period of ≥1 hour before sleep and ≥2 hours during stud (unsupported)"
+   "A single smartphone notification interrupts focus for about 23 seconds and re‑engagement takes ~3 mi (unsupported)",
+   "Turning off or locking the phone for ≥45 minutes reduces perceived stress by 15 % and boosts concent (unsupported)",
+   "71 % of top‑scoring high‑school seniors set daily no‑phone study windows, averaging 2 hours per day (unsupported)",
+   "Following a structured revision timetable raises exam scores by ~0.4 SD on average (unsupported)",
+   "Multitasking with a phone reduces comprehension by ~25 % and memory recall by ~30 % (unsupported)",
+   "80 % of students think a revision plan is enough, but with a buzzing phone study efficiency drops to (unsupported)"
   ]
  },
  "script": {
@@ -31,9 +38,9 @@
  },
  "stages": {
   "research": {
-   "at": "2026-11-07T19:15:20",
+   "at": "2026-11-07T22:07:11",
    "provider": "groq",
-   "note": "unstructured"
+   "note": "partial"
   }
  },
  "handoff": [
@@ -68,6 +75,38 @@
    "model": "openai/gpt-oss-120b",
    "key": "GROQ_API_KEY",
    "summary": "{\"results\":[{\"i\":0,\"verdict\":\"uncertain\",\"cites\":[0,1],\"fix\":\"Smartphone checks incur a task‑switching cost, but the cit"
+  },
+  {
+   "at": "2026-11-07T22:07:02",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"जन्मभूमि से कर्म भूमि तक📚🧿✨ #motivation #nursingofficer #aiims #trending #shorts #norcet\",\"formul"
+  },
+  {
+   "at": "2026-11-07T22:07:05",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Revision timetable – the phone‑proof version **ANGLE (why it is underused)** Even though a well‑planned revisi"
+  },
+  {
+   "at": "2026-11-07T22:07:07",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Revision timetable – the phone‑proof version\",\"search_terms\":[\"spaced repetition study retention\",\"smartphone "
+  },
+  {
+   "at": "2026-11-07T22:07:11",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"uncertain\",\"cites\":[0],\"fix\":\"Spaced repetition has been shown to improve long‑term retent"
   }
  ],
  "pending": [],

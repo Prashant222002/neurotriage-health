@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-08-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-08T03:52:47+05:30",
+  "publish_at": "2026-11-08T10:00+05:30",
+  "publish_at_utc": "2026-11-08T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-08-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "How to Build a Phone-Proof Revision Timetable",
+    "yt_description": "Struggling to stick to your revision schedule because of phone distractions? Learn how to structure a Phone-Proof Revision Block backed by spaced repetition science.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/39250798/\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\n#StudyTips #RevisionHacks #FocusMode #StudentLife #SpacedRepetition #Shorts",
+    "ig_caption": "Struggling to stick to your revision schedule because of phone distractions? Learn how to structure a Phone-Proof Revision Block backed by spaced repetition science.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#StudyTips #RevisionHacks #FocusMode #StudentLife #SpacedRepetition",
+    "hashtags": [
+      "#StudyTips",
+      "#RevisionHacks",
+      "#FocusMode",
+      "#StudentLife",
+      "#SpacedRepetition",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "q8Et_KCcHw4",
+        "url": "https://youtube.com/watch?v=q8Et_KCcHw4",
+        "scheduled": true
+      },
+      "at": "2026-11-07T22:22:52+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-07T22:22:52+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-07T22:22:52+00:00"
+    }
+  },
+  "status": "pending"
+}
