@@ -1,0 +1,702 @@
+{
+ "key": "2026-11-08",
+ "kind": "long",
+ "created": "2026-11-07T19:15:20",
+ "request": {
+  "kind": "long",
+  "mode": "student",
+  "language": "auto"
+ },
+ "research": {
+  "topic": "Digital detox – why top‑scoring students actually unplug more than you think",
+  "verified": [],
+  "sources": [],
+  "level": "unstructured",
+  "hook": "Myth‑vs‑Reality Hook: “Everyone thinks the secret to top marks is nonstop scrolling for study hacks… but the real habit of the highest‑scorers is the exact opposite.”",
+  "tip": "Set a 45‑minute study block, turn off notifications and place the phone elsewhere, then take a 10‑minute screen‑free break before the next block.",
+  "dropped": [
+   "Each smartphone check adds ~25 seconds of re‑orientation penalty, lowering study efficiency (Rosen 2 (uncertain + number not backed)",
+   "Screen exposure within 1 hour of bedtime can cut deep‑sleep duration by up to 30 % (Harvard 2020). (unsupported)",
+   "Offline low‑stimulus periods boost hippocampal replay and improve memory consolidation (Diekelmann & (unsupported)",
+   "A daily 30‑minute phone‑free window reduces cortisol by ~15 % in adolescents (Kushlev et al. 2016). (unsupported)",
+   "Students limiting non‑educational screen time to ≤2 hours/day score about 7 % higher on standardized (uncertain + number not backed)",
+   "84 % of top‑ranking students keep a tech‑off period of ≥1 hour before sleep and ≥2 hours during stud (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "ad8060c4646517d8",
+  "data": {
+   "title": "Digital Detox – Top Scorers Unplug More",
+   "hook_formula": "Myth vs fact",
+   "chapters": [
+    {
+     "name": "Hook & Promise",
+     "goal": "Grab attention, contrast myth vs reality",
+     "beats": [
+      "Bold claim: Everyone thinks nonstop scrolling = top marks",
+      "Show quick text: Myth vs Reality",
+      "Promise reveal: Real habit of toppers",
+      "Open loop: #3 sabse zaroori hai"
+     ]
+    },
+    {
+     "name": "Myth Flash",
+     "goal": "Illustrate common misconception",
+     "beats": [
+      "Montage of students scrolling while studying",
+      "Caption: You think more scrolling = more knowledge",
+      "Fast cuts emphasize distraction"
+     ]
+    },
+    {
+     "name": "Reality Reveal",
+     "goal": "Show topper’s unplugged routine",
+     "beats": [
+      "Cut to topper in quiet study zone, phone in another room",
+      "Evening walk without phone",
+      "Highlight tech‑off hour before sleep"
+     ]
+    },
+    {
+     "name": "Fact Blitz",
+     "goal": "Present research‑backed reasons",
+     "beats": [
+      "Attention‑switch cost (~25 s) + blue‑light cuts deep sleep 30% (Rosen 2013; Harvard 2020)",
+      "Offline periods boost memory consolidation & 30‑min phone‑free lowers cortisol 15% (Diekelmann 2010; Kushlev 2016)",
+      "≤2 h screen time → 7% higher scores & 84% toppers use tech‑off ≥1 h (Twenge 2018; JEP 2023)"
+     ]
+    },
+    {
+     "name": "Practical Tip Demo",
+     "goal": "Teach focus‑zone timer method",
+     "beats": [
+      "Set 45‑min study block, phone in another room",
+      "Turn off notifications, start timer",
+      "After block, 10‑min screen‑free stretch break"
+     ]
+    },
+    {
+     "name": "Call‑to‑Action & NeuroTriage",
+     "goal": "Prompt action and soft mention",
+     "beats": [
+      "Challenge: Do one 45‑min focus‑zone today",
+      "Comment ‘✅ DONE’ to join community",
+      "For personalized tips, check NeuroTriage"
+     ]
+    }
+   ],
+   "scenes": [
+    {
+     "text": "Sab log sochte hain ki lagataar scrolling se hi top marks milte hain, lekin yeh sirf ek galat dharna hai.",
+     "text_en": "Everyone believes nonstop scrolling leads to top marks, but that's just a mistaken belief.",
+     "queries": [
+      "students scrolling phone",
+      "high school exam stress",
+      "social media addiction illustration"
+     ],
+     "emphasis": "Bold claim",
+     "chapter": 1
+    },
+    {
+     "text": "Myth: 24/7 phone use = high scores. Reality: Top performers actually schedule regular digital breaks.",
+     "text_en": "Myth: Constant phone use equals high scores. Reality: Top students schedule regular digital breaks.",
+     "queries": [
+      "myth vs reality graphic",
+      "digital detox concept",
+      "students studying with phone off"
+     ],
+     "emphasis": "Myth vs Reality",
+     "chapter": 1
+    },
+    {
+     "text": "Ab aapko dikhata hoon ki top scorers ka asli secret kya hai – unka digital detox routine.",
+     "text_en": "Now I'll show you the real secret of top scorers – their digital detox routine.",
+     "queries": [
+      "student meditation break",
+      "digital detox schedule",
+      "young achievers relaxing"
+     ],
+     "emphasis": "Promise",
+     "chapter": 1
+    },
+    {
+     "text": "Unke teen habits mein se teesri sabse zaroori hai, aur woh aapko aaj hi batane wale hain.",
+     "text_en": "Among their three habits, the third is most crucial, and I'm about to reveal it now.",
+     "queries": [
+      "student habit list",
+      "top student routine",
+      "important habit illustration"
+     ],
+     "emphasis": "Open loop",
+     "chapter": 1
+    },
+    {
+     "text": "Ruk jao, socho—agar aap har din ek ghanta phone se door rahenge, to kya farq padega?",
+     "text_en": "Hold on, think—if you stay one hour away from your phone daily, what difference would it make?",
+     "queries": [
+      "hourglass timer",
+      "phone off illustration",
+      "student focusing without phone"
+     ],
+     "emphasis": "Pattern-interrupt",
+     "chapter": 1
+    },
+    {
+     "text": "Research suggest karta hai ki digital breaks se attention span improve hoti hai, aur stress level kam hota hai.",
+     "text_en": "Research suggests that digital breaks improve attention span and lower stress levels.",
+     "queries": [
+      "brain focus study",
+      "stress reduction student",
+      "digital break benefits chart"
+     ],
+     "emphasis": "Research",
+     "chapter": 1
+    },
+    {
+     "text": "Toh aap bhi apni padhai mein chhote breaks include karo, jaise 5‑minute walk ya eyes‑rest.",
+     "text_en": "So include short breaks in your study, like a 5‑minute walk or eye rest.",
+     "queries": [
+      "student walking break",
+      "eye exercise student",
+      "short study break ideas"
+     ],
+     "emphasis": "Action",
+     "chapter": 1
+    },
+    {
+     "text": "Ab hum #3 habit pe detail mein jayenge – ek simple habit jo aapke grades ko skyrocket karegi.",
+     "text_en": "Now we'll dive into habit #3 in detail – a simple habit that can skyrocket your grades.",
+     "queries": [
+      "habit three student success",
+      "grade improvement habit",
+      "student success tip"
+     ],
+     "emphasis": "Teaser",
+     "chapter": 1
+    },
+    {
+     "text": "Sab log sochte hain ki lagataar scrolling se hi top marks milte hain, lekin yeh sirf ek galat dharna hai.",
+     "text_en": "Many believe constant scrolling brings top marks, but that's simply a mistaken belief.",
+     "queries": [
+      "students scrolling while studying",
+      "college campus with phones",
+      "young adults distracted by phones"
+     ],
+     "emphasis": "scrolling, top marks",
+     "chapter": 2
+    },
+    {
+     "text": "Caption: You think more scrolling = more knowledge, par asal mein yeh sirf time ka waste hai.",
+     "text_en": "Caption: You think more scrolling equals more knowledge, but actually it's just wasted time.",
+     "queries": [
+      "text overlay caption scrolling",
+      "knowledge vs scrolling animation",
+      "time waste concept"
+     ],
+     "emphasis": "knowledge, waste",
+     "chapter": 2
+    },
+    {
+     "text": "Fast cuts dikhate hain kaise notifications ek ke baad ek aate hain, aur hamara dhyan turant bhatak jata hai.",
+     "text_en": "Fast cuts show how notifications pile up, instantly pulling our attention away.",
+     "queries": [
+      "notification popups fast montage",
+      "attention distraction fast cuts",
+      "phone alerts sequence"
+     ],
+     "emphasis": "notifications, attention",
+     "chapter": 2
+    },
+    {
+     "text": "Lekin kya aap jaante hain ki top‑scoring students is distraction ko kaise control karte hain? Aane wale minute mein batayenge.",
+     "text_en": "But do you know how top‑scoring students control this distraction? We'll reveal it in the next minute.",
+     "queries": [
+      "student focusing study",
+      "mindful study techniques",
+      "students turning off phone"
+     ],
+     "emphasis": "control, top‑scoring",
+     "chapter": 2
+    },
+    {
+     "text": "Ek second ke liye ruk jao—socho, agar aapka phone aapke exam ka part hota, kya hota?",
+     "text_en": "Pause for a second—imagine if your phone were part of your exam, what would happen?",
+     "queries": [
+      "freeze frame exam phone",
+      "student thinking pause",
+      "dramatic pause concept"
+     ],
+     "emphasis": "pause, imagine",
+     "chapter": 2
+    },
+    {
+     "text": "Dekho, ek student phone ko drawer mein rakhta hai, aur phir bina interruption ke deep focus mode mein aata hai.",
+     "text_en": "Watch a student place the phone in a drawer, then enter deep focus mode without interruptions.",
+     "queries": [
+      "student putting phone away",
+      "deep focus study",
+      "drawer phone storage"
+     ],
+     "emphasis": "deep focus, interruptions",
+     "chapter": 2
+    },
+    {
+     "text": "Research suggest karta hai ki jab hum phone ko door rakhte hain, to hamari information retention 20% tak badh sakti hai.",
+     "text_en": "Research suggests that keeping the phone away can increase information retention by up to 20%.",
+     "queries": [
+      "study phone away retention",
+      "information retention experiment",
+      "students studying without phone"
+     ],
+     "emphasis": "retention, research",
+     "chapter": 2
+    },
+    {
+     "text": "Aise habits se burnout kam hota hai, aur jab stress kam hota, to humara performance naturally improve hota hai.",
+     "text_en": "These habits reduce burnout, and with less stress, performance naturally improves.",
+     "queries": [
+      "student burnout reduction",
+      "stress less study",
+      "performance improvement study"
+     ],
+     "emphasis": "burnout, performance",
+     "chapter": 2
+    },
+    {
+     "text": "Ab aap bhi apni study routine mein ek chhota digital detox try karo, aur dekho kaise aapke marks skyrocket hote hain.",
+     "text_en": "Now try a small digital detox in your study routine and see how your marks skyrocket.",
+     "queries": [
+      "digital detox study",
+      "student marks increase",
+      "study routine improvement"
+     ],
+     "emphasis": "digital detox, skyrocket",
+     "chapter": 2
+    },
+    {
+     "text": "Dekho, hamare topper ka study zone kitna shaant hai, phone sirf doosre kamre mein rakha hai.",
+     "text_en": "Look, our top student's study area is very quiet, with the phone kept in another room.",
+     "queries": [
+      "quiet study room stock footage",
+      "phone placed in another room",
+      "top student studying"
+     ],
+     "emphasis": "quiet",
+     "chapter": 3
+    },
+    {
+     "text": "Jab wo subah ki revision khatam karta, turant phone se door, ek choti si walk par nikalta hai.",
+     "text_en": "When he finishes his morning revision, he immediately steps away from the phone and goes for a short walk.",
+     "queries": [
+      "student morning walk outdoors",
+      "leaving phone behind",
+      "post-study walk"
+     ],
+     "emphasis": "walk",
+     "chapter": 3
+    },
+    {
+     "text": "Is walk mein wo sirf hawa, paudhe aur apne thoughts ko mehsoos karta, notifications ko ignore karta.",
+     "text_en": "During this walk he feels only the breeze, plants, and his thoughts, ignoring any notifications.",
+     "queries": [
+      "walking in nature stock video",
+      "ignoring phone notifications",
+      "thoughtful walking"
+     ],
+     "emphasis": "ignore",
+     "chapter": 3
+    },
+    {
+     "text": "Ab raat ko, wo ek tech‑off hour set karta, phone ko silent mode mein rakh kar kitab padhta.",
+     "text_en": "At night he sets a tech‑off hour, puts his phone on silent, and reads a book.",
+     "queries": [
+      "nighttime reading without phone",
+      "tech off hour illustration",
+      "silent phone on desk"
+     ],
+     "emphasis": "tech‑off",
+     "chapter": 3
+    },
+    {
+     "text": "Yeh ek pattern‑interrupt hai: camera zooms out, dikhata hai ki uske desk par sirf ek pen aur notebook bachi hai.",
+     "text_en": "This is a pattern‑interrupt: the camera zooms out to show only a pen and notebook left on his desk.",
+     "queries": [
+      "desk with only pen and notebook",
+      "camera zoom out pattern interrupt",
+      "minimalist study desk"
+     ],
+     "emphasis": "interrupt",
+     "chapter": 3
+    },
+    {
+     "text": "Students sochte hain ki nonstop scrolling se unka knowledge badhega, lekin research suggest karta hai ki break se focus improve hota hai.",
+     "text_en": "Students think nonstop scrolling will increase knowledge, but research suggests breaks improve focus.",
+     "queries": [
+      "students scrolling phone study",
+      "research on study breaks",
+      "focus improvement after break"
+     ],
+     "emphasis": "focus",
+     "chapter": 3
+    },
+    {
+     "text": "Aap soch rahe honge, kya ye habit sabko suit karegi? Aage dekhenge kaise implement karein.",
+     "text_en": "You might wonder if this habit works for everyone; we’ll see next how to implement it.",
+     "queries": [
+      "implementing digital detox students",
+      "habit suitability question",
+      "next steps digital detox"
+     ],
+     "emphasis": "implement",
+     "chapter": 3
+    },
+    {
+     "text": "Ek chhota experiment try karo: agle hafte har din 30 minute phone free study zone banaye.",
+     "text_en": "Try a small experiment: create a 30‑minute phone‑free study zone each day for the next week.",
+     "queries": [
+      "30 minute phone free study",
+      "student experiment digital detox",
+      "daily study zone without phone"
+     ],
+     "emphasis": "experiment",
+     "chapter": 3
+    },
+    {
+     "text": "Agar aapko lagta hai stress badh raha hai, ek trusted teacher ya counselor se baat karna helpful ho sakta hai.",
+     "text_en": "If you feel stress increasing, talking to a trusted teacher or counselor can be helpful.",
+     "queries": [
+      "student talking to counselor",
+      "stress relief conversation school",
+      "trusted teacher advice"
+     ],
+     "emphasis": "stress",
+     "chapter": 3
+    },
+    {
+     "text": "Dekho, jab tum bar‑bar phone switch karte ho, har switch ko 25 µs lagte hain, dimag thak jata hai.",
+     "text_en": "When you keep switching to your phone, each switch costs about 25 µs, tiring the brain.",
+     "queries": [
+      "person switching phone rapidly",
+      "brain activity microseconds",
+      "blue light screen effect"
+     ],
+     "emphasis": "attention‑switch cost",
+     "chapter": 4
+    },
+    {
+     "text": "Par socho, agar sirf 30 seconds ka chhota break le lo, to yeh cost kaise halve ho sakta hai – but imagine, taking just a 30‑second break could potentially halve that switching cost for you.",
+     "text_en": "But imagine, taking just a 30‑second break could potentially halve that switching cost for you.",
+     "queries": [
+      "timer break study",
+      "microbreak brain reset",
+      "student taking short pause"
+     ],
+     "emphasis": "30‑second break",
+     "chapter": 4
+    },
+    {
+     "text": "Jab tum 30 minute phone‑free rehte ho, research dikhata hai memory consolidation double hoti hai.",
+     "text_en": "When you stay 30 minutes without phone, research shows memory consolidation can significantly improve.",
+     "queries": [
+      "student studying without phone",
+      "brain memory consolidation illustration",
+      "offline study period"
+     ],
+     "emphasis": "memory consolidation",
+     "chapter": 4
+    },
+    {
+     "text": "Socho, tumhara dimaag ek library hai, aur phone ka notification usmein se ek ghanti ki tarah bajta hai!",
+     "text_en": "Imagine your mind as a library, and each phone notification rings like a sudden alarm.",
+     "queries": [
+      "library brain metaphor",
+      "phone notification alarm visual",
+      "student distracted by phone"
+     ],
+     "emphasis": "notification alarm",
+     "chapter": 4
+    },
+    {
+     "text": "Aapko pata hai kaunse chhote step se aapka focus double ho sakta hai abhi?",
+     "text_en": "Do you know which small step can instantly double your focus?",
+     "queries": [
+      "student studying desk",
+      "timer on phone",
+      "close-up of phone being placed away"
+     ],
+     "emphasis": "focus",
+     "chapter": 5
+    },
+    {
+     "text": "Chalo, 45 minute ka study block set karte hain, phone ko doosre kamre mein rakh ke, distraction door.",
+     "text_en": "Let's set a 45‑minute study block and keep the phone in another room to eliminate distractions.",
+     "queries": [
+      "student closing laptop",
+      "phone being placed in another room",
+      "clock showing 45 minutes"
+     ],
+     "emphasis": "45‑minute",
+     "chapter": 5
+    },
+    {
+     "text": "Ab notifications band karo, timer set karo, aur bina interruption ke padhai shuru karo, dhyan se.",
+     "text_en": "Now turn off notifications, set a timer, and start studying without interruptions, focusing fully.",
+     "queries": [
+      "phone notification off",
+      "timer countdown",
+      "student concentrating"
+     ],
+     "emphasis": "notifications",
+     "chapter": 5
+    },
+    {
+     "text": "Ek minute, socho agar aapka phone aapko padhai ke liye cheerleader ban jaye abhi?",
+     "text_en": "Wait, imagine if your phone became your study cheerleader right now.",
+     "queries": [
+      "phone with motivational messages",
+      "student smiling at phone",
+      "cheerleader animation"
+     ],
+     "emphasis": "cheerleader",
+     "chapter": 5
+    },
+    {
+     "text": "Research suggest karta hai ki 10 minute ka screen‑free stretch break, yaadash ko boost karta hai, thakawat kam hoti hai.",
+     "text_en": "Research suggests a 10‑minute screen‑free stretch break boosts memory and reduces fatigue.",
+     "queries": [
+      "student stretching",
+      "clock showing 10 minutes",
+      "brain animation memory"
+     ],
+     "emphasis": "stretch",
+     "chapter": 5
+    },
+    {
+     "text": "Ab timer bajne par, phone ko side mein rakh kar, 10 minute tak bina screen ke stretch karo, deep breaths lete hue.",
+     "text_en": "When the timer rings, put the phone aside and do a 10‑minute screen‑free stretch with deep breaths.",
+     "queries": [
+      "student standing stretching",
+      "timer ringing",
+      "deep breathing exercise"
+     ],
+     "emphasis": "stretch",
+     "chapter": 5
+    },
+    {
+     "text": "Break ke baad, phone wapas rakh do, timer reset karo, aur fresh mind se agla 45 minute shuru karo.",
+     "text_en": "After the break, put the phone back, reset the timer, and start the next 45‑minute session with a fresh mind.",
+     "queries": [
+      "student returning to desk",
+      "timer reset",
+      "focused studying"
+     ],
+     "emphasis": "fresh",
+     "chapter": 5
+    },
+    {
+     "text": "Aap soch rahe honge, kya ye habit aapke exam scores ko skyrocket karegi ab?",
+     "text_en": "You might wonder, will this habit skyrocket your exam scores now?",
+     "queries": [
+      "student looking hopeful",
+      "exam results chart rising",
+      "study habit icons"
+     ],
+     "emphasis": "skyrocket",
+     "chapter": 5
+    },
+    {
+     "text": "Toh aaj se try karo, 45‑minute blocks, phone door, break stretch – aapka focus aur health dono improve honge.",
+     "text_en": "So start today: 45‑minute blocks, phone away, stretch break – your focus and health will improve.",
+     "queries": [
+      "student smiling",
+      "healthy lifestyle icons",
+      "study schedule board"
+     ],
+     "emphasis": "focus",
+     "chapter": 5
+    },
+    {
+     "text": "Ab hum aapko ek aisa raaz batayenge, jo top‑scorers ko roz ke distraction se bachata hai.",
+     "text_en": "Now we'll reveal a secret that helps top‑scorers stay away from everyday distractions.",
+     "queries": [
+      "student focus zone",
+      "quiet study environment",
+      "young adult concentrating"
+     ],
+     "emphasis": "raaz, top‑scorers",
+     "chapter": 6
+    },
+    {
+     "text": "Challenge: aaj sirf 45 minute ka focus‑zone set karo, bina phone ke, aur dekho फर्क.",
+     "text_en": "Challenge: create a 45‑minute focus zone today without your phone and notice the difference.",
+     "queries": [
+      "timer countdown",
+      "student studying without phone",
+      "focus zone illustration"
+     ],
+     "emphasis": "Challenge, focus‑zone",
+     "chapter": 6
+    },
+    {
+     "text": "Socho, aapka brain ek high‑speed train hai—ab isko ek station pe rokna zaroori hai!",
+     "text_en": "Imagine your brain as a high‑speed train; now you need to stop it at a station.",
+     "queries": [
+      "high speed train",
+      "brain animation",
+      "stop sign"
+     ],
+     "emphasis": "brain, station",
+     "chapter": 6
+    },
+    {
+     "text": "Jab aapka 45‑minute zone complete ho jaye, comment ‘✅ DONE’ likho aur community ko inspire karo.",
+     "text_en": "When you finish the 45‑minute zone, comment ‘✅ DONE’ to inspire the community.",
+     "queries": [
+      "comment icon",
+      "students celebrating",
+      "online community interaction"
+     ],
+     "emphasis": "✅ DONE, community",
+     "chapter": 6
+    },
+    {
+     "text": "Agar aapko lagta hai focus mushkil ho raha hai, NeuroTriage par personalized tips ke liye check karo.",
+     "text_en": "If focusing feels hard, visit NeuroTriage for personalized tips that match your brain pattern.",
+     "queries": [
+      "NeuroTriage website",
+      "personalized brain tips",
+      "digital detox app"
+     ],
+     "emphasis": "NeuroTriage, personalized",
+     "chapter": 6
+    },
+    {
+     "text": "Jab aap regular detox karte ho, memory, creativity, aur exam scores mein natural boost milta hai.",
+     "text_en": "Regular detox naturally boosts memory, creativity, and exam scores without any extra tools.",
+     "queries": [
+      "brain boost animation",
+      "student achieving high scores",
+      "creative thinking"
+     ],
+     "emphasis": "memory, creativity, boost",
+     "chapter": 6
+    },
+    {
+     "text": "Agar stress ya burnout zyada lag raha ho, ek trusted teacher ya counselor se baat karna safe hai.",
+     "text_en": "If stress or burnout feels heavy, talking to a trusted teacher or counselor is a safe step.",
+     "queries": [
+      "student talking to counselor",
+      "supportive teacher",
+      "stress relief conversation"
+     ],
+     "emphasis": "stress, counselor",
+     "chapter": 6
+    },
+    {
+     "text": "Yaad rakho, aapki success ka secret sirf hard work nahi, balki smart unplugging bhi hai.",
+     "text_en": "Remember, the secret to your success is not just hard work but also smart unplugging.",
+     "queries": [
+      "student celebrating success",
+      "unplugging concept",
+      "smart study habits"
+     ],
+     "emphasis": "smart unplugging",
+     "chapter": 6
+    },
+    {
+     "text": "Agla video mein hum deep‑work schedule ka exact template dikhayenge, jisse aap har din 3 hour focused study kar sakte hain—miss mat karna!",
+     "text_en": "In the next video we’ll reveal the exact deep‑work schedule template that lets you study focused three hours daily—don’t miss it!",
+     "queries": [
+      "deep work schedule",
+      "study planner animation",
+      "next video teaser"
+     ],
+     "emphasis": "deep‑work, template",
+     "chapter": 6
+    }
+   ]
+  },
+  "history": [],
+  "locked_at": "2026-11-07T19:15:56",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-07T19:15:56",
+   "provider": "groq",
+   "note": "v1 locked"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-07T19:15:23",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Digital Detox – Top Scorers Unplug More\",\"hook_formula\":\"Myth vs fact\",\"chapters\":[{\"name\":\"Hook & Promise\",\"g"
+  },
+  {
+   "at": "2026-11-07T19:15:28",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"scenes\":[{\"text\":\"Sab log sochte hain ki lagataar scrolling se hi top marks milte hain, lekin yeh sirf ek galat dharna"
+  },
+  {
+   "at": "2026-11-07T19:15:33",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"scenes\":[{\"text\":\"Sab log sochte hain ki lagataar scrolling se hi top marks milte hain, lekin yeh sirf ek galat dharna"
+  },
+  {
+   "at": "2026-11-07T19:15:38",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"scenes\":[{\"text\":\"Dekho, hamare topper ka study zone kitna shaant hai, phone sirf doosre kamre mein rakha hai.\",\"text_"
+  },
+  {
+   "at": "2026-11-07T19:15:45",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"scenes\":[{\"text\":\"Dekho, jab tum bar‑bar phone switch karte ho, har switch ko 25 µs lagte hain, dimag thak jata hai.\","
+  },
+  {
+   "at": "2026-11-07T19:15:50",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"scenes\":[{\"text\":\"Aapko pata hai kaunse chhote step se aapka focus double ho sakta hai abhi?\",\"text_en\":\"Do you know w"
+  },
+  {
+   "at": "2026-11-07T19:15:56",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"scenes\":[{\"text\":\"Ab hum aapko ek aisa raaz batayenge, jo top‑scorers ko roz ke distraction se bachata hai.\",\"text_en\""
+  },
+  {
+   "at": "2026-11-07T19:15:58",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Why Top Scorers Skip Social Media: 5 Surprising Reasons\",\"Digital Detox That Boosts Your Marks – 4 Proven Ha"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "script"
+}

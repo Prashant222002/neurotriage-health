@@ -1,0 +1,38 @@
+{
+  "id": "2026-11-08-long",
+  "kind": "long",
+  "built": true,
+  "built_at": "2026-11-08T01:06:30+05:30",
+  "publish_at": "2026-11-08T19:00+05:30",
+  "publish_at_utc": "2026-11-08T13:30+00:00",
+  "privacy": "private",
+  "artifact": "queue-2026-11-08-long",
+  "files": {
+    "video": "long_final.mp4",
+    "thumb": "thumb.jpg"
+  },
+  "meta": {
+    "title": "Digital Detox – Top Scorers Unplug More",
+    "yt_description": "Discover why India's top med students are unplugging and how it can skyrocket your scores. We break down the science, habits, and easy steps to start your own digital detox today. Join the conversation – comment your biggest phone distraction and let’s beat it together!\n\nChapters:\n00:00 Hook & Promise\n00:50 Myth Flash\n01:45 Reality Reveal\n02:43 Fact Blitz\n03:10 Practical Tip Demo\n04:05 Call‑to‑Action & NeuroTriage\n\nNeuroTriage: https://www.neurotriage.in/\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\n#DigitalDetox #MedStudentLife #StudyTips #FocusMode #AceYourExams",
+    "hashtags": [
+      "#DigitalDetox",
+      "#MedStudentLife",
+      "#StudyTips",
+      "#FocusMode",
+      "#AceYourExams"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "done",
+      "attempts": 1,
+      "result": {
+        "id": "FwjWqxc6GJI",
+        "url": "https://youtube.com/watch?v=FwjWqxc6GJI",
+        "scheduled": false
+      },
+      "at": "2026-11-07T19:36:39+00:00"
+    }
+  },
+  "status": "pending"
+}
