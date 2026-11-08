@@ -1,0 +1,83 @@
+{
+ "key": "2026-11-09",
+ "kind": "research",
+ "created": "2026-11-08T22:19:38",
+ "request": {
+  "kind": "research",
+  "mode": "awareness"
+ },
+ "research": {
+  "topic": "Specific Phobias (e.g., arachnophobia, claustrophobia, aviophobia)",
+  "verified": [
+   "Specific phobias can lead to avoidance that interferes with daily activities, though the evidence does not quantify the impact for mild cases."
+  ],
+  "sources": [
+   {
+    "title": "Specific phobia.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16171704/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Ever wake up at 3 AM and Google ‘Why can’t I stop fearing spiders?’ – you’re not alone. Let’s crack the 3 AM phobia questions in 60 seconds.",
+  "tip": "Pick the most feared object (e.g., a spider picture), look at it for 5 seconds, breathe, look away, and repeat 3 times daily for a week to train your brain to treat it as safe.",
+  "dropped": [
+   "7‑9% of adults worldwide have a specific phobia (APA 2022) (unsupported)",
+   "fMRI studies show hyper‑activation of the amygdala and reduced pre‑frontal regulation to phobic cues (unsupported)",
+   "Twin studies estimate 30‑40% heritability of specific phobias (WHO 2020) (unsupported)",
+   "Graded exposure therapy reduces fear response in ≈70% of cases after 8‑12 sessions (Cochrane Review  (unsupported)",
+   "The “5‑Second Rule” micro‑exposure can lower immediate anxiety by ≈15% (NIMH 2021) (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-08T22:19:56",
+   "provider": "groq",
+   "note": "partial"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-08T22:19:47",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"POV: Exam Is Tomorrow 😭 | Every Student Can Relate! | Exam Memes | Student Life\",\"formula\":\"Patte"
+  },
+  {
+   "at": "2026-11-08T22:19:50",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Specific Phobias (e.g., arachnophobia, claustrophobia, aviophobia) **ANGLE (why it is under‑used)** Most menta"
+  },
+  {
+   "at": "2026-11-08T22:19:53",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Specific Phobias (e.g., arachnophobia, claustrophobia, aviophobia)\",\"search_terms\":[\"specific phobia prevalenc"
+  },
+  {
+   "at": "2026-11-08T22:19:56",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\":1,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\""
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}

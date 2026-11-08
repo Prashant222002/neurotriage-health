@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-09-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-09T04:04:08+05:30",
+  "publish_at": "2026-11-09T10:00+05:30",
+  "publish_at_utc": "2026-11-09T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-09-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "How to Beat Specific Phobias – 60 Sec Tips",
+    "yt_description": "A quick guide on how specific phobias like spider, claustrophobia, and flight fear affect daily life and simple daily exposure tricks to reduce them. Learn a three‑step mini‑plan in under a minute.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/16171704/\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\nIf you are struggling, India's free 24x7 helpline Tele-MANAS: 14416.\n\n#Phobia #MentalHealth #AnxietyTips #SelfHelp #Psychology #Shorts",
+    "ig_caption": "A quick guide on how specific phobias like spider, claustrophobia, and flight fear affect daily life and simple daily exposure tricks to reduce them. Learn a three‑step mini‑plan in under a minute.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#Phobia #MentalHealth #AnxietyTips #SelfHelp #Psychology",
+    "hashtags": [
+      "#Phobia",
+      "#MentalHealth",
+      "#AnxietyTips",
+      "#SelfHelp",
+      "#Psychology",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "QwaLw8M6lRY",
+        "url": "https://youtube.com/watch?v=QwaLw8M6lRY",
+        "scheduled": true
+      },
+      "at": "2026-11-08T22:34:11+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-08T22:34:11+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-08T22:34:11+00:00"
+    }
+  },
+  "status": "pending"
+}

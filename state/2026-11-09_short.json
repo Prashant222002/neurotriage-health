@@ -1,0 +1,192 @@
+{
+ "key": "2026-11-09",
+ "kind": "short",
+ "created": "2026-11-08T22:19:56",
+ "request": {
+  "kind": "short",
+  "mode": "awareness",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Specific Phobias (e.g., arachnophobia, claustrophobia, aviophobia)",
+  "verified": [
+   "Specific phobias can lead to avoidance that interferes with daily activities, though the evidence does not quantify the impact for mild cases."
+  ],
+  "sources": [
+   {
+    "title": "Specific phobia.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16171704/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Ever wake up at 3 AM and Google ‘Why can’t I stop fearing spiders?’ – you’re not alone. Let’s crack the 3 AM phobia questions in 60 seconds.",
+  "tip": "Pick the most feared object (e.g., a spider picture), look at it for 5 seconds, breathe, look away, and repeat 3 times daily for a week to train your brain to treat it as safe.",
+  "dropped": [
+   "7‑9% of adults worldwide have a specific phobia (APA 2022) (unsupported)",
+   "fMRI studies show hyper‑activation of the amygdala and reduced pre‑frontal regulation to phobic cues (unsupported)",
+   "Twin studies estimate 30‑40% heritability of specific phobias (WHO 2020) (unsupported)",
+   "Graded exposure therapy reduces fear response in ≈70% of cases after 8‑12 sessions (Cochrane Review  (unsupported)",
+   "The “5‑Second Rule” micro‑exposure can lower immediate anxiety by ≈15% (NIMH 2021) (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "5b555b03c2d21d2e",
+  "data": {
+   "title": "Specific Phobias ko Kaise Beat Karein – 60 Sec Tips",
+   "title_en": "How to Beat Specific Phobias – 60 Sec Tips",
+   "formula": "Pattern-interrupt question",
+   "kicker": "MIND HACK",
+   "hook_text": "DAR KE PICHHE KA RAJ",
+   "scenes": [
+    {
+     "text": "Kabhi raat ko sochti ho, spider se darr?",
+     "queries": [
+      "spider closeup",
+      "night bedroom",
+      "person looking scared"
+     ],
+     "text_en": "Ever wonder at night, scared of spiders?",
+     "text_hi": "कभी रात को सोचती हो, स्पाइडर से डर?",
+     "emphasis": "DAR"
+    },
+    {
+     "text": "Ye fear aapke daily routine ko rok sakta hai, jaise exam hall ya office meeting, par chhote steps se aap isse handle kar sakte hain",
+     "queries": [
+      "person avoiding stairs",
+      "busy office",
+      "calendar"
+     ],
+     "text_en": "This fear can stop your daily routine, like in an exam hall or office meeting, but small steps can help you handle it",
+     "text_hi": "ये फियर आपके डेली रूटीन को रोक सकता है, जैसे exam hall या office meeting, पर छोटे स्टेप्स से आप इसे हैंडल कर सकते हैं",
+     "emphasis": ""
+    },
+    {
+     "text": "Specific phobia ka matlab hota hai intense, irrational fear. Aapko pata hai ye fear kaise kam ho sakta hai?",
+     "queries": [
+      "brain illustration",
+      "medical diagram",
+      "animation"
+     ],
+     "text_en": "Specific phobia means an intense, irrational fear. Do you know how this fear can be reduced?",
+     "text_hi": "स्पेसिफिक फोबिया का मतलब होता है इंटेन्स, इरैशनल फियर। आपको पता है ये फियर कैसे कम हो सकता है?",
+     "emphasis": ""
+    },
+    {
+     "text": "Sabse common phobia spider ka darr, yaani arachnophobia. Aur aap isse roz 5‑second exposure se kam kar sakte hain",
+     "queries": [
+      "spider crawling",
+      "arachnid",
+      "nature macro"
+     ],
+     "text_en": "The most common phobia is spider fear, called arachnophobia. You can reduce it with a daily 5‑second exposure",
+     "text_hi": "सबसे कॉमन फोबिया स्पाइडर का डर, यानी अरैक्नोफोबिया। और आप इसे रोज़ 5‑सेकंड एक्सपोज़र से कम कर सकते हैं",
+     "emphasis": "ARACHNOPHOBIA"
+    },
+    {
+     "text": "Dusra, chhote kamre mein phansna, claustrophobia bhi. Iska simple exposure technique bhi hai",
+     "queries": [
+      "crowded elevator",
+      "tight hallway",
+      "confined space"
+     ],
+     "text_en": "Second, being trapped in a small room, also claustrophobia. There’s a simple exposure technique for it",
+     "text_hi": "दूसरा, छोटे कमरे में फंसना, क्लॉस्ट्रोफोबिया भी। इसका सिम्पल एक्सपोज़र टेक्निक भी है",
+     "emphasis": ""
+    },
+    {
+     "text": "Teesra, plane mein udna, aviophobia, log ko panic hota. Iske liye bhi aap short visual exposure try kar sakte hain",
+     "queries": [
+      "airplane interior",
+      "plane window",
+      "flight cabin"
+     ],
+     "text_en": "Third, flying in a plane, aviophobia, makes people panic. You can also try short visual exposure for this",
+     "text_hi": "तीसरा, प्लेन में उड़ना, एवीओफोबिया, लोग को पैनिक होता। इसके लिए भी आप शॉर्ट विज़ुअल एक्सपोज़र ट्राय कर सकते हैं",
+     "emphasis": ""
+    }
+   ],
+   "description": "A quick guide on how specific phobias like spider, claustrophobia, and flight fear affect daily life and simple daily exposure tricks to reduce them. Learn a three‑step mini‑plan in under a minute.",
+   "hashtags": [
+    "#Phobia",
+    "#MentalHealth",
+    "#AnxietyTips",
+    "#SelfHelp",
+    "#Psychology",
+    "#Shorts"
+   ],
+   "audit": {
+    "score": 70,
+    "hook": 85,
+    "retention": 70,
+    "specificity": 50,
+    "safety_ok": true,
+    "fixes": [
+     "Add a teasing question in scene 3 to create an open loop (e.g., \"Aapko pata hai ye fear kaise kam ho sakta hai?\")",
+     "Include an Indian student or professional scenario, like a college exam or office meeting, to increase relevance",
+     "End with a direct personal action for the viewer, e.g., \"Aaj hi 5‑second exposure exercise try karo\"",
+     "Ensure each beat (2‑3 scenes) ends with a quick takeaway or promise to keep momentum"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-08T22:20:12",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-08T22:20:12",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-08T22:20:32",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-08T22:34:08",
+   "provider": "",
+   "note": "How to Beat Specific Phobias – 60 Sec Tips"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-08T22:20:03",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Specific Phobias ko Kaise Beat Karein – 60 Sec Tips\",\"title_en\":\"How to Beat Specific Phobias – 60 Sec Tips\",\""
+  },
+  {
+   "at": "2026-11-08T22:20:05",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"score\":70,\"hook\":85,\"retention\":70,\"specificity\":50,\"safety_ok\":true,\"fixes\":[\"Add a teasing question in scene 3 to cr"
+  },
+  {
+   "at": "2026-11-08T22:20:12",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Specific Phobias ko Kaise Beat Karein – 60 Sec Tips\",\"title_en\":\"How to Beat Specific Phobias – 60 Sec Tips\",\""
+  },
+  {
+   "at": "2026-11-08T22:34:08",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"5 Quick Hacks to Calm Your Arachnophobia in 60 Seconds\",\"How to Beat Claustrophobia: 60‑Sec Simple Steps\",\"S"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}
