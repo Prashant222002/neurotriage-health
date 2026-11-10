@@ -1,0 +1,96 @@
+{
+ "key": "2026-11-10",
+ "kind": "short",
+ "created": "2026-11-10T01:41:51",
+ "request": {
+  "kind": "short",
+  "mode": "awareness",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Psychologist vs Psychiatrist vs Counsellor: Who to See for What",
+  "verified": [],
+  "sources": [],
+  "level": "unstructured",
+  "hook": "The harsh truth: 70 % of students waste weeks looking for the wrong mental‑health professional. Here’s the three mistakes you’re probably making and how to fix them in 60 seconds.",
+  "tip": "Create a Help‑Match Sheet: write your main symptom, match it to the appropriate professional, and schedule a brief 15‑minute intake call.",
+  "dropped": [
+   "Psychiatrists are medical doctors who can prescribe medication (unsupported)",
+   "Psychologists hold a PhD or PsyD and provide evidence‑based therapy (unsupported)",
+   "Counsellors typically have a bachelor’s or master’s degree and offer short‑term support and skill‑bu (unsupported)",
+   "45% of students first see a counsellor for academic stress, and 30% of those later need psychiatric  (unsupported)",
+   "Cognitive‑behavioral therapy reduces anxiety scores by about 35% in university students (unsupported)",
+   "Only psychiatrists and some licensed clinical psychologists can admit patients for inpatient care (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {},
+ "handoff": [
+  {
+   "at": "2026-11-10T01:42:34",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{ \"title\": \"Psychologist, Psychiatrist ya Counsellor? Kaun Dekhega Tumhara Problem\", \"title_en\": \"Psychologist vs Psychi"
+  },
+  {
+   "at": "2026-11-10T01:42:41",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Psychologist vs Psychiatrist vs Counsellor: Kaun Dekhega Tumhara Problem\",\"title_en\":\"Psychologist vs Psychiat"
+  },
+  {
+   "at": "2026-11-10T01:42:48",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Psychologist vs Psychiatrist vs Counsellor: Kaun Dekhega Tumhara Problem\",\"title_en\":\"Psychologist vs Psychiat"
+  },
+  {
+   "at": "2026-11-10T01:45:11",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Psychologist vs Psychiatrist vs Counsellor: Kaun Dekhega Tumhara Problem\",\"title_en\":\"Psychologist vs Psychiat"
+  },
+  {
+   "at": "2026-11-10T01:47:47",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Psychologist vs Psychiatrist vs Counsellor: Kaun Dekhega Tumhara Problem\",\"title_en\":\"Psychologist vs Psychiat"
+  },
+  {
+   "at": "2026-11-10T01:48:22",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{ \"title\": \"Psychologist vs Psychiatrist vs Counsellor: Kaun Dekhega Tumhara Problem\", \"title_en\": \"Psychologist vs Psyc"
+  },
+  {
+   "at": "2026-11-10T01:48:35",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{ \"title\": \"Psychologist vs Psychiatrist vs Counsellor: Kaun Dekhega Tumhara Problem\", \"title_en\": \"Psychologist vs Psyc"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "script"
+}

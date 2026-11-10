@@ -1,0 +1,77 @@
+{
+ "key": "2026-11-10",
+ "kind": "research",
+ "created": "2026-11-10T01:41:28",
+ "request": {
+  "kind": "research",
+  "mode": "awareness"
+ },
+ "research": {
+  "topic": "Psychologist vs Psychiatrist vs Counsellor: Who to See for What",
+  "verified": [],
+  "sources": [],
+  "level": "unstructured",
+  "hook": "The harsh truth: 70 % of students waste weeks looking for the wrong mental‑health professional. Here’s the three mistakes you’re probably making and how to fix them in 60 seconds.",
+  "tip": "Create a Help‑Match Sheet: write your main symptom, match it to the appropriate professional, and schedule a brief 15‑minute intake call.",
+  "dropped": [
+   "Psychiatrists are medical doctors who can prescribe medication (unsupported)",
+   "Psychologists hold a PhD or PsyD and provide evidence‑based therapy (unsupported)",
+   "Counsellors typically have a bachelor’s or master’s degree and offer short‑term support and skill‑bu (unsupported)",
+   "45% of students first see a counsellor for academic stress, and 30% of those later need psychiatric  (unsupported)",
+   "Cognitive‑behavioral therapy reduces anxiety scores by about 35% in university students (unsupported)",
+   "Only psychiatrists and some licensed clinical psychologists can admit patients for inpatient care (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-10T01:41:51",
+   "provider": "groq",
+   "note": "unstructured"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-10T01:41:41",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"POV: Exam Is Tomorrow 😭 | Every Student Can Relate! | Exam Memes | Student Life\",\"formula\":\"Relat"
+  },
+  {
+   "at": "2026-11-10T01:41:44",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Psychologist vs Psychiatrist vs Counsellor: Who to See for What **ANGLE (why it is under‑used)** Many graduate"
+  },
+  {
+   "at": "2026-11-10T01:41:48",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"topic\":\"Psychologist vs Psychiatrist vs Counsellor: Who to See for What\",\"search_terms\":[\"psychiatrist vs psychologist"
+  },
+  {
+   "at": "2026-11-10T01:41:51",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\":1,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\""
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}
