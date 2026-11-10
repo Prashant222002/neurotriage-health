@@ -87,6 +87,54 @@
    "model": "openai/gpt-oss-120b",
    "key": "GROQ_API_KEY",
    "summary": "{ \"title\": \"Psychologist vs Psychiatrist vs Counsellor: Kaun Dekhega Tumhara Problem\", \"title_en\": \"Psychologist vs Psyc"
+  },
+  {
+   "at": "2026-11-10T02:55:04",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Psychologist vs Psychiatrist vs Counsellor: Kaun Dekhega Tumhara Problem\",\"title_en\":\"Psychologist vs Psychiat"
+  },
+  {
+   "at": "2026-11-10T02:58:06",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{ \"title\": \"Psychologist vs Psychiatrist vs Counsellor: Kaun Dekhega Tumhara Problem\", \"title_en\": \"Psychologist vs Psyc"
+  },
+  {
+   "at": "2026-11-10T02:58:27",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{ \"title\": \"Psychologist vs Psychiatrist vs Counsellor: Kaun Dekhega Tumhara Problem\", \"title_en\": \"Psychologist vs Psyc"
+  },
+  {
+   "at": "2026-11-10T03:00:43",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Psychologist vs Psychiatrist vs Counsellor: Kaun Dekhega Tumhara Problem\",\"title_en\":\"Psychologist vs Psychiat"
+  },
+  {
+   "at": "2026-11-10T03:00:56",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{ \"title\": \"Psychologist vs Psychiatrist vs Counsellor: Kaun Dekhega Tumhara Problem\", \"title_en\": \"Psychologist vs Psyc"
+  },
+  {
+   "at": "2026-11-10T03:01:03",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"Psychologist vs Psychiatrist vs Counsellor: Kaun Dekhega Tumhara Problem\",\"title_en\":\"Psychologist vs Psychiat"
   }
  ],
  "pending": [],
