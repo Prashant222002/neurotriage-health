@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-10-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-10T10:01:31+05:30",
+  "publish_at": "2026-11-11T10:00+05:30",
+  "publish_at_utc": "2026-11-11T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-10-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "Psychologist vs Psychiatrist vs Counsellor: Who to See for What",
+    "yt_description": "A quick 45‑second guide for students to know when to see a psychiatrist, psychologist, or counsellor, with three common mistakes and a simple Help‑Match Sheet tip.\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\nIf you are struggling, India's free 24x7 helpline Tele-MANAS: 14416.\n\n#MentalHealth #StudentLife #Psychology #Psychiatry #Counselling #Shorts",
+    "ig_caption": "A quick 45‑second guide for students to know when to see a psychiatrist, psychologist, or counsellor, with three common mistakes and a simple Help‑Match Sheet tip.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#MentalHealth #StudentLife #Psychology #Psychiatry #Counselling",
+    "hashtags": [
+      "#MentalHealth",
+      "#StudentLife",
+      "#Psychology",
+      "#Psychiatry",
+      "#Counselling",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "0gMtX1chxHo",
+        "url": "https://youtube.com/watch?v=0gMtX1chxHo",
+        "scheduled": true
+      },
+      "at": "2026-11-10T04:31:35+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-10T04:31:35+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-10T04:31:35+00:00"
+    }
+  },
+  "status": "pending"
+}

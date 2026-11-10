@@ -165,11 +165,12 @@
   ],
   "Specific phobias": [
    "THE 3 AM QUESTIONS: answer the 3 things people secretly search at night about it"
+  ],
+  "Psychologist vs psychiatrist vs counsellor: who to see for what": [
+   "COMMON MISTAKES: 3 things people get wrong about it"
   ]
  },
- "reserved": {
-  "Psychologist vs psychiatrist vs counsellor: who to see for what": 1794274888.466084
- },
- "slot": 5,
+ "reserved": {},
+ "slot": 6,
  "migrated_v3": true
 }

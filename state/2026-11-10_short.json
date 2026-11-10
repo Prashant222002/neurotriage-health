@@ -24,13 +24,182 @@
   ]
  },
  "script": {
-  "locked": false,
-  "version": 0,
-  "hash": "",
-  "data": null,
-  "history": []
+  "locked": true,
+  "version": 1,
+  "hash": "dddfbbc14ff1f04e",
+  "data": {
+   "title": "Psychologist vs Psychiatrist vs Counsellor: Kaun Dekhega Tumhara Problem",
+   "title_en": "Psychologist vs Psychiatrist vs Counsellor: Who to See for What",
+   "formula": "Harsh truth",
+   "kicker": "MENTAL HELP",
+   "hook_text": "70% students waste time on wrong mental‑health help",
+   "scenes": [
+    {
+     "text": "70% students galat mental‑health professional pe time waste karte hain.",
+     "queries": [
+      "student looking confused",
+      "clock ticking",
+      "calendar pages"
+     ],
+     "text_en": "Seventy percent of students waste time on the wrong mental‑health professional.",
+     "text_hi": "७०% छात्रों गलत मेंटल‑हेल्थ प्रोफेशनल पे टाइम वेस्ट करते हैं।",
+     "emphasis": "['70%','STUDENTS','WRONG']"
+    },
+    {
+     "text": "JEE/NEET ke exam stress se leke burnout tak, sabko confusion hota hai.",
+     "queries": [
+      "library stress",
+      "student with books",
+      "coffee cup study"
+     ],
+     "text_en": "From JEE/NEET exam stress to burnout, everyone feels confused.",
+     "text_hi": "JEE/NEET के एग्जाम स्ट्रेस से लेकर बर्नआउट तक, सबको कन्फ्यूजन होता है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Psychiatrist, psychologist, counsellor teen alag roles hain. Par kaunse professional kaunse problem solve karta hai?",
+     "queries": [
+      "three professional icons",
+      "medical symbols",
+      "therapy couch"
+     ],
+     "text_en": "Psychiatrist, psychologist, and counsellor are three different roles. But which professional solves which problem?",
+     "text_hi": "साइकीयाट्रिस्ट, साइकोलॉजिस्ट, काउंसलर तीन अलग रोल्स हैं। पर कौनसे प्रोफेशनल कौनसे प्रॉब्लम सॉल्व करता है?",
+     "emphasis": ""
+    },
+    {
+     "text": "Galat socho ki counsellor medicines prescribe kar sakta hai.",
+     "queries": [
+      "prescription pad crossed",
+      "counsellor desk",
+      "no medication sign"
+     ],
+     "text_en": "Don’t think a counsellor can prescribe medicines.",
+     "text_hi": "गलत सोचो कि काउंसलर मेडिसिन्स प्रिस्क्राइब कर सकता है।",
+     "emphasis": "['GALAT','PRESCRIBE']"
+    },
+    {
+     "text": "Psychologist ko hospital admit karne ka authority nahi hoti.",
+     "queries": [
+      "hospital door no entry",
+      "psychologist office",
+      "closed sign"
+     ],
+     "text_en": "Psychologists don’t have the authority to admit patients to hospital.",
+     "text_hi": "साइकोलॉजिस्ट को हॉस्पिटल एडमिट करने का अथॉरिटी नहीं होती।",
+     "emphasis": ""
+    },
+    {
+     "text": "Sabka cost same nahi, Star Health ya ICICI Lombard jaise insurance ya Ayushman Bharat scheme alag hoti hai.",
+     "queries": [
+      "price tags comparison",
+      "insurance card",
+      "billing desk"
+     ],
+     "text_en": "Costs aren’t the same and insurance like Star Health, ICICI Lombard, or the Ayushman Bharat scheme differ.",
+     "text_hi": "सबका कॉस्ट सेम नहीं, स्टार हेल्थ या आईसीआईसीआई लोम्बार्ड जैसे इंश्योरेंस या आयुष्मान भारत स्कीम अलग होती है।",
+     "emphasis": "['COST','INSURANCE']"
+    },
+    {
+     "text": "Psychiatrist MD hai, medication prescribe kar sakta hai.",
+     "queries": [
+      "doctor with stethoscope",
+      "medicine bottle",
+      "prescription writing"
+     ],
+     "text_en": "A psychiatrist is an MD and can prescribe medication.",
+     "text_hi": "साइकीयाट्रिस्ट एमडी है, मेडिकेशन प्रिस्क्राइब कर सकता है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Psychologist therapy deta hai, research‑based techniques use karta hai.",
+     "queries": [
+      "therapy session",
+      "cognitive behavioral therapy",
+      "brain diagram"
+     ],
+     "text_en": "Psychologists provide therapy using research‑based techniques.",
+     "text_hi": "साइकोलॉजिस्ट थेरेपी देता है, रिसर्च‑बेस्ड टेक्निक्स यूज़ करता है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Counsellor short‑term skill building aur life‑coach jaisa hota hai.",
+     "queries": [
+      "career counseling",
+      "skill workshop",
+      "coach talking"
+     ],
+     "text_en": "Counsellors focus on short‑term skill building and act like life coaches.",
+     "text_hi": "काउंसलर शॉर्ट‑टर्म स्किल बिल्डिंग और लाइफ‑कोच जैसा होता है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Apni Help‑Match Sheet banao, symptom likho, best professional choose karo.",
+     "queries": [
+      "hand filling sheet",
+      "checklist paper",
+      "pen writing"
+     ],
+     "text_en": "Create your Help‑Match Sheet, write the symptom, choose the best professional.",
+     "text_hi": "अपनी हेल्प‑मैच शीट बनाओ, सिंप्टम लिखो, बेस्ट प्रोफेशनल चुनो।",
+     "emphasis": "['HELP‑MATCH','CHOOSE']"
+    },
+    {
+     "text": "Ab comment karo kaunse mistake tumne ki, aur save karo.",
+     "queries": [
+      "comment icon",
+      "save button",
+      "phone notification"
+     ],
+     "text_en": "Now comment which mistake you made and save this video.",
+     "text_hi": "अब कमेंट करो कौनसे मिस्टेक तुमने की, और सेव करो।",
+     "emphasis": ""
+    }
+   ],
+   "description": "A quick 45‑second guide for students to know when to see a psychiatrist, psychologist, or counsellor, with three common mistakes and a simple Help‑Match Sheet tip.",
+   "hashtags": [
+    "#MentalHealth",
+    "#StudentLife",
+    "#Psychology",
+    "#Psychiatry",
+    "#Counselling",
+    "#StudyTips"
+   ],
+   "audit": {
+    "score": 62,
+    "hook": 30,
+    "retention": 55,
+    "specificity": 45,
+    "safety_ok": true,
+    "fixes": [
+     "Trim the hook to ≤9 words, e.g., \"70% students waste time on wrong mental‑health help\"",
+     "Add an open‑loop question in scene 3 like \"Par kaunse professional kaunse problem solve karta hai?\"",
+     "Insert a specific Indian exam stress example (JEE/NEET) in scene 2",
+     "Mention insurance providers or schemes common in India for clarity"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-10T04:23:32",
+  "source": "groq"
  },
- "stages": {},
+ "stages": {
+  "script": {
+   "at": "2026-11-10T04:23:32",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-10T04:24:51",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-10T04:31:31",
+   "provider": "",
+   "note": "Psychologist vs Psychiatrist vs Counsellor: Who to See for W"
+  }
+ },
  "handoff": [
   {
    "at": "2026-11-10T01:42:34",
@@ -135,10 +304,50 @@
    "model": "openai/gpt-oss-120b",
    "key": "GROQ_API_KEY_3",
    "summary": "{\"title\":\"Psychologist vs Psychiatrist vs Counsellor: Kaun Dekhega Tumhara Problem\",\"title_en\":\"Psychologist vs Psychiat"
+  },
+  {
+   "at": "2026-11-10T04:23:11",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Psychologist vs Psychiatrist vs Counsellor: Kaun Dekhega Tumhara Problem\",\"title_en\":\"Psychologist vs Psychiat"
+  },
+  {
+   "at": "2026-11-10T04:23:25",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{ \"title\": \"Psychologist vs Psychiatrist vs Counsellor: Kaun Dekhega Tumhara Problem\", \"title_en\": \"Psychologist vs Psyc"
+  },
+  {
+   "at": "2026-11-10T04:23:26",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"score\":62,\"hook\":30,\"retention\":55,\"specificity\":45,\"safety_ok\":true,\"fixes\":[\"Trim the hook to ≤9 words, e.g., \\\"70% "
+  },
+  {
+   "at": "2026-11-10T04:23:32",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Psychologist vs Psychiatrist vs Counsellor: Kaun Dekhega Tumhara Problem\",\"title_en\":\"Psychologist vs Psychiat"
+  },
+  {
+   "at": "2026-11-10T04:31:31",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"70% Med Students Waste Time on Wrong Pro – Who to See?\",\"Psychologist, Psychiatrist, Counsellor – Kaun Hai B"
   }
  ],
  "pending": [],
  "errors": [],
  "approved_changes": [],
- "stage_now": "script"
+ "stage_now": "voice"
 }
