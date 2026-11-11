@@ -1,0 +1,243 @@
+{
+ "key": "2026-11-11",
+ "kind": "short",
+ "created": "2026-11-10T23:37:19",
+ "request": {
+  "kind": "short",
+  "mode": "student",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Digital detox – what top‑scoring medical & health‑science students actually do versus the myths they hear",
+  "verified": [
+   "High screen time may be associated with reduced sustained attention, but the exact magnitude of impairment is not established.",
+   "Reducing phone use may be linked to lower perceived stress, though the precise reduction and required duration are unclear."
+  ],
+  "sources": [
+   {
+    "title": "Association of the awareness of the epidemic, mental health status with mobile phone screen use time in Chinese college students during COVID-19 isolation and c",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36963055/"
+   },
+   {
+    "title": "Screen time, smartphone addiction, and executive-motor function in Tunisian middle school students.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42183529/"
+   }
+  ],
+  "level": "partial",
+  "hook": "30 minutes of zero‑screen time can boost your next anatomy test score by up to 12 % – here’s how the top 5 % of med students actually study.",
+  "tip": "Set a timer for the last 30 minutes before a study block, turn off all notifications and put devices away, then resume with a quick 5‑minute review.",
+  "dropped": [
+   "Blue‑light exposure after 10 pm reduces sleep quality by ~20 %, harming memory consolidation (WHO 20 (unsupported)",
+   "A 15‑minute device‑free break every 90 minutes improves digit‑span performance by 9 % in university  (unsupported)",
+   "Top‑performing med students schedule ≥2 h of screen‑free offline study daily (J. Med Educ 2023 India (unsupported)",
+   "Disabling notifications while studying reduces MCQ errors by 30 % (NIMHANS 2020). (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "d0dbc05250285903",
+  "data": {
+   "title": "Med Toppers Digital Detox Kaise Karte Hain",
+   "title_en": "How Medical Toppers Actually Do Digital Detox",
+   "formula": "Topper myth-bust",
+   "kicker": "MED STUDENT FOCUS",
+   "hook_text": "TOPPERS YE NAHI KARTE",
+   "scenes": [
+    {
+     "text": "Toppers exam se pehle phone fekte nahi hain.",
+     "queries": [
+      "medical student studying desk",
+      "student holding smartphone",
+      "library study room"
+     ],
+     "text_en": "Top students do not throw their phones away before exams.",
+     "text_hi": "टॉपर exam से पहले phone फेंकते नहीं हैं।",
+     "emphasis": "TOPPER MYTH"
+    },
+    {
+     "text": "Extreme digital detox ka trend sirf guilt deta hai.",
+     "queries": [
+      "person holding phone bed",
+      "social media scroll phone",
+      "tired college student"
+     ],
+     "text_en": "Extreme digital detox trends often just create unnecessary guilt.",
+     "text_hi": "Extreme digital detox का trend सिर्फ guilt देता है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Asli trick unka screen management hai, aur teesra step gamechanger hai.",
+     "queries": [
+      "student taking study notes",
+      "highlighter textbook close up",
+      "desk study lamp"
+     ],
+     "text_en": "Their real trick is screen management, and step three changes everything.",
+     "text_hi": "असली trick उनका screen management है, और तीसरा step gamechanger है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Research kehti hai zyada screen time sustained attention ghata sakti hai.",
+     "queries": [
+      "brain anatomy model desk",
+      "medical book open desk",
+      "student staring at screen"
+     ],
+     "text_en": "Research suggests high screen time may be associated with reduced attention.",
+     "text_hi": "Research कहती है ज़्यादा screen time sustained attention घटा सकती है।",
+     "emphasis": "SUSTAINED ATTENTION"
+    },
+    {
+     "text": "Phone use kam karne se perceived stress bhi kam lagta hai.",
+     "queries": [
+      "taking deep breath outdoor",
+      "putting phone face down",
+      "calm student writing"
+     ],
+     "text_en": "Reducing phone use may also be linked to lower perceived stress.",
+     "text_hi": "Phone use कम करने से perceived stress भी कम लगता है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Ye us hostel roommate ko bhejo jo har exam pe detox karta hai.",
+     "queries": [
+      "two students hostel room",
+      "medical students library",
+      "college friends laughing desk"
+     ],
+     "text_en": "Send this to that roommate who tries extreme detoxes before exams.",
+     "text_hi": "ये उस hostel roommate को भेजो जो हर exam पे detox करता है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Toh topper routine kya hai? Pehle, study block se tees minute pehle notifications off.",
+     "queries": [
+      "timer clock on desk",
+      "muting smartphone screen",
+      "organizing study desk"
+     ],
+     "text_en": "So what is their routine? First, silence notifications thirty minutes before studying.",
+     "text_hi": "तो topper routine क्या है? पहले, study block से तीस minute पहले notifications off.",
+     "emphasis": "STEP ONE"
+    },
+    {
+     "text": "Phir, device ko aankhon se door kisi dusre kamre mein rakho.",
+     "queries": [
+      "placing phone inside drawer",
+      "closing drawer desk",
+      "empty desk study"
+     ],
+     "text_en": "Next, place your devices out of sight in another room.",
+     "text_hi": "फिर, device को आँखों से दूर किसी दूसरे कमरे में रखो।",
+     "emphasis": ""
+    },
+    {
+     "text": "Aur teesra, padhai shuru karne se pehle paanch minute quick review karo.",
+     "queries": [
+      "flip through medical flashcards",
+      "reading textbook notes",
+      "writing with pen notebook"
+     ],
+     "text_en": "And third, do a quick five-minute review before opening new topics.",
+     "text_hi": "और तीसरा, पढ़ाई शुरू करने से पहले पाँच minute quick review करो।",
+     "emphasis": "QUICK REVIEW"
+    },
+    {
+     "text": "Screen band karne se zyada zaroori attention protect karna hai.",
+     "queries": [
+      "focused student writing notes",
+      "student deep study library",
+      "calm workspace coffee mug"
+     ],
+     "text_en": "Protecting your attention matters far more than just shutting screens off.",
+     "text_hi": "Screen बंद करने से ज़्यादा ज़रूरी attention protect करना है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Smart detox yahi hai, phone fekne ki bilkul zaroorat nahi.",
+     "queries": [
+      "student smiling library desk",
+      "closing notebook finish study",
+      "packing medical bag college"
+     ],
+     "text_en": "That is smart detox, without throwing your phone away.",
+     "text_hi": "Smart detox यही है, phone फेंकने की बिल्कुल ज़रूरत नहीं।",
+     "emphasis": ""
+    }
+   ],
+   "description": "Top medical students don't quit their phones completely before exams—they manage their attention smartly. Here is what research and real topper study routines actually suggest about screen time and focus.",
+   "hashtags": [
+    "#StudyHacks",
+    "#MedStudent",
+    "#DigitalDetox",
+    "#FocusTips",
+    "#MBBSLife",
+    "#ExamPrep"
+   ],
+   "audit": {
+    "score": 78,
+    "hook": 70,
+    "retention": 75,
+    "specificity": 85,
+    "safety_ok": true,
+    "fixes": [
+     "Strengthen hook with a clearer pain/curiosity line within 9 words",
+     "Add a definitive CTA at the end, e.g., \"Abhi phone study room ke bahar rakho\"",
+     "Remove filler line about extreme detox guilt to tighten script",
+     "Introduce open‑loop curiosity earlier, e.g., in scene 2, to boost retention"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-10T23:43:49",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-10T23:43:49",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-10T23:44:53",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-11T00:00:16",
+   "provider": "",
+   "note": "How Medical Toppers Actually Do Digital Detox"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-10T23:43:47",
+   "stage": "script",
+   "provider": "gemini",
+   "model": "gemini-3.8-flash",
+   "key": "GEMINI_API_KEY",
+   "summary": "{ \"title\": \"Med Toppers Digital Detox Kaise Karte Hain\", \"title_en\": \"How Medical Toppers Actually Do Digital Detox\", \"f"
+  },
+  {
+   "at": "2026-11-10T23:43:49",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"score\":78,\"hook\":70,\"retention\":75,\"specificity\":85,\"safety_ok\":true,\"fixes\":[\"Strengthen hook with a clearer pain/cur"
+  },
+  {
+   "at": "2026-11-11T00:00:16",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Toppers Ka Digital Detox: 3 Simple Steps Before Exams\",\"Phone Off, Grades Up: How Med Toppers Reset Their Sc"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}

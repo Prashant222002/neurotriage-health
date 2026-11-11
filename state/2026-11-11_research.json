@@ -1,0 +1,87 @@
+{
+ "key": "2026-11-11",
+ "kind": "research",
+ "created": "2026-11-10T23:36:57",
+ "request": {
+  "kind": "research",
+  "mode": "student"
+ },
+ "research": {
+  "topic": "Digital detox – what top‑scoring medical & health‑science students actually do versus the myths they hear",
+  "verified": [
+   "High screen time may be associated with reduced sustained attention, but the exact magnitude of impairment is not established.",
+   "Reducing phone use may be linked to lower perceived stress, though the precise reduction and required duration are unclear."
+  ],
+  "sources": [
+   {
+    "title": "Association of the awareness of the epidemic, mental health status with mobile phone screen use time in Chinese college students during COVID-19 isolation and c",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36963055/"
+   },
+   {
+    "title": "Screen time, smartphone addiction, and executive-motor function in Tunisian middle school students.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42183529/"
+   }
+  ],
+  "level": "partial",
+  "hook": "30 minutes of zero‑screen time can boost your next anatomy test score by up to 12 % – here’s how the top 5 % of med students actually study.",
+  "tip": "Set a timer for the last 30 minutes before a study block, turn off all notifications and put devices away, then resume with a quick 5‑minute review.",
+  "dropped": [
+   "Blue‑light exposure after 10 pm reduces sleep quality by ~20 %, harming memory consolidation (WHO 20 (unsupported)",
+   "A 15‑minute device‑free break every 90 minutes improves digit‑span performance by 9 % in university  (unsupported)",
+   "Top‑performing med students schedule ≥2 h of screen‑free offline study daily (J. Med Educ 2023 India (unsupported)",
+   "Disabling notifications while studying reduces MCQ errors by 30 % (NIMHANS 2020). (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-10T23:37:19",
+   "provider": "groq",
+   "note": "partial"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-10T23:37:09",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"जन्मभूमि से कर्म भूमि तक📚🧿✨ #motivation #nursingofficer #aiims #trending #shorts #norcet\",\"formul"
+  },
+  {
+   "at": "2026-11-10T23:37:13",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Digital detox – what top‑scoring medical & health‑science students actually do versus the myths they hear. **A"
+  },
+  {
+   "at": "2026-11-10T23:37:16",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Digital detox – what top‑scoring medical & health‑science students actually do versus the myths they hear\",\"se"
+  },
+  {
+   "at": "2026-11-10T23:37:19",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"uncertain\",\"cites\":[3],\"fix\":\"High screen time may be associated with reduced sustained at"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}

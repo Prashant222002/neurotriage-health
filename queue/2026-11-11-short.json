@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-11-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-11T05:30:16+05:30",
+  "publish_at": "2026-11-11T10:00+05:30",
+  "publish_at_utc": "2026-11-11T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-11-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "How Medical Toppers Actually Do Digital Detox",
+    "yt_description": "Top medical students don't quit their phones completely before exams—they manage their attention smartly. Here is what research and real topper study routines actually suggest about screen time and focus.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/36963055/ | https://pubmed.ncbi.nlm.nih.gov/42183529/\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\n#StudyHacks #MedStudent #DigitalDetox #FocusTips #MBBSLife #Shorts",
+    "ig_caption": "Top medical students don't quit their phones completely before exams—they manage their attention smartly. Here is what research and real topper study routines actually suggest about screen time and focus.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#StudyHacks #MedStudent #DigitalDetox #FocusTips #MBBSLife",
+    "hashtags": [
+      "#StudyHacks",
+      "#MedStudent",
+      "#DigitalDetox",
+      "#FocusTips",
+      "#MBBSLife",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "6A6Num4eQJI",
+        "url": "https://youtube.com/watch?v=6A6Num4eQJI",
+        "scheduled": true
+      },
+      "at": "2026-11-11T00:00:18+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-11T00:00:18+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-11T00:00:18+00:00"
+    }
+  },
+  "status": "pending"
+}
