@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-13-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-13T05:27:10+05:30",
+  "publish_at": "2026-11-13T10:00+05:30",
+  "publish_at_utc": "2026-11-13T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-13-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "5-Minute AI Therapist Stress Solution",
+    "yt_description": "A quick guide on how AI mental‑health chatbots can help you manage stress in just five minutes, their limits, and safe usage tips.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/40882177/ | https://pubmed.ncbi.nlm.nih.gov/30545815/ | https://pubmed.ncbi.nlm.nih.gov/41195352/ | https://pubmed.ncbi.nlm.nih.gov/42853564/\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\nIf you are struggling, India's free 24x7 helpline Tele-MANAS: 14416.\n\n#AIHealth #MentalWellness #StressRelief #Chatbot #CBT #Shorts",
+    "ig_caption": "A quick guide on how AI mental‑health chatbots can help you manage stress in just five minutes, their limits, and safe usage tips.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#AIHealth #MentalWellness #StressRelief #Chatbot #CBT",
+    "hashtags": [
+      "#AIHealth",
+      "#MentalWellness",
+      "#StressRelief",
+      "#Chatbot",
+      "#CBT",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "mU8Sw-Kv5Ys",
+        "url": "https://youtube.com/watch?v=mU8Sw-Kv5Ys",
+        "scheduled": true
+      },
+      "at": "2026-11-12T23:57:14+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-12T23:57:14+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-12T23:57:14+00:00"
+    }
+  },
+  "status": "pending"
+}
