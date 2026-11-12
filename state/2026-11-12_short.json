@@ -1,0 +1,303 @@
+{
+ "key": "2026-11-12",
+ "kind": "short",
+ "created": "2026-11-12T00:54:55",
+ "request": {
+  "kind": "short",
+  "mode": "awareness",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Imposter Syndrome – “I’m not really good enough, I’m just faking it”",
+  "verified": [
+   "Imposter syndrome is a persistent self‑doubt and fear of being exposed as a fraud despite evidence of competence.",
+   "A substantial proportion of high‑achieving individuals report occasional imposter feelings, and a notable minority experience chronic symptoms, though exact percentages vary across studies.",
+   "It is a psychological pattern, not a clinical diagnosis.",
+   "Chronic imposter feelings may be associated with reduced motivation and increased burnout, as observed in some high‑pressure fields, though evidence beyond medical education is limited.",
+   "Individuals experiencing imposter feelings are often high achievers and may exhibit a strong orientation toward learning, according to some studies."
+  ],
+  "sources": [
+   {
+    "title": "The impostor phenomenon construct in medical education: a meta-analysis of its prevalence and a critical appraisal of its measurement.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41801596/"
+   }
+  ],
+  "level": "verified",
+  "hook": "Myth: ‘If you’re feeling like a fraud, you just need to work harder.’ Fact: Your brain is actually playing tricks on you – and no amount of extra hours will fix it.",
+  "tip": "Keep an “Evidence Log” – write one concrete achievement after each task and review it weekly to counter the fraud narrative.",
+  "dropped": [
+   "fMRI studies show heightened activity in the anterior cingulate cortex and reduced activity in the v (unsupported)",
+   "Advice like “just work harder” is ineffective because imposter feelings stem from cognitive bias, no (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "07a5c82cc0b14422",
+  "data": {
+   "title": "Jab lage aap fraud ho, ye video zaroor dekho",
+   "title_en": "When you feel like a fraud, watch this video",
+   "formula": "Myth vs fact",
+   "kicker": "BRAIN SCIENCE",
+   "hook_text": "APNE KO FRAUD MAT SAMJHO",
+   "scenes": [
+    {
+     "text": "Kya aapko lagta hai aap fraud ho?",
+     "text_en": "Do you feel like you are a fraud?",
+     "queries": [
+      "person looking worried",
+      "student at desk",
+      "office worker"
+     ],
+     "emphasis": "FRAUD HO?"
+    },
+    {
+     "text": "Fact ye hai ki tumhara brain tricks play kar raha hai, aur ek simple solution aapko aage batayenge.",
+     "text_en": "The fact is your brain plays tricks, and we’ll reveal a simple solution soon.",
+     "queries": [
+      "brain animation",
+      "thinking person",
+      "mind illustration"
+     ],
+     "emphasis": "TRICKS PLAY"
+    },
+    {
+     "text": "Ye self‑doubt persistent hota hai, chahe evidence ho ki tum competent ho.",
+     "text_en": "This self‑doubt persists even when evidence shows you are competent.",
+     "queries": [
+      "student with certificate",
+      "professional smiling",
+      "person reflecting"
+     ],
+     "emphasis": "PERSISTENT"
+    },
+    {
+     "text": "Bade high‑achievers bhi aksar aisi feelings experience karte hain.",
+     "text_en": "Many high‑achieving individuals often experience these feelings.",
+     "queries": [
+      "busy office",
+      "medical students",
+      "library"
+     ],
+     "emphasis": "HIGH ACHIEVERS"
+    },
+    {
+     "text": "Ye koi clinical diagnosis nahi, bas ek psychological pattern hai.",
+     "text_en": "It is not a clinical diagnosis, just a psychological pattern.",
+     "queries": [
+      "psychology book",
+      "notes on whiteboard",
+      "study desk"
+     ],
+     "emphasis": "PSYCHOLOGICAL PATTERN"
+    },
+    {
+     "text": "Aise feelings ke baare mein kisi trusted dost ya counselor se baat karna madadgar ho sakta hai.",
+     "text_en": "Talking about these feelings with a trusted friend or counselor can help.",
+     "queries": [
+      "two friends talking",
+      "counselor session",
+      "supportive conversation"
+     ],
+     "emphasis": "TALK TO TRUSTED PERSON"
+    },
+    {
+     "text": "Ek engineering student, jo project deadline se pressure mein hai, aksar sochta hai ki woh qualify nahi hai.",
+     "text_en": "An engineering student under project deadline pressure often feels unqualified.",
+     "queries": [
+      "engineering student laptop",
+      "college campus",
+      "project work"
+     ],
+     "emphasis": "ENGINEERING STUDENT"
+    },
+    {
+     "text": "Ek junior manager, meeting mein ideas rakhte hue, darrta hai ki sab usko fraud samjhenge.",
+     "text_en": "A junior manager presenting ideas fears everyone will think they’re a fraud.",
+     "queries": [
+      "junior manager meeting",
+      "office presentation",
+      "colleagues listening"
+     ],
+     "emphasis": "JUNIOR MANAGER"
+    },
+    {
+     "text": "High‑pressure fields mein chronic feelings burnout aur motivation kam kar sakti hain, lekin aise log learning ke liye strong orientation rakhte hain.",
+     "text_en": "In high‑pressure fields chronic feelings can cause burnout and lower motivation, yet such people often have a strong learning orientation.",
+     "queries": [
+      "tired worker",
+      "student reading textbook",
+      "online course"
+     ],
+     "emphasis": "BURNOUT & LEARNING"
+    },
+    {
+     "text": "Is fraud narrative ko har week counter karne ka ek simple tarika hai.",
+     "text_en": "There is a simple weekly method to counter this fraud narrative.",
+     "queries": [
+      "writing journal",
+      "planner",
+      "calendar"
+     ],
+     "emphasis": "SIMPLE TARIKA"
+    },
+    {
+     "text": "Ek Evidence Log banao aur har task ke baad apni achievement likho.",
+     "text_en": "Create an Evidence Log and write your achievement after each task.",
+     "queries": [
+      "writing checklist",
+      "bullet journal page",
+      "hand writing notes"
+     ],
+     "emphasis": "EVIDENCE LOG"
+    },
+    {
+     "text": "Jab bhi lage ki tum faking ho, apna evidence log weekly check karo.",
+     "text_en": "Whenever you feel you’re faking it, review your evidence log weekly.",
+     "queries": [
+      "reading notes smiling",
+      "person looking calendar",
+      "calm relaxed face"
+     ],
+     "emphasis": "WEEKLY CHECK"
+    }
+   ],
+   "description": "Understand why high-achieving students and professionals feel like frauds and learn how an evidence log helps counter self-doubt.",
+   "hashtags": [
+    "#impostersyndrome",
+    "#selfdoubt",
+    "#mentalhealth",
+    "#studentlife",
+    "#careeradvice",
+    "#psychology"
+   ],
+   "audit": {
+    "score": 45,
+    "hook": 20,
+    "retention": 50,
+    "specificity": 30,
+    "safety_ok": true,
+    "fixes": [
+     "Replace the first line with a <=9 word curiosity/pain hook like \"Kya aapko lagta hai aap fraud ho?\"",
+     "Swap filler scenes (6,7) for concrete Indian examples, e.g., an engineering student or junior manager facing imposter feelings",
+     "Add a teaser in scene 2 to create an open loop earlier, hinting at a simple solution later",
+     "Combine or trim redundant scenes to keep a new beat every 2‑3 scenes and improve retention"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-12T01:03:11",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-12T01:03:11",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-12T01:04:23",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-12T01:12:49",
+   "provider": "",
+   "note": "When you feel like a fraud, watch this video"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-12T00:55:01",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Imposter Syndrome? Kaam zyada karne se nahi hota fix\",\"title_en\":\"Imposter Syndrome? Working harder won’t fix "
+  },
+  {
+   "at": "2026-11-12T00:55:09",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"Imposter Syndrome? Kaam se nahi, dimaag ki chal\",\"title_en\":\"Imposter Syndrome? It's not work, it's your mind\""
+  },
+  {
+   "at": "2026-11-12T00:55:15",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"Imposter Syndrome? Kaam se nahi, dimaag ki chal\",\"title_en\":\"Imposter Syndrome? It's not work, it's your mind\""
+  },
+  {
+   "at": "2026-11-12T00:57:30",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{ \"title\": \"Imposter Syndrome? Kaam"
+  },
+  {
+   "at": "2026-11-12T00:57:44",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{ \"title\": \"Imposter Syndrome? Kaam ka pressure aur self-doubt ka sach\", \"title_en\": \"Imposter Syndrome? The truth about"
+  },
+  {
+   "at": "2026-11-12T00:57:58",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{ \"title\": \"Imposter Syndrome: Jab aapko lagta hai aap fraud ho\", \"title_en\": \"Imposter Syndrome: When you feel like a f"
+  },
+  {
+   "at": "2026-11-12T01:01:02",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_5",
+   "summary": "{ \"title\": \"Imposter Syndrome: Jab aapko lagta hai aap fraud ho\", \"title_en\": \"Imposter Syndrome: When you feel like a f"
+  },
+  {
+   "at": "2026-11-12T01:03:04",
+   "stage": "script",
+   "provider": "gemini",
+   "model": "gemini-3.5-flash-lite",
+   "key": "GEMINI_API_KEY",
+   "summary": "{ \"title\": \"Jab lage aap fraud ho, ye video zaroor dekho\", \"title_en\": \"When you feel like a fraud, watch this video\", \""
+  },
+  {
+   "at": "2026-11-12T01:03:06",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"score\":45,\"hook\":20,\"retention\":50,\"specificity\":30,\"safety_ok\":true,\"fixes\":[\"Replace the first line with a <=9 word "
+  },
+  {
+   "at": "2026-11-12T01:03:11",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Jab lage aap fraud ho, ye video zaroor dekho\",\"title_en\":\"When you feel like a fraud, watch this video\",\"formu"
+  },
+  {
+   "at": "2026-11-12T01:12:49",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Imposter Syndrome? 3 Simple Steps to Stop Feeling Like a Fraud\",\"Why Top Med Students Feel Like Fakes – And "
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}

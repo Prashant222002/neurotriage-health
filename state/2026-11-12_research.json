@@ -1,0 +1,84 @@
+{
+ "key": "2026-11-12",
+ "kind": "research",
+ "created": "2026-11-12T00:54:33",
+ "request": {
+  "kind": "research",
+  "mode": "awareness"
+ },
+ "research": {
+  "topic": "Imposter Syndrome – “I’m not really good enough, I’m just faking it”",
+  "verified": [
+   "Imposter syndrome is a persistent self‑doubt and fear of being exposed as a fraud despite evidence of competence.",
+   "A substantial proportion of high‑achieving individuals report occasional imposter feelings, and a notable minority experience chronic symptoms, though exact percentages vary across studies.",
+   "It is a psychological pattern, not a clinical diagnosis.",
+   "Chronic imposter feelings may be associated with reduced motivation and increased burnout, as observed in some high‑pressure fields, though evidence beyond medical education is limited.",
+   "Individuals experiencing imposter feelings are often high achievers and may exhibit a strong orientation toward learning, according to some studies."
+  ],
+  "sources": [
+   {
+    "title": "The impostor phenomenon construct in medical education: a meta-analysis of its prevalence and a critical appraisal of its measurement.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41801596/"
+   }
+  ],
+  "level": "verified",
+  "hook": "Myth: ‘If you’re feeling like a fraud, you just need to work harder.’ Fact: Your brain is actually playing tricks on you – and no amount of extra hours will fix it.",
+  "tip": "Keep an “Evidence Log” – write one concrete achievement after each task and review it weekly to counter the fraud narrative.",
+  "dropped": [
+   "fMRI studies show heightened activity in the anterior cingulate cortex and reduced activity in the v (unsupported)",
+   "Advice like “just work harder” is ineffective because imposter feelings stem from cognitive bias, no (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-12T00:54:55",
+   "provider": "groq",
+   "note": "verified"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-12T00:54:45",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"POV: Exam Is Tomorrow 😭 | Every Student Can Relate! | Exam Memes | Student Life\",\"formula\":\"Relat"
+  },
+  {
+   "at": "2026-11-12T00:54:49",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Imposter Syndrome – “I’m not really good enough, I’m just faking it” **ANGLE (why it is under‑used)** Most sho"
+  },
+  {
+   "at": "2026-11-12T00:54:51",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Imposter Syndrome – “I’m not really good enough, I’m just faking it”\",\"search_terms\":[\"imposter syndrome defin"
+  },
+  {
+   "at": "2026-11-12T00:54:55",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"supported\",\"cites\":[2],\"fix\":\"\"},{\"i\":1,\"verdict\":\"uncertain\",\"cites\":[2],\"fix\":\"A substan"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}

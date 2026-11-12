@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-12-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-12T06:42:49+05:30",
+  "publish_at": "2026-11-12T10:00+05:30",
+  "publish_at_utc": "2026-11-12T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-12-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "When you feel like a fraud, watch this video",
+    "yt_description": "Understand why high-achieving students and professionals feel like frauds and learn how an evidence log helps counter self-doubt.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/41801596/\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\nIf you are struggling, India's free 24x7 helpline Tele-MANAS: 14416.\n\n#impostersyndrome #selfdoubt #mentalhealth #studentlife #careeradvice #Shorts",
+    "ig_caption": "Understand why high-achieving students and professionals feel like frauds and learn how an evidence log helps counter self-doubt.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#impostersyndrome #selfdoubt #mentalhealth #studentlife #careeradvice",
+    "hashtags": [
+      "#impostersyndrome",
+      "#selfdoubt",
+      "#mentalhealth",
+      "#studentlife",
+      "#careeradvice",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "Ku_nkl7iRrk",
+        "url": "https://youtube.com/watch?v=Ku_nkl7iRrk",
+        "scheduled": true
+      },
+      "at": "2026-11-12T01:12:51+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-12T01:12:51+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-12T01:12:51+00:00"
+    }
+  },
+  "status": "pending"
+}
