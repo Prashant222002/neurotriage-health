@@ -1,0 +1,77 @@
+{
+ "key": "2026-11-14",
+ "kind": "research",
+ "created": "2026-11-13T23:45:01",
+ "request": {
+  "kind": "research",
+  "mode": "student"
+ },
+ "research": {
+  "topic": "Mock‑test analysis – why it sometimes stops boosting your scores",
+  "verified": [],
+  "sources": [],
+  "level": "unstructured",
+  "hook": "3 hidden reasons your mock‑tests aren’t helping – fix them in 60 seconds!",
+  "tip": "After each mock, spend 10 minutes on a three‑step “Error‑type Sprint”: categorize every wrong answer, prioritize the top two cost‑liest categories, and create a 30‑second flash‑card for each to review over the next three days.",
+  "dropped": [
+   "Retrieval practice works best when the test mimics the real exam format, improving long‑term retenti (unsupported)",
+   "Spaced‑review of mock results is more effective than a single post‑test review, with optimal spacing (unsupported)",
+   "Metacognitive reflection on errors raises subsequent scores by about 10% on average (Dunlosky et al. (unsupported)",
+   "High anxiety during a mock impairs encoding of feedback, reducing consolidation of corrective inform (unsupported)",
+   "Focusing only on raw scores hides skill gaps; detailed error‑type coding predicts a 15% larger gain  (unsupported)",
+   "Using a single‑source mock limits exposure to varied question styles, reducing transferability to th (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-13T23:45:22",
+   "provider": "groq",
+   "note": "unstructured"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-13T23:45:14",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"Studying until the sunrise 🤍📚☀️| STUDY VLOG 🫠\",\"formula\":\"Open loop / teaser\",\"trigger\":\"Awe & as"
+  },
+  {
+   "at": "2026-11-13T23:45:17",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Mock‑test analysis – why it sometimes stops boosting your scores **ANGLE (why it is underused)** Most students"
+  },
+  {
+   "at": "2026-11-13T23:45:19",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Mock‑test analysis – why it sometimes stops boosting your scores\",\"search_terms\":[\"test enhanced learning rete"
+  },
+  {
+   "at": "2026-11-13T23:45:22",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\":1,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\""
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}

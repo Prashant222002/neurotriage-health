@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-14-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-14T05:29:23+05:30",
+  "publish_at": "2026-11-14T10:00+05:30",
+  "publish_at_utc": "2026-11-14T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-14-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "Mock Test Scores Plateauing? Fix It in 60 Seconds",
+    "yt_description": "Taking mock tests without a proper analysis loop stops your score from improving. Here are 3 science-backed reasons your mock scores plateau and how a 10-minute Error Sprint can fix it.\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\n#StudyTips #MockTest #NEETPG #ActiveRecall #ExamPrep #Shorts",
+    "ig_caption": "Taking mock tests without a proper analysis loop stops your score from improving. Here are 3 science-backed reasons your mock scores plateau and how a 10-minute Error Sprint can fix it.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#StudyTips #MockTest #NEETPG #ActiveRecall #ExamPrep",
+    "hashtags": [
+      "#StudyTips",
+      "#MockTest",
+      "#NEETPG",
+      "#ActiveRecall",
+      "#ExamPrep",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "CUcp9vKofSI",
+        "url": "https://youtube.com/watch?v=CUcp9vKofSI",
+        "scheduled": true
+      },
+      "at": "2026-11-13T23:59:26+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-13T23:59:26+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-13T23:59:26+00:00"
+    }
+  },
+  "status": "pending"
+}

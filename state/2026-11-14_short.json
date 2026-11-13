@@ -1,0 +1,241 @@
+{
+ "key": "2026-11-14",
+ "kind": "short",
+ "created": "2026-11-13T23:45:22",
+ "request": {
+  "kind": "short",
+  "mode": "student",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Mock‑test analysis – why it sometimes stops boosting your scores",
+  "verified": [],
+  "sources": [],
+  "level": "unstructured",
+  "hook": "3 hidden reasons your mock‑tests aren’t helping – fix them in 60 seconds!",
+  "tip": "After each mock, spend 10 minutes on a three‑step “Error‑type Sprint”: categorize every wrong answer, prioritize the top two cost‑liest categories, and create a 30‑second flash‑card for each to review over the next three days.",
+  "dropped": [
+   "Retrieval practice works best when the test mimics the real exam format, improving long‑term retenti (unsupported)",
+   "Spaced‑review of mock results is more effective than a single post‑test review, with optimal spacing (unsupported)",
+   "Metacognitive reflection on errors raises subsequent scores by about 10% on average (Dunlosky et al. (unsupported)",
+   "High anxiety during a mock impairs encoding of feedback, reducing consolidation of corrective inform (unsupported)",
+   "Focusing only on raw scores hides skill gaps; detailed error‑type coding predicts a 15% larger gain  (unsupported)",
+   "Using a single‑source mock limits exposure to varied question styles, reducing transferability to th (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "02e97ad1136424c2",
+  "data": {
+   "title": "Mock Tests Mein Score Stuck Hai? Fix It in 60 Seconds",
+   "title_en": "Mock Test Scores Plateauing? Fix It in 60 Seconds",
+   "formula": "Specific number / time box",
+   "kicker": "EXAM STRATEGY",
+   "hook_text": "MOCK MARKS STUCK KYUN HAIN",
+   "scenes": [
+    {
+     "text": "Har mock test ke baad bhi marks stuck hain?",
+     "queries": [
+      "student staring laptop screen",
+      "confused student library desk",
+      "open notebook pencil desk"
+     ],
+     "text_en": "Are your scores stuck despite taking every mock test?",
+     "text_hi": "हर mock test के बाद भी marks stuck हैं?",
+     "emphasis": "MARKS STUCK"
+    },
+    {
+     "text": "Problem mocks nahi, tumhara test analysis ka tareeqa hai.",
+     "queries": [
+      "student highlighting test paper",
+      "desk with test sheets",
+      "typing on laptop keyboard"
+     ],
+     "text_en": "The problem is not the mocks, but your analysis method.",
+     "text_hi": "Problem mocks नहीं, तुम्हारा test analysis का तरीक़ा है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Research-backed teen mistakes samjho, aur teesri sabse common hai.",
+     "queries": [
+      "research papers on desk",
+      "scientist writing on blackboard",
+      "focused student taking notes"
+     ],
+     "text_en": "Understand three research-backed mistakes, and the third is most common.",
+     "text_hi": "Research-backed तीन mistakes समझो, और तीसरी सबसे common है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Pehli mistake: sirf total score dekh kar test band kar dena.",
+     "queries": [
+      "student closing laptop frustrated",
+      "closing textbook desk",
+      "calculator on test paper"
+     ],
+     "text_en": "First mistake: closing the test right after checking the score.",
+     "text_hi": "पहली mistake: सिर्फ़ total score देख कर test बंद कर देना।",
+     "emphasis": "SCORE-ONLY TRAP"
+    },
+    {
+     "text": "Doosri mistake: analysis sirf ek baar karna, spacing bhool jana.",
+     "queries": [
+      "calendar dates circled red",
+      "flip calendar desk clock",
+      "student studying late night"
+     ],
+     "text_en": "Second mistake: reviewing errors only once, forgetting spaced repetition.",
+     "text_hi": "दूसरी mistake: analysis सिर्फ़ एक बार करना, spacing भूल जाना।",
+     "emphasis": ""
+    },
+    {
+     "text": "Ye baat us batchmate ko zaroor bhejo jo roz mock deta hai.",
+     "queries": [
+      "friends studying together library",
+      "two students discussing notes",
+      "young adult holding smartphone"
+     ],
+     "text_en": "Send this to that batchmate who takes mocks every single day.",
+     "text_hi": "ये बात उस batchmate को ज़रूर भेजो जो रोज़ mock देता है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Teesra: Dunlosky research ke mutabik error-type categorize na karna.",
+     "queries": [
+      "red pen marking wrong answers",
+      "exam paper red cross",
+      "student analyzing mark sheet"
+     ],
+     "text_en": "Third: failing to categorize error types, per Dunlosky research.",
+     "text_hi": "तीसरा: Dunlosky research के मुताबिक error-type categorize ना करना।",
+     "emphasis": ""
+    },
+    {
+     "text": "Isko theek karne ke liye bas 10-minute Error Sprint karo.",
+     "queries": [
+      "stopwatch ticking desk",
+      "student writing timer running",
+      "hourglass sand pouring"
+     ],
+     "text_en": "To fix this, simply run a 10-minute Error Sprint.",
+     "text_hi": "इसको ठीक करने के लिए बस 10-minute Error Sprint करो।",
+     "emphasis": "ERROR SPRINT"
+    },
+    {
+     "text": "Pehle wrong answers ko conceptual, recall ya silly mistakes mein baanto.",
+     "queries": [
+      "organizing colored sticky notes",
+      "writing list on notepad",
+      "sorting papers on desk"
+     ],
+     "text_en": "First, sort incorrect answers into conceptual, recall, or silly errors.",
+     "text_hi": "पहले wrong answers को conceptual, recall या silly mistakes में बांटो।",
+     "emphasis": ""
+    },
+    {
+     "text": "Phir top two categories ke flashcards bana kar spaced review karo.",
+     "queries": [
+      "flipping paper flashcards",
+      "holding index cards study",
+      "student writing quick summary"
+     ],
+     "text_en": "Then make quick flashcards for the top two categories for spaced review.",
+     "text_hi": "फिर top two categories के flashcards बना कर spaced review करो।",
+     "emphasis": ""
+    },
+    {
+     "text": "Aise analysis badloge, toh agle mock mein score zaroor badhega.",
+     "queries": [
+      "smiling student holding exam paper",
+      "student ticking checklist success",
+      "bright sunlight morning study desk"
+     ],
+     "text_en": "Change your analysis routine, and your next mock score will rise.",
+     "text_hi": "ऐसे analysis बदलोगे, तो अगले mock में score ज़रूर बढ़ेगा।",
+     "emphasis": ""
+    }
+   ],
+   "description": "Taking mock tests without a proper analysis loop stops your score from improving. Here are 3 science-backed reasons your mock scores plateau and how a 10-minute Error Sprint can fix it.",
+   "hashtags": [
+    "#StudyTips",
+    "#MockTest",
+    "#NEETPG",
+    "#ActiveRecall",
+    "#ExamPrep",
+    "#StudentLife"
+   ],
+   "audit": {
+    "score": 92,
+    "hook": 96,
+    "retention": 90,
+    "specificity": 94,
+    "safety_ok": true,
+    "fixes": [
+     "Combine the two ending actions into one clear CTA (e.g., ‘Do a 10‑minute Error Sprint and make flashcards’)",
+     "Add a visual timer cue for the 10‑minute sprint to boost engagement",
+     "Mention a specific exam like JEE/NEET for stronger Indian relevance",
+     "Trim scene 6 to keep beat every 2‑3 scenes, e.g., merge with scene 5"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-13T23:50:40",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-13T23:50:40",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-13T23:51:05",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-13T23:59:23",
+   "provider": "",
+   "note": "Mock Test Scores Plateauing? Fix It in 60 Seconds"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-13T23:45:36",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{ \"title\": \"Mock Tests Kyun Nahi Badha Rahe Scores? 3 Reasons in 60 Sec\", \"title_en\": \"Why Mock Tests Stop Raising Score"
+  },
+  {
+   "at": "2026-11-13T23:50:38",
+   "stage": "script",
+   "provider": "gemini",
+   "model": "gemini-3.8-flash",
+   "key": "GEMINI_API_KEY_2",
+   "summary": "{ \"title\": \"Mock Tests Mein Score Stuck Hai? Fix It in 60 Seconds\", \"title_en\": \"Mock Test Scores Plateauing? Fix It in "
+  },
+  {
+   "at": "2026-11-13T23:50:40",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"score\":92,\"hook\":96,\"retention\":90,\"specificity\":94,\"safety_ok\":true,\"fixes\":[\"Combine the two ending actions into one"
+  },
+  {
+   "at": "2026-11-13T23:59:23",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Mock Test Scores Stuck? Boost in 60 Sec!\",\"Why Your Mock Test Marks Plateau – Quick Fix\",\"Score Stagnation A"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}

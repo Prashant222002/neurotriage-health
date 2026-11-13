@@ -177,9 +177,12 @@
   ],
   "AI psychologist / AI mental-health chat: what it can do, what it cannot, how to use it safely": [
    "THE 5-MINUTE VERSION: the single most useful takeaway someone can act on today"
+  ],
+  "Mock-test analysis": [
+   "WHEN IT STOPS WORKING: troubleshooting the 3 common reasons it fails"
   ]
  },
  "reserved": {},
- "slot": 9,
+ "slot": 10,
  "migrated_v3": true
 }
