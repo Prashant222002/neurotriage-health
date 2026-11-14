@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-15-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-15T04:39:16+05:30",
+  "publish_at": "2026-11-15T10:00+05:30",
+  "publish_at_utc": "2026-11-15T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-15-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "Phone & Gaming Overload: Sleep, Stress, Isolation",
+    "yt_description": "Explore how evening gaming and constant internet use affect sleep, stress, and social life, and learn a simple 20‑20‑20 break to restore balance.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/36796079/ | https://pubmed.ncbi.nlm.nih.gov/23137332/ | https://pubmed.ncbi.nlm.nih.gov/36522167/\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\nIf you are struggling, India's free 24x7 helpline Tele-MANAS: 14416.\n\n#DigitalWellness #StudentLife #SleepHealth #StressFree #GamingBalance #Shorts",
+    "ig_caption": "Explore how evening gaming and constant internet use affect sleep, stress, and social life, and learn a simple 20‑20‑20 break to restore balance.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#DigitalWellness #StudentLife #SleepHealth #StressFree #GamingBalance",
+    "hashtags": [
+      "#DigitalWellness",
+      "#StudentLife",
+      "#SleepHealth",
+      "#StressFree",
+      "#GamingBalance",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "f2p5MKHu3Ek",
+        "url": "https://youtube.com/watch?v=f2p5MKHu3Ek",
+        "scheduled": true
+      },
+      "at": "2026-11-14T23:09:19+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-14T23:09:19+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-14T23:09:19+00:00"
+    }
+  },
+  "status": "pending"
+}

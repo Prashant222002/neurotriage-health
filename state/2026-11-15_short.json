@@ -1,0 +1,308 @@
+{
+ "key": "2026-11-15",
+ "kind": "short",
+ "created": "2026-11-14T22:38:21",
+ "request": {
+  "kind": "short",
+  "mode": "awareness",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Internet & gaming over‑use (digital‑behavioral overload)",
+  "verified": [
+   "Evening gaming is associated with reduced total sleep time and delayed sleep onset.",
+   "Higher daily internet use is associated with higher self‑reported stress.",
+   "Excessive digital use is linked to reduced face‑to‑face contact and increased feelings of isolation."
+  ],
+  "sources": [
+   {
+    "title": "Screen time and mental health in college students: Time in nature as a protective factor.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36796079/"
+   },
+   {
+    "title": "The impact of prolonged violent video-gaming on adolescent sleep: an experimental study.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23137332/"
+   },
+   {
+    "title": "Adolescent sleep, distress, and technology use: weekday versus weekend.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36522167/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Ever felt like your phone knows you better than your roommate does? 🤔 Let’s spend 60 seconds inside a typical day of a student who can’t log off.",
+  "tip": "The 20‑20‑20‑Break: after 20 minutes of continuous gaming or scrolling, look 20 feet away for 20 seconds and stand up for a quick 20‑second stretch.",
+  "dropped": [
+   "~30% of university students exceed 4 hours of recreational screen time daily (WHO 2023) (unsupported)",
+   "Continuous gaming >2 hours without breaks impairs working‑memory performance by ~10% (Frontiers in P (unsupported)",
+   "Students in the top quartile of gaming hours earn 0.4 grade points lower on average than peers who g (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "441c188704555a7a",
+  "data": {
+   "title": "Phone aur Gaming Overload: Neend, Stress, Akelaapan",
+   "title_en": "Phone & Gaming Overload: Sleep, Stress, Isolation",
+   "formula": "Pattern-interrupt question",
+   "kicker": "DIGITAL OVERLOAD",
+   "hook_text": "PHONE TUMHE JADA JANTA HAI",
+   "scenes": [
+    {
+     "text": "Kabhi socha ki phone tumse zyada sochta hai?",
+     "queries": [
+      "student looking at phone",
+      "confused teen",
+      "phone notification closeup"
+     ],
+     "text_en": "Ever wondered if your phone thinks more than you?",
+     "emphasis": ""
+    },
+    {
+     "text": "Delhi ke engineering student Rohan subah class, lunch break, shaam ko gaming start.",
+     "queries": [
+      "engineering student Delhi",
+      "college classroom",
+      "student gaming at home"
+     ],
+     "text_en": "Delhi engineering student Rohan has morning classes, lunch break, then gaming in the evening.",
+     "emphasis": ""
+    },
+    {
+     "text": "Raat ko 10 baje tak game, phir phone scroll—par kya aap jaante hain ki isse aapki neend kitni delay ho sakti hai?",
+     "queries": [
+      "late night gaming",
+      "phone scrolling",
+      "curious teen"
+     ],
+     "text_en": "Playing games until 10 pm, then scrolling—do you know how much this can delay your sleep?",
+     "emphasis": ""
+    },
+    {
+     "text": "Research ke mutabik, shaam ki gaming neend ko delay karti hai.",
+     "queries": [
+      "sleepy student bedroom",
+      "clock showing night",
+      "gaming console"
+     ],
+     "text_en": "Research shows evening gaming delays sleep.",
+     "emphasis": "NEEND"
+    },
+    {
+     "text": "Zyada internet use se stress badh sakta hai.",
+     "queries": [
+      "stressed student head in hands",
+      "stress graph",
+      "person typing anxiously"
+     ],
+     "text_en": "Higher internet use can raise stress levels.",
+     "emphasis": "STRESS"
+    },
+    {
+     "text": "Digital overload se face‑to‑face milna kam, akelaapan badhta.",
+     "queries": [
+      "isolated teenager",
+      "empty park bench",
+      "people chatting"
+     ],
+     "text_en": "Digital overload reduces face‑to‑face contact and increases isolation.",
+     "emphasis": ""
+    },
+    {
+     "text": "Ab ek chhota break plan try karo.",
+     "queries": [
+      "hand writing plan",
+      "calendar reminder",
+      "person holding phone"
+     ],
+     "text_en": "Now try a small break plan.",
+     "emphasis": ""
+    },
+    {
+     "text": "20‑20‑20‑Break: 20 minute game, 20 feet door, 20 second stretch.",
+     "queries": [
+      "20-20-20 break illustration",
+      "person looking out window",
+      "stretching at desk"
+     ],
+     "text_en": "20‑20‑20‑Break: 20 minutes gaming, look 20 feet away, stretch 20 seconds.",
+     "emphasis": "20‑20‑20‑BREAK"
+    },
+    {
+     "text": "Aaj raat sirf ek 20‑second stretch karo, feel difference.",
+     "queries": [
+      "person doing stretch",
+      "timer on screen",
+      "happy teenager"
+     ],
+     "text_en": "Tonight do just a 20‑second stretch and feel the difference.",
+     "emphasis": ""
+    },
+    {
+     "text": "Thodi break se neend better, stress kam, doston ke saath time.",
+     "queries": [
+      "friends hanging out",
+      "group studying outdoors",
+      "sunny campus"
+     ],
+     "text_en": "A short break improves sleep, lowers stress, and frees time with friends.",
+     "emphasis": ""
+    },
+    {
+     "text": "Toh har 20 minute baad, 20‑20‑20 break lo, aur apni digital life balance karo.",
+     "queries": [
+      "balance scale digital",
+      "person closing laptop",
+      "peaceful sunrise"
+     ],
+     "text_en": "So every 20 minutes, take a 20‑20‑20 break and balance your digital life.",
+     "emphasis": ""
+    }
+   ],
+   "description": "Explore how evening gaming and constant internet use affect sleep, stress, and social life, and learn a simple 20‑20‑20 break to restore balance.",
+   "hashtags": [
+    "#DigitalWellness",
+    "#StudentLife",
+    "#SleepHealth",
+    "#StressFree",
+    "#GamingBalance",
+    "#20-20-20"
+   ],
+   "audit": {
+    "score": 70,
+    "hook": 90,
+    "retention": 60,
+    "specificity": 40,
+    "safety_ok": true,
+    "fixes": [
+     "Add a stronger tease in scene 3 to create an open loop",
+     "Include a specific Indian student/professional example (e.g., engineering student in Delhi)",
+     "Trim filler content in scenes 4-6 for tighter pacing",
+     "Ensure beats change every 2-3 scenes by adjusting scene grouping"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-14T22:44:55",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-14T22:44:55",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-14T22:46:07",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-14T23:09:16",
+   "provider": "",
+   "note": "Phone & Gaming Overload: Sleep, Stress, Isolation"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-14T22:38:35",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{ \"title\": \"Phone aur Gaming ka Overload: Neend, Stress aur Akelaapan\", \"title_en\": \"Phone & Gaming Overload: Sleep, Str"
+  },
+  {
+   "at": "2026-11-14T22:38:42",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Phone aur Gaming ka Overload: Neend, Stress, Akelaapan\",\"title_en\":\"Phone & Gaming Overload: Sleep, Stress, Is"
+  },
+  {
+   "at": "2026-11-14T22:38:49",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"Phone aur Gaming Overload: Neend, Stress, Akelaapan\",\"title_en\":\"Phone & Gaming Overload: Sleep, Stress, Isola"
+  },
+  {
+   "at": "2026-11-14T22:40:57",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Phone aur Gaming Overload: Neend, Stress, Akelaapan\",\"title_en\":\"Phone & Gaming Overload: Sleep, Stress, Isola"
+  },
+  {
+   "at": "2026-11-14T22:41:03",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Phone aur Gaming Overload: Neend, Stress, Akelaapan\",\"title_en\":\"Phone & Gaming Overload: Sleep, Stress, Isola"
+  },
+  {
+   "at": "2026-11-14T22:41:24",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"Phone aur Gaming Overload: Neend, Stress, Akelaapan\",\"title_en\":\"Phone & Gaming Overload: Sleep, Stress, Isola"
+  },
+  {
+   "at": "2026-11-14T22:43:52",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{ \"title\": \"Phone aur Gaming Overload: Neend, Stress, Akelaapan\", \"title_en\": \"Phone & Gaming Overload: Sleep, Stress, I"
+  },
+  {
+   "at": "2026-11-14T22:44:26",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_5",
+   "summary": "{\"title\":\"Phone aur Gaming Overload: Neend, Stress, Akelaapan\",\"title_en\":\"Phone & Gaming Overload: Sleep, Stress, Isola"
+  },
+  {
+   "at": "2026-11-14T22:44:47",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"Phone aur Gaming Overload: Neend, Stress, Akelaapan\",\"title_en\":\"Phone & Gaming Overload: Sleep, Stress, Isola"
+  },
+  {
+   "at": "2026-11-14T22:44:49",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"score\":70,\"hook\":90,\"retention\":60,\"specificity\":40,\"safety_ok\":true,\"fixes\":[\"Add a stronger tease in scene 3 to crea"
+  },
+  {
+   "at": "2026-11-14T22:44:55",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Phone aur Gaming Overload: Neend, Stress, Akelaapan\",\"title_en\":\"Phone & Gaming Overload: Sleep, Stress, Isola"
+  },
+  {
+   "at": "2026-11-14T23:09:16",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Gaming se neend kam? 3 signs aapko pata hone chahiye!\",\"Phone aur gaming overload: Stress aur akelaapan ka s"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}

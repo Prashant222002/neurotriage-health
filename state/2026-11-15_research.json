@@ -1,0 +1,91 @@
+{
+ "key": "2026-11-15",
+ "kind": "research",
+ "created": "2026-11-14T22:37:57",
+ "request": {
+  "kind": "research",
+  "mode": "awareness"
+ },
+ "research": {
+  "topic": "Internet & gaming over‑use (digital‑behavioral overload)",
+  "verified": [
+   "Evening gaming is associated with reduced total sleep time and delayed sleep onset.",
+   "Higher daily internet use is associated with higher self‑reported stress.",
+   "Excessive digital use is linked to reduced face‑to‑face contact and increased feelings of isolation."
+  ],
+  "sources": [
+   {
+    "title": "Screen time and mental health in college students: Time in nature as a protective factor.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36796079/"
+   },
+   {
+    "title": "The impact of prolonged violent video-gaming on adolescent sleep: an experimental study.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23137332/"
+   },
+   {
+    "title": "Adolescent sleep, distress, and technology use: weekday versus weekend.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36522167/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Ever felt like your phone knows you better than your roommate does? 🤔 Let’s spend 60 seconds inside a typical day of a student who can’t log off.",
+  "tip": "The 20‑20‑20‑Break: after 20 minutes of continuous gaming or scrolling, look 20 feet away for 20 seconds and stand up for a quick 20‑second stretch.",
+  "dropped": [
+   "~30% of university students exceed 4 hours of recreational screen time daily (WHO 2023) (unsupported)",
+   "Continuous gaming >2 hours without breaks impairs working‑memory performance by ~10% (Frontiers in P (unsupported)",
+   "Students in the top quartile of gaming hours earn 0.4 grade points lower on average than peers who g (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-14T22:38:21",
+   "provider": "groq",
+   "note": "partial"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-14T22:38:11",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"POV: Exam Is Tomorrow 😭 | Every Student Can Relate! | Exam Memes | Student Life\",\"formula\":\"Patte"
+  },
+  {
+   "at": "2026-11-14T22:38:14",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Internet & gaming over‑use (digital‑behavioral overload) **ANGLE (why it is under‑used)** *A “Day‑in‑the‑Life”"
+  },
+  {
+   "at": "2026-11-14T22:38:16",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Internet & gaming over‑use (digital‑behavioral overload)\",\"search_terms\":[\"university student screen time prev"
+  },
+  {
+   "at": "2026-11-14T22:38:21",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\":1,\"verdict\":\"uncertain\",\"cites\":[4],\"fix\":\"Evening "
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}
