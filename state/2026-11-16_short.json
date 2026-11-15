@@ -1,0 +1,122 @@
+{
+ "key": "2026-11-16",
+ "kind": "short",
+ "created": "2026-11-15T23:02:12",
+ "request": {
+  "kind": "short",
+  "mode": "awareness",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "How to prepare for your first therapy session – the smart questions you should ask",
+  "verified": [
+   "Therapeutic alliance is a significant predictor of psychotherapy outcomes, accounting for a notable portion of variance."
+  ],
+  "sources": [
+   {
+    "title": "The alliance in adult psychotherapy: A meta-analytic synthesis.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29792475/"
+   },
+   {
+    "title": "Therapeutic alliance as a mediator of change: A systematic review and evaluation of research.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33069096/"
+   }
+  ],
+  "level": "partial",
+  "hook": "What are the 4️⃣ questions you MUST ask before stepping into your first therapy session?",
+  "tip": "Write your top 3‑5 questions on a sticky note or phone note the night before and bring it to the session.",
+  "dropped": [
+   "Psychotherapy reduces anxiety and depression symptoms by about 50% (meta‑analysis of 300+ RCTs). (unsupported)",
+   "Confidentiality in therapy is protected by laws such as HIPAA, GDPR and the Indian Mental Health Act (unsupported)",
+   "Therapists have different specialties and may use models like CBT, ACT or psychodynamic therapy. (unsupported)",
+   "First therapy sessions typically last 45–60 minutes for assessment and goal‑setting. (unsupported)",
+   "Clients who ask questions report 20–30% faster symptom reduction. (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {},
+ "handoff": [
+  {
+   "at": "2026-11-15T23:02:52",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{ \"title\": \"First Therapy Session? Ye 4 Smart Questions Poochna Na Bhoolna!\", \"title_en\": \"4 Smart Questions to Ask Befo"
+  },
+  {
+   "at": "2026-11-15T23:03:06",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{ \"title\": \"First Therapy Session? Ye 4 Smart Questions Poochna Na Bhoolna!\", \"title_en\": \"4 Smart Questions to Ask Befo"
+  },
+  {
+   "at": "2026-11-15T23:03:26",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"First Therapy Session? Ye 4 Smart Questions Poochna Na Bhoolna!\",\"title_en\":\"4 Smart Questions to Ask Before Y"
+  },
+  {
+   "at": "2026-11-15T23:05:55",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{ \"title\": \"First Therapy Session? Ye 4 Smart Questions Poochna Na Bhoolna!\", \"title_en\": \"4 Smart Questions to Ask Befo"
+  },
+  {
+   "at": "2026-11-15T23:06:15",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"First Therapy Session? Ye 4 Smart Questions Poochna Na Bhoolna!\",\"title_en\":\"4 Smart Questions to Ask Before Y"
+  },
+  {
+   "at": "2026-11-15T23:06:29",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{\"title\":\"First Therapy Session? Ye 4 Smart Questions Poochna Na Bhoolna!\",\"title_en\":\"4 Smart Questions to Ask Before Y"
+  },
+  {
+   "at": "2026-11-15T23:08:37",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"First Therapy Session? Ye 4 Smart Questions Poochna Na Bhoolna!\",\"title_en\":\"4 Smart Questions to Ask Before Y"
+  },
+  {
+   "at": "2026-11-15T23:08:44",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"First Therapy Session? Ye 4 Smart Questions Poochna Na Bhoolna!\",\"title_en\":\"4 Smart Questions to Ask Before Y"
+  },
+  {
+   "at": "2026-11-15T23:09:18",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{ \"title\": \"First Therapy Session? Ye 4 Smart Questions Poochna Na Bhoolna!\", \"title_en\": \"4 Smart Questions to Ask Befo"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "script"
+}
