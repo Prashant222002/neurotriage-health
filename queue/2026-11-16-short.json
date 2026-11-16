@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-16-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-16T08:01:14+05:30",
+  "publish_at": "2026-11-16T10:00+05:30",
+  "publish_at_utc": "2026-11-16T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-16-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "First Therapy Session? Ask These 4 Smart Questions",
+    "yt_description": "Learn the four essential questions to ask before your first therapy session and why a strong therapeutic alliance matters. Follow a simple note‑taking tip to walk in confident.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/29792475/ | https://pubmed.ncbi.nlm.nih.gov/33069096/\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\nIf you are struggling, India's free 24x7 helpline Tele-MANAS: 14416.\n\n#TherapyTips #MentalHealth #FirstSession #SmartQuestions #TherapeuticAlliance #Shorts",
+    "ig_caption": "Learn the four essential questions to ask before your first therapy session and why a strong therapeutic alliance matters. Follow a simple note‑taking tip to walk in confident.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#TherapyTips #MentalHealth #FirstSession #SmartQuestions #TherapeuticAlliance",
+    "hashtags": [
+      "#TherapyTips",
+      "#MentalHealth",
+      "#FirstSession",
+      "#SmartQuestions",
+      "#TherapeuticAlliance",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "PwpEuyUyOWE",
+        "url": "https://youtube.com/watch?v=PwpEuyUyOWE",
+        "scheduled": true
+      },
+      "at": "2026-11-16T02:31:18+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-16T02:31:18+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-16T02:31:18+00:00"
+    }
+  },
+  "status": "pending"
+}

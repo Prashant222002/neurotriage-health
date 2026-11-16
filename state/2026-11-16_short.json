@@ -34,13 +34,193 @@
   ]
  },
  "script": {
-  "locked": false,
-  "version": 0,
-  "hash": "",
-  "data": null,
-  "history": []
+  "locked": true,
+  "version": 1,
+  "hash": "34920ad3eacd52b5",
+  "data": {
+   "title": "First Therapy Session? Ye 4 Smart Questions Zaroor Poocho!",
+   "title_en": "First Therapy Session? Ask These 4 Smart Questions",
+   "formula": "Pattern-interrupt question",
+   "kicker": "THERAPY TIPS",
+   "hook_text": "YE 4 QUESTIONS",
+   "scenes": [
+    {
+     "text": "College ke stress se nipatna hai? Kabhi socha pehli therapy mein kya poochna?",
+     "queries": [
+      "person thinking",
+      "question mark animation",
+      "close up face thinking"
+     ],
+     "text_en": "Dealing with college stress? Ever wondered what to ask in your first therapy?",
+     "text_hi": "कभी सोचा पहली थेरेपी में क्या पूछना?",
+     "emphasis": "['POOCHNA']"
+    },
+    {
+     "text": "Therapy pe jaane se pehle sabko doubt hota hai.",
+     "queries": [
+      "anxious person waiting",
+      "clinic waiting room",
+      "hand tapping"
+     ],
+     "text_en": "Everyone feels doubt before therapy.",
+     "text_hi": "थेरेपी पे जाने से पहले सबको डाउट होता है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Aur #3 sabse zaroori hai, suno.",
+     "queries": [
+      "number three graphic",
+      "highlighted text",
+      "countdown animation"
+     ],
+     "text_en": "And point #3 is most important, listen.",
+     "text_hi": "और #3 सबसे ज़रूरी है, सुनो।",
+     "emphasis": ""
+    },
+    {
+     "text": "Research ke mutabik therapist ke saath achha rishta outcome badhata hai.",
+     "queries": [
+      "research paper",
+      "scientist reading",
+      "brain scan illustration"
+     ],
+     "text_en": "Research shows a good therapist relationship boosts outcomes.",
+     "text_hi": "रिसर्च के मुताबिक थैरेपिस्ट के साथ अच्छा रिश्ता आउटकम बढ़ाता है।",
+     "emphasis": "['RISTA']"
+    },
+    {
+     "text": "Therapeutic alliance outcome ka ek bada predictor hai.",
+     "queries": [
+      "therapist and client handshake",
+      "therapy session",
+      "brain connection graphic"
+     ],
+     "text_en": "Therapeutic alliance is a major predictor of outcomes.",
+     "text_hi": "थेरेप्यूटिक अलायंस आउटकम का एक बड़ा प्रेडिक्टर है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Ab main aapko 4 smart questions bataunga.",
+     "queries": [
+      "list icon",
+      "notebook writing",
+      "bullet points"
+     ],
+     "text_en": "Now I'll share four smart questions you should ask.",
+     "text_hi": "अब मैं आपको 4 स्मार्ट क्वेश्चन बताऊँगा।",
+     "emphasis": ""
+    },
+    {
+     "text": "Therapist ka approach aur techniques kya hain?",
+     "queries": [
+      "therapist speaking",
+      "couch therapy",
+      "conversation bubble"
+     ],
+     "text_en": "What is the therapist's approach and techniques?",
+     "text_hi": "थेरेपिस्ट का अप्रोच और टेक्निक्स क्या हैं?",
+     "emphasis": ""
+    },
+    {
+     "text": "Mere goals ke liye yeh therapy kitni suitable hai?",
+     "queries": [
+      "goal setting",
+      "target board",
+      "progress chart"
+     ],
+     "text_en": "How suitable is this therapy for my goals?",
+     "text_hi": "मेरे गोल्स के लिए ये थेरेपी कितनी सूटेबल है?",
+     "emphasis": "['SUITABLE']"
+    },
+    {
+     "text": "Session ke dauran confidentiality kaise maintain hoti hai?",
+     "queries": [
+      "confidential file",
+      "locked box",
+      "privacy icon"
+     ],
+     "text_en": "How is confidentiality maintained during sessions?",
+     "text_hi": "सेशन के दौरान कॉन्फिडेंशियलिटी कैसे मेंटेन होती है?",
+     "emphasis": ""
+    },
+    {
+     "text": "Agar progress slow lage toh kya karun?",
+     "queries": [
+      "slow progress bar",
+      "clock ticking",
+      "frustrated person"
+     ],
+     "text_en": "What should I do if progress feels slow?",
+     "text_hi": "अगर मुझे प्रोग्रेस स्लो लगे तो क्या करूँ?",
+     "emphasis": ""
+    },
+    {
+     "text": "Apni top 3‑5 questions sticky note pe likho, leke jao.",
+     "queries": [
+      "sticky note on desk",
+      "hand writing",
+      "note pad"
+     ],
+     "text_en": "Write your top 3‑5 questions on a sticky note and bring it.",
+     "text_hi": "अपनी टॉप 3‑5 क्वेश्चन स्टिकी नोट पे लिखो, लेके जाओ।",
+     "emphasis": ""
+    },
+    {
+     "text": "Pehli session se pehle yeh questions poochna confidence badhata hai.",
+     "queries": [
+      "confident person smiling",
+      "thumbs up",
+      "success graphic"
+     ],
+     "text_en": "Asking these before the first session boosts confidence.",
+     "text_hi": "पहली सेशन से पहले ये क्वेश्चन पूछना कॉन्फिडेंस बढ़ाता है।",
+     "emphasis": "['CONFIDENCE']"
+    }
+   ],
+   "description": "Learn the four essential questions to ask before your first therapy session and why a strong therapeutic alliance matters. Follow a simple note‑taking tip to walk in confident.",
+   "hashtags": [
+    "#TherapyTips",
+    "#MentalHealth",
+    "#FirstSession",
+    "#SmartQuestions",
+    "#TherapeuticAlliance",
+    "#SelfCare"
+   ],
+   "audit": {
+    "score": 70,
+    "hook": 90,
+    "retention": 80,
+    "specificity": 30,
+    "safety_ok": true,
+    "fixes": [
+     "Add a line referencing Indian students or young professionals (e.g., “College ke stress se nipatna hai?”)",
+     "Ensure each beat changes every 2‑3 scenes by grouping related points",
+     "Trim any redundant filler words to keep pacing tight",
+     "Confirm the hook stays under 9 words (it already does)"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-16T02:22:57",
+  "source": "groq"
  },
- "stages": {},
+ "stages": {
+  "script": {
+   "at": "2026-11-16T02:22:57",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-16T02:23:22",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-16T02:31:14",
+   "provider": "",
+   "note": "First Therapy Session? Ask These 4 Smart Questions"
+  }
+ },
  "handoff": [
   {
    "at": "2026-11-15T23:02:52",
@@ -185,10 +365,82 @@
    "model": "openai/gpt-oss-120b",
    "key": "GROQ_API_KEY_2",
    "summary": "{\"title\":\"First Therapy Session? Ye 4 Smart Questions Zaroor Poochho!\",\"title_en\":\"First Therapy Session? Ask These 4 Sm"
+  },
+  {
+   "at": "2026-11-16T02:19:47",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"First Therapy Session? Ye 4 Smart Questions Zaroor Poochho!\",\"title_en\":\"First Therapy Session? Ask These 4 Sm"
+  },
+  {
+   "at": "2026-11-16T02:19:54",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"First Therapy Session? Ye 4 Smart Questions Zaroor Poochho!\",\"title_en\":\"First Therapy Session? Ask These 4 Sm"
+  },
+  {
+   "at": "2026-11-16T02:20:21",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{ \"title\": \"First Therapy Session? Ye 4 Smart Questions Zaroor Poocho!\", \"title_en\": \"First Therapy Session? Ask These 4"
+  },
+  {
+   "at": "2026-11-16T02:22:29",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"First Therapy Session? Ye 4 Smart Questions Zaroor Poocho!\",\"title_en\":\"First Therapy Session? Ask These 4 Sma"
+  },
+  {
+   "at": "2026-11-16T02:22:36",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"First Therapy Session? Ye 4 Smart Questions Zaroor Poocho!\",\"title_en\":\"First Therapy Session? Ask These 4 Sma"
+  },
+  {
+   "at": "2026-11-16T02:22:49",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{ \"title\": \"First Therapy Session? Ye 4 Smart Questions Zaroor Poocho!\", \"title_en\": \"First Therapy Session? Ask These 4"
+  },
+  {
+   "at": "2026-11-16T02:22:51",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"score\":70,\"hook\":90,\"retention\":80,\"specificity\":30,\"safety_ok\":true,\"fixes\":[\"Add a line referencing Indian students "
+  },
+  {
+   "at": "2026-11-16T02:22:57",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"First Therapy Session? Ye 4 Smart Questions Zaroor Poocho!\",\"title_en\":\"First Therapy Session? Ask These 4 Sma"
+  },
+  {
+   "at": "2026-11-16T02:31:14",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"College Stress? 4 Smart Questions for Your First Therapy Session\",\"Pehli Therapy Mein Ye 4 Sawal Poocho – St"
   }
  ],
  "pending": [],
  "errors": [],
  "approved_changes": [],
- "stage_now": "script"
+ "stage_now": "voice"
 }
