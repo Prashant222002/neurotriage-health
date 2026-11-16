@@ -113,6 +113,78 @@
    "model": "openai/gpt-oss-120b",
    "key": "GROQ_API_KEY_4",
    "summary": "{ \"title\": \"First Therapy Session? Ye 4 Smart Questions Poochna Na Bhoolna!\", \"title_en\": \"4 Smart Questions to Ask Befo"
+  },
+  {
+   "at": "2026-11-16T00:10:17",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"First Therapy Session? Ye 4 Smart Questions Poochna Na Bhoolna!\",\"title_en\":\"4 Smart Questions to Ask Before Y"
+  },
+  {
+   "at": "2026-11-16T00:10:30",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"First Therapy Session? Ye 4 Smart Questions Poochna Na Bhoolna!\",\"title_en\":\"4 Smart Questions to Ask Before Y"
+  },
+  {
+   "at": "2026-11-16T00:10:51",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{\"title\":\"First Therapy Session? Ye 4 Smart Questions Poochna Na Bhoolna!\",\"title_en\":\"4 Smart Questions to Ask Before Y"
+  },
+  {
+   "at": "2026-11-16T00:13:26",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"First Therapy Session? Ye 4 Smart Questions Zaroor Poochho!\",\"title_en\":\"First Therapy Session? Ask These 4 Sm"
+  },
+  {
+   "at": "2026-11-16T00:13:33",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"First Therapy Session? Ye 4 Smart Questions Zaroor Poochho!\",\"title_en\":\"First Therapy Session? Ask These 4 Sm"
+  },
+  {
+   "at": "2026-11-16T00:13:47",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{ \"title\": \"First Therapy Session? Ye 4 Smart Questions Zaroor Poochho!\", \"title_en\": \"First Therapy Session? Ask These "
+  },
+  {
+   "at": "2026-11-16T00:15:55",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"First Therapy Session? Ye 4 Smart Questions Zaroor Poochho!\",\"title_en\":\"First Therapy Session? Ask These 4 Sm"
+  },
+  {
+   "at": "2026-11-16T00:16:44",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{ \"title\": \"First Therapy Session? Ye 4 Smart Questions Zaroor Poochho!\", \"title_en\": \"First Therapy Session? Ask These "
+  },
+  {
+   "at": "2026-11-16T00:17:04",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"First Therapy Session? Ye 4 Smart Questions Zaroor Poochho!\",\"title_en\":\"First Therapy Session? Ask These 4 Sm"
   }
  ],
  "pending": [],
