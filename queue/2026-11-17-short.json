@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-17-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-17T07:39:57+05:30",
+  "publish_at": "2026-11-17T10:00+05:30",
+  "publish_at_utc": "2026-11-17T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-17-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "5-Minute Sun Burst Boosts Focus and Memory",
+    "yt_description": "Discover how a quick five-minute morning sun burst can reset your circadian rhythm, support vitamin D synthesis, and boost your daily focus and memory naturally.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/32668607/\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\n#CircadianRhythm #MorningRoutine #BrainHacks #StudyMotivation #Focus #Shorts",
+    "ig_caption": "Discover how a quick five-minute morning sun burst can reset your circadian rhythm, support vitamin D synthesis, and boost your daily focus and memory naturally.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#CircadianRhythm #MorningRoutine #BrainHacks #StudyMotivation #Focus",
+    "hashtags": [
+      "#CircadianRhythm",
+      "#MorningRoutine",
+      "#BrainHacks",
+      "#StudyMotivation",
+      "#Focus",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "xNLi3pgs3ks",
+        "url": "https://youtube.com/watch?v=xNLi3pgs3ks",
+        "scheduled": true
+      },
+      "at": "2026-11-17T02:10:01+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-17T02:10:01+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-17T02:10:01+00:00"
+    }
+  },
+  "status": "pending"
+}

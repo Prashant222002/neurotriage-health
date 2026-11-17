@@ -1,0 +1,84 @@
+{
+ "key": "2026-11-17",
+ "kind": "research",
+ "created": "2026-11-17T01:55:52",
+ "request": {
+  "kind": "research",
+  "mode": "student"
+ },
+ "research": {
+  "topic": "Morning sunlight & the body clock (circadian rhythm) – why a 5‑minute daily “sun‑burst” can jump‑start focus and memory",
+  "verified": [
+   "Brief midday sun exposure can contribute to vitamin D synthesis, which may be associated with mood regulation.",
+   "Five minutes of midday sun contributes to vitamin D synthesis, supporting mood regulation"
+  ],
+  "sources": [
+   {
+    "title": "Insufficient Sun Exposure Has Become a Real Public Health Problem.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32668607/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Boost your brain in just 5 minutes every morning!",
+  "tip": "Sun‑Burst Routine: as soon as you turn off your alarm, open curtains or step outside, face the sun for 5 minutes with eyes open, then drink water and start your study block",
+  "dropped": [
+   "Light is the primary cue for the circadian system; morning exposure to ≥250 lux shifts the internal  (unsupported)",
+   "A 5‑minute walk in bright outdoor light boosts subjective alertness and reduces reaction‑time errors (unsupported)",
+   "Morning daylight of ≥30 minutes improves next‑day recall by 8‑12 % in medical students (unsupported)",
+   "A 5‑minute sunrise exposure advances sleep onset by ~15 minutes in young adults (unsupported)",
+   "Similar alertness gains from brief natural‑light exposure are reported across latitudes 30°–50° N (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-17T01:56:14",
+   "provider": "groq",
+   "note": "partial"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-17T01:56:05",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"Studying until the sunrise 🤍📚☀️| STUDY VLOG 🫠\",\"formula\":\"Specific number / time box\",\"trigger\":\""
+  },
+  {
+   "at": "2026-11-17T01:56:08",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Morning sunlight & the body clock (circadian rhythm) – why a 5‑minute daily “sun‑burst” can jump‑start focus a"
+  },
+  {
+   "at": "2026-11-17T01:56:10",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Morning sunlight & the body clock (circadian rhythm) – why a 5‑minute daily “sun‑burst” can jump‑start focus a"
+  },
+  {
+   "at": "2026-11-17T01:56:14",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\":1,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\""
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}

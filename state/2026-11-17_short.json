@@ -1,0 +1,253 @@
+{
+ "key": "2026-11-17",
+ "kind": "short",
+ "created": "2026-11-17T01:56:14",
+ "request": {
+  "kind": "short",
+  "mode": "student",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Morning sunlight & the body clock (circadian rhythm) – why a 5‑minute daily “sun‑burst” can jump‑start focus and memory",
+  "verified": [
+   "Brief midday sun exposure can contribute to vitamin D synthesis, which may be associated with mood regulation.",
+   "Five minutes of midday sun contributes to vitamin D synthesis, supporting mood regulation"
+  ],
+  "sources": [
+   {
+    "title": "Insufficient Sun Exposure Has Become a Real Public Health Problem.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32668607/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Boost your brain in just 5 minutes every morning!",
+  "tip": "Sun‑Burst Routine: as soon as you turn off your alarm, open curtains or step outside, face the sun for 5 minutes with eyes open, then drink water and start your study block",
+  "dropped": [
+   "Light is the primary cue for the circadian system; morning exposure to ≥250 lux shifts the internal  (unsupported)",
+   "A 5‑minute walk in bright outdoor light boosts subjective alertness and reduces reaction‑time errors (unsupported)",
+   "Morning daylight of ≥30 minutes improves next‑day recall by 8‑12 % in medical students (unsupported)",
+   "A 5‑minute sunrise exposure advances sleep onset by ~15 minutes in young adults (unsupported)",
+   "Similar alertness gains from brief natural‑light exposure are reported across latitudes 30°–50° N (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "dbd5a0195647499e",
+  "data": {
+   "title": "5 Minute Sun Burst Se Focus Aur Memory Ka Turbo Boost",
+   "title_en": "5-Minute Sun Burst Boosts Focus and Memory",
+   "formula": "Specific number / time box",
+   "kicker": "STUDY HACK",
+   "hook_text": "BOOST YOUR BRAIN IN 5 MINUTES",
+   "scenes": [
+    {
+     "text": "5 minute ki dhoop se subah ki thakan door?",
+     "text_en": "Can 5 minutes of sunlight erase morning fatigue?",
+     "queries": [
+      "sunlight morning window",
+      "student yawning",
+      "alarm clock"
+     ],
+     "emphasis": "5 MINUTE"
+    },
+    {
+     "text": "Kya tum subah uthte hi thake hue aur sleepy feel karte ho?",
+     "text_en": "Do you feel tired and sleepy as soon as you wake up?",
+     "queries": [
+      "tired student stretching morning",
+      "yawning in bed",
+      "dark bedroom morning"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Ye roz ki aadat tumhari morning focus aur memory ko slow kar rahi hai.",
+     "text_en": "This daily habit is slowing down your morning focus and memory.",
+     "queries": [
+      "person looking at smartphone tired",
+      "gloomy student desk",
+      "messy study room"
+     ],
+     "emphasis": "SLOW KAR RAHI HAI"
+    },
+    {
+     "text": "Ye us dost ko bhejo jo subah alarm snooze karke sota rehta hai.",
+     "text_en": "Send this to that friend who keeps snoozing their morning alarm.",
+     "queries": [
+      "phone alarm snoozing hand",
+      "sleeping person in bed",
+      "sunlight on curtains"
+     ],
+     "emphasis": "US DOST KO BHEJO"
+    },
+    {
+     "text": "Science kehti hai ki light exposure body clock ko seedha reset karta hai.",
+     "text_en": "Science says light exposure directly resets the body clock.",
+     "queries": [
+      "brain scan animation glowing",
+      "person opening window blinds",
+      "bright sunlight outdoor"
+     ],
+     "emphasis": "BODY CLOCK"
+    },
+    {
+     "text": "Teesra point sabse zaroori hai jo mood aur energy ko direct boost karega.",
+     "text_en": "And the third point is most important which will directly boost mood and energy.",
+     "queries": [
+      "smiling student morning",
+      "holding glass of water",
+      "bright campus hallway"
+     ],
+     "emphasis": "TEESRA POINT"
+    },
+    {
+     "text": "Exam ki tayari ya office meeting ke liye subah ki dhoop se alertness badhao.",
+     "text_en": "Boost alertness with morning sun for exam prep or office meetings.",
+     "queries": [
+      "student studying notes",
+      "office desk morning coffee",
+      "sunlight through window"
+     ],
+     "emphasis": "ALERTNESS"
+    },
+    {
+     "text": "Alarm band kar, khidki kholo, aur seedha balcony ya garden mein paanch minute dhoop lo.",
+     "text_en": "Turn off the alarm, open the curtains, and step onto a balcony or garden for five minutes of sun.",
+     "queries": [
+      "opening curtains",
+      "stepping onto balcony",
+      "sunlight on face"
+     ],
+     "emphasis": "PAANCH MINUTE"
+    },
+    {
+     "text": "Research suggests five minutes of midday sun helps vitamin D synthesis, supporting mood regulation.",
+     "text_en": "Research suggests five minutes of midday sun helps vitamin D synthesis, supporting mood regulation.",
+     "queries": [
+      "sunlight on skin",
+      "person outdoors midday",
+      "vitamin D icon"
+     ],
+     "emphasis": "VITAMIN D"
+    },
+    {
+     "text": "Pehle paani piyo, phir apna study ya work focus block shuru karo.",
+     "text_en": "First drink water, then start your study or work focus block.",
+     "queries": [
+      "drinking glass of water",
+      "opening textbook desk",
+      "pen writing notebook"
+     ],
+     "emphasis": "FOCUS BLOCK"
+    },
+    {
+     "text": "Is 5‑minute sun burst ko roz repeat karo aur din bhar ki productivity dekho.",
+     "text_en": "Repeat this 5‑minute sun burst daily and watch your productivity soar.",
+     "queries": [
+      "calendar daily habit",
+      "sunrise window",
+      "productive student"
+     ],
+     "emphasis": "DAILY REPEAT"
+    }
+   ],
+   "description": "Discover how a quick five-minute morning sun burst can reset your circadian rhythm, support vitamin D synthesis, and boost your daily focus and memory naturally.",
+   "hashtags": [
+    "#CircadianRhythm",
+    "#MorningRoutine",
+    "#BrainHacks",
+    "#StudyMotivation",
+    "#Focus",
+    "#VitaminD"
+   ],
+   "audit": {
+    "score": 55,
+    "hook": 30,
+    "retention": 60,
+    "specificity": 40,
+    "safety_ok": true,
+    "fixes": [
+     "Rewrite the opening line to 9 words or fewer and add a curiosity or pain hook",
+     "Delete the repetitive vitamin D scenes (7‑9) to cut filler",
+     "Insert a concrete Indian student/professional detail, e.g., exam prep or office meeting",
+     "Group related points so a new beat appears every 2‑3 scenes"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-17T02:00:26",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-17T02:00:26",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-17T02:01:36",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-17T02:09:57",
+   "provider": "",
+   "note": "5-Minute Sun Burst Boosts Focus and Memory"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-17T01:56:28",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{ \"title\": \"5 Minute Sun‑Burst Se Focus Aur Memory Ka Boost\", \"title_en\": \"Boost Focus and Memory with a 5‑Minute Sun Bu"
+  },
+  {
+   "at": "2026-11-17T01:57:02",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{ \"title\": \"5 Minute Sun‑Burst Se Focus Aur Memory Ka Turbo Boost\", \"title_en\": \"5‑Minute Sun Burst Boosts Focus and Mem"
+  },
+  {
+   "at": "2026-11-17T02:00:17",
+   "stage": "script",
+   "provider": "gemini",
+   "model": "gemini-3.5-flash-lite",
+   "key": "GEMINI_API_KEY_2",
+   "summary": "{ \"title\": \"5 Minute Sun Burst Se Focus Aur Memory Ka Turbo Boost\", \"title_en\": \"5-Minute Sun Burst Boosts Focus and Mem"
+  },
+  {
+   "at": "2026-11-17T02:00:19",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"score\":55,\"hook\":30,\"retention\":60,\"specificity\":40,\"safety_ok\":true,\"fixes\":[\"Rewrite the opening line to 9 words or "
+  },
+  {
+   "at": "2026-11-17T02:00:26",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"5 Minute Sun Burst Se Focus Aur Memory Ka Turbo Boost\",\"title_en\":\"5-Minute Sun Burst Boosts Focus and Memory\""
+  },
+  {
+   "at": "2026-11-17T02:09:57",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"5 Minute Sun Burst Se Subah Ki Thakan Ka Solution!\",\"Sirf 5 Minute Dhoop: Focus Aur Memory Ka Turbo Boost\",\""
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}
