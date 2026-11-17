@@ -35,10 +35,12 @@
       "at": "2026-11-17T02:10:01+00:00"
     },
     "instagram": {
-      "status": "pending",
-      "attempts": 0,
-      "result": {},
-      "at": "2026-11-17T02:10:01+00:00"
+      "status": "failed",
+      "attempts": 1,
+      "result": {
+        "error": "container: {'error': {'message': 'API access blocked.', 'code': 200, 'type': 'OAuthException', 'error_subcode': 5258005, 'fbtrace_id': 'AfGk6669J19klUa8A_SLUlf'}}"
+      },
+      "at": "2026-11-17T12:55:56+00:00"
     },
     "facebook": {
       "status": "skipped",
