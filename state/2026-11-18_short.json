@@ -1,0 +1,256 @@
+{
+ "key": "2026-11-18",
+ "kind": "short",
+ "created": "2026-11-18T01:05:39",
+ "request": {
+  "kind": "short",
+  "mode": "awareness",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Autism in Adults – Myths vs. Facts",
+  "verified": [
+   "A substantial proportion of autistic adults report social masking, though exact percentages are not established in the cited literature."
+  ],
+  "sources": [
+   {
+    "title": "Camouflage and masking behavior in adult autism.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37009119/"
+   },
+   {
+    "title": "\"Putting on My Best Normal\": Social Camouflaging in Adults with Autism Spectrum Conditions.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28527095/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Nobody tells you that autism isn’t just a ‘childhood thing’ – it can shape the way you study, work, and connect even as an adult. Let’s bust the myths and see if any of these hidden signs ring a bell for you.",
+  "tip": "Create a one‑week Sensory & Social Log to note moments of overload or masking, then review it with a mental‑health professional.",
+  "dropped": [
+   "~1 in 100 people worldwide meet criteria for autism across the lifespan (unsupported)",
+   "Up to 50% of autistic adults receive diagnosis after age 18 (unsupported)",
+   "Over 80% of autistic adults experience atypical sensory processing (uncertain + number not backed)",
+   "Autistic adults often excel in detail‑oriented tasks, pattern recognition, and deep expertise in nic (unsupported)",
+   "Anxiety and depression affect 40‑60% of autistic adults (uncertain + number not backed)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "4998acdab13913a0",
+  "data": {
+   "title": "Autism Adults: Myths, Masking aur Real Facts",
+   "title_en": "Autism in Adults: Myths vs Facts",
+   "formula": "Nobody tells you...",
+   "kicker": "AUTISM FACTS",
+   "hook_text": "AUTISM SABKO NHI PATA",
+   "scenes": [
+    {
+     "text": "Kya aapko pata hai autism sirf bachchon ka nahi?",
+     "text_en": "Did you know autism isn’t just a childhood condition?",
+     "queries": [
+      "autism awareness",
+      "adult autism",
+      "myth busting"
+     ],
+     "emphasis": "AUTISM CHILDHOOD"
+    },
+    {
+     "text": "Rohit, ek engineering student, roz apni feelings chhupata hai, jaise kai adults karte hain.",
+     "text_en": "Rohit, an engineering student, hides his feelings daily, like many adults do.",
+     "queries": [
+      "student masking",
+      "social hiding",
+      "engineering student"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Myth: Autism low IQ ka sign hai. Fact: Intelligence alag ho sakti hai. Aapko kya lagta hai?",
+     "text_en": "Myth: Autism means low IQ. Fact: Intelligence can vary. What do you think?",
+     "queries": [
+      "IQ myth",
+      "autism intelligence",
+      "question"
+     ],
+     "emphasis": "MYTH FACT"
+    },
+    {
+     "text": "Myth: Autistic adults empathetic nahi hote. Fact: Empathy har vyakti mein alag hoti hai.",
+     "text_en": "Myth: Autistic adults lack empathy. Fact: Empathy varies among individuals.",
+     "queries": [
+      "empathy myth",
+      "autism fact",
+      "neurodiversity"
+     ],
+     "emphasis": "MYTH FACT"
+    },
+    {
+     "text": "Kya aap kabhi social masking feel karte ho?",
+     "text_en": "Do you ever experience social masking?",
+     "queries": [
+      "social masking",
+      "masking feeling",
+      "self conceal"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Research ke mutabik, kaafi adults social masking karte hain.",
+     "text_en": "Research shows many adults practice social masking.",
+     "queries": [
+      "research masking",
+      "adult masking",
+      "social behavior"
+     ],
+     "emphasis": "SOCIAL MASKING"
+    },
+    {
+     "text": "Ek hafte ka Sensory & Social Log banayein.",
+     "text_en": "Create a one‑week Sensory & Social Log.",
+     "queries": [
+      "journal",
+      "sensory log",
+      "self tracking"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Pehle din overload moments daily likho.",
+     "text_en": "On day one, note overload moments each day.",
+     "queries": [
+      "overload notes",
+      "daily journal",
+      "sensory overload"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Har din apne notes ko review karo aur patterns dekho.",
+     "text_en": "Review your notes daily to spot patterns.",
+     "queries": [
+      "review journal",
+      "pattern spotting",
+      "daily review"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Is habit se aapka stress kam hoga aur self‑awareness badhegi.",
+     "text_en": "This habit can reduce stress and boost self‑awareness.",
+     "queries": [
+      "stress reduction",
+      "self awareness",
+      "habit benefit"
+     ],
+     "emphasis": "STRESS HELP"
+    },
+    {
+     "text": "Apne therapist ko apna masking log dikhayein.",
+     "text_en": "Show your masking log to your therapist.",
+     "queries": [
+      "therapist discussion",
+      "masking log",
+      "professional help"
+     ],
+     "emphasis": "CTA"
+    }
+   ],
+   "description": "A short reel busting common myths about adult autism, highlighting social masking and a practical one‑week log to manage sensory overload. Learn the facts and a simple step‑by‑step tip.",
+   "hashtags": [
+    "#AutismAwareness",
+    "#AdultAutism",
+    "#MythBusting",
+    "#MentalHealth",
+    "#Neurodiversity",
+    "#SelfCare"
+   ],
+   "audit": {
+    "score": 55,
+    "hook": 80,
+    "retention": 60,
+    "specificity": 30,
+    "safety_ok": true,
+    "fixes": [
+     "Add a specific Indian student/professional example (e.g., Rohit, ek engineering student)",
+     "Make scene 3 end with a question to create a stronger open loop",
+     "Conclude with a clear CTA like “Apne therapist ko apna masking log dikhayein”",
+     "Remove filler lines and ensure beat changes every 2‑3 scenes"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-18T01:06:27",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-18T01:06:27",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-18T01:06:55",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-18T01:18:50",
+   "provider": "",
+   "note": "Autism in Adults: Myths vs Facts"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-18T01:06:06",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{\"title\":\"Autism Adults: Myths, Masking & Real Facts\",\"title_en\":\"Autism in Adults: Myths, Masking and Facts\",\"formula\":"
+  },
+  {
+   "at": "2026-11-18T01:06:13",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Autism Adults: Myths, Masking aur Real Facts\",\"title_en\":\"Autism in Adults: Myths vs Facts\",\"formula\":\"Nobody "
+  },
+  {
+   "at": "2026-11-18T01:06:19",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Autism Adults: Myths, Masking aur Real Facts\",\"title_en\":\"Autism in Adults: Myths vs Facts\",\"formula\":\"Nobody "
+  },
+  {
+   "at": "2026-11-18T01:06:21",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{\"score\":55,\"hook\":80,\"retention\":60,\"specificity\":30,\"safety_ok\":true,\"fixes\":[\"Add a specific Indian student/professio"
+  },
+  {
+   "at": "2026-11-18T01:06:27",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{\"title\":\"Autism Adults: Myths, Masking aur Real Facts\",\"title_en\":\"Autism in Adults: Myths vs Facts\",\"formula\":\"Nobody "
+  },
+  {
+   "at": "2026-11-18T01:18:50",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Autism Adults: 5 Myths Busted & Masking Truths\",\"Kya Autism Sirf Bachchon Ka Hai? Adult Myths Explained\",\"Ma"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}

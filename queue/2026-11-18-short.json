@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-18-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-18T06:48:51+05:30",
+  "publish_at": "2026-11-18T10:00+05:30",
+  "publish_at_utc": "2026-11-18T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-18-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "Autism in Adults: Myths vs Facts",
+    "yt_description": "A short reel busting common myths about adult autism, highlighting social masking and a practical one‑week log to manage sensory overload. Learn the facts and a simple step‑by‑step tip.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/37009119/ | https://pubmed.ncbi.nlm.nih.gov/28527095/\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\nIf you are struggling, India's free 24x7 helpline Tele-MANAS: 14416.\n\n#AutismAwareness #AdultAutism #MythBusting #MentalHealth #Neurodiversity #Shorts",
+    "ig_caption": "A short reel busting common myths about adult autism, highlighting social masking and a practical one‑week log to manage sensory overload. Learn the facts and a simple step‑by‑step tip.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#AutismAwareness #AdultAutism #MythBusting #MentalHealth #Neurodiversity",
+    "hashtags": [
+      "#AutismAwareness",
+      "#AdultAutism",
+      "#MythBusting",
+      "#MentalHealth",
+      "#Neurodiversity",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "uE-SX8cxl18",
+        "url": "https://youtube.com/watch?v=uE-SX8cxl18",
+        "scheduled": true
+      },
+      "at": "2026-11-18T01:18:54+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-18T01:18:54+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-18T01:18:54+00:00"
+    }
+  },
+  "status": "pending"
+}
