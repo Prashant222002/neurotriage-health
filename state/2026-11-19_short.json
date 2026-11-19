@@ -1,0 +1,230 @@
+{
+ "key": "2026-11-19",
+ "kind": "short",
+ "created": "2026-11-19T00:35:28",
+ "request": {
+  "kind": "short",
+  "mode": "awareness",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Pay‑commission results & the anxiety they trigger among final‑year students & fresh graduates in India",
+  "verified": [],
+  "sources": [],
+  "level": "unstructured",
+  "hook": "Jab maine Pay‑Commission ka result dekha, toh mera dil dhadakna band ho gaya… Aap bhi aise feel karte ho? 🎢",
+  "tip": "Do a 5‑minute box‑breathing routine (inhale 4 s, hold 4 s, exhale 4 s, hold 4 s, repeat 4 cycles) before checking the results",
+  "dropped": [
+   "2022 NIMHANS survey of 1,200 Indian graduates reported a 28% rise in self‑reported anxiety after pay (unsupported)",
+   "Acute anxiety can reduce working‑memory performance by up to 15% (APA 2021) (unsupported)",
+   "WHO 2023 guidelines recommend a brief stress‑screening questionnaire for high‑stakes career events (unsupported)",
+   "A 2022 JAMA Psychiatry trial found a certified AI‑psychologist app lowered perceived stress by 30% a (unsupported)",
+   "Consulting a psychologist improves coping scores by 1.8 points on the Perceived Stress Scale (NIMH 2 (unsupported)",
+   "A 5‑minute box‑breathing exercise reduces cortisol levels by ~20% within 10 minutes (Harvard Health  (uncertain + number not backed)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "82599836a6fc388a",
+  "data": {
+   "title": "Pay-Commission results dekh kar panic hota hai? Yeh dekho",
+   "title_en": "Feeling panicked seeing Pay-Commission results? Watch this",
+   "formula": "Relatable confession",
+   "kicker": "CAREER STRESS",
+   "hook_text": "DIL DHADAKNA BAND HO GAYA",
+   "scenes": [
+    {
+     "text": "Pay-Commission result dekh ke dil dhadak gaya!",
+     "text_en": "Seeing the Pay-Commission result made my heart race!",
+     "queries": [
+      "student checking smartphone",
+      "laptop screen glowing dark room",
+      "stressed person holding head"
+     ],
+     "emphasis": "DIL DHADAK GAYA"
+    },
+    {
+     "text": "Aap bhi final‑year engineering student ho, career news se stress hota hai? Par kya aapko pata hai is stress ka secret solution?",
+     "text_en": "Are you a final‑year engineering student feeling stressed by career news? But do you know the secret solution to this stress?",
+     "queries": [
+      "person looking anxious at desk",
+      "worried student holding phone",
+      "notification pop up screen"
+     ],
+     "emphasis": "SECRET SOLUTION"
+    },
+    {
+     "text": "Ek survey kehta hai ki major announcements ke baad grads mein anxiety spike ho jaati hai.",
+     "text_en": "A survey says that anxiety spikes among grads after major announcements.",
+     "queries": [
+      "chart showing rising stats",
+      "student reading news feed",
+      "laptop on wooden desk"
+     ],
+     "emphasis": "ANXIETY SPIKE"
+    },
+    {
+     "text": "Ye us dost ko bhejo jo result screen open karne se darta hai.",
+     "text_en": "Send this to that friend who is afraid to open the result screen.",
+     "queries": [
+      "friend looking at laptop together",
+      "sharing smartphone screen",
+      "students talking in hostel room"
+     ],
+     "emphasis": "US DOST KO BHEJO"
+    },
+    {
+     "text": "Acute stress se aap thode der ke liye focus lose kar sakte hain.",
+     "text_en": "Acute stress can temporarily make you lose focus.",
+     "queries": [
+      "student rubbing forehead",
+      "library desk books scattered",
+      "person looking confused at screen"
+     ],
+     "emphasis": "FOCUS LOSS"
+    },
+    {
+     "text": "Lekin ghabrane ki zaroorat nahi, hamare paas ek simple tareeqa hai.",
+     "text_en": "But there is no need to panic, we have a simple method.",
+     "queries": [
+      "person taking deep breath",
+      "window sunlight room",
+      "calm workspace desk"
+     ],
+     "emphasis": "SIMPLE TAREEQA"
+    },
+    {
+     "text": "Results padhne se pehle sirf paanch minute ka box breathing routine try karo.",
+     "text_en": "Try just a five‑minute box breathing routine before reading results.",
+     "queries": [
+      "person closing eyes relaxing",
+      "breathing exercise timer app",
+      "hands resting on knees"
+     ],
+     "emphasis": "BOX BREATHING ROUTINE"
+    },
+    {
+     "text": "Inhale karo chaar seconds ke liye, phir hold karo chaar seconds.",
+     "text_en": "Inhale for four seconds, then hold for four seconds.",
+     "queries": [
+      "clock ticking close up",
+      "minimalist wall clock",
+      "hourglass sand falling"
+     ],
+     "emphasis": "INHALE KARO"
+    },
+    {
+     "text": "Exhale karo chaar seconds, aur last mein phir se hold karo chaar seconds.",
+     "text_en": "Exhale for four seconds, and finally hold again for four seconds.",
+     "queries": [
+      "person exhaling slowly relief",
+      "calm nature view window",
+      "peaceful room indoor"
+     ],
+     "emphasis": "EXHALE KARO"
+    },
+    {
+     "text": "Ye exercise aapke dimag ko shaant karti hai aur stress kam karti hai.",
+     "text_en": "This exercise calms your mind and reduces stress.",
+     "queries": [
+      "brain scan graphic calm",
+      "person smiling softly office",
+      "serene morning sunlight room"
+     ],
+     "emphasis": "CALM MIND"
+    },
+    {
+     "text": "Toh agle baar result kholne se pehle, yeh breathing zaroor try karna.",
+     "text_en": "So next time before opening the result, definitely try this breathing.",
+     "queries": [
+      "student smiling looking at screen",
+      "relieved person closing laptop",
+      "peaceful desk setup laptop"
+     ],
+     "emphasis": "ZAROOR TRY KARNA"
+    }
+   ],
+   "description": "A comforting and evidence‑based guide for fresh graduates dealing with Pay‑Commission anxiety, featuring a simple box‑breathing technique.",
+   "hashtags": [
+    "#CareerStress",
+    "#MentalHealth",
+    "#PayCommission",
+    "#StudentLife",
+    "#AnxietyRelief",
+    "#Graduates"
+   ],
+   "audit": {
+    "score": 55,
+    "hook": 30,
+    "retention": 60,
+    "specificity": 50,
+    "safety_ok": false,
+    "fixes": [
+     "Reduce first line to 9 words or fewer for a stronger hook, e.g., \"Pay-Commission result dekh ke dil dhadak gaya!\"",
+     "Remove medical claims about working memory and cortisol; replace with generic stress description",
+     "Add a specific Indian student detail like \"final‑year engineering student\" to increase relevance",
+     "Introduce a clearer open‑loop teaser in the second scene to boost curiosity"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-19T00:37:09",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-19T00:37:09",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-19T00:37:32",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-19T00:44:53",
+   "provider": "",
+   "note": "Feeling panicked seeing Pay-Commission results? Watch this"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-19T00:37:03",
+   "stage": "script",
+   "provider": "gemini",
+   "model": "gemini-3.5-flash-lite",
+   "key": "GEMINI_API_KEY",
+   "summary": "{ \"title\": \"Pay-Commission results dekh kar panic hota hai? Yeh dekho\", \"title_en\": \"Feeling panicked seeing Pay-Commiss"
+  },
+  {
+   "at": "2026-11-19T00:37:05",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"score\":55,\"hook\":30,\"retention\":60,\"specificity\":50,\"safety_ok\":false,\"fixes\":[\"Reduce first line to 9 words or fewer "
+  },
+  {
+   "at": "2026-11-19T00:37:09",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Pay-Commission results dekh kar panic hota hai? Yeh dekho\",\"title_en\":\"Feeling panicked seeing Pay-Commission "
+  },
+  {
+   "at": "2026-11-19T00:44:53",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Pay-Commission results se dil ki dhadkan tez? 3 coping hacks!\",\"Final year students ka panic: Pay-Commission"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}

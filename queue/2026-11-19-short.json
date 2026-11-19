@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-19-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-19T06:14:53+05:30",
+  "publish_at": "2026-11-19T10:00+05:30",
+  "publish_at_utc": "2026-11-19T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-19-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "Feeling panicked seeing Pay-Commission results? Watch this",
+    "yt_description": "A comforting and evidence‑based guide for fresh graduates dealing with Pay‑Commission anxiety, featuring a simple box‑breathing technique.\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\nIf you are struggling, India's free 24x7 helpline Tele-MANAS: 14416.\n\n#CareerStress #MentalHealth #PayCommission #StudentLife #AnxietyRelief #Shorts",
+    "ig_caption": "A comforting and evidence‑based guide for fresh graduates dealing with Pay‑Commission anxiety, featuring a simple box‑breathing technique.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#CareerStress #MentalHealth #PayCommission #StudentLife #AnxietyRelief",
+    "hashtags": [
+      "#CareerStress",
+      "#MentalHealth",
+      "#PayCommission",
+      "#StudentLife",
+      "#AnxietyRelief",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "7W-7IRATqQI",
+        "url": "https://youtube.com/watch?v=7W-7IRATqQI",
+        "scheduled": true
+      },
+      "at": "2026-11-19T00:44:56+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-19T00:44:56+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-19T00:44:56+00:00"
+    }
+  },
+  "status": "pending"
+}

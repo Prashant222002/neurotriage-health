@@ -1,0 +1,77 @@
+{
+ "key": "2026-11-19",
+ "kind": "research",
+ "created": "2026-11-19T00:35:04",
+ "request": {
+  "kind": "research",
+  "mode": "awareness"
+ },
+ "research": {
+  "topic": "Pay‑commission results & the anxiety they trigger among final‑year students & fresh graduates in India",
+  "verified": [],
+  "sources": [],
+  "level": "unstructured",
+  "hook": "Jab maine Pay‑Commission ka result dekha, toh mera dil dhadakna band ho gaya… Aap bhi aise feel karte ho? 🎢",
+  "tip": "Do a 5‑minute box‑breathing routine (inhale 4 s, hold 4 s, exhale 4 s, hold 4 s, repeat 4 cycles) before checking the results",
+  "dropped": [
+   "2022 NIMHANS survey of 1,200 Indian graduates reported a 28% rise in self‑reported anxiety after pay (unsupported)",
+   "Acute anxiety can reduce working‑memory performance by up to 15% (APA 2021) (unsupported)",
+   "WHO 2023 guidelines recommend a brief stress‑screening questionnaire for high‑stakes career events (unsupported)",
+   "A 2022 JAMA Psychiatry trial found a certified AI‑psychologist app lowered perceived stress by 30% a (unsupported)",
+   "Consulting a psychologist improves coping scores by 1.8 points on the Perceived Stress Scale (NIMH 2 (unsupported)",
+   "A 5‑minute box‑breathing exercise reduces cortisol levels by ~20% within 10 minutes (Harvard Health  (uncertain + number not backed)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-19T00:35:28",
+   "provider": "groq",
+   "note": "unstructured"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-19T00:35:19",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"POV: Exam Is Tomorrow 😭 | Every Student Can Relate! | Exam Memes | Student Life\",\"formula\":\"Relat"
+  },
+  {
+   "at": "2026-11-19T00:35:21",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Pay‑commission results & the anxiety they trigger among final‑year students & fresh graduates in India. **ANGL"
+  },
+  {
+   "at": "2026-11-19T00:35:24",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Pay‑commission results & the anxiety they trigger among final‑year students & fresh graduates in India\",\"searc"
+  },
+  {
+   "at": "2026-11-19T00:35:28",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\":1,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\""
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}
