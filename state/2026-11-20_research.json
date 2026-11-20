@@ -1,0 +1,77 @@
+{
+ "key": "2026-11-20",
+ "kind": "research",
+ "created": "2026-11-20T00:45:24",
+ "request": {
+  "kind": "research",
+  "mode": "student"
+ },
+ "research": {
+  "topic": "Eat the frog — tackling your hardest/most important task first",
+  "verified": [],
+  "sources": [],
+  "level": "unstructured",
+  "hook": "What if I told you that doing the hardest thing first and then napping can double your exam scores? Try it for 3 days and watch the magic happen.",
+  "tip": "Use the 50/5 Frog‑First Routine: 50 min on your toughest task, 5‑min stretch break, then a 20‑min power nap before the next work block.",
+  "dropped": [
+   "Self‑control is strongest in the first 2 hours after waking (Baumeister & Tierney, 2011) (unsupported)",
+   "Starting with a difficult task reduces proactive interference that hampers later recall (Miyake et a (unsupported)",
+   "A 60‑minute nap after learning boosts declarative memory by ~20 % (Diekelmann & Born, 2010) (unsupported)",
+   "The brain cycles in ~90‑minute focus periods (ultradian rhythm) and aligning work blocks improves at (unsupported)",
+   "Students who complete their most dreaded assignment first report 30‑40 % less perceived stress (APA, (unsupported)",
+   "A 5‑minute physical break restores dopamine levels, sharpening focus (Kelley et al., 2021) (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-20T00:45:43",
+   "provider": "groq",
+   "note": "unstructured"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-20T00:45:34",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"Studying until the sunrise 🤍📚☀️| STUDY VLOG 🫠\",\"formula\":\"Pattern-interrupt question\",\"trigger\":\""
+  },
+  {
+   "at": "2026-11-20T00:45:37",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Eat the frog — tackling your hardest/most important task first **ANGLE (why it is under‑used)** Most students "
+  },
+  {
+   "at": "2026-11-20T00:45:40",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Eat the frog — tackling your hardest/most important task first\",\"search_terms\":[\"willpower peak morning\",\"slee"
+  },
+  {
+   "at": "2026-11-20T00:45:43",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\":1,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\""
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}

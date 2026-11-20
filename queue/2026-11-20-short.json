@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-20-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-20T06:30:06+05:30",
+  "publish_at": "2026-11-20T10:00+05:30",
+  "publish_at_utc": "2026-11-20T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-20-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "Do the Hardest Task First, Reduce Stress, Boost Grades",
+    "yt_description": "A quick 45‑second reel showing why doing your toughest task first, followed by a short nap, boosts focus and reduces stress, with a simple 50/5 routine you can start today.\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\n#StudyHack #EatTheFrog #PowerNap #StudentLife #ProductivityTips #Shorts",
+    "ig_caption": "A quick 45‑second reel showing why doing your toughest task first, followed by a short nap, boosts focus and reduces stress, with a simple 50/5 routine you can start today.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#StudyHack #EatTheFrog #PowerNap #StudentLife #ProductivityTips",
+    "hashtags": [
+      "#StudyHack",
+      "#EatTheFrog",
+      "#PowerNap",
+      "#StudentLife",
+      "#ProductivityTips",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "xSNAdUq5Cso",
+        "url": "https://youtube.com/watch?v=xSNAdUq5Cso",
+        "scheduled": true
+      },
+      "at": "2026-11-20T01:00:09+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-20T01:00:09+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-20T01:00:09+00:00"
+    }
+  },
+  "status": "pending"
+}

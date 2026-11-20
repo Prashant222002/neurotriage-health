@@ -1,0 +1,264 @@
+{
+ "key": "2026-11-20",
+ "kind": "short",
+ "created": "2026-11-20T00:45:43",
+ "request": {
+  "kind": "short",
+  "mode": "student",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Eat the frog — tackling your hardest/most important task first",
+  "verified": [],
+  "sources": [],
+  "level": "unstructured",
+  "hook": "What if I told you that doing the hardest thing first and then napping can double your exam scores? Try it for 3 days and watch the magic happen.",
+  "tip": "Use the 50/5 Frog‑First Routine: 50 min on your toughest task, 5‑min stretch break, then a 20‑min power nap before the next work block.",
+  "dropped": [
+   "Self‑control is strongest in the first 2 hours after waking (Baumeister & Tierney, 2011) (unsupported)",
+   "Starting with a difficult task reduces proactive interference that hampers later recall (Miyake et a (unsupported)",
+   "A 60‑minute nap after learning boosts declarative memory by ~20 % (Diekelmann & Born, 2010) (unsupported)",
+   "The brain cycles in ~90‑minute focus periods (ultradian rhythm) and aligning work blocks improves at (unsupported)",
+   "Students who complete their most dreaded assignment first report 30‑40 % less perceived stress (APA, (unsupported)",
+   "A 5‑minute physical break restores dopamine levels, sharpening focus (Kelley et al., 2021) (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "9bcbdc99ee36bbd8",
+  "data": {
+   "title": "Hardest Assignment Pehle Karo, Stress Kam, Marks Double!",
+   "title_en": "Do the Hardest Task First, Reduce Stress, Boost Grades",
+   "formula": "Counterintuitive",
+   "kicker": "STUDY HACK",
+   "hook_text": "HARD TASK FIRST, NAP LATER",
+   "scenes": [
+    {
+     "text": "Kya tumhara hardest assignment har din tumhe thakata hai?",
+     "text_en": "Does your hardest assignment tire you every day?",
+     "queries": [
+      "student stressed morning",
+      "alarm clock ringing",
+      "messy desk"
+     ],
+     "emphasis": "THAKATA"
+    },
+    {
+     "text": "Sab log pehle easy kaam karte, frog baad mein.",
+     "text_en": "Everyone does easy work first, the frog later.",
+     "queries": [
+      "student scrolling phone",
+      "coffee cup desk",
+      "lazy study setup"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Research kehti hai subah ki willpower sabse zyada hoti.",
+     "text_en": "Research says morning willpower is the highest.",
+     "queries": [
+      "brain scan graphic",
+      "sunrise window",
+      "student waking up"
+     ],
+     "emphasis": "WILLPOWER"
+    },
+    {
+     "text": "Pehele apna sabse dreaded task, yaani frog, chun lo.",
+     "text_en": "First pick your most dreaded task, the frog.",
+     "queries": [
+      "student writing list",
+      "task checklist",
+      "close-up notebook"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Timer set karo 50 minute, bina distraction ke kaam karo.",
+     "text_en": "Set a timer for 50 minutes, work without distraction.",
+     "queries": [
+      "timer app on phone",
+      "student focused studying",
+      "quiet library"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Timer khatam hone par 5 minute stretch ya walk karo.",
+     "text_en": "When the timer ends, do a 5‑minute stretch or walk.",
+     "queries": [
+      "student stretching",
+      "short walk hallway",
+      "timer ringing"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Uske baad 20 minute power nap lo, lights dim.",
+     "text_en": "After that, take a 20‑minute power nap, dim the lights.",
+     "queries": [
+      "cozy nap corner",
+      "sleep mask on desk",
+      "soft lighting"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Isse stress kam hota aur focus improve hota.",
+     "text_en": "It helps reduce stress and improve focus.",
+     "queries": [
+      "student relaxed",
+      "focus icon",
+      "calm study"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Ye tip us dost ko bhejo jo hamesha procrastinate karta.",
+     "text_en": "Send this tip to that friend who always procrastinates.",
+     "queries": [
+      "student texting friend",
+      "phone notification",
+      "group chat screen"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Aur teesra step, yaani nap, sabse zaroori hai.",
+     "text_en": "And the third step, the nap, is the most important.",
+     "queries": [
+      "sleep timer app",
+      "student closing eyes",
+      "soft pillow"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Aaj se 50/5 frog routine try karo, farak dekho.",
+     "text_en": "Start the 50/5 frog routine today, see the difference.",
+     "queries": [
+      "student checking timer",
+      "before after study desk",
+      "happy student"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Results may vary; individual experiences differ.",
+     "text_en": "Results may vary; individual experiences differ.",
+     "queries": [
+      "student reading disclaimer",
+      "info icon",
+      "uncertainty"
+     ],
+     "emphasis": ""
+    }
+   ],
+   "description": "A quick 45‑second reel showing why doing your toughest task first, followed by a short nap, boosts focus and reduces stress, with a simple 50/5 routine you can start today.",
+   "hashtags": [
+    "#StudyHack",
+    "#EatTheFrog",
+    "#PowerNap",
+    "#StudentLife",
+    "#ProductivityTips",
+    "#ExamPrep"
+   ],
+   "audit": {
+    "score": 70,
+    "hook": 85,
+    "retention": 80,
+    "specificity": 85,
+    "safety_ok": false,
+    "fixes": [
+     "Remove the exact percentages for stress reduction and memory improvement to avoid medical claims",
+     "Rephrase claim to a general benefit like \"helps reduce stress and improve focus\"",
+     "Add a brief disclaimer that results may vary",
+     "Ensure the hook stays within 9 words and maintains curiosity"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-20T00:49:03",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-20T00:49:03",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-20T00:49:28",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-20T01:00:05",
+   "provider": "",
+   "note": "Do the Hardest Task First, Reduce Stress, Boost Grades"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-20T00:46:04",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"Hardest Assignment Pehle Karo, Nind Se Double Marks!\",\"title_en\":\"Do the Hardest Task First, Nap for Double Ma"
+  },
+  {
+   "at": "2026-11-20T00:46:17",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"Hardest Assignment Pehle Karo, Nap Se Double Marks!\",\"title_en\":\"Do the Hardest Task First, Nap for Double Mar"
+  },
+  {
+   "at": "2026-11-20T00:46:38",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_5",
+   "summary": "{\"title\":\"Hardest Assignment Pehle Karo, Stress Kam, Marks Double!\",\"title_en\":\"Do the Hardest Task First, Reduce Stress"
+  },
+  {
+   "at": "2026-11-20T00:48:57",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Hardest Assignment Pehle Karo, Stress Kam, Marks Double!\",\"title_en\":\"Do the Hardest Task First, Reduce Stress"
+  },
+  {
+   "at": "2026-11-20T00:48:58",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"score\":70,\"hook\":85,\"retention\":80,\"specificity\":85,\"safety_ok\":false,\"fixes\":[\"Remove the exact percentages for stres"
+  },
+  {
+   "at": "2026-11-20T00:49:03",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"Hardest Assignment Pehle Karo, Stress Kam, Marks Double!\",\"title_en\":\"Do the Hardest Task First, Reduce Stress"
+  },
+  {
+   "at": "2026-11-20T01:00:05",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Hardest Assignment Pehle Karo, Stress 50% Kam, Marks 2x Badho!\",\"Kya Tumhara Tough Assignment Roz Thakata Ha"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}
