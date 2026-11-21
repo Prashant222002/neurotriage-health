@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-21-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-21T07:19:11+05:30",
+  "publish_at": "2026-11-21T10:00+05:30",
+  "publish_at_utc": "2026-11-21T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-21-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "Schizophrenia Myths: How to Support a Friend",
+    "yt_description": "A quick myth‑busting reel on schizophrenia, showing how stigma harms treatment and giving three simple steps to support a friend or family member without judgment.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/23032675/\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\nIf you are struggling, India's free 24x7 helpline Tele-MANAS: 14416.\n\n#Schizophrenia #MentalHealth #MythBusting #SupportFriends #Stigma #Shorts",
+    "ig_caption": "A quick myth‑busting reel on schizophrenia, showing how stigma harms treatment and giving three simple steps to support a friend or family member without judgment.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#Schizophrenia #MentalHealth #MythBusting #SupportFriends #Stigma",
+    "hashtags": [
+      "#Schizophrenia",
+      "#MentalHealth",
+      "#MythBusting",
+      "#SupportFriends",
+      "#Stigma",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "an26RY8GtMg",
+        "url": "https://youtube.com/watch?v=an26RY8GtMg",
+        "scheduled": true
+      },
+      "at": "2026-11-21T01:49:14+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-21T01:49:14+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-21T01:49:14+00:00"
+    }
+  },
+  "status": "pending"
+}

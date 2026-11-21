@@ -30,13 +30,182 @@
   ]
  },
  "script": {
-  "locked": false,
-  "version": 0,
-  "hash": "",
-  "data": null,
-  "history": []
+  "locked": true,
+  "version": 1,
+  "hash": "69b20d08d5f76d34",
+  "data": {
+   "title": "Schizophrenia Myths: Dost ko Kaise Support Kare",
+   "title_en": "Schizophrenia Myths: How to Support a Friend",
+   "formula": "Wish I knew earlier",
+   "kicker": "MENTAL HEALTH",
+   "hook_text": "JUST RELAX HURTS",
+   "scenes": [
+    {
+     "text": "Kya ‘just relax’ dosti ko door karta hai?",
+     "queries": [
+      "person looking confused",
+      "friend texting phone",
+      "closeup hand gesture"
+     ],
+     "text_en": "Does saying ‘just relax’ push a friendship away?",
+     "text_hi": "क्या ‘just relax’ दोस्ती को दूर करता है?",
+     "emphasis": "JUST RELAX"
+    },
+    {
+     "text": "Schizophrenia mein soch aur feelings kabhi kabhi alag lagti hain.",
+     "queries": [
+      "brain illustration",
+      "person holding head",
+      "thought bubbles"
+     ],
+     "text_en": "In schizophrenia, thoughts and feelings can sometimes feel separate.",
+     "text_hi": "Schizophrenia में सोच और feelings कभी कभी अलग लगती हैं।",
+     "emphasis": ""
+    },
+    {
+     "text": "Myth: Unko sirf ‘mind games’ se theek kiya ja sakta hai.",
+     "queries": [
+      "myth text overlay",
+      "crossed out sign",
+      "question mark icon"
+     ],
+     "text_en": "Myth: They can be fixed just with ‘mind games’.",
+     "text_hi": "Myth: उनको सिर्फ ‘mind games’ से ठीक किया जा सकता है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Fact: Ye ek medical condition hai, professional help zaroori hai.",
+     "queries": [
+      "doctor office",
+      "medical chart",
+      "handshake"
+     ],
+     "text_en": "Fact: It’s a medical condition, professional help is essential.",
+     "text_hi": "Fact: यह एक medical condition है, professional help ज़रूरी है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Stigma unki treatment adherence ko kam karta hai, relapse risk badhata hai.",
+     "queries": [
+      "stigma symbol",
+      "closed door",
+      "shadow figure"
+     ],
+     "text_en": "Stigma reduces treatment adherence and raises relapse risk.",
+     "text_hi": "Stigma उनकी treatment adherence को कम करता है, relapse risk बढ़ाता है।",
+     "emphasis": "STIGMA"
+    },
+    {
+     "text": "Aap kya kar sakte ho? Pehle unse puchho, assume mat karo.",
+     "queries": [
+      "two friends talking",
+      "coffee shop conversation",
+      "hand reaching out"
+     ],
+     "text_en": "What can you do? First ask them, don’t assume.",
+     "text_hi": "आप क्या कर सकते हो? पहले उनसे पूछो, assume मत करो।",
+     "emphasis": ""
+    },
+    {
+     "text": "Say: ‘Maine notice kiya tum stress mein ho, baat karna?’",
+     "queries": [
+      "text message bubble",
+      "person speaking gently",
+      "closeup face listening"
+     ],
+     "text_en": "Say: ‘I’ve noticed you’re stressed, want to talk?’",
+     "text_hi": "Say: ‘मैंने notice किया तुम stress में हो, बात करना?’",
+     "emphasis": "MAINE NOTICE"
+    },
+    {
+     "text": "Unko suno bina judge kiye, unki feelings ko validate karo.",
+     "queries": [
+      "listening ear illustration",
+      "nodding head",
+      "supportive hug"
+     ],
+     "text_en": "Listen without judging, validate their feelings.",
+     "text_hi": "उनको सुनो बिना judge किए, उनकी feelings को validate करो।",
+     "emphasis": ""
+    },
+    {
+     "text": "Agar wo therapy chahe, unhe gently encourage karo.",
+     "queries": [
+      "therapy session door",
+      "calendar reminder",
+      "encouraging gesture"
+     ],
+     "text_en": "If they want therapy, gently encourage them.",
+     "text_hi": "अगर वो therapy चाहे, उन्हें gently encourage करो।",
+     "emphasis": ""
+    },
+    {
+     "text": "Yaad rakho: stigma ko todna, support dena, assumptions nahi.",
+     "queries": [
+      "summary bullet points",
+      "checklist",
+      "lightbulb idea"
+     ],
+     "text_en": "Remember: break stigma, give support, no assumptions.",
+     "text_hi": "याद रखो: stigma को तोड़ना, support देना, assumptions नहीं।",
+     "emphasis": ""
+    },
+    {
+     "text": "Aaj se ek friend ko pucho, ‘Kaisa feel kar rahe ho?’",
+     "queries": [
+      "person asking question",
+      "friendly smile",
+      "handshake"
+     ],
+     "text_en": "From today, ask a friend, ‘How are you feeling?’",
+     "text_hi": "आज से एक friend को पूछो, ‘कैसा feel कर रहे हो?’",
+     "emphasis": ""
+    }
+   ],
+   "description": "A quick myth‑busting reel on schizophrenia, showing how stigma harms treatment and giving three simple steps to support a friend or family member without judgment.",
+   "hashtags": [
+    "#Schizophrenia",
+    "#MentalHealth",
+    "#MythBusting",
+    "#SupportFriends",
+    "#Stigma",
+    "#Awareness"
+   ],
+   "audit": {
+    "score": 78,
+    "hook": 90,
+    "retention": 85,
+    "specificity": 40,
+    "safety_ok": true,
+    "fixes": [
+     "Add a line mentioning a typical Indian student or professional (e.g., a college engineering student or a junior IT analyst) dealing with a friend’s schizophrenia",
+     "Ensure each beat changes visually or narratively every 2‑3 scenes to keep pacing tight",
+     "Include a quick on‑screen text or graphic reinforcing the myth‑fact contrast for better retention",
+     "Add a brief closing tagline reinforcing the call‑to‑action, e.g., ‘Break the stigma, be the support’"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-21T01:39:53",
+  "source": "groq"
  },
- "stages": {},
+ "stages": {
+  "script": {
+   "at": "2026-11-21T01:39:53",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-21T01:40:17",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-21T01:49:11",
+   "provider": "",
+   "note": "Schizophrenia Myths: How to Support a Friend"
+  }
+ },
  "handoff": [
   {
    "at": "2026-11-21T00:05:39",
@@ -101,10 +270,42 @@
    "model": "openai/gpt-oss-120b",
    "key": "GROQ_API_KEY_5",
    "summary": "{ \"title\": \"Schizophrenia Myths: Dost ko Kaise Support Kare\", \"title_en\": \"Schizophrenia Myths: How to Support a Friend\""
+  },
+  {
+   "at": "2026-11-21T01:39:37",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{ \"title\": \"Schizophrenia Myths: Dost ko Kaise Support Kare\", \"title_en\": \"Schizophrenia Myths: How to Support a Friend\""
+  },
+  {
+   "at": "2026-11-21T01:39:51",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{ \"title\": \"Schizophrenia Myths: Dost ko Kaise Support Kare\", \"title_en\": \"Schizophrenia Myths: How to Support a Friend\""
+  },
+  {
+   "at": "2026-11-21T01:39:53",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"score\":78,\"hook\":90,\"retention\":85,\"specificity\":40,\"safety_ok\":true,\"fixes\":[\"Add a line mentioning a typical Indian "
+  },
+  {
+   "at": "2026-11-21T01:49:11",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Schizophrenia Myths: Dost ko Kaise Support Kare?\",\"Kya ‘Just Relax’ Schizophrenia Relapse Badhaata Hai?\",\"5 "
   }
  ],
  "pending": [],
  "errors": [],
  "approved_changes": [],
- "stage_now": "script"
+ "stage_now": "voice"
 }
