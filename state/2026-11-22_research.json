@@ -1,0 +1,87 @@
+{
+ "key": "2026-11-22",
+ "kind": "research",
+ "created": "2026-11-21T23:30:48",
+ "request": {
+  "kind": "research",
+  "mode": "awareness"
+ },
+ "research": {
+  "topic": "Types of therapy explained simply with a quick checklist to choose the right one",
+  "verified": [
+   "CBT is effective in reducing anxiety and depression symptoms in many adolescents, though exact response rates vary across studies."
+  ],
+  "sources": [
+   {
+    "title": "Cognitive Behavioral Therapy for Children and Adolescents with Anxiety Disorders.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37201966/"
+   },
+   {
+    "title": "Cognitive Behavioral Therapy for Anxiety and Depression in Children and Adolescents.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38724122/"
+   }
+  ],
+  "level": "partial",
+  "hook": "STOP if you think therapy = ‘crazy’",
+  "tip": "Apply the 5‑point Therapy‑Choice Checklist (goal, time, comfort, access, cost) to pick a suitable therapy",
+  "dropped": [
+   "Talk (psychodynamic) therapy is longer‑term and aids deeper self‑insight (WHO 2022) (unsupported)",
+   "Mindfulness‑based therapy modestly improves stress scores after 8 weeks in Indian adolescents (NIMHA (unsupported)",
+   "Art and music therapy show benefits for trauma‑related symptoms in teens (J Child Psych 2020) (unsupported)",
+   "Group therapy reduces loneliness by ~30% in high‑school students after 10 sessions (Lancet Psychiatr (unsupported)",
+   "Tele‑therapy outcomes are comparable to in‑person CBT for mild‑moderate anxiety (JAMA Netw Open 2021 (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-21T23:32:04",
+   "provider": "groq",
+   "note": "partial"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-21T23:31:55",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"POV: Exam Is Tomorrow 😭 | Every Student Can Relate! | Exam Memes | Student Life\",\"formula\":\"Patte"
+  },
+  {
+   "at": "2026-11-21T23:31:58",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Types of therapy explained simply (CBT, talk‑therapy, art therapy, group therapy, etc.) – and a quick checklis"
+  },
+  {
+   "at": "2026-11-21T23:32:00",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Types of therapy explained simply with a quick checklist to choose the right one\",\"search_terms\":[\"cognitive b"
+  },
+  {
+   "at": "2026-11-21T23:32:04",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"uncertain\",\"cites\":[0,2],\"fix\":\"CBT is effective in reducing anxiety and depression sympto"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}

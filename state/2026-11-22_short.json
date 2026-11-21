@@ -1,0 +1,318 @@
+{
+ "key": "2026-11-22",
+ "kind": "short",
+ "created": "2026-11-21T23:32:04",
+ "request": {
+  "kind": "short",
+  "mode": "awareness",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Types of therapy explained simply with a quick checklist to choose the right one",
+  "verified": [
+   "CBT is effective in reducing anxiety and depression symptoms in many adolescents, though exact response rates vary across studies."
+  ],
+  "sources": [
+   {
+    "title": "Cognitive Behavioral Therapy for Children and Adolescents with Anxiety Disorders.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37201966/"
+   },
+   {
+    "title": "Cognitive Behavioral Therapy for Anxiety and Depression in Children and Adolescents.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38724122/"
+   }
+  ],
+  "level": "partial",
+  "hook": "STOP if you think therapy = ‘crazy’",
+  "tip": "Apply the 5‑point Therapy‑Choice Checklist (goal, time, comfort, access, cost) to pick a suitable therapy",
+  "dropped": [
+   "Talk (psychodynamic) therapy is longer‑term and aids deeper self‑insight (WHO 2022) (unsupported)",
+   "Mindfulness‑based therapy modestly improves stress scores after 8 weeks in Indian adolescents (NIMHA (unsupported)",
+   "Art and music therapy show benefits for trauma‑related symptoms in teens (J Child Psych 2020) (unsupported)",
+   "Group therapy reduces loneliness by ~30% in high‑school students after 10 sessions (Lancet Psychiatr (unsupported)",
+   "Tele‑therapy outcomes are comparable to in‑person CBT for mild‑moderate anxiety (JAMA Netw Open 2021 (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "bcc4c80f083025da",
+  "data": {
+   "title": "Therapy Kaise Chune? 5-Point Quick Guide",
+   "title_en": "How to Choose Therapy: 5-Point Quick Guide",
+   "formula": "Stop doing this if...",
+   "kicker": "MENTAL WELLNESS",
+   "hook_text": "THERAPY IS NOT FOR CRAZY – Aaj jaaniye ek aisa fayda jo aapko hairaan kar dega!",
+   "scenes": [
+    {
+     "text": "Ruk jao agar lagta hai therapy sirf pagalpan hai.",
+     "queries": [
+      "person closing laptop screen",
+      "empty wooden chair studio",
+      "tea cup table window"
+     ],
+     "text_en": "Stop if you think therapy is only for severe madness.",
+     "text_hi": "रुक जाओ अगर लगता है therapy सिर्फ पागलपन है।",
+     "emphasis": "RUK JAO"
+    },
+    {
+     "text": "Therapy dimaag ka gym hai, aur teesra step sabse zaroori.",
+     "queries": [
+      "running shoes on floor",
+      "morning sunlight bedroom",
+      "person tying sports shoes"
+     ],
+     "text_en": "Therapy is a mental gym, and step three matters most.",
+     "text_hi": "Therapy दिमाग का gym है, और तीसरा step सबसे ज़रूरी है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Research kehti hai CBT, jaise Rohit, engineering student, anxiety aur sadness kam karne mein kaafi effective hai.",
+     "queries": [
+      "journal and pen desk",
+      "hands writing notebook",
+      "sunlit study table"
+     ],
+     "text_en": "Research suggests CBT, like Rohit the engineering student, effectively reduces anxiety and low mood.",
+     "text_hi": "Research कहती है CBT, जैसे रोहित, engineering student, anxiety और sadness कम करने में काफी effective है।",
+     "emphasis": "CBT EFFECTIVE"
+    },
+    {
+     "text": "Ye us dost ko bhejo jo overthinking se thak chuka hai.",
+     "queries": [
+      "two friends walking park",
+      "college students talking bench",
+      "person texting phone outdoors"
+     ],
+     "text_en": "Send this to that friend who is exhausted from overthinking.",
+     "text_hi": "ये उस दोस्त को भेजो जो overthinking से थक चुका है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Sahi therapy chunne ke liye ye simple five-point checklist follow karo.",
+     "queries": [
+      "checklist notepad pen",
+      "person ticking box paper",
+      "clean minimal workspace desk"
+     ],
+     "text_en": "Follow this simple five-point checklist to pick the right therapy.",
+     "text_hi": "सही therapy चुनने के लिए ये simple five-point checklist follow करो।",
+     "emphasis": "CHECKLIST"
+    },
+    {
+     "text": "Pehle apna goal decide karo, phir weekly time commitment dekho.",
+     "queries": [
+      "analog wall clock ticking",
+      "calendar desk planner",
+      "person checking wrist watch"
+     ],
+     "text_en": "First decide your clear goal, then check your weekly time commitment.",
+     "text_hi": "पहले अपना goal decide करो, फिर weekly time commitment देखो।",
+     "emphasis": ""
+    },
+    {
+     "text": "Teesra point, kya therapist ke saath baat karne mein safe lagta hai?",
+     "queries": [
+      "warm coffee mugs hands",
+      "two chairs opposite table",
+      "cozy indoor potted plant"
+     ],
+     "text_en": "Third point, do you feel completely safe talking with that therapist?",
+     "text_hi": "तीसरा point, क्या therapist के साथ बात करने में safe लगता है?",
+     "emphasis": "SAFE SPACE"
+    },
+    {
+     "text": "Chautha access aur paanchva budget, jo long term sustain ho sake.",
+     "queries": [
+      "person typing modern laptop",
+      "calculator bills desk",
+      "piggy bank wooden shelf"
+     ],
+     "text_en": "Fourth is easy access and fifth is a budget you can sustain long term.",
+     "text_hi": "चौथा access और पाँचवाँ budget, जो long term sustain हो सके।",
+     "emphasis": ""
+    },
+    {
+     "text": "Thoughts badalne ke liye CBT, feelings express karne ke liye talk therapy.",
+     "queries": [
+      "person sketching paper art",
+      "turning pages book close",
+      "glasses reading notebook desk"
+     ],
+     "text_en": "Try CBT to reshape thoughts, or talk therapy to express bottled emotions.",
+     "text_hi": "Thoughts बदलने के लिए CBT, feelings express करने के लिए talk therapy।",
+     "emphasis": ""
+    },
+    {
+     "text": "Help maangna kamzori nahi, self-awareness ki sabse badi nishani hai.",
+     "queries": [
+      "walking solitary beach dawn",
+      "open window fresh breeze",
+      "morning sky calm sunrise"
+     ],
+     "text_en": "Asking for help is not weakness; it is genuine self-awareness.",
+     "text_hi": "Help माँगना कमज़ोरी नहीं, self-awareness की सबसे बड़ी निशानी है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Toh khud par bharosa rakho aur therapy lene se bilkul mat darna.",
+     "queries": [
+      "person smiling looking window",
+      "stepping outside sunny street",
+      "hand opening window curtain"
+     ],
+     "text_en": "Trust yourself gently, and never fear reaching out for therapy guidance.",
+     "text_hi": "तो खुद पर भरोसा रखो और therapy लेने से बिल्कुल मत डरना।",
+     "emphasis": ""
+    },
+    {
+     "text": "Aaj hi ek therapist book karo aur apni mental fitness shuru karo!",
+     "queries": [
+      "smartphone booking app",
+      "calendar reminder note",
+      "person clicking confirm button"
+     ],
+     "text_en": "Book a therapist today and start your mental fitness journey!",
+     "text_hi": "Aaj hi ek therapist book karo aur apni mental fitness shuru karo!",
+     "emphasis": "CTA"
+    }
+   ],
+   "description": "Understanding therapy types doesn't have to be confusing. Here is a simple 5-point checklist to find the right support for your mental wellness.",
+   "hashtags": [
+    "#MentalHealthAwareness",
+    "#TherapyTips",
+    "#CBT",
+    "#SelfCareMatters",
+    "#StudentMentalHealth",
+    "#BreakTheStigma"
+   ],
+   "audit": {
+    "score": 65,
+    "hook": 80,
+    "retention": 70,
+    "specificity": 30,
+    "safety_ok": true,
+    "fixes": [
+     "Add a concrete Indian student or professional example (e.g., engineering student prepping for exams)",
+     "End with a clear CTA like “Aaj hi ek therapist book karo”",
+     "Trim filler lines to keep beats concise",
+     "Strengthen the open loop by teasing a surprising benefit in a later scene"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-21T23:41:59",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-21T23:41:59",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-21T23:43:04",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-21T23:54:25",
+   "provider": "",
+   "note": "How to Choose Therapy: 5-Point Quick Guide"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-21T23:32:57",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_5",
+   "summary": "{ \"title\": \"Therapy kaise choose kare? Simple checklist se\", \"title_en\": \"How to Choose Therapy? Simple Checklist\", \"for"
+  },
+  {
+   "at": "2026-11-21T23:33:11",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{ \"title\": \"Therapy kaise choose kare? Simple checklist se\", \"title_en\": \"How to Choose Therapy? Simple Checklist\", \"for"
+  },
+  {
+   "at": "2026-11-21T23:33:25",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{ \"title\": \"Therapy kaise choose kare? Simple checklist se\", \"title_en\": \"How to Choose Therapy? Simple Checklist\", \"for"
+  },
+  {
+   "at": "2026-11-21T23:35:39",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{ \"title\": \"Therapy kaise choose kare? Simple checklist se\", \"title_en\": \"How to Choose Therapy? Simple Checklist\", \"for"
+  },
+  {
+   "at": "2026-11-21T23:36:06",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Therapy kaise choose kare? Simple checklist se\",\"title_en\":\"How to Choose Therapy? Simple Checklist\",\"formula\""
+  },
+  {
+   "at": "2026-11-21T23:39:00",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{ \"title\": \"Therapy kaise choose kare? Quick 5-point checklist\", \"title_en\": \"How to Choose Therapy? Quick 5-point Check"
+  },
+  {
+   "at": "2026-11-21T23:39:48",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_5",
+   "summary": "{\"title\":\"Therapy kaun si chunen? Quick 5-point checklist\",\"title_en\":\"Which therapy to choose? Quick 5-point checklist\""
+  },
+  {
+   "at": "2026-11-21T23:41:53",
+   "stage": "script",
+   "provider": "gemini",
+   "model": "gemini-3.8-flash",
+   "key": "GEMINI_API_KEY",
+   "summary": "{ \"title\": \"Therapy Kaise Chune? 5-Point Quick Guide\", \"title_en\": \"How to Choose Therapy: 5-Point Quick Guide\", \"formul"
+  },
+  {
+   "at": "2026-11-21T23:41:55",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"score\":65,\"hook\":80,\"retention\":70,\"specificity\":30,\"safety_ok\":true,\"fixes\":[\"Add a concrete Indian student or profes"
+  },
+  {
+   "at": "2026-11-21T23:41:59",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Therapy Kaise Chune? 5-Point Quick Guide\",\"title_en\":\"How to Choose Therapy: 5-Point Quick Guide\",\"formula\":\"S"
+  },
+  {
+   "at": "2026-11-21T23:54:25",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Therapy Kaise Chune? 5 Simple Steps for Stress Relief\",\"Kya Therapy Sirf Pagal Logon Ka Hai? 5 Facts You Nee"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}
