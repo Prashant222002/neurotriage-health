@@ -1,0 +1,83 @@
+{
+ "key": "2026-11-21",
+ "kind": "research",
+ "created": "2026-11-21T00:05:11",
+ "request": {
+  "kind": "research",
+  "mode": "awareness"
+ },
+ "research": {
+  "topic": "Schizophrenia – Myths & How to Support a Friend or Family Member",
+  "verified": [
+   "Stigma may negatively affect treatment adherence and increase relapse risk."
+  ],
+  "sources": [
+   {
+    "title": "Challenging the public stigma of mental illness: a meta-analysis of outcome studies.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23032675/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Wish I knew earlier that saying ‘just relax, you’ll be fine’ can actually push a friend with schizophrenia further away… Here’s what really helps.",
+  "tip": "Ask, don’t assume – say “Hey, I’ve noticed you’ve seemed a bit stressed lately. Want to talk? I’m here to listen.”",
+  "dropped": [
+   "Schizophrenia affects about 1 % of the global population (WHO, 2023). (unsupported)",
+   "It includes positive symptoms (hallucinations, delusions) and negative symptoms (social withdrawal,  (unsupported)",
+   "Early intervention improves long‑term functional recovery (NIMHANS, 2022). (unsupported)",
+   "Coercive language about medication can increase resistance; adherence is a personal decision (NIMH,  (unsupported)",
+   "Supportive friends and family lower hospitalization rates (APA Journal of Clinical Psychiatry, 2021) (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-21T00:05:32",
+   "provider": "groq",
+   "note": "partial"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-21T00:05:24",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"POV: Exam Is Tomorrow 😭 | Every Student Can Relate! | Exam Memes | Student Life\",\"formula\":\"Patte"
+  },
+  {
+   "at": "2026-11-21T00:05:27",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Schizophrenia – Myths & How to Support a Friend or Family Member **ANGLE (why it is under‑used)** Most short‑f"
+  },
+  {
+   "at": "2026-11-21T00:05:28",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Schizophrenia – Myths & How to Support a Friend or Family Member\",\"search_terms\":[\"schizophrenia prevalence WH"
+  },
+  {
+   "at": "2026-11-21T00:05:32",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\":1,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\""
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}
