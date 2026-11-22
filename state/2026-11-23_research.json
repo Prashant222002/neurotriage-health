@@ -1,0 +1,77 @@
+{
+ "key": "2026-11-23",
+ "kind": "research",
+ "created": "2026-11-22T23:42:40",
+ "request": {
+  "kind": "research",
+  "mode": "student"
+ },
+ "research": {
+  "topic": "Single‑tasking (focusing on one activity at a time)",
+  "verified": [],
+  "sources": [],
+  "level": "unstructured",
+  "hook": "Can you ace a chapter in just 45 minutes by doing ONE thing at a time? Here’s how toppers do it.",
+  "tip": "The 45‑Minute Focus Sprint: pick one sub‑task, set a 45‑min timer, eliminate distractions, work only on that task, then take a 5‑min micro‑break before repeating.",
+  "dropped": [
+   "Task switching every few minutes cuts efficiency by ~40% (Ophir et al., 2009) (uncertain + number not backed)",
+   "Uninterrupted study boosts recall by 15‑20% vs. phone‑checking (Pashler, 1994) (unsupported)",
+   "82% of elite students use 30‑60 min focus blocks without digital interruptions (survey, 2022) (unsupported)",
+   "Single‑tasking lowers perceived stress by ~30% during exams (APA Stress Survey, 2021) (unsupported)",
+   "≈45 min of continuous focus increases hippocampal activity linked to memory consolidation (Ranganath (unsupported)",
+   "Using a focus‑only app raised grades by 0.3 points over a semester (Kumar et al., 2023) (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-22T23:43:00",
+   "provider": "groq",
+   "note": "unstructured"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-22T23:42:50",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"Hyperfocus | LOCK IN for 3 Hours | Deep Work Study With Me (Pomodoro 50/10)\",\"formula\":\"Specific "
+  },
+  {
+   "at": "2026-11-22T23:42:54",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Single‑tasking (the practice of focusing on one activity at a time) **ANGLE** **TOPPERS vs MYTH:** What high‑s"
+  },
+  {
+   "at": "2026-11-22T23:42:56",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Single‑tasking (focusing on one activity at a time)\",\"search_terms\":[\"multitasking productivity reduction stud"
+  },
+  {
+   "at": "2026-11-22T23:43:00",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"uncertain\",\"cites\":[1],\"fix\":\"Task switching can reduce efficiency, but the evidence does "
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}

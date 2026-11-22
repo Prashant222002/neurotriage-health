@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-23-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-23T05:21:08+05:30",
+  "publish_at": "2026-11-23T10:00+05:30",
+  "publish_at_utc": "2026-11-23T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-23-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "Topper Single Tasking vs Multitasking Study Hack",
+    "yt_description": "Discover how toppers use single-tasking and forty-five minute focus blocks to study better without burning out.\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\n#singletasking #studyhacks #focus #productivity #collegelife #Shorts",
+    "ig_caption": "Discover how toppers use single-tasking and forty-five minute focus blocks to study better without burning out.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#singletasking #studyhacks #focus #productivity #collegelife",
+    "hashtags": [
+      "#singletasking",
+      "#studyhacks",
+      "#focus",
+      "#productivity",
+      "#collegelife",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "ZkMsP4UEePA",
+        "url": "https://youtube.com/watch?v=ZkMsP4UEePA",
+        "scheduled": true
+      },
+      "at": "2026-11-22T23:51:14+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-22T23:51:14+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-22T23:51:14+00:00"
+    }
+  },
+  "status": "pending"
+}

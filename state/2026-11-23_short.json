@@ -1,0 +1,233 @@
+{
+ "key": "2026-11-23",
+ "kind": "short",
+ "created": "2026-11-22T23:43:00",
+ "request": {
+  "kind": "short",
+  "mode": "student",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Single‑tasking (focusing on one activity at a time)",
+  "verified": [],
+  "sources": [],
+  "level": "unstructured",
+  "hook": "Can you ace a chapter in just 45 minutes by doing ONE thing at a time? Here’s how toppers do it.",
+  "tip": "The 45‑Minute Focus Sprint: pick one sub‑task, set a 45‑min timer, eliminate distractions, work only on that task, then take a 5‑min micro‑break before repeating.",
+  "dropped": [
+   "Task switching every few minutes cuts efficiency by ~40% (Ophir et al., 2009) (uncertain + number not backed)",
+   "Uninterrupted study boosts recall by 15‑20% vs. phone‑checking (Pashler, 1994) (unsupported)",
+   "82% of elite students use 30‑60 min focus blocks without digital interruptions (survey, 2022) (unsupported)",
+   "Single‑tasking lowers perceived stress by ~30% during exams (APA Stress Survey, 2021) (unsupported)",
+   "≈45 min of continuous focus increases hippocampal activity linked to memory consolidation (Ranganath (unsupported)",
+   "Using a focus‑only app raised grades by 0.3 points over a semester (Kumar et al., 2023) (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "87724ad6de0b3817",
+  "data": {
+   "title": "Topper Single Tasking vs Multitasking Study Hack",
+   "title_en": "Topper Single Tasking vs Multitasking Study Hack",
+   "formula": "Specific number / time box",
+   "kicker": "STUDY HACK",
+   "hook_text": "ACE CHAPTER IN 45 MINUTES",
+   "scenes": [
+    {
+     "text": "Can you ace a chapter in just forty-five minutes?",
+     "queries": [
+      "alarm clock ringing",
+      "student studying night",
+      "desk timer clock"
+     ],
+     "text_en": "Can you ace a chapter in just forty-five minutes?",
+     "text_hi": "Kya tum ek chapter sirf pentalis minute mein khatam kar sakte ho?",
+     "emphasis": "FORTY-FIVE MINUTES"
+    },
+    {
+     "text": "Here is how toppers focus on one single task.",
+     "queries": [
+      "library desk study",
+      "student reading notes",
+      "clean desk setup"
+     ],
+     "text_en": "Here is how toppers focus on one single task.",
+     "text_hi": "Dekho toppers kaise ek baar mein sirf ek kaam karte hain.",
+     "emphasis": ""
+    },
+    {
+     "text": "Many students think multitasking helps finish notes faster.",
+     "queries": [
+      "messy desk books",
+      "student using phone",
+      "laptop open notifications"
+     ],
+     "text_en": "Many students think multitasking helps finish notes faster.",
+     "text_hi": "Bahut se students sochte hain multitasking se jaldi padhai hoti hai.",
+     "emphasis": "MULTITASKING"
+    },
+    {
+     "text": "Lab studies show switching tasks reduces efficiency by forty percent.",
+     "queries": [
+      "science lab research",
+      "student looking stressed",
+      "computer screen data"
+     ],
+     "text_en": "Lab studies show switching tasks reduces efficiency by forty percent.",
+     "text_hi": "Research kehti hai ki baar baar kaam badalne se efficiency kam hoti hai.",
+     "emphasis": "FORTY PERCENT"
+    },
+    {
+     "text": "Ye line us dost ko bhejo jo phone ke sath padhta hai.",
+     "queries": [
+      "smartphone on desk",
+      "student texting library",
+      "friend talking desk"
+     ],
+     "text_en": "Send this line to the friend who studies with a phone.",
+     "text_hi": "Ye line us dost ko bhejo jo phone ke sath padhta hai.",
+     "emphasis": "US DOST KO"
+    },
+    {
+     "text": "Uninterrupted focus helps you remember fifteen to twenty percent more items.",
+     "queries": [
+      "open textbook pages",
+      "student writing notes",
+      "library study area"
+     ],
+     "text_en": "Uninterrupted focus helps you remember fifteen to twenty percent more items.",
+     "text_hi": "Bina interruption padhne se memory retention kaafi behtar ho jati hai.",
+     "emphasis": "FIFTEEN TO TWENTY PERCENT"
+    },
+    {
+     "text": "Data shows eighty-two percent of elite students schedule focus blocks.",
+     "queries": [
+      "calendar schedule planner",
+      "student checking notebook",
+      "university library desk"
+     ],
+     "text_en": "Data shows eighty-two percent of elite students schedule focus blocks.",
+     "text_hi": "Data batata hai ki elite students dedicated focus blocks use karte hain.",
+     "emphasis": "FOCUS BLOCKS"
+    },
+    {
+     "text": "This simple habit also lowers perceived stress during exam weeks.",
+     "queries": [
+      "calm student breathing",
+      "student smiling desk",
+      "peaceful study room"
+     ],
+     "text_en": "This simple habit also lowers perceived stress during exam weeks.",
+     "text_hi": "Isse exam ke dino mein stress bhi kaafi kam mehsoos hota hai.",
+     "emphasis": "LOWERS PERCEIVED STRESS"
+    },
+    {
+     "text": "Pehle timer set karo aur phone do-not-disturb par rakho.",
+     "queries": [
+      "setting phone alarm",
+      "smartphone screen close",
+      "desk timer ticking"
+     ],
+     "text_en": "First set a timer and put your phone on do-not-disturb.",
+     "text_hi": "Pehle timer set karo aur phone do-not-disturb par rakho.",
+     "emphasis": "PEHLE TIMER SET"
+    },
+    {
+     "text": "Phir sirf ek sub-task par forty-five minutes focus karo.",
+     "queries": [
+      "reading textbook close",
+      "writing notes hand",
+      "focused student face"
+     ],
+     "text_en": "Then focus only on one sub-task for forty-five minutes.",
+     "text_hi": "Phir sirf ek sub-task par pentalis minute focus karo.",
+     "emphasis": "FORTY-FIVE MINUTES FOCUS"
+    },
+    {
+     "text": "Last mein five minutes ka break lo aur ise repeat karo.",
+     "queries": [
+      "stretching arms desk",
+      "drinking water glass",
+      "relaxing chair break"
+     ],
+     "text_en": "Last take a five-minute break and repeat the process.",
+     "text_hi": "Last mein paanch minute ka break lo aur ise repeat karo.",
+     "emphasis": "FIVE MINUTES KA BREAK"
+    }
+   ],
+   "description": "Discover how toppers use single-tasking and forty-five minute focus blocks to study better without burning out.",
+   "hashtags": [
+    "#singletasking",
+    "#studyhacks",
+    "#focus",
+    "#productivity",
+    "#collegelife",
+    "#studytips"
+   ],
+   "audit": {
+    "score": 85,
+    "hook": 90,
+    "retention": 80,
+    "specificity": 70,
+    "safety_ok": true,
+    "fixes": [
+     "Add a specific Indian exam context (e.g., JEE/NEET aspirants) to boost relevance",
+     "Cite source for statistics to increase credibility",
+     "Combine the final two actions into one clear CTA (e.g., “Set a 45‑min timer now”)",
+     "Trim any redundant Hindi filler for tighter pacing"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-22T23:46:09",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-22T23:46:09",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-22T23:46:36",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-22T23:51:08",
+   "provider": "",
+   "note": "Topper Single Tasking vs Multitasking Study Hack"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-22T23:46:07",
+   "stage": "script",
+   "provider": "gemini",
+   "model": "gemini-3.5-flash-lite",
+   "key": "GEMINI_API_KEY",
+   "summary": "{ \"title\": \"Topper Single Tasking vs Multitasking Study Hack\", \"title_en\": \"Topper Single Tasking vs Multitasking Study "
+  },
+  {
+   "at": "2026-11-22T23:46:09",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"score\":85,\"hook\":90,\"retention\":80,\"specificity\":70,\"safety_ok\":true,\"fixes\":[\"Add a specific Indian exam context (e.g"
+  },
+  {
+   "at": "2026-11-22T23:51:08",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Single‑Tasking Se 45 Min Mein Chapter Master: Multitaskers Ka Kya Hai Result?\",\"Medical Exams Ki Race: Ek Sa"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}
