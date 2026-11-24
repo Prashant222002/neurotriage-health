@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-24-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-24T09:37:26+05:30",
+  "publish_at": "2026-11-25T10:00+05:30",
+  "publish_at_utc": "2026-11-25T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-24-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "Stop these 3 habits that damage body image and productivity",
+    "yt_description": "A quick reel showing three habits that worsen body‑image worries during study periods, backed by research, and a simple 2‑minute neutral break to reset your mindset.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/33799804/ | https://pubmed.ncbi.nlm.nih.gov/39861349/ | https://pubmed.ncbi.nlm.nih.gov/34120098/ | https://pubmed.ncbi.nlm.nih.gov/38356364/\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\nIf you are struggling, India's free 24x7 helpline Tele-MANAS: 14416.\n\n#BodyImage #StudyTips #MentalHealth #SocialMedia #StudentLife #Shorts",
+    "ig_caption": "A quick reel showing three habits that worsen body‑image worries during study periods, backed by research, and a simple 2‑minute neutral break to reset your mindset.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#BodyImage #StudyTips #MentalHealth #SocialMedia #StudentLife",
+    "hashtags": [
+      "#BodyImage",
+      "#StudyTips",
+      "#MentalHealth",
+      "#SocialMedia",
+      "#StudentLife",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "O3lBQbbfv48",
+        "url": "https://youtube.com/watch?v=O3lBQbbfv48",
+        "scheduled": true
+      },
+      "at": "2026-11-24T04:07:29+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-24T04:07:29+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-24T04:07:29+00:00"
+    }
+  },
+  "status": "pending"
+}

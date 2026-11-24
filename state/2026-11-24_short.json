@@ -1,0 +1,263 @@
+{
+ "key": "2026-11-24",
+ "kind": "short",
+ "created": "2026-11-24T04:01:18",
+ "request": {
+  "kind": "short",
+  "mode": "awareness",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Body‑image worries (negative thoughts about one’s own shape, size, or appearance)",
+  "verified": [
+   "A notable proportion of university‑educated women express concerns about body image, though exact prevalence is unclear.",
+   "Periods of high academic stress may be linked to heightened body dissatisfaction, but evidence is limited.",
+   "Frequent scrolling of appearance‑focused social media predicts greater thin‑ideal internalisation and lower self‑esteem"
+  ],
+  "sources": [
+   {
+    "title": "Social Media Use and Body Image Disorders: Association between Frequency of Comparing One's Own Physical Appearance to That of People Being Followed on Social M",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33799804/"
+   },
+   {
+    "title": "The Impact of Social Media on Eating Disorder Risk and Self-Esteem Among Adolescents and Young Adults: A Psychosocial Analysis in Individuals Aged 16-25.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39861349/"
+   },
+   {
+    "title": "Beauty ideals, social media, and body positivity: A qualitative investigation of influences on body image among young women in Japan.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34120098/"
+   },
+   {
+    "title": "Addressing nutritional issues and eating behaviours among university students: a narrative review.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38356364/"
+   }
+  ],
+  "level": "verified",
+  "hook": "Stop doing these 3 things if you want to stop letting your body‑image worries hijack your research productivity.",
+  "tip": "After each 45‑minute work block, take a 2‑minute neutral‑focus break: look away, stand, and silently list three functional aspects of your body.",
+  "dropped": [
+   "~1 in 4 adults worldwide experience significant body‑image concerns (unsupported)",
+   "Sleeping less than 6 hours per night amplifies negative self‑evaluation (uncertain + number not backed)",
+   "Negative self‑talk triggers cortisol rise and reinforces body‑image distress (unsupported)",
+   "Talking about body‑image worries with trusted peers reduces isolation and improves coping (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "53b2467051501a69",
+  "data": {
+   "title": "Stop these 3 habits that wreck your body image and research",
+   "title_en": "Stop these 3 habits that damage body image and productivity",
+   "formula": "Stop doing this if...",
+   "kicker": "BODY IMAGE",
+   "hook_text": "STOP THESE 3 HABITS",
+   "scenes": [
+    {
+     "text": "Kya tum apni body image se pareshan ho?",
+     "queries": [
+      "college student looking stressed",
+      "woman scrolling phone",
+      "university campus hallway"
+     ],
+     "text_en": "Are you worried about your body image?",
+     "text_hi": "क्या तुम अपनी बॉडी इमेज से परेशान हो?",
+     "emphasis": ""
+    },
+    {
+     "text": "Jab exams aate hain, hum apni shape pe zyada sochte hain.",
+     "queries": [
+      "student with books",
+      "exam hall",
+      "clock ticking"
+     ],
+     "text_en": "During exams, we think more about our shape.",
+     "text_hi": "जब एग्जाम्स आते हैं, हम अपनी शेप पे ज़्यादा सोचते हैं।",
+     "emphasis": ""
+    },
+    {
+     "text": "Social media ko bina limit scroll karna.",
+     "queries": [
+      "phone scrolling feed",
+      "instagram feed",
+      "young woman on couch"
+     ],
+     "text_en": "Scrolling social media without limits.",
+     "text_hi": "सोशल मीडिया को बिना लिमिट स्क्रॉल करना।",
+     "emphasis": "SOCIAL MEDIA"
+    },
+    {
+     "text": "Apne aap ko dusron ke perfect photos se compare karna.",
+     "queries": [
+      "comparison collage",
+      "photo gallery",
+      "woman looking at phone"
+     ],
+     "text_en": "Comparing yourself to others' perfect photos.",
+     "text_hi": "अपने आप को दूसरों के परफेक्ट फोटोस से कंपेयर करना।",
+     "emphasis": "COMPARE"
+    },
+    {
+     "text": "Stress ke time me body ko ignore karna.",
+     "queries": [
+      "student stressed head in hands",
+      "messy desk",
+      "clock late night"
+     ],
+     "text_en": "Ignoring your body during stress periods.",
+     "text_hi": "स्ट्रेस के टाइम में बॉडी को इग्नोर करना।",
+     "emphasis": ""
+    },
+    {
+     "text": "Research suggests, university‑educated women often worry about looks.",
+     "queries": [
+      "research lab",
+      "female graduate",
+      "books and laptop"
+     ],
+     "text_en": "Research shows educated women often worry about looks.",
+     "text_hi": "रिसर्च बताती है, यूनिवर्सिटी‑एजुकेटेड महिलाएँ अक्सर लुक्स की चिंता करती हैं।",
+     "emphasis": "RESEARCH"
+    },
+    {
+     "text": "High academic stress may increase body dissatisfaction, though evidence limited.",
+     "queries": [
+      "student stressed with papers",
+      "pile of books",
+      "brain illustration"
+     ],
+     "text_en": "High academic stress may raise body dissatisfaction, evidence limited.",
+     "text_hi": "हाई अकादमिक स्ट्रेस बॉडी डिससैटिस्फैक्शन बढ़ा सकता है, हालांकि एविडेंस लिमिटेड है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Scrolling appearance‑focused feeds predicts thin‑ideal internalisation and lower self‑esteem.",
+     "queries": [
+      "social media feed",
+      "thin ideal images",
+      "woman looking dissatisfied"
+     ],
+     "text_en": "Scrolling appearance‑focused feeds predicts thin‑ideal internalisation and lower self‑esteem.",
+     "text_hi": "एपियरेंस‑फोकस्ड फीड स्क्रॉल करने से थिन‑आइडल इंटर्नलाइज़ेशन और लोअर सेल्फ‑एस्टीम बढ़ता है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Ab har 45 minute ke baad, 2 minute ka neutral break lo.",
+     "queries": [
+      "timer on desk",
+      "person standing stretching",
+      "clock hands moving"
+     ],
+     "text_en": "After each 45‑minute block, take a 2‑minute neutral break.",
+     "text_hi": "अब हर 45 मिनट के बाद, 2 मिनट का न्यूट्रल ब्रेक लो।",
+     "emphasis": ""
+    },
+    {
+     "text": "Pehle dekh, phir khade ho, teen functional aspects likho.",
+     "queries": [
+      "person looking away",
+      "standing up",
+      "writing on paper"
+     ],
+     "text_en": "First look away, then stand, list three functional aspects.",
+     "text_hi": "पहले देख, फिर खड़े हो, तीन फ़ंक्शनल एस्पेक्ट्स लिखो।",
+     "emphasis": ""
+    },
+    {
+     "text": "Yeh chhote break tumhari body‑image ko calm karenge.",
+     "queries": [
+      "relaxed student smiling",
+      "peaceful scenery",
+      "sunlight on desk"
+     ],
+     "text_en": "These short breaks will calm your body image.",
+     "text_hi": "ये छोटे ब्रेक तुम्हारी बॉडी‑इमेज को क़ाम कर देंगे।",
+     "emphasis": ""
+    },
+    {
+     "text": "Ye tip apne study buddy ko bhejo, dono ko fayda.",
+     "queries": [
+      "two friends chatting",
+      "message on phone",
+      "handshake"
+     ],
+     "text_en": "Send this tip to your study buddy, both benefit.",
+     "text_hi": "ये टिप अपने स्टडी बडी को भेजो, दोनों को फ़ायदा।",
+     "emphasis": ""
+    }
+   ],
+   "description": "A quick reel showing three habits that worsen body‑image worries during study periods, backed by research, and a simple 2‑minute neutral break to reset your mindset.",
+   "hashtags": [
+    "#BodyImage",
+    "#StudyTips",
+    "#MentalHealth",
+    "#SocialMedia",
+    "#StudentLife",
+    "#SelfCare"
+   ],
+   "audit": {
+    "score": 85,
+    "hook": 90,
+    "retention": 80,
+    "specificity": 85,
+    "safety_ok": true,
+    "fixes": [
+     "Move the open‑loop hook to scene 2 for earlier curiosity",
+     "Combine scenes 9‑11 into a single concise beat to avoid filler",
+     "Make the final call‑to‑action more specific (e.g., “share this 2‑minute break tip with your study buddy today”)",
+     "Add a quick visual cue or text overlay to reinforce each beat every 2‑3 scenes"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-24T04:02:07",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-24T04:02:07",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-24T04:02:34",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-24T04:07:26",
+   "provider": "",
+   "note": "Stop these 3 habits that damage body image and productivity"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-24T04:02:06",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_5",
+   "summary": "{\"title\":\"Stop these 3 habits that wreck your body image and research\",\"title_en\":\"Stop these 3 habits that damage body "
+  },
+  {
+   "at": "2026-11-24T04:02:07",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"score\":85,\"hook\":90,\"retention\":80,\"specificity\":85,\"safety_ok\":true,\"fixes\":[\"Move the open‑loop hook to scene 2 for "
+  },
+  {
+   "at": "2026-11-24T04:07:26",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"3 Habits Jo Tumhari Body Image Ko Destroy Kar Rahe Hai\",\"Kya Yeh 3 Daily Habits Tumhari Self‑Esteem Ko Nuksa"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}

@@ -1,0 +1,96 @@
+{
+ "key": "2026-11-24",
+ "kind": "research",
+ "created": "2026-11-24T04:00:53",
+ "request": {
+  "kind": "research",
+  "mode": "awareness"
+ },
+ "research": {
+  "topic": "Body‑image worries (negative thoughts about one’s own shape, size, or appearance)",
+  "verified": [
+   "A notable proportion of university‑educated women express concerns about body image, though exact prevalence is unclear.",
+   "Periods of high academic stress may be linked to heightened body dissatisfaction, but evidence is limited.",
+   "Frequent scrolling of appearance‑focused social media predicts greater thin‑ideal internalisation and lower self‑esteem"
+  ],
+  "sources": [
+   {
+    "title": "Social Media Use and Body Image Disorders: Association between Frequency of Comparing One's Own Physical Appearance to That of People Being Followed on Social M",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33799804/"
+   },
+   {
+    "title": "The Impact of Social Media on Eating Disorder Risk and Self-Esteem Among Adolescents and Young Adults: A Psychosocial Analysis in Individuals Aged 16-25.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39861349/"
+   },
+   {
+    "title": "Beauty ideals, social media, and body positivity: A qualitative investigation of influences on body image among young women in Japan.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34120098/"
+   },
+   {
+    "title": "Addressing nutritional issues and eating behaviours among university students: a narrative review.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38356364/"
+   }
+  ],
+  "level": "verified",
+  "hook": "Stop doing these 3 things if you want to stop letting your body‑image worries hijack your research productivity.",
+  "tip": "After each 45‑minute work block, take a 2‑minute neutral‑focus break: look away, stand, and silently list three functional aspects of your body.",
+  "dropped": [
+   "~1 in 4 adults worldwide experience significant body‑image concerns (unsupported)",
+   "Sleeping less than 6 hours per night amplifies negative self‑evaluation (uncertain + number not backed)",
+   "Negative self‑talk triggers cortisol rise and reinforces body‑image distress (unsupported)",
+   "Talking about body‑image worries with trusted peers reduces isolation and improves coping (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-24T04:01:18",
+   "provider": "groq",
+   "note": "verified"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-24T04:01:06",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"POV: Exam Is Tomorrow 😭 | Every Student Can Relate! | Exam Memes | Student Life\",\"formula\":\"Patte"
+  },
+  {
+   "at": "2026-11-24T04:01:09",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Body‑image worries (negative thoughts about one’s own shape, size, or appearance) **ANGLE (why it is under‑use"
+  },
+  {
+   "at": "2026-11-24T04:01:11",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Body‑image worries (negative thoughts about one’s own shape, size, or appearance)\",\"search_terms\":[\"body image"
+  },
+  {
+   "at": "2026-11-24T04:01:18",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"unsupported\",\"cites\":[1],\"fix\":\"\"},{\"i\":1,\"verdict\":\"uncertain\",\"cites\":[3],\"fix\":\"A notab"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}
