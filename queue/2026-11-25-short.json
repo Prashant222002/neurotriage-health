@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-25-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-25T08:25:39+05:30",
+  "publish_at": "2026-11-25T10:00+05:30",
+  "publish_at_utc": "2026-11-25T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-25-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "Psychiatric medicines myths and facts: why they’re under‑used",
+    "yt_description": "A short reel busting myths about psychiatric medicines and teaching the SAFE‑MED checklist so viewers can make informed choices.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/37755655/ | https://pubmed.ncbi.nlm.nih.gov/31952459/\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\nIf you are struggling, India's free 24x7 helpline Tele-MANAS: 14416.\n\n#MentalHealth #PsychiatryMyths #SafeMed #MedicationTips #HealthEducation #Shorts",
+    "ig_caption": "A short reel busting myths about psychiatric medicines and teaching the SAFE‑MED checklist so viewers can make informed choices.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#MentalHealth #PsychiatryMyths #SafeMed #MedicationTips #HealthEducation",
+    "hashtags": [
+      "#MentalHealth",
+      "#PsychiatryMyths",
+      "#SafeMed",
+      "#MedicationTips",
+      "#HealthEducation",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "1cJyuEoXkh8",
+        "url": "https://youtube.com/watch?v=1cJyuEoXkh8",
+        "scheduled": true
+      },
+      "at": "2026-11-25T02:55:42+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-25T02:55:42+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-25T02:55:42+00:00"
+    }
+  },
+  "status": "pending"
+}

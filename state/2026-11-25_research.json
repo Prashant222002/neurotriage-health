@@ -1,0 +1,87 @@
+{
+ "key": "2026-11-25",
+ "kind": "research",
+ "created": "2026-11-25T02:40:13",
+ "request": {
+  "kind": "research",
+  "mode": "awareness"
+ },
+ "research": {
+  "topic": "Psychiatric medicines: myths and facts – why they’re under‑used",
+  "verified": [
+   "Weight gain is common with many antipsychotics but not all; newer agents such as aripiprazole have lower metabolic risk."
+  ],
+  "sources": [
+   {
+    "title": "Antipsychotic-Induced Weight Gain in Severe Mental Illness: Risk Factors and Special Considerations.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37755655/"
+   },
+   {
+    "title": "Update on weight-gain caused by antipsychotics: a systematic review and meta-analysis.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31952459/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Nobody tells you the 4 things you must check before trusting a psychiatric‑medicine label…",
+  "tip": "Run the SAFE‑MED checklist (Source, Approved name, Evidence, Explain side‑effects, Medication plan, Discuss alternatives) before accepting any prescription.",
+  "dropped": [
+   "Antidepressants do not produce physiological dependence, though abrupt stop can cause withdrawal‑lik (unsupported)",
+   "Psychiatric medicines are prescribed for a wide range of conditions and affect anyone; about 1 in 4  (unsupported)",
+   "Medication response varies between individuals due to genetics, comorbidities and drug interactions. (unsupported)",
+   "Only qualified prescribers can match a medication to a diagnosis, dosage and safety profile; self‑me (unsupported)",
+   "Approved psychotropics undergo rigorous safety testing and many have decades of post‑marketing data  (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-25T02:41:21",
+   "provider": "groq",
+   "note": "partial"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-25T02:41:09",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"POV: Exam Is Tomorrow 😭 | Every Student Can Relate! | Exam Memes | Student Life\",\"formula\":\"Nobod"
+  },
+  {
+   "at": "2026-11-25T02:41:13",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Psychiatric medicines: myths and facts (no doses, no advice to start or stop) **ANGLE (why it is under‑used)**"
+  },
+  {
+   "at": "2026-11-25T02:41:16",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Psychiatric medicines: myths and facts – why they’re under‑used\",\"search_terms\":[\"antidepressant withdrawal de"
+  },
+  {
+   "at": "2026-11-25T02:41:21",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"unsupported\",\"cites\":[0,1],\"fix\":\"\"},{\"i\":1,\"verdict\":\"supported\",\"cites\":[3,5],\"fix\":\"\"},"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}

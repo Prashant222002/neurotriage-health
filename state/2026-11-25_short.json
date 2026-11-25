@@ -1,0 +1,248 @@
+{
+ "key": "2026-11-25",
+ "kind": "short",
+ "created": "2026-11-25T02:41:21",
+ "request": {
+  "kind": "short",
+  "mode": "awareness",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Psychiatric medicines: myths and facts – why they’re under‑used",
+  "verified": [
+   "Weight gain is common with many antipsychotics but not all; newer agents such as aripiprazole have lower metabolic risk."
+  ],
+  "sources": [
+   {
+    "title": "Antipsychotic-Induced Weight Gain in Severe Mental Illness: Risk Factors and Special Considerations.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37755655/"
+   },
+   {
+    "title": "Update on weight-gain caused by antipsychotics: a systematic review and meta-analysis.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31952459/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Nobody tells you the 4 things you must check before trusting a psychiatric‑medicine label…",
+  "tip": "Run the SAFE‑MED checklist (Source, Approved name, Evidence, Explain side‑effects, Medication plan, Discuss alternatives) before accepting any prescription.",
+  "dropped": [
+   "Antidepressants do not produce physiological dependence, though abrupt stop can cause withdrawal‑lik (unsupported)",
+   "Psychiatric medicines are prescribed for a wide range of conditions and affect anyone; about 1 in 4  (unsupported)",
+   "Medication response varies between individuals due to genetics, comorbidities and drug interactions. (unsupported)",
+   "Only qualified prescribers can match a medication to a diagnosis, dosage and safety profile; self‑me (unsupported)",
+   "Approved psychotropics undergo rigorous safety testing and many have decades of post‑marketing data  (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "a708e07ded4fe252",
+  "data": {
+   "title": "Psychiatric medicines ke myths aur facts: kyun kam use hoti hain",
+   "title_en": "Psychiatric medicines myths and facts: why they’re under‑used",
+   "formula": "Nobody tells you...",
+   "kicker": "MENTAL HEALTH",
+   "hook_text": "Side‑effects ka darr tumhe dawa lene se rok raha hai? Ek aisa myth hai jo sabko hairaan kar dega – aage dekho!",
+   "scenes": [
+    {
+     "text": "Riya, ek engineering student, sochti hai ki psychiatric medicines sirf severe cases ke liye hain – kya yeh sach hai?",
+     "text_en": "Riya, an engineering student, wonders if psychiatric medicines are only for severe cases – is that true?",
+     "queries": [
+      "student",
+      "campus",
+      "thinking"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Bahut log side‑effects ki darr se dawa nahi lete, aur yeh darr unke liye bahut badi pareshani ban jata hai.",
+     "text_en": "Many people avoid medication because fear of side‑effects becomes a huge worry for them.",
+     "queries": [
+      "anxious person",
+      "pill bottle",
+      "hand shaking"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Myth: Sab antipsychotics weight gain karvate hain.",
+     "text_en": "Myth: All antipsychotics cause weight gain.",
+     "queries": [
+      "myth overlay",
+      "brain scan",
+      "confused face"
+     ],
+     "emphasis": "MYTH"
+    },
+    {
+     "text": "Fact: Kuch newer drugs jaise aripiprazole kam metabolic risk rakhte hain.",
+     "text_en": "Fact: Some newer drugs like aripiprazole have lower metabolic risk.",
+     "queries": [
+      "doctor explaining",
+      "aripiprazole box",
+      "weight scale"
+     ],
+     "emphasis": "FACT"
+    },
+    {
+     "text": "Myth: Psychiatric medicines lene se aap lazy ya unproductive ho jaate hain.",
+     "text_en": "Myth: Taking psychiatric medicines makes you lazy or unproductive.",
+     "queries": [
+      "lazy person",
+      "clock",
+      "office"
+     ],
+     "emphasis": "MYTH"
+    },
+    {
+     "text": "Fact: Sahi medication aapki functioning aur productivity ko improve kar sakti hai.",
+     "text_en": "Fact: Proper medication can improve your functioning and productivity.",
+     "queries": [
+      "focused professional",
+      "chart rising",
+      "smile"
+     ],
+     "emphasis": "FACT"
+    },
+    {
+     "text": "Ab SAFE‑MED checklist se prescription ko smartly check karo – pehle authenticity aur approval dekho.",
+     "text_en": "Now use the SAFE‑MED checklist to smartly check prescriptions – first look at authenticity and approval.",
+     "queries": [
+      "checklist graphic",
+      "magnifying glass",
+      "approval stamp"
+     ],
+     "emphasis": "SAFE‑MED"
+    },
+    {
+     "text": "Phir, research evidence dekho aur doctor se side‑effects ke baare mein poochho.",
+     "text_en": "Next, review research evidence and ask the doctor clearly about side‑effects.",
+     "queries": [
+      "research paper",
+      "doctor talking",
+      "side‑effects chart"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Akhir mein, dose aur duration likho aur agar zaroori ho to dusri options bhi explore karo.",
+     "text_en": "Finally, write down dose and duration and explore other options if needed.",
+     "queries": [
+      "medication schedule",
+      "calendar",
+      "discussion group"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Aaj se SAFE‑MED use karo, informed decision lo.",
+     "text_en": "From today, use SAFE‑MED and make an informed decision.",
+     "queries": [
+      "person smiling",
+      "thumbs up",
+      "mobile phone"
+     ],
+     "emphasis": "SAFE‑MED"
+    },
+    {
+     "text": "Apni mental health ko priority do – agar doubts ho to trusted professional se baat karo.",
+     "text_en": "Prioritize your mental health – if in doubt, talk to a trusted professional.",
+     "queries": [
+      "conversation",
+      "support",
+      "phone call"
+     ],
+     "emphasis": ""
+    }
+   ],
+   "description": "A short reel busting myths about psychiatric medicines and teaching the SAFE‑MED checklist so viewers can make informed choices.",
+   "hashtags": [
+    "#MentalHealth",
+    "#PsychiatryMyths",
+    "#SafeMed",
+    "#MedicationTips",
+    "#HealthEducation",
+    "#Wellbeing"
+   ],
+   "audit": {
+    "score": 63,
+    "hook": 85,
+    "retention": 75,
+    "specificity": 30,
+    "safety_ok": true,
+    "fixes": [
+     "Add a relatable Indian student/professional example to increase specificity",
+     "Include a stronger pain point in the hook about side‑effect fear",
+     "Condense the SAFE‑MED checklist into fewer, punchier scenes to improve pacing",
+     "Add a teaser in scene 2 hinting at a surprising myth that will be debunked later"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-25T02:41:55",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-25T02:41:55",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-25T02:43:04",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-25T02:55:38",
+   "provider": "",
+   "note": "Psychiatric medicines myths and facts: why they’re under‑use"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-25T02:41:27",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Psychiatric medicines ke myths aur facts: kyun kam use hoti hain\",\"title_en\":\"Psychiatric medicines myths and "
+  },
+  {
+   "at": "2026-11-25T02:41:47",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{\"title\":\"Psychiatric medicines ke myths aur facts: kyun kam use hoti hain\",\"title_en\":\"Psychiatric medicines myths and "
+  },
+  {
+   "at": "2026-11-25T02:41:49",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"score\":63,\"hook\":85,\"retention\":75,\"specificity\":30,\"safety_ok\":true,\"fixes\":[\"Add a relatable Indian student/professi"
+  },
+  {
+   "at": "2026-11-25T02:41:55",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Psychiatric medicines ke myths aur facts: kyun kam use hoti hain\",\"title_en\":\"Psychiatric medicines myths and "
+  },
+  {
+   "at": "2026-11-25T02:55:38",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Psychiatric medicines: 5 myths busted – kya aap galat soch rahe hain?\",\"Why are psychiatric drugs under‑used"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}
