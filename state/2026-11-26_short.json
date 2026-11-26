@@ -30,13 +30,191 @@
   ]
  },
  "script": {
-  "locked": false,
-  "version": 0,
-  "hash": "",
-  "data": null,
-  "history": []
+  "locked": true,
+  "version": 1,
+  "hash": "7e21b91e559a642b",
+  "data": {
+   "title": "Interleaved Practice Se Exam Ki Memory Boost",
+   "title_en": "Boost Exam Memory with Interleaved Practice",
+   "formula": "Counterintuitive",
+   "kicker": "STUDY HACK",
+   "hook_text": "ZYAADA PADHO, KAM YAAD",
+   "scenes": [
+    {
+     "text": "Zyada padhna = kam yaad?",
+     "queries": [
+      "student confused desk",
+      "books scattered",
+      "brain illustration"
+     ],
+     "text_en": "Studying more leads to less recall?",
+     "text_hi": "ज़्यादा पढ़ना = कम याद?",
+     "emphasis": ""
+    },
+    {
+     "text": "Exam ki tayari mein sab topics ek saath padhte ho",
+     "queries": [
+      "student cramming notes",
+      "stack of textbooks",
+      "clock ticking"
+     ],
+     "text_en": "You study all topics together for exams",
+     "text_hi": "एग्जाम की तैयारी में सब टॉपिक एक साथ पढ़ते हो",
+     "emphasis": ""
+    },
+    {
+     "text": "Interleaved practice matlab alag‑alag problems ko mix karna, aur yeh aapke scores ko surprise kar sakta hai",
+     "queries": [
+      "mixing puzzle pieces",
+      "colorful sticky notes",
+      "hands shuffling cards",
+      "animation spark effect"
+     ],
+     "text_en": "Interleaved practice means mixing different problems, and it can surprise your scores",
+     "text_hi": "इंटरलीव्ड प्रैक्टिस मतलब अलग‑अलग प्रॉब्लेम्स को मिक्स करना, और यह आपके स्कोर को सरप्राइज़ कर सकता है",
+     "emphasis": ""
+    },
+    {
+     "text": "Research suggest karta hai ki ye method long‑term yaad behtar banata",
+     "queries": [
+      "brain MRI scan",
+      "neuron animation",
+      "study chart",
+      "sound effect chime"
+     ],
+     "text_en": "Research suggests this method improves long‑term memory",
+     "text_hi": "रिसर्च सजेस्ट करता है कि ये मेथड लोंग‑टर्म याद बेहतर बनाता",
+     "emphasis": "LONG‑TERM YAAD"
+    },
+    {
+     "text": "Rohit, Delhi ka 12th‑grade student, interleaved practice se maths aur physics dono mein behtar perform karta hai",
+     "queries": [
+      "student Rohit studying",
+      "mix of math and physics books",
+      "Delhi skyline",
+      "quick quiz pop-up"
+     ],
+     "text_en": "Rohit, a 12th‑grade student in Delhi, performs better in both maths and physics with interleaved practice",
+     "text_hi": "रोहित, दिल्ली का 12वीं कक्षा का छात्र, इंटरलीव्ड प्रैक्टिस से गणित और भौतिकी दोनों में बेहतर प्रदर्शन करता है",
+     "emphasis": ""
+    },
+    {
+     "text": "Ek chhota sa quiz: Kya aap ek hi subject ko 30 minute tak padhte ho?",
+     "queries": [
+      "quiz pop-up",
+      "timer icon",
+      "sound beep",
+      "student thinking"
+     ],
+     "text_en": "Quick quiz: Do you study a single subject for 30 minutes straight?",
+     "text_hi": "एक छोटा क्विज़: क्या आप एक ही विषय को 30 मिनट तक पढ़ते हो?",
+     "emphasis": ""
+    },
+    {
+     "text": "Pehle din 10 minute teen topics, 5 minute break",
+     "queries": [
+      "timer on phone",
+      "clock hands",
+      "student taking break",
+      "animation swipe"
+     ],
+     "text_en": "First day 10 minutes three topics, 5 minute break",
+     "text_hi": "पहले दिन 10 मिनट थ्री टॉपिक्स, 5 मिनट ब्रेक",
+     "emphasis": "10 MINUTE"
+    },
+    {
+     "text": "Dusre din same routine repeat karo, sleep 7+ ghante",
+     "queries": [
+      "bedroom night lamp",
+      "sleeping person",
+      "alarm clock morning",
+      "soft lullaby sound"
+     ],
+     "text_en": "Second day repeat same routine, sleep 7+ hours",
+     "text_hi": "दूसरे दिन सेम रूटीन रिपीट करो, स्लीप 7+ घंटे",
+     "emphasis": ""
+    },
+    {
+     "text": "Aathve din mixed problems solve karo, dekh improvement",
+     "queries": [
+      "student writing answers",
+      "test paper",
+      "progress bar",
+      "cheer sound effect"
+     ],
+     "text_en": "On day eight solve mixed problems, see improvement",
+     "text_hi": "आठवे दिन मिक्स्ड प्रॉब्लेम्स सॉल्व करो, देख इम्प्रूवमेंट",
+     "emphasis": ""
+    },
+    {
+     "text": "Ye tip us dost ko bhejo jo hamesha ek subject mein atka",
+     "queries": [
+      "phone messaging",
+      "hand holding phone",
+      "friend laughing",
+      "notification ping"
+     ],
+     "text_en": "Send this tip to the friend stuck on one subject",
+     "text_hi": "ये टिप उस दोस्त को भेजो जो हमेशा एक सब्जेक्ट में अटका",
+     "emphasis": ""
+    },
+    {
+     "text": "Toh yaad rakho, mix karo aur yaad strong banao",
+     "queries": [
+      "brain glowing",
+      "students high five",
+      "books stacked neatly",
+      "final beat applause"
+     ],
+     "text_en": "So remember, mix it and make memory strong",
+     "text_hi": "तो याद रखो, mix करो और याद स्ट्रॉन्ग बनाओ",
+     "emphasis": "MIX KARO"
+    }
+   ],
+   "description": "A short reel explaining how mixing study topics (interleaved practice) improves long‑term memory and problem‑solving. Follow the 7‑day Neuro‑Focus Sprint to boost your exam recall.",
+   "hashtags": [
+    "#StudyHack",
+    "#InterleavedPractice",
+    "#ExamPrep",
+    "#MemoryBoost",
+    "#NeuroFocus",
+    "#LearningTips"
+   ],
+   "audit": {
+    "score": 70,
+    "hook": 90,
+    "retention": 70,
+    "specificity": 40,
+    "safety_ok": true,
+    "fixes": [
+     "Make scene 3 tease a surprising benefit to create a stronger open loop",
+     "Add visual or auditory beats every 2‑3 scenes (e.g., quick quiz, animation, sound effect)",
+     "Include a concrete Indian student example like “Rohit, a 12th‑grade student in Delhi”",
+     "Remove filler line “Aur teesra point sabse zaroori hai, abhi suno”"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-26T03:02:44",
+  "source": "groq"
  },
- "stages": {},
+ "stages": {
+  "script": {
+   "at": "2026-11-26T03:02:44",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-26T03:03:07",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-26T03:09:48",
+   "provider": "",
+   "note": "Boost Exam Memory with Interleaved Practice"
+  }
+ },
  "handoff": [
   {
    "at": "2026-11-26T01:54:09",
@@ -101,10 +279,58 @@
    "model": "openai/gpt-oss-120b",
    "key": "GROQ_API_KEY_5",
    "summary": "{\"title\":\"Interleaved Study Se Exam Ki Memory Boost\",\"title_en\":\"Boost Exam Memory with Interleaved Study\",\"formula\":\"Co"
+  },
+  {
+   "at": "2026-11-26T03:00:08",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_5",
+   "summary": "{\"title\":\"Interleaved Study Se Exam Ki Memory Boost\",\"title_en\":\"Boost Exam Memory with Interleaved Study\",\"formula\":\"Wi"
+  },
+  {
+   "at": "2026-11-26T03:00:15",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Interleaved Practice Se Exam Ki Memory Boost\",\"title_en\":\"Boost Exam Memory with Interleaved Practice\",\"formul"
+  },
+  {
+   "at": "2026-11-26T03:02:36",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Interleaved Practice Se Exam Ki Memory Boost\",\"title_en\":\"Boost Exam Memory with Interleaved Practice\",\"formul"
+  },
+  {
+   "at": "2026-11-26T03:02:37",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"score\":70,\"hook\":90,\"retention\":70,\"specificity\":40,\"safety_ok\":true,\"fixes\":[\"Make scene 3 tease a surprising benefit"
+  },
+  {
+   "at": "2026-11-26T03:02:44",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Interleaved Practice Se Exam Ki Memory Boost\",\"title_en\":\"Boost Exam Memory with Interleaved Practice\",\"formul"
+  },
+  {
+   "at": "2026-11-26T03:09:48",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Interleaved Practice Se 2x Faster Memory Retention?\",\"Kya Interleaving Se Exam Ki Recall 30% Badh Sakti Hai?"
   }
  ],
  "pending": [],
  "errors": [],
  "approved_changes": [],
- "stage_now": "script"
+ "stage_now": "voice"
 }

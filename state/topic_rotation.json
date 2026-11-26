@@ -217,11 +217,12 @@
   ],
   "Psychiatric medicines: myths and facts (no doses, no advice to start or stop)": [
    "HOW TO CHOOSE: a short checklist for picking a safe, good option"
+  ],
+  "Interleaved practice": [
+   "SLEEP AND BREAKS: combining it with rest so it sticks"
   ]
  },
- "reserved": {
-  "Interleaved practice": 1795658009.97189
- },
- "slot": 21,
+ "reserved": {},
+ "slot": 22,
  "migrated_v3": true
 }
