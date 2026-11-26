@@ -1,0 +1,83 @@
+{
+ "key": "2026-11-26",
+ "kind": "research",
+ "created": "2026-11-26T01:53:29",
+ "request": {
+  "kind": "research",
+  "mode": "student"
+ },
+ "research": {
+  "topic": "Interleaved practice – mixing different types of problems or subjects in one study session",
+  "verified": [
+   "Interleaving can lead to better long‑term retention compared with blocked practice, though exact magnitude varies across studies.",
+   "Interleaved study may improve transfer to novel problems, but the size of the benefit is not consistently quantified."
+  ],
+  "sources": [
+   {
+    "title": "Interleaved practice benefits implicit sequence learning and transfer.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33796961/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Wish I’d known this 7‑day hack that lets you ace every coding interview topic without pulling all‑nighters – it’s just mixing up your practice and sleeping right!",
+  "tip": "Follow the 7‑Day Neuro‑Focus Sprint: each day spend 10 min on three different topics with 5‑min breaks, get ≥7 h sleep, and test yourself on mixed problems on day 8.",
+  "dropped": [
+   "A night of sleep after interleaved practice doubles memory gains versus wakeful rest (Diekelmann & B (unsupported)",
+   "5‑10 minute micro‑breaks keep attention above 90% of baseline for up to 2 hours (APA, 2019). (unsupported)",
+   "Spacing interleaved blocks by at least 24 hours adds a 30% performance boost over massed practice (C (unsupported)",
+   "Engineering and CS students who use interleaved coding drills improve problem‑solving speed by about (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-26T01:53:49",
+   "provider": "groq",
+   "note": "partial"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-26T01:53:40",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"Build 10-Hour Focus \\uD83E\\uDD16 | Avadh Ojha Sir on IIT Roorkee\",\"formula\":\"Counterintuitive\",\"t"
+  },
+  {
+   "at": "2026-11-26T01:53:43",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Interleaved practice – mixing different types of problems or subjects in one study session **ANGLE (why it is "
+  },
+  {
+   "at": "2026-11-26T01:53:45",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Interleaved practice – mixing different types of problems or subjects in one study session\",\"search_terms\":[\"i"
+  },
+  {
+   "at": "2026-11-26T01:53:49",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"uncertain\",\"cites\":[1],\"fix\":\"Interleaving can lead to better long‑term retention compared"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}

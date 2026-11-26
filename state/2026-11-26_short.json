@@ -1,0 +1,110 @@
+{
+ "key": "2026-11-26",
+ "kind": "short",
+ "created": "2026-11-26T01:53:49",
+ "request": {
+  "kind": "short",
+  "mode": "student",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Interleaved practice – mixing different types of problems or subjects in one study session",
+  "verified": [
+   "Interleaving can lead to better long‑term retention compared with blocked practice, though exact magnitude varies across studies.",
+   "Interleaved study may improve transfer to novel problems, but the size of the benefit is not consistently quantified."
+  ],
+  "sources": [
+   {
+    "title": "Interleaved practice benefits implicit sequence learning and transfer.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33796961/"
+   }
+  ],
+  "level": "partial",
+  "hook": "Wish I’d known this 7‑day hack that lets you ace every coding interview topic without pulling all‑nighters – it’s just mixing up your practice and sleeping right!",
+  "tip": "Follow the 7‑Day Neuro‑Focus Sprint: each day spend 10 min on three different topics with 5‑min breaks, get ≥7 h sleep, and test yourself on mixed problems on day 8.",
+  "dropped": [
+   "A night of sleep after interleaved practice doubles memory gains versus wakeful rest (Diekelmann & B (unsupported)",
+   "5‑10 minute micro‑breaks keep attention above 90% of baseline for up to 2 hours (APA, 2019). (unsupported)",
+   "Spacing interleaved blocks by at least 24 hours adds a 30% performance boost over massed practice (C (unsupported)",
+   "Engineering and CS students who use interleaved coding drills improve problem‑solving speed by about (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {},
+ "handoff": [
+  {
+   "at": "2026-11-26T01:54:09",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"Interleaved Practice Se Exam Ki Memory Boost Ka Secret\",\"title_en\":\"Boost Your Exam Memory with Interleaved Pr"
+  },
+  {
+   "at": "2026-11-26T01:54:29",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{ \"title\": \"Interleaved Practice Se Exam Ki Memory Boost Ka Secret\", \"title_en\": \"Boost Exam Memory with Interleaved Pra"
+  },
+  {
+   "at": "2026-11-26T01:54:36",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Interleaved Practice Se Exam Ki Memory Boost Ka Secret\",\"title_en\":\"Boost Exam Memory with Interleaved Practic"
+  },
+  {
+   "at": "2026-11-26T01:56:44",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Interleaved Practice Se Exam Ki Memory Boost Ka Secret\",\"title_en\":\"The Secret to Boosting Exam Memory with In"
+  },
+  {
+   "at": "2026-11-26T01:56:50",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Interleaved Practice Se Exam Ki Memory Boost Ka Secret\",\"title_en\":\"The Secret to Boosting Exam Memory with In"
+  },
+  {
+   "at": "2026-11-26T02:00:27",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{ \"title\": \"Interleaved Study Se Exam Ki Memory Boost Ka Secret\", \"title_en\": \"The Secret to Boosting Exam Memory with I"
+  },
+  {
+   "at": "2026-11-26T02:00:47",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"title\":\"Interleaved Study Se Exam Ki Memory Boost Ka Secret\",\"title_en\":\"Boost Exam Memory with Interleaved Study\",\"fo"
+  },
+  {
+   "at": "2026-11-26T02:01:21",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_5",
+   "summary": "{\"title\":\"Interleaved Study Se Exam Ki Memory Boost\",\"title_en\":\"Boost Exam Memory with Interleaved Study\",\"formula\":\"Co"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "script"
+}
