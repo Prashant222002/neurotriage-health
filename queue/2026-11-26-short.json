@@ -36,11 +36,11 @@
     },
     "instagram": {
       "status": "failed",
-      "attempts": 1,
+      "attempts": 2,
       "result": {
-        "error": "container: {'error': {'message': 'API access blocked.', 'code': 200, 'type': 'OAuthException', 'error_subcode': 5258005, 'fbtrace_id': 'AjJGwBdeZXafs2-hOwJ10qS'}}"
+        "error": "container: {'error': {'message': 'API access blocked.', 'code': 200, 'type': 'OAuthException', 'error_subcode': 5258005, 'fbtrace_id': 'A-wd6dwgFu0LXlEo6X-3OaX'}}"
       },
-      "at": "2026-11-26T13:40:40+00:00"
+      "at": "2026-11-26T22:08:39+00:00"
     },
     "facebook": {
       "status": "skipped",
