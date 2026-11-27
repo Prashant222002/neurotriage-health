@@ -1,0 +1,77 @@
+{
+ "key": "2026-11-27",
+ "kind": "research",
+ "created": "2026-11-27T01:51:24",
+ "request": {
+  "kind": "research",
+  "mode": "awareness"
+ },
+ "research": {
+  "topic": "Loneliness and Its Effect on the Brain – What to Say (and NOT Say) When a Friend or Family Member Is Feeling Isolated",
+  "verified": [],
+  "sources": [],
+  "level": "unstructured",
+  "hook": "Nobody tells you the three exact things you should (and shouldn’t) say to a lonely friend.",
+  "tip": "Say \"I’ve noticed you’ve been quieter lately. I’m here if you want to talk or just hang out – no pressure.\"",
+  "dropped": [
+   "Chronic loneliness is linked to reduced gray‑matter volume in the hippocampus (Cacioppo et al., 2020 (number not in cited evidence)",
+   "Lonely individuals have higher baseline cortisol levels (WHO 2022). (unsupported)",
+   "Loneliness raises cardiovascular disease risk by about 30 % and is comparable to smoking 15 cigarett (unsupported)",
+   "Perceived social isolation predicts lower GPA and reduced productivity in university students (Mille (unsupported)",
+   "Lonely people show weaker default‑mode network connectivity affecting self‑referential thinking and  (unsupported)",
+   "Positive, validating social interactions can lower cortisol within weeks and buffer neural changes ( (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-27T01:51:45",
+   "provider": "groq",
+   "note": "unstructured"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-27T01:51:37",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"How to avoid sleep while studying 📚 #motivation #upsc #explore #tips #tricks #exam #study\",\"formu"
+  },
+  {
+   "at": "2026-11-27T01:51:40",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** Loneliness and Its Effect on the Brain – What to Say (and NOT Say) When a Friend or Family Member Is Feeling I"
+  },
+  {
+   "at": "2026-11-27T01:51:42",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Loneliness and Its Effect on the Brain – What to Say (and NOT Say) When a Friend or Family Member Is Feeling I"
+  },
+  {
+   "at": "2026-11-27T01:51:45",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"supported\",\"cites\":[2],\"fix\":\"\"},{\"i\":1,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\":"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}

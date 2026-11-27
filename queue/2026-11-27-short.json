@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-27-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-27T07:28:30+05:30",
+  "publish_at": "2026-11-27T10:00+05:30",
+  "publish_at_utc": "2026-11-27T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-27-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "Loneliness, Brain Effects & What to Say",
+    "yt_description": "A short Hinglish reel that explains how loneliness changes the brain and gives three exact lines you should and shouldn't say to a lonely friend. Includes a quick science bite and a practical 3‑step conversation tip.\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\nIf you are struggling, India's free 24x7 helpline Tele-MANAS: 14416.\n\n#Loneliness #BrainHealth #MentalHealthTips #StudentLife #Empathy #Shorts",
+    "ig_caption": "A short Hinglish reel that explains how loneliness changes the brain and gives three exact lines you should and shouldn't say to a lonely friend. Includes a quick science bite and a practical 3‑step conversation tip.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#Loneliness #BrainHealth #MentalHealthTips #StudentLife #Empathy",
+    "hashtags": [
+      "#Loneliness",
+      "#BrainHealth",
+      "#MentalHealthTips",
+      "#StudentLife",
+      "#Empathy",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "zxrZLhVhUiU",
+        "url": "https://youtube.com/watch?v=zxrZLhVhUiU",
+        "scheduled": true
+      },
+      "at": "2026-11-27T01:58:33+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-27T01:58:33+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-27T01:58:33+00:00"
+    }
+  },
+  "status": "pending"
+}

@@ -1,0 +1,248 @@
+{
+ "key": "2026-11-27",
+ "kind": "short",
+ "created": "2026-11-27T01:51:45",
+ "request": {
+  "kind": "short",
+  "mode": "awareness",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Loneliness and Its Effect on the Brain – What to Say (and NOT Say) When a Friend or Family Member Is Feeling Isolated",
+  "verified": [],
+  "sources": [],
+  "level": "unstructured",
+  "hook": "Nobody tells you the three exact things you should (and shouldn’t) say to a lonely friend.",
+  "tip": "Say \"I’ve noticed you’ve been quieter lately. I’m here if you want to talk or just hang out – no pressure.\"",
+  "dropped": [
+   "Chronic loneliness is linked to reduced gray‑matter volume in the hippocampus (Cacioppo et al., 2020 (number not in cited evidence)",
+   "Lonely individuals have higher baseline cortisol levels (WHO 2022). (unsupported)",
+   "Loneliness raises cardiovascular disease risk by about 30 % and is comparable to smoking 15 cigarett (unsupported)",
+   "Perceived social isolation predicts lower GPA and reduced productivity in university students (Mille (unsupported)",
+   "Lonely people show weaker default‑mode network connectivity affecting self‑referential thinking and  (unsupported)",
+   "Positive, validating social interactions can lower cortisol within weeks and buffer neural changes ( (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "3c1ebe70f4e496c5",
+  "data": {
+   "title": "Loneliness ka Brain Effect aur Kya Kehna Hai",
+   "title_en": "Loneliness, Brain Effects & What to Say",
+   "formula": "Nobody tells you...",
+   "kicker": "MIND HACK",
+   "hook_text": "YE 3 BAATEN TUMHE NAHI PATA",
+   "scenes": [
+    {
+     "text": "Kya tum jaante ho akelaapan dimaag ko badal sakta?",
+     "text_en": "Do you know loneliness can change the brain?",
+     "queries": [
+      "lonely person sitting",
+      "brain scan illustration",
+      "student alone room"
+     ],
+     "emphasis": "['AKELAAPAN']"
+    },
+    {
+     "text": "Jab tumhara classmate exam stress se chup rehta, tum sochte ho sab theek.",
+     "text_en": "When your classmate stays silent due to exam stress, you think everything's fine.",
+     "queries": [
+      "quiet classmate campus",
+      "student looking out window",
+      "empty hallway"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Aur teesra point sabse zaroori hai, suno dhyan se.",
+     "text_en": "And the third point is most important, listen carefully.",
+     "queries": [
+      "close-up ear listening",
+      "hand pointing note",
+      "focus attention"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Research suggests loneliness may raise cortisol, affecting decisions.",
+     "text_en": "Research suggests loneliness may raise cortisol, affecting decisions.",
+     "queries": [
+      "cortisol graph",
+      "stress hormone animation",
+      "student stressed"
+     ],
+     "emphasis": "['CORTISOL']"
+    },
+    {
+     "text": "Studies suggest loneliness may affect the hippocampus and could increase heart risk.",
+     "text_en": "Studies suggest loneliness may affect the hippocampus and could increase heart risk.",
+     "queries": [
+      "hippocampus illustration",
+      "heart monitor",
+      "brain and heart icons"
+     ],
+     "emphasis": "['HIPPOCAMPUS','HEART']"
+    },
+    {
+     "text": "Pehle, unki feelings ko simple shabd me accept karo.",
+     "text_en": "First, accept their feelings in simple words.",
+     "queries": [
+      "handshake agreement",
+      "person nodding",
+      "friendly conversation"
+     ],
+     "emphasis": "['VALIDATE']"
+    },
+    {
+     "text": "Phir, batao ki tum hamesha unke liye available ho.",
+     "text_en": "Then, tell them you’re always available for them.",
+     "queries": [
+      "phone call support",
+      "open door invitation",
+      "supportive gesture"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Last mein, ek casual invite do, bina kisi pressure ke.",
+     "text_en": "Finally, give a casual invite with no pressure.",
+     "queries": [
+      "coffee cup on table",
+      "friends walking park",
+      "relaxed meetup"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Ye line us dost ko bhejo jo aksar akela feel karta hai.",
+     "text_en": "Send this line to the friend who often feels alone.",
+     "queries": [
+      "text message screen",
+      "friend smiling",
+      "hand holding phone"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Yaad rakho, ek simple ‘main yahan hoon’ se farak padta hai.",
+     "text_en": "Remember, a simple ‘I’m here’ makes a difference.",
+     "queries": [
+      "hand on shoulder",
+      "supportive hug",
+      "person listening"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Message them today to let them know you care.",
+     "text_en": "Message them today to let them know you care.",
+     "queries": [
+      "phone notification",
+      "chat bubble",
+      "supportive text"
+     ],
+     "emphasis": ""
+    },
+    {
+     "text": "Agar tum bhi yeh karte ho, tum akele nahi ho – share karo!",
+     "text_en": "If you do this too, you’re not alone – share!",
+     "queries": [
+      "social media share icon",
+      "group chat bubbles",
+      "people cheering"
+     ],
+     "emphasis": ""
+    }
+   ],
+   "description": "A short Hinglish reel that explains how loneliness changes the brain and gives three exact lines you should and shouldn't say to a lonely friend. Includes a quick science bite and a practical 3‑step conversation tip.",
+   "hashtags": [
+    "#Loneliness",
+    "#BrainHealth",
+    "#MentalHealthTips",
+    "#StudentLife",
+    "#Empathy",
+    "#ScienceBacked"
+   ],
+   "audit": {
+    "score": 55,
+    "hook": 60,
+    "retention": 70,
+    "specificity": 40,
+    "safety_ok": false,
+    "fixes": [
+     "Trim first line to 9 words or fewer for stronger hook",
+     "Add a concrete Indian student or professional scenario for specificity",
+     "Replace direct medical claims (hippocampus shrink, heart risk) with softer phrasing like 'studies suggest'",
+     "Include a clear, actionable CTA like 'Message them today'"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-27T01:52:11",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-27T01:52:11",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-27T01:52:35",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-27T01:58:30",
+   "provider": "",
+   "note": "Loneliness, Brain Effects & What to Say"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-27T01:51:58",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{ \"title\": \"Loneliness ka Brain Effect aur Kya Kehna Hai\", \"title_en\": \"Loneliness, Brain Effects & What to Say\", \"formu"
+  },
+  {
+   "at": "2026-11-27T01:52:05",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"Loneliness ka Brain Effect aur Kya Kehna Hai\",\"title_en\":\"Loneliness, Brain Effects & What to Say\",\"formula\":\""
+  },
+  {
+   "at": "2026-11-27T01:52:06",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"score\":55,\"hook\":60,\"retention\":70,\"specificity\":40,\"safety_ok\":false,\"fixes\":[\"Trim first line to 9 words or fewer fo"
+  },
+  {
+   "at": "2026-11-27T01:52:11",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_3",
+   "summary": "{\"title\":\"Loneliness ka Brain Effect aur Kya Kehna Hai\",\"title_en\":\"Loneliness, Brain Effects & What to Say\",\"formula\":\""
+  },
+  {
+   "at": "2026-11-27T01:58:30",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Akelaapan ka Dimaag par 3 Surprising Effects – Dekho Kaise Badalta Hai\",\"Loneliness vs Brain Health: 5 Facts"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}
