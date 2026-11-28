@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-28-short",
+  "kind": "short",
+  "built": true,
+  "built_at": "2026-11-28T07:23:43+05:30",
+  "publish_at": "2026-11-28T10:00+05:30",
+  "publish_at_utc": "2026-11-28T04:30+00:00",
+  "privacy": "public",
+  "artifact": "queue-2026-11-28-short",
+  "files": {
+    "video": "final_reel.mp4"
+  },
+  "meta": {
+    "title": "Stop doing this if you're exhausted from exam stress",
+    "yt_description": "A quick 45‑second reel showing three common mistakes that stop students from seeking help and a simple 15‑minute check‑in to catch early signs. Speak in Hinglish, keep it relatable and end with a clear actionable tip.\n\nNeuroTriage: https://www.neurotriage.in/ | Free screening  |  Productivity tools\n\nThis video is for education only. It is not medical advice or a diagnosis.\n\nIf you are struggling, India's free 24x7 helpline Tele-MANAS: 14416.\n\n#MentalHealth #ExamStress #StudentLife #SelfCare #Counseling #Shorts",
+    "ig_caption": "A quick 45‑second reel showing three common mistakes that stop students from seeking help and a simple 15‑minute check‑in to catch early signs. Speak in Hinglish, keep it relatable and end with a clear actionable tip.\n\nhttps://www.neurotriage.in/\nThis video is for education only. It is not medical advice or a diagnosis.\n#MentalHealth #ExamStress #StudentLife #SelfCare #Counseling",
+    "hashtags": [
+      "#MentalHealth",
+      "#ExamStress",
+      "#StudentLife",
+      "#SelfCare",
+      "#Counseling",
+      "#Shorts"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "status": "scheduled",
+      "attempts": 1,
+      "result": {
+        "id": "AF6cSVA9OqI",
+        "url": "https://youtube.com/watch?v=AF6cSVA9OqI",
+        "scheduled": true
+      },
+      "at": "2026-11-28T01:53:46+00:00"
+    },
+    "instagram": {
+      "status": "pending",
+      "attempts": 0,
+      "result": {},
+      "at": "2026-11-28T01:53:46+00:00"
+    },
+    "facebook": {
+      "status": "skipped",
+      "attempts": 1,
+      "result": {
+        "skipped": "FB_PAGE_ID / FB_PAGE_TOKEN missing"
+      },
+      "at": "2026-11-28T01:53:46+00:00"
+    }
+  },
+  "status": "pending"
+}

@@ -1,0 +1,77 @@
+{
+ "key": "2026-11-28",
+ "kind": "research",
+ "created": "2026-11-28T01:33:50",
+ "request": {
+  "kind": "research",
+  "mode": "awareness"
+ },
+ "research": {
+  "topic": "Signs It’s Time to Talk to a Mental‑Health Professional – 3 Common Mistakes People Make",
+  "verified": [],
+  "sources": [],
+  "level": "unstructured",
+  "hook": "Stop ignoring these 3 red‑flags if you’re prepping for exams",
+  "tip": "Do a 15‑minute nightly mental‑health check‑in with the PHQ‑4; if you score 3 or higher on either sub‑scale, book a 20‑minute free tele‑counseling session",
+  "dropped": [
+   "~1 in 5 university‑age students worldwide report clinically significant anxiety or depressive sympto (number not in cited evidence)",
+   "Persistent anxiety can reduce concentration by ~30 % and memory retention by ~20 % (APA 2023) (unsupported)",
+   "Students who receive professional counseling within 3 months of symptom onset show a 40 % faster ret (unsupported)",
+   "Red‑flags: mood low >2 weeks, sleep/appetite changes >1 week, trouble focusing despite rest (NIMHANS (unsupported)",
+   "Self‑reliance doubles the risk of academic dropout (WHO 2022) (unsupported)",
+   "Early professional support can cut the risk of chronic anxiety, depression, and burnout by up to 40  (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": false,
+  "version": 0,
+  "hash": "",
+  "data": null,
+  "history": []
+ },
+ "stages": {
+  "research": {
+   "at": "2026-11-28T01:34:10",
+   "provider": "groq",
+   "note": "unstructured"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-28T01:34:00",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"patterns\":[{\"title\":\"How to avoid sleep while studying 📚 #motivation #upsc #explore #tips #tricks #exam #study\",\"formu"
+  },
+  {
+   "at": "2026-11-28T01:34:03",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "**TOPIC** **“Signs It’s Time to Talk to a Mental‑Health Professional – 3 Common Mistakes People Make”** --- **ANGLE (why"
+  },
+  {
+   "at": "2026-11-28T01:34:05",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"topic\":\"Signs It’s Time to Talk to a Mental‑Health Professional – 3 Common Mistakes People Make\",\"search_terms\":[\"stud"
+  },
+  {
+   "at": "2026-11-28T01:34:10",
+   "stage": "research",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"results\":[{\"i\":0,\"verdict\":\"supported\",\"cites\":[3],\"fix\":\"\"},{\"i\":1,\"verdict\":\"unsupported\",\"cites\":[],\"fix\":\"\"},{\"i\":"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "research"
+}

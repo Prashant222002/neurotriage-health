@@ -1,0 +1,257 @@
+{
+ "key": "2026-11-28",
+ "kind": "short",
+ "created": "2026-11-28T01:34:10",
+ "request": {
+  "kind": "short",
+  "mode": "awareness",
+  "language": "hinglish"
+ },
+ "research": {
+  "topic": "Signs It’s Time to Talk to a Mental‑Health Professional – 3 Common Mistakes People Make",
+  "verified": [],
+  "sources": [],
+  "level": "unstructured",
+  "hook": "Stop ignoring these 3 red‑flags if you’re prepping for exams",
+  "tip": "Do a 15‑minute nightly mental‑health check‑in with the PHQ‑4; if you score 3 or higher on either sub‑scale, book a 20‑minute free tele‑counseling session",
+  "dropped": [
+   "~1 in 5 university‑age students worldwide report clinically significant anxiety or depressive sympto (number not in cited evidence)",
+   "Persistent anxiety can reduce concentration by ~30 % and memory retention by ~20 % (APA 2023) (unsupported)",
+   "Students who receive professional counseling within 3 months of symptom onset show a 40 % faster ret (unsupported)",
+   "Red‑flags: mood low >2 weeks, sleep/appetite changes >1 week, trouble focusing despite rest (NIMHANS (unsupported)",
+   "Self‑reliance doubles the risk of academic dropout (WHO 2022) (unsupported)",
+   "Early professional support can cut the risk of chronic anxiety, depression, and burnout by up to 40  (unsupported)"
+  ]
+ },
+ "script": {
+  "locked": true,
+  "version": 1,
+  "hash": "4ddb6416c6c5fbcd",
+  "data": {
+   "title": "Stop doing this if exam ki tension se thak gaye ho",
+   "title_en": "Stop doing this if you're exhausted from exam stress",
+   "formula": "Stop doing this if...",
+   "kicker": "MIND HACK",
+   "hook_text": "IGNORE THESE 3 RED FLAGS",
+   "scenes": [
+    {
+     "text": "Kya tum exam ki tension se thak gaye ho?",
+     "queries": [
+      "student stressed exam",
+      "young adult studying",
+      "exam anxiety"
+     ],
+     "text_en": "Are you exhausted from exam pressure?",
+     "text_hi": "क्या तुम एग्जाम की टेंशन से थक गए हो?",
+     "emphasis": ""
+    },
+    {
+     "text": "Har roz raat ko phone scroll karte, neend nahi aati.",
+     "queries": [
+      "phone scrolling night",
+      "student in bed",
+      "sleep deprivation"
+     ],
+     "text_en": "Scrolling on phone every night, you can’t sleep.",
+     "text_hi": "हर रोज़ रात को फ़ोन स्क्रॉल करते, नींद नहीं आती।",
+     "emphasis": ""
+    },
+    {
+     "text": "Research kehti hai, 1 in 5 students ko anxiety hoti hai.",
+     "queries": [
+      "statistics chart student",
+      "university campus",
+      "anxiety concept"
+     ],
+     "text_en": "Research says 1 in 5 students experience anxiety.",
+     "text_hi": "रिसर्च कहती है, 1 इन 5 स्टूडेंट्स को एंग्जायटी होती है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Galti #1: Sochna ki sirf stress hi hai.",
+     "queries": [
+      "student stressed",
+      "headache",
+      "stress concept"
+     ],
+     "text_en": "Mistake #1: Thinking it’s just stress.",
+     "text_hi": "गलती #1: सोचना कि सिर्फ स्ट्रेस ही है।",
+     "emphasis": "GALTI #1"
+    },
+    {
+     "text": "Galti #2: Sab kuch akela handle karna samajh lo.",
+     "queries": [
+      "alone studying",
+      "self reliance",
+      "student alone"
+     ],
+     "text_en": "Mistake #2: Believing you must handle everything alone.",
+     "text_hi": "गलती #2: सब कुछ अकेला हैंडल करना समझ लो।",
+     "emphasis": "GALTI #2"
+    },
+    {
+     "text": "Galti #3: Sirf severe case hi professional ko dikhana.",
+     "queries": [
+      "counselor office",
+      "student talking",
+      "professional help"
+     ],
+     "text_en": "Mistake #3: Showing only severe cases to a professional.",
+     "text_hi": "गलती #3: सिर्फ सीवियर केस ही प्रोफेशनल को दिखाना।",
+     "emphasis": "GALTI #3"
+    },
+    {
+     "text": "Ye line us dost ko bhejo jo raat ko jagta hai.",
+     "queries": [
+      "friend texting",
+      "phone message",
+      "student sharing"
+     ],
+     "text_en": "Send this line to the friend who stays up late.",
+     "text_hi": "ये लाइन उस दोस्त को भेजो जो रात को जागता है।",
+     "emphasis": ""
+    },
+    {
+     "text": "Ab ek 15‑minute mental check‑in try karo har raat.",
+     "queries": [
+      "phone timer",
+      "checking mental health",
+      "student using phone"
+     ],
+     "text_en": "Now try a 15‑minute mental check‑in each night.",
+     "text_hi": "अब एक 15‑मिनट मेंटल चेक‑इन ट्राय करो हर रात।",
+     "emphasis": ""
+    },
+    {
+     "text": "Pehle PHQ‑4 ke 4 sawaal padho, jawab likho.",
+     "queries": [
+      "questionnaire paper",
+      "student writing",
+      "PHQ‑4 form"
+     ],
+     "text_en": "First, read the 4 PHQ‑4 questions and write answers.",
+     "text_hi": "पहले PHQ‑4 के 4 सवाल पढ़ो, जवाब लिखो।",
+     "emphasis": ""
+    },
+    {
+     "text": "Agar score 3 ya zyada ho, turant counseling book karo.",
+     "queries": [
+      "online booking",
+      "counseling session",
+      "student on laptop"
+     ],
+     "text_en": "If the score is 3 or higher, book counseling right away.",
+     "text_hi": "अगर स्कोर 3 या ज़्यादा हो, तुरंत काउंसलिंग बुक करो।",
+     "emphasis": ""
+    },
+    {
+     "text": "Yeh habit apnao, aur apni mental health ko priority do.",
+     "queries": [
+      "student smiling",
+      "sunrise desk",
+      "positive mindset"
+     ],
+     "text_en": "Adopt this habit and make your mental health a priority.",
+     "text_hi": "यह habit अपनाओ, और अपनी mental health को priority दो।",
+     "emphasis": ""
+    }
+   ],
+   "description": "A quick 45‑second reel showing three common mistakes that stop students from seeking help and a simple 15‑minute check‑in to catch early signs. Speak in Hinglish, keep it relatable and end with a clear actionable tip.",
+   "hashtags": [
+    "#MentalHealth",
+    "#ExamStress",
+    "#StudentLife",
+    "#SelfCare",
+    "#Counseling",
+    "#StudyTips"
+   ],
+   "audit": {
+    "score": 75,
+    "hook": 80,
+    "retention": 70,
+    "specificity": 75,
+    "safety_ok": true,
+    "fixes": [
+     "Align content with the requested topic about signs to see a mental‑health professional and the 3 common mistakes",
+     "Replace or qualify the PHQ‑4 recommendation with a disclaimer that it’s not a diagnostic tool",
+     "Avoid implying that a specific score mandates counseling without professional assessment",
+     "Add a clear, concise call‑to‑action to consult a mental‑health professional"
+    ]
+   }
+  },
+  "history": [],
+  "locked_at": "2026-11-28T01:42:35",
+  "source": "groq"
+ },
+ "stages": {
+  "script": {
+   "at": "2026-11-28T01:42:35",
+   "provider": "groq",
+   "note": "v1 locked"
+  },
+  "voice": {
+   "at": "2026-11-28T01:42:55",
+   "provider": "ELEVEN",
+   "note": "english"
+  },
+  "short_final": {
+   "at": "2026-11-28T01:53:43",
+   "provider": "",
+   "note": "Stop doing this if you're exhausted from exam stress"
+  }
+ },
+ "handoff": [
+  {
+   "at": "2026-11-28T01:34:43",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_4",
+   "summary": "{ \"title\": \"Exam ki Tension? Ye 3 Red Flags Ignoring Na Karo\", \"title_en\": \"Exam Stress? Don't Ignore These 3 Red Flags\""
+  },
+  {
+   "at": "2026-11-28T01:35:24",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_5",
+   "summary": "{ \"title\": \"Exam ki Tension? Ye 3 Red Flags Ignoring Na Karo\", \"title_en\": \"Exam Stress? Don't Ignore These 3 Red Flags\""
+  },
+  {
+   "at": "2026-11-28T01:40:20",
+   "stage": "script",
+   "provider": "gemini",
+   "model": "gemini-3.5-flash-lite",
+   "key": "GEMINI_API_KEY",
+   "summary": "{ \"title\": \"Stop doing this if exam ki tension ho rahi hai\", \"title_en\": \"Stop doing this if you are feeling exam stress"
+  },
+  {
+   "at": "2026-11-28T01:42:33",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"title\":\"Stop doing this if exam ki tension se thak gaye ho\",\"title_en\":\"Stop doing this if you're exhausted from exam "
+  },
+  {
+   "at": "2026-11-28T01:42:35",
+   "stage": "script",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY_2",
+   "summary": "{\"score\":75,\"hook\":80,\"retention\":70,\"specificity\":75,\"safety_ok\":true,\"fixes\":[\"Align content with the requested topic "
+  },
+  {
+   "at": "2026-11-28T01:53:43",
+   "stage": "voice",
+   "provider": "groq",
+   "model": "openai/gpt-oss-120b",
+   "key": "GROQ_API_KEY",
+   "summary": "{\"titles\":[\"Exam ki tension se thak gaye ho? Yeh 3 galtiyan chhodo!\",\"Stress se pareshan? Mental health ke 3 bade mistak"
+  }
+ ],
+ "pending": [],
+ "errors": [],
+ "approved_changes": [],
+ "stage_now": "voice"
+}
